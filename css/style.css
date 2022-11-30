@@ -383,12 +383,38 @@ body.shrink .tooltip {
 	user-select: none;
 }
 
+.section {
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+}
+
 .section-title {
 	font-size: 3rem;
 	font-weight: 800;
-	margin-top: 1.5rem;
+}
+
+.section img {
+	padding: 2rem;
 }
 
 .text {
 	text-align: justify;
+	margin-bottom: 2rem;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+.instructions {
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+
+#marker {
+	width: 30rem;
 }

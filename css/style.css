@@ -154,6 +154,11 @@ nav:hover .shrink-btn,
 	cursor: pointer;
 }
 
+.search a {
+	text-decoration: none;
+	color: white;
+}
+
 #regresar {
 	max-width: 10rem;
 	max-height: 2rem;

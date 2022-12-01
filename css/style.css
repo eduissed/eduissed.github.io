@@ -8,6 +8,18 @@
 	box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+	width: 5px;
+}
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #888;
+	border-radius: 5px;
+}
+
 html {
 	scroll-behavior: smooth;
 }
@@ -29,6 +41,10 @@ body {
 
 a {
 	text-decoration: none;
+}
+
+a:visited {
+	color: inherit;
 }
 
 ul {
@@ -131,12 +147,16 @@ nav:hover .shrink-btn,
 
 .search {
 	margin: 2rem 0.5rem 1.7rem;
-	display: grid;
-	grid-template-columns: 2.7rem 1fr;
+	display: flex;
+	flex-direction: column;
 	align-items: center;
 	text-align: center;
-	border-radius: 50px;
 	cursor: pointer;
+}
+
+#regresar {
+	max-width: 10rem;
+	max-height: 2rem;
 }
 
 .sidebar-links ul {
@@ -410,9 +430,44 @@ body.shrink .tooltip {
 	justify-content: center;
 }
 
+#temas-canvas {
+	display: grid;
+	grid-template-areas:
+		"title"
+		"temas";
+}
+
+#temas-title {
+	grid-area: title;
+}
+
+#temas {
+	grid-area: temas;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-gap: 1rem;
+	margin: 20px;
+	justify-content: center;
+	align-self: center;
+}
+
+.tema {
+	background-color: var(--main-color);
+	padding: 2rem;
+	color: white;
+	border-radius: 10px;
+	transition: all 0.3s;
+	text-align: center;
+}
+
+.tema:hover {
+	background-color: var(--main-color-dark);
+}
+
 .instructions {
 	font-size: 1.5rem;
 	font-weight: 700;
+	text-align: center;
 }
 
 #marker {

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EDUISSED</title>
-    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="shortcut icon" href="./resources/favicon.ico" media="(prefers-color-scheme: dark)" type="image/x-icon" />
     <link rel="shortcut icon" href="./resources/black-favicon.ico" media="(prefers-color-scheme: light)"
@@ -32,14 +32,23 @@
                 <li class="tooltip-element" data-tooltip="0">
                     <a href="#inicio" class="active" data-active="0">
                         <div class="icon">
-                            <i class='bx bx-home-smile'></i>
-                            <i class='bx bxs-home-smile'></i>
+                            <i class='bx bx-home-alt-2'></i>
+                            <i class='bx bxs-home-alt-2'></i>
                         </div>
                         <span class="link hide noselect">Inicio</span>
                     </a>
                 </li>
                 <li class="tooltip-element" data-tooltip="1">
-                    <a href="#recursos" data-active="1">
+                    <a href="#aprende" data-active="1">
+                        <div class="icon">
+                            <i class='bx bx-pencil'></i>
+                            <i class='bx bxs-pencil'></i>
+                        </div>
+                        <span class="link hide noselect">Aprende</span>
+                    </a>
+                </li>
+                <li class="tooltip-element" data-tooltip="2">
+                    <a href="#recursos" data-active="2">
                         <div class="icon">
                             <i class='bx bx-folder'></i>
                             <i class='bx bxs-folder-open'></i>
@@ -47,22 +56,13 @@
                         <span class="link hide noselect">Recursos</span>
                     </a>
                 </li>
-                <li class="tooltip-element" data-tooltip="2">
-                    <a href="#contacto" data-active="2">
+                <li class="tooltip-element" data-tooltip="3">
+                    <a href="#contacto" data-active="3">
                         <div class="icon">
                             <i class='bx bx-message-square-detail'></i>
                             <i class='bx bxs-message-square-detail'></i>
                         </div>
                         <span class="link hide noselect">Contáctanos</span>
-                    </a>
-                </li>
-                <li class="tooltip-element" data-tooltip="3">
-                    <a href="#aprende" data-active="3">
-                        <div class="icon">
-                            <i class='bx bx-pencil'></i>
-                            <i class='bx bxs-pencil'></i>
-                        </div>
-                        <span class="link hide noselect">Aprende</span>
                     </a>
                 </li>
                 <div class="tooltip">
@@ -77,21 +77,12 @@
 
             <ul>
                 <li class="tooltip-element" data-tooltip="0">
-                    <a href="#infografias" data-active="4">
+                    <a href="#info" data-active="4">
                         <div class="icon">
-                            <i class='bx bx-notepad'></i>
-                            <i class='bx bxs-notepad'></i>
+                            <i class='bx bx-info-circle'></i>
+                            <i class='bx bxs-info-circle'></i>
                         </div>
-                        <span class="link hide noselect">Infografías</span>
-                    </a>
-                </li>
-                <li class="tooltip-element" data-tooltip="1">
-                    <a href="#ayuda" data-active="5">
-                        <div class="icon">
-                            <i class='bx bx-help-circle'></i>
-                            <i class='bx bxs-help-circle'></i>
-                        </div>
-                        <span class="link hide noselect">Ayuda</span>
+                        <span class="link hide noselect">Información</span>
                     </a>
                 </li>
             </ul>
@@ -120,6 +111,64 @@
                 transmitir
                 información, es también adquirir habilidades socioemocionales en sexualidad.
             </p>
+        </div>
+        <div id="aprende" class="section">
+            <h1 class="section-title">Aprende</h1>
+            <p class="text">
+                A continuación presentamos una serie de articulos y presentaciones intercativas que te permitirán
+                adquirir más conocimientos sobre éstos temas <b>¡Utiliza tu teléfono para escanearlo!</b>
+            </p>
+            <div id="temas-canvas">
+                <h3 id="temas-title">¡Elije uno de estos!</h3>
+                <ul id="temas">
+                    <li>
+                        <a href="./aprende/#relaciones">
+                            <div class="tema">Relaciones</div>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="./aprende/#genero">
+                            <div class="tema">Género</div>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="./aprende/#seguridad">
+                            <div class="tema">Seguridad personal</div>
+                    </li></a>
+
+                    <li>
+                        <a href="./aprende/#salud">
+                            <div class="tema">Salud</div>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="./aprende/#cuerpo">
+                            <div class="tema">Cuerpo humano</div>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="./aprende/#sexualidad">
+                            <div class="tema">Sexualidad</div>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="./aprende/#salud-sexual">
+                            <div class="tema">Salud sexual</div>
+                        </a>
+
+                    </li>
+                </ul>
+            </div>
+            <div class="wrapper">
+                <p class="instructions">Haz clic en el marcador para agrandarlo</p><a
+                    href="./resources/images/marker.jpg" title="marker_click" target="_blank"><img id="marker"
+                        src="./resources/images/marker.jpg" alt="marker" /></a>
+            </div>
         </div>
         <div id="recursos" class="section">
             <h1 class="section-title">Recursos</h1>
@@ -150,20 +199,6 @@
                 nam laborum voluptatem, reprehenderit quae. Dignissimos perferendis possimus modi maiores non sed
                 dolores atque eum incidunt quae!</p>
         </div>
-
-        <div id="aprende" class="section">
-            <h1 class="section-title">Aprende</h1>
-            <p class="text">
-                A continuación presentamos un video realizado por la FES UNAM Aragón que explica el género con mucho
-                detalle. <b>¡Utiliza tu teléfono para escanearlo!</b>
-            </p>
-            <div class="wrapper">
-                <p class="instructions">Haz clic en el marcador para agrandarlo</p><a
-                    href="./resources/images/marker.jpg" title="marker_click" target="_blank"><img id="marker"
-                        src="./resources/images/marker.jpg" alt="marker" /></a>
-            </div>
-        </div>
-
         <p class="copyright">
             &copy; 2022 - <span>EDUISSED</span> Todos los derechos reservados
         </p>

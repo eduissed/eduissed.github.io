@@ -2,7 +2,6 @@ const shrink_btn = document.querySelector(".shrink-btn");
 const search = document.querySelector(".search");
 const sidebar_links = document.querySelectorAll(".sidebar-links a");
 const active_tab = document.querySelector(".active-tab");
-const Extras = document.querySelector(".sidebar-links h4");
 const tooltip_elements = document.querySelectorAll(".tooltip-element");
 
 let activeIndex;
@@ -18,17 +17,8 @@ shrink_btn.addEventListener("click", () => {
 	}, 500);
 });
 
-search.addEventListener("click", () => {
-	document.body.classList.remove("shrink");
-	search.lastElementChild.focus();
-});
-
 function moveActiveTab() {
 	let topPosition = activeIndex * 58 + 2.5;
-
-	if (activeIndex > 3) {
-		topPosition += Extras.clientHeight;
-	}
 
 	active_tab.style.top = `${topPosition}px`;
 }
@@ -60,3 +50,31 @@ function showTooltip() {
 tooltip_elements.forEach((elem) => {
 	elem.addEventListener("mouseover", showTooltip);
 });
+
+function zoom(img) {
+	// Get the modal
+	let modal = document.getElementById("myModal");
+
+	// Get the image and insert it inside the modal - use its "alt" text as a caption
+	let modalImg = document.getElementById("img01");
+	let captionText = document.getElementById("caption");
+	img.onclick = function () {
+		modal.style.display = "block";
+		modalImg.src = this.src;
+		captionText.innerHTML = this.alt;
+	};
+
+	// Get the <span> element that closes the modal
+	let span = document.getElementsByClassName("close")[0];
+
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function () {
+		modal.style.display = "none";
+	};
+}
+
+let images = document.getElementsByClassName("marker");
+
+for (let i = 0; i < images.length; i++) {
+	zoom(images[i]);
+}

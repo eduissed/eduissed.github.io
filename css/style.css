@@ -595,5 +595,6 @@ body.shrink .tooltip {
 	.section:target {
 		margin-top: -12px;
 		padding-top: 12rem;
+		transition-delay: 50ms;
 	}
 }

@@ -5,6 +5,18 @@ const active_tab = document.querySelector(".active-tab");
 const tooltip_elements = document.querySelectorAll(".tooltip-element");
 
 let activeIndex;
+let minWidth = window.matchMedia("(min-width: 912px)").matches;
+
+window.addEventListener("resize", function () {
+	minWidth = window.matchMedia("(min-width: 912px)").matches;
+	if (!minWidth) {
+		active_tab.style.top = `2.5px`;
+		active_tab.style.left = `${activeIndex * 48}px`;
+	} else {
+		active_tab.style.left = `2.5px`;
+		active_tab.style.top = `${activeIndex * 58 + 2.5}px`;
+	}
+});
 
 shrink_btn.addEventListener("click", () => {
 	document.body.classList.toggle("shrink");
@@ -19,8 +31,12 @@ shrink_btn.addEventListener("click", () => {
 
 function moveActiveTab() {
 	let topPosition = activeIndex * 58 + 2.5;
-
-	active_tab.style.top = `${topPosition}px`;
+	let leftPosition = activeIndex * 48;
+	if (minWidth) {
+		active_tab.style.top = `${topPosition}px`;
+	} else {
+		active_tab.style.left = `${leftPosition}px`;
+	}
 }
 
 function changeLink() {

@@ -104,7 +104,7 @@ main .copyright span {
 	align-items: center;
 }
 
-.sidebar-top .logo {
+.sidebar-top .logo img {
 	width: 4rem;
 }
 
@@ -526,7 +526,7 @@ body.shrink .tooltip {
 	}
 
 	.active-tab {
-		display: none;
+		width: 3rem;
 	}
 
 	nav {
@@ -551,10 +551,6 @@ body.shrink .tooltip {
 		display: none;
 	}
 
-	.sidebar-top {
-		display: none;
-	}
-
 	.sidebar-links {
 		min-width: 100vw;
 	}
@@ -562,6 +558,18 @@ body.shrink .tooltip {
 	.sidebar-links ul {
 		display: flex;
 		flex-direction: row;
+	}
+
+	.sidebar-top h3 {
+		display: none;
+	}
+
+	.shrink-btn {
+		display: none;
+	}
+
+	.sidebar-top .logo img {
+		width: 3rem;
 	}
 
 	.link {
@@ -581,7 +589,7 @@ body.shrink .tooltip {
 	}
 
 	#temas {
-		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 	}
 
 	.tema {
@@ -592,9 +600,21 @@ body.shrink .tooltip {
 		min-height: 7rem;
 	}
 
-	.section:target {
-		margin-top: -12px;
-		padding-top: 12rem;
+	.section:target:not(#manual, #salud-sexual) {
+		margin-top: -10px;
+		padding-top: 10rem;
 		transition-delay: 50ms;
+	}
+
+	.search {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	#regresar {
+		min-width: 100%;
+		min-height: 3rem;
+		transform: translateY(-4px);
 	}
 }

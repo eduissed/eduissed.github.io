@@ -29,6 +29,7 @@ html {
 	--main-color-dark: #0d1956;
 	--main-color-light: #0a27b8;
 	--app-link-color: #890c7c;
+	--nav-height: 100vh;
 }
 
 body {
@@ -56,7 +57,7 @@ nav {
 	position: sticky;
 	top: 0;
 	left: 0;
-	height: 100vh;
+	height: var(--nav-height);
 	background-color: var(--main-color);
 	width: 16rem;
 	padding: 1.8rem 0.85rem;
@@ -519,7 +520,11 @@ body.shrink .tooltip {
 	}
 }
 
-@media (max-width: 912px) {
+@media (max-width: 915px) {
+	:root {
+		--nav-height: 6.5rem;
+	}
+
 	::-webkit-scrollbar {
 		width: 2px;
 		height: 8px;
@@ -535,7 +540,7 @@ body.shrink .tooltip {
 		top: 0;
 		bottom: auto;
 		width: 100vw;
-		height: 6.5rem;
+		height: var(--nav-height);
 		padding: 1rem;
 		margin: 0;
 		flex-direction: row;
@@ -558,6 +563,7 @@ body.shrink .tooltip {
 	.sidebar-links ul {
 		display: flex;
 		flex-direction: row;
+		left: 5rem;
 	}
 
 	.sidebar-top h3 {
@@ -568,8 +574,23 @@ body.shrink .tooltip {
 		display: none;
 	}
 
+	.sidebar-top .logo {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: calc(var(--nav-height) - 1rem);
+		left: 0;
+		position: fixed;
+		padding-left: 5rem;
+		background-color: var(--main-color);
+		box-shadow: 10px 0 5px -1px rgba(0, 0, 0, 0.311);
+		z-index: 1;
+		clip-path: inset(0px -15px 0px 0px);
+	}
+
 	.sidebar-top .logo img {
 		width: 3rem;
+		transform: translateX(-2.5rem);
 	}
 
 	.link {
@@ -607,6 +628,7 @@ body.shrink .tooltip {
 	}
 
 	.search {
+		transform: translateX(5rem);
 		display: flex;
 		align-items: center;
 		justify-content: center;

@@ -5,10 +5,10 @@ const active_tab = document.querySelector(".active-tab");
 const tooltip_elements = document.querySelectorAll(".tooltip-element");
 
 let activeIndex;
-let minWidth = window.matchMedia("(min-width: 912px)").matches;
+let minWidth = window.matchMedia("(min-width: 915px)").matches;
 
 window.addEventListener("resize", function () {
-	minWidth = window.matchMedia("(min-width: 912px)").matches;
+	minWidth = window.matchMedia("(min-width: 915px)").matches;
 	if (!minWidth) {
 		active_tab.style.top = `2.5px`;
 		active_tab.style.left = `${activeIndex * 48}px`;

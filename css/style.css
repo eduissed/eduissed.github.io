@@ -11,9 +11,6 @@
 ::-webkit-scrollbar {
 	width: 10px;
 }
-::-webkit-scrollbar-track {
-	background: #f1f1f1;
-}
 
 ::-webkit-scrollbar-thumb {
 	background: var(--main-color-dark);
@@ -25,10 +22,13 @@ html {
 }
 
 :root {
+	--title-font-size: 2.5rem;
+
 	--main-color: #10289f;
 	--main-color-dark: #0d1956;
 	--main-color-light: #0a27b8;
 	--app-link-color: #890c7c;
+
 	--nav-height: 100vh;
 }
 
@@ -342,7 +342,7 @@ body.shrink .tooltip {
 }
 
 .section-title {
-	font-size: 3rem;
+	font-size: var(--title-font-size);
 	font-weight: 800;
 }
 
@@ -522,6 +522,8 @@ body.shrink .tooltip {
 
 @media (max-width: 915px) {
 	:root {
+		--title-font-size: 2rem;
+
 		--nav-height: 6.5rem;
 	}
 
@@ -554,6 +556,10 @@ body.shrink .tooltip {
 
 	nav h4 {
 		display: none;
+	}
+
+	#nav-index {
+		overflow: hidden;
 	}
 
 	.sidebar-links {

@@ -583,7 +583,7 @@ body.shrink .tooltip {
 		position: fixed;
 		padding-left: 5rem;
 		background-color: var(--main-color);
-		box-shadow: 10px 0 5px -1px rgba(0, 0, 0, 0.311);
+		box-shadow: 4px 0 5px -1px rgba(0, 0, 0, 0.182);
 		z-index: 1;
 		clip-path: inset(0px -15px 0px 0px);
 	}

@@ -1,5 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
+:root {
+	--title-font-size: 2.5rem;
+	--subtema-font-size: 1.3rem;
+
+	--main-color: #10289f;
+	--main-color-dark: #0d1956;
+	--main-color-light: #0a27b8;
+
+	--nav-height: 100vh;
+}
+
 *,
 *::before,
 *::after {
@@ -19,17 +30,6 @@
 
 html {
 	scroll-behavior: smooth;
-}
-
-:root {
-	--title-font-size: 2.5rem;
-
-	--main-color: #10289f;
-	--main-color-dark: #0d1956;
-	--main-color-light: #0a27b8;
-	--app-link-color: #890c7c;
-
-	--nav-height: 100vh;
 }
 
 body {
@@ -347,7 +347,9 @@ body.shrink .tooltip {
 }
 
 .section img {
-	padding: 2rem;
+	padding: 1rem;
+	max-width: 80%;
+	cursor: pointer;
 }
 
 .text {
@@ -369,7 +371,7 @@ body.shrink .tooltip {
 	padding: 0;
 	width: -moz-fit-content;
 	width: fit-content;
-	color: var(--app-link-color);
+	color: var(--main-color);
 }
 
 .app-link:after {
@@ -435,47 +437,9 @@ body.shrink .tooltip {
 	cursor: pointer;
 }
 
-.modal {
-	display: none; /* Hidden by default */
-	position: fixed; /* Stay in place */
-	z-index: 1; /* Sit on top */
-	padding-top: 100px; /* Location of the box */
-	left: 0;
-	top: 0;
-	width: 100%; /* Full width */
-	height: 100%; /* Full height */
-	overflow: auto; /* Enable scroll if needed */
-	background-color: rgb(0, 0, 0); /* Fallback color */
-	background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
-}
-
-/* Modal Content (image) */
-.modal-content {
-	margin: auto;
-	display: block;
-	width: 80%;
-	max-width: 700px;
-}
-
-/* Caption of Modal Image */
-#caption {
-	margin: auto;
-	display: block;
-	width: 80%;
-	max-width: 700px;
-	text-align: center;
-	color: #ccc;
-	padding: 10px 0;
-	height: 150px;
-}
-
-/* Add Animation */
-.modal-content,
-#caption {
-	-webkit-animation-name: zoom;
-	-webkit-animation-duration: 0.6s;
-	animation-name: zoom;
-	animation-duration: 0.6s;
+#img-container img {
+	max-width: 90%;
+	max-height: 90%;
 }
 
 @-webkit-keyframes zoom {
@@ -512,6 +476,30 @@ body.shrink .tooltip {
 	color: #bbb;
 	text-decoration: none;
 	cursor: pointer;
+}
+
+.subtema {
+	margin: 1rem;
+	padding: 1rem;
+	border: var(--main-color) 3px solid;
+	border-radius: 10px;
+}
+
+.subtema summary {
+	font-size: var(--subtema-font-size);
+	font-weight: 700;
+	cursor: pointer;
+	transition: 0.3s all ease-in-out;
+}
+
+.subtema[open] summary {
+	border-bottom: 1px solid var(--main-color);
+	font-size: medium;
+}
+
+.subtema[open] p {
+	text-align: justify;
+	padding: 1rem;
 }
 
 @media only screen and (max-width: 700px) {

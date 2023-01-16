@@ -67,30 +67,42 @@ tooltip_elements.forEach((elem) => {
 	elem.addEventListener("mouseover", showTooltip);
 });
 
-function zoom(img) {
-	// Get the modal
-	let modal = document.getElementById("myModal");
+// Add a click event listener to all existing image elements
+// Add a click event listener to all existing image elements
+let imgs = document.getElementsByTagName("img");
+for (let i = 0; i < imgs.length; i++) {
+	imgs[i].addEventListener("click", function () {
+		// Create a clone of the clicked image
+		let imgClone = this.cloneNode();
+		imgClone.id = "img-clone";
 
-	// Get the image and insert it inside the modal - use its "alt" text as a caption
-	let modalImg = document.getElementById("img01");
-	let captionText = document.getElementById("caption");
-	img.onclick = function () {
-		modal.style.display = "block";
-		modalImg.src = this.src;
-		captionText.innerHTML = this.alt;
-	};
+		// Create a new div element to hold the image
+		let imgContainer = document.createElement("div");
+		imgContainer.id = "img-container";
+		imgContainer.style.position = "fixed";
+		imgContainer.style.top = "0";
+		imgContainer.style.left = "0";
+		imgContainer.style.width = "100%";
+		imgContainer.style.height = "100%";
+		imgContainer.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+		imgContainer.style.display = "flex";
+		imgContainer.style.alignItems = "center";
+		imgContainer.style.justifyContent = "center";
+		imgContainer.style.zIndex = "9999";
 
-	// Get the <span> element that closes the modal
-	let span = document.getElementsByClassName("close")[0];
+		// Add the image element to the container
+		imgContainer.appendChild(imgClone);
+		imgClone.style.maxWidth = "90%";
+		imgClone.style.maxHeight = "90%";
 
-	// When the user clicks on <span> (x), close the modal
-	span.onclick = function () {
-		modal.style.display = "none";
-	};
-}
+		// Add the container to the body
+		document.body.appendChild(imgContainer);
 
-let images = document.getElementsByClassName("marker");
-
-for (let i = 0; i < images.length; i++) {
-	zoom(images[i]);
+		// Add a click event listener to the container to close the image when clicking outside of it
+		imgContainer.addEventListener("click", function (e) {
+			if (e.target == imgContainer) {
+				imgContainer.remove();
+			}
+		});
+	});
 }

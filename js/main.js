@@ -69,7 +69,7 @@ tooltip_elements.forEach((elem) => {
 
 // Add a click event listener to all existing image elements
 // Add a click event listener to all existing image elements
-let imgs = document.getElementsByTagName("img");
+let imgs = document.getElementsByClassName("zoomable");
 for (let i = 0; i < imgs.length; i++) {
 	imgs[i].addEventListener("click", function () {
 		// Create a clone of the clicked image

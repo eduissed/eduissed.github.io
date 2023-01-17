@@ -495,6 +495,7 @@ body.shrink .tooltip {
 .subtema[open] summary {
 	border-bottom: 1px solid var(--main-color);
 	font-size: medium;
+	margin-bottom: 1rem;
 }
 
 .subtema[open] p {

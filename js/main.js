@@ -97,6 +97,21 @@ for (let i = 0; i < imgs.length; i++) {
 		let imgClone = this.cloneNode();
 		imgClone.id = "img-clone";
 
+		//Create the alt text for the image that allows you to download it
+		let altText = document.createElement("a");
+		altText.id = "alt-text";
+		altText.href = this.src;
+		altText.download = `${this.alt}.png`;
+		altText.innerHTML = "Descárgalo aquí";
+		altText.style.position = "relative";
+		altText.style.bottom = "1rem";
+		altText.style.left = "0";
+		altText.style.width = "100%";
+		altText.style.padding = "10px";
+		altText.style.color = "white";
+		altText.style.textAlign = "center";
+		altText.style.textDecoration = "underline";
+
 		// Create a new div element to hold the image
 		let imgContainer = document.createElement("div");
 		imgContainer.id = "img-container";
@@ -109,12 +124,15 @@ for (let i = 0; i < imgs.length; i++) {
 		imgContainer.style.display = "flex";
 		imgContainer.style.alignItems = "center";
 		imgContainer.style.justifyContent = "center";
+		imgContainer.style.flexDirection = "column";
+		imgContainer.style.gap = "1rem";
 		imgContainer.style.zIndex = "9999";
 
 		// Add the image element to the container
 		imgContainer.appendChild(imgClone);
-		imgClone.style.maxWidth = "90%";
-		imgClone.style.maxHeight = "90%";
+		imgContainer.appendChild(altText);
+		imgClone.style.maxWidth = "85%";
+		imgClone.style.maxHeight = "85%";
 
 		// Add the container to the body
 		document.body.appendChild(imgContainer);

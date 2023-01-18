@@ -405,12 +405,15 @@ body.shrink .tooltip {
 
 #temas {
 	grid-area: temas;
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	grid-gap: 1rem;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 1rem;
 	margin: 20px;
 	justify-content: center;
 	align-self: center;
+	align-items: center;
+	align-content: center;
 }
 
 .tema {
@@ -420,6 +423,7 @@ body.shrink .tooltip {
 	border-radius: 10px;
 	transition: all 0.3s;
 	text-align: center;
+	min-width: 14rem;
 }
 
 .tema:hover {
@@ -554,7 +558,12 @@ body.shrink .tooltip {
 	}
 
 	#temas {
+		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+		grid-area: temas;
+		margin: 20px;
+		justify-content: center;
+		align-self: center;
 	}
 
 	.tema {

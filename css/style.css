@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
 :root {
+	--body-font: "Poppins", sans-serif;
 	--title-font-size: 2.5rem;
 	--subtema-font-size: 1.3rem;
 
@@ -9,6 +10,7 @@
 	--main-color-light: #0a27b8;
 
 	--nav-height: 100vh;
+	--remark-color: #7b0086;
 }
 
 *,
@@ -33,7 +35,7 @@ html {
 }
 
 body {
-	font-family: "Poppins", sans-serif;
+	font-family: var(--body-font);
 	overflow-x: hidden;
 	background-color: #e4e2f5;
 	min-height: 100vh;
@@ -336,6 +338,11 @@ body.shrink .tooltip {
 	user-select: none;
 }
 
+.remark {
+	color: var(--remark-color);
+	font-weight: 500;
+}
+
 .section {
 	margin-top: 1.5rem;
 	margin-bottom: 1.5rem;
@@ -442,6 +449,24 @@ body.shrink .tooltip {
 	padding: 1rem;
 	border: var(--main-color) 3px solid;
 	border-radius: 10px;
+}
+
+.subtema p,
+.subtema h4,
+.subtema ul,
+.subtema li {
+	margin: 0 3rem 0 3rem;
+}
+
+.subtema ul {
+	list-style: disc;
+	margin-left: 5rem;
+	padding-right: 1rem;
+	text-align: justify;
+}
+
+.subtema h4 {
+	margin-top: 2rem;
 }
 
 .subtema summary {

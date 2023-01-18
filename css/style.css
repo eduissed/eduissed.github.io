@@ -426,51 +426,6 @@ body.shrink .tooltip {
 	background-color: var(--main-color-dark);
 }
 
-.instructions {
-	font-size: 1.5rem;
-	font-weight: 700;
-	text-align: center;
-}
-
-.marker {
-	width: 30rem;
-	cursor: pointer;
-}
-
-#img-container img {
-	max-width: 90%;
-	max-height: 90%;
-}
-
-@-webkit-keyframes zoom {
-	from {
-		-webkit-transform: scale(0);
-	}
-	to {
-		-webkit-transform: scale(1);
-	}
-}
-
-@keyframes zoom {
-	from {
-		transform: scale(0);
-	}
-	to {
-		transform: scale(1);
-	}
-}
-
-/* The Close Button */
-.close {
-	position: absolute;
-	top: 15px;
-	right: 35px;
-	color: #f1f1f1;
-	font-size: 40px;
-	font-weight: bold;
-	transition: 0.3s;
-}
-
 .close:hover,
 .close:focus {
 	color: #bbb;
@@ -501,12 +456,6 @@ body.shrink .tooltip {
 .subtema[open] p {
 	text-align: justify;
 	padding: 1rem;
-}
-
-@media only screen and (max-width: 700px) {
-	.modal-content {
-		width: 100%;
-	}
 }
 
 @media (max-width: 915px) {
@@ -616,7 +565,7 @@ body.shrink .tooltip {
 		min-height: 7rem;
 	}
 
-	.section:target:not(#manual, #salud-sexual) {
+	.section:target {
 		margin-top: -10px;
 		padding-top: 10rem;
 		transition-delay: 50ms;

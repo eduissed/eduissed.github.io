@@ -1,0 +1,19 @@
+@import url(style.css);
+
+.instructions {
+	font-size: 1.5rem;
+	font-weight: 700;
+	text-align: center;
+}
+
+.marker {
+	width: 30rem;
+	cursor: pointer;
+}
+
+#info-31 {
+	width: 30rem;
+}
+
+@media (max-width: 915px) {
+}

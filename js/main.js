@@ -15,11 +15,32 @@ window.addEventListener("resize", function () {
 	} else {
 		active_tab.style.left = `2.5px`;
 		active_tab.style.top = `${activeIndex * 58 + 2.5}px`;
+		loadShrink();
 	}
 });
 
+if (minWidth) {
+	loadShrink();
+}
+
+function loadShrink() {
+	let shrinked = localStorage.getItem("shrinked");
+	if (shrinked == "true") {
+		localStorage.setItem("shrinked", "true");
+		document.body.classList.add("shrink");
+	} else {
+		localStorage.setItem("shrinked", "false");
+		document.body.classList.remove("shrink");
+	}
+}
+
 shrink_btn.addEventListener("click", () => {
 	document.body.classList.toggle("shrink");
+	if (document.body.classList.contains("shrink")) {
+		localStorage.setItem("shrinked", "true");
+	} else {
+		localStorage.setItem("shrinked", "false");
+	}
 	setTimeout(moveActiveTab, 400);
 
 	shrink_btn.classList.add("hovered");

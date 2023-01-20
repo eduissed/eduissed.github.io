@@ -443,7 +443,7 @@ body.shrink .tooltip {
 	:root {
 		--title-font-size: 2rem;
 
-		--nav-height: 6.5rem;
+		--nav-height: 5rem;
 	}
 
 	::-webkit-scrollbar {
@@ -458,8 +458,8 @@ body.shrink .tooltip {
 	nav {
 		background-color: var(--main-color);
 		position: fixed;
-		top: 0;
-		bottom: auto;
+		bottom: 0;
+		top: auto;
 		width: 100vw;
 		height: var(--nav-height);
 		padding: 1rem;
@@ -483,6 +483,7 @@ body.shrink .tooltip {
 
 	.sidebar-links {
 		min-width: 100vw;
+		transform: translateY(-5px);
 	}
 
 	.sidebar-links ul {
@@ -549,12 +550,6 @@ body.shrink .tooltip {
 		justify-content: center;
 		min-width: 100%;
 		min-height: 7rem;
-	}
-
-	.section:target {
-		margin-top: -10px;
-		padding-top: 10rem;
-		transition-delay: 50ms;
 	}
 
 	.search {

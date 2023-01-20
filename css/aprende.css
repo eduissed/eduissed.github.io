@@ -1,5 +1,10 @@
 @import url(style.css);
 
+.remark {
+	color: var(--remark-color);
+	font-weight: 600;
+}
+
 .subtema {
 	margin: 1rem;
 	padding: 1rem;
@@ -54,11 +59,29 @@ blockquote {
 	font-weight: 600;
 }
 
+.infog {
+	border-radius: 15px;
+}
+
 #info-31 {
 	width: 30rem;
 }
 
+#info-331,
+#info-332,
+#info-333 {
+	width: 40rem;
+}
+
+#info-43 {
+	width: 25rem;
+}
+
 #gen-ataque {
+	width: 25rem;
+}
+
+#no-sign-no {
 	width: 25rem;
 }
 

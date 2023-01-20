@@ -10,7 +10,7 @@
 	--main-color-light: #70c2e7;
 
 	--nav-height: 100vh;
-	--remark-color: #7b0086;
+	--remark-color: #07916e;
 }
 
 *,
@@ -336,11 +336,6 @@ body.shrink .tooltip {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-}
-
-.remark {
-	color: var(--remark-color);
-	font-weight: 500;
 }
 
 .section {

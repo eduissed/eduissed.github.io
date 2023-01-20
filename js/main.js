@@ -58,7 +58,7 @@ sidebar_links.forEach((link) => link.addEventListener("click", changeLink));
 function changeLinkState() {
 	let index = sections.length;
 
-	while (--index && window.scrollY + 300 < sections[index].offsetTop) {}
+	while (--index && window.scrollY + 100 < sections[index].offsetTop) {}
 
 	sidebar_links.forEach((link) => link.classList.remove("active"));
 	sidebar_links[index].classList.add("active");

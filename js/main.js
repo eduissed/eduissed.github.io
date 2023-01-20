@@ -3,12 +3,13 @@ const search = document.querySelector(".search");
 const sidebar_links = document.querySelectorAll(".sidebar-links a");
 const active_tab = document.querySelector(".active-tab");
 const tooltip_elements = document.querySelectorAll(".tooltip-element");
+const sections = document.querySelectorAll("div.section");
 
 let activeIndex;
 let minWidth = window.matchMedia("(min-width: 915px)").matches;
 
-window.addEventListener("resize", function () {
-	minWidth = window.matchMedia("(min-width: 915px)").matches;
+//Moving the active tab to the active link
+function moveTab() {
 	if (!minWidth) {
 		active_tab.style.top = `2.5px`;
 		active_tab.style.left = `${activeIndex * 48}px`;
@@ -17,10 +18,6 @@ window.addEventListener("resize", function () {
 		active_tab.style.top = `${activeIndex * 58 + 2.5}px`;
 		loadShrink();
 	}
-});
-
-if (minWidth) {
-	loadShrink();
 }
 
 function loadShrink() {
@@ -41,7 +38,6 @@ shrink_btn.addEventListener("click", () => {
 	} else {
 		localStorage.setItem("shrinked", "false");
 	}
-	setTimeout(moveActiveTab, 400);
 
 	shrink_btn.classList.add("hovered");
 
@@ -50,26 +46,30 @@ shrink_btn.addEventListener("click", () => {
 	}, 500);
 });
 
-function moveActiveTab() {
-	let topPosition = activeIndex * 58 + 2.5;
-	let leftPosition = activeIndex * 48;
-	if (minWidth) {
-		active_tab.style.top = `${topPosition}px`;
-	} else {
-		active_tab.style.left = `${leftPosition}px`;
-	}
-}
-
 function changeLink() {
 	sidebar_links.forEach((sideLink) => sideLink.classList.remove("active"));
 	this.classList.add("active");
 
 	activeIndex = this.dataset.active;
-
-	moveActiveTab();
 }
 
 sidebar_links.forEach((link) => link.addEventListener("click", changeLink));
+
+function changeLinkState() {
+	let index = sections.length;
+
+	while (--index && window.scrollY + 300 < sections[index].offsetTop) {}
+
+	sidebar_links.forEach((link) => link.classList.remove("active"));
+	sidebar_links[index].classList.add("active");
+
+	activeIndex = index;
+
+	moveTab();
+}
+
+changeLinkState();
+window.addEventListener("scroll", changeLinkState);
 
 function showTooltip() {
 	let tooltip = this.parentNode.lastElementChild;
@@ -88,16 +88,13 @@ tooltip_elements.forEach((elem) => {
 	elem.addEventListener("mouseover", showTooltip);
 });
 
-// Add a click event listener to all existing image elements
-// Add a click event listener to all existing image elements
+//Adding a zoom effect to the .zoomable class
 let imgs = document.getElementsByClassName("zoomable");
 for (let i = 0; i < imgs.length; i++) {
 	imgs[i].addEventListener("click", function () {
-		// Create a clone of the clicked image
 		let imgClone = this.cloneNode();
 		imgClone.id = "img-clone";
 
-		//Create the alt text for the image that allows you to download it
 		let altText = document.createElement("a");
 		altText.id = "alt-text";
 		altText.href = this.src;
@@ -144,4 +141,9 @@ for (let i = 0; i < imgs.length; i++) {
 			}
 		});
 	});
+}
+
+//loading the shrinked state
+if (minWidth) {
+	loadShrink();
 }

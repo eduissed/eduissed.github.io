@@ -1,5 +1,42 @@
 @import url(style.css);
 
+.subtema {
+	margin: 1rem;
+	padding: 1rem;
+	border: var(--main-color) 3px solid;
+	border-radius: 10px;
+}
+
+.subtema ul {
+	list-style: disc;
+	margin-left: 3rem;
+	padding-right: 1rem;
+	text-align: justify;
+}
+
+.subtema h4 {
+	margin-top: 2rem;
+}
+
+.subtema summary {
+	font-size: var(--subtema-font-size);
+	font-weight: 700;
+	cursor: pointer;
+	transition: 0.1s all ease-in-out;
+}
+
+.subtema[open] summary {
+	border-bottom: 1px solid var(--main-color);
+	font-size: medium;
+	margin-bottom: 1rem;
+}
+
+.subtema[open] p {
+	text-align: justify;
+	padding: 0.5rem 0 0.5rem 0;
+	margin: 0.5rem;
+}
+
 .instructions {
 	font-size: 1.5rem;
 	font-weight: 700;
@@ -9,6 +46,12 @@
 .marker {
 	width: 30rem;
 	cursor: pointer;
+}
+
+blockquote {
+	padding: 1rem 1rem 1rem 2rem;
+	text-align: justify;
+	font-weight: 600;
 }
 
 #info-31 {
@@ -27,6 +70,7 @@ table.paleBlueRows {
 	text-align: center;
 	border-collapse: collapse;
 }
+
 table.paleBlueRows td,
 table.paleBlueRows th {
 	border: 1px solid #000000;
@@ -36,10 +80,11 @@ table.paleBlueRows tbody td {
 	font-size: 13px;
 }
 table.paleBlueRows tr:nth-child(even) {
-	background: #dfd8e8;
+	background: var(--main-color-light);
 }
+
 table.paleBlueRows thead {
-	background: #8064a2;
+	background: var(--main-color);
 	border-bottom: 2px solid #000000;
 }
 table.paleBlueRows thead th {
@@ -58,4 +103,17 @@ table.paleBlueRows tfoot td {
 }
 
 @media (max-width: 915px) {
+	.subtema[open] {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	table.paleBlueRows {
+		font-family: var(--body-font);
+		border: 1px solid #000000;
+		width: 250px;
+		height: 200px;
+		text-align: center;
+		border-collapse: collapse;
+	}
 }

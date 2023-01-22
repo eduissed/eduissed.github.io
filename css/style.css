@@ -224,7 +224,7 @@ nav:hover .shrink-btn,
 }
 
 .active-tab {
-	width: 100%;
+	width: 90%;
 	height: 53px;
 	background-color: var(--main-color-dark);
 	border-radius: 10px;
@@ -367,6 +367,11 @@ body.shrink .tooltip {
 	justify-content: center;
 }
 
+.remark {
+	color: var(--remark-color);
+	font-weight: 600;
+}
+
 .app-link {
 	display: inline-block;
 	position: relative;
@@ -392,6 +397,12 @@ body.shrink .tooltip {
 .app-link:hover:after {
 	transform: scaleX(1);
 	transform-origin: bottom left;
+}
+
+.section p,
+.section ul {
+	text-align: justify;
+	margin: 0.5rem;
 }
 
 #temas-canvas {
@@ -456,6 +467,7 @@ body.shrink .tooltip {
 	}
 
 	nav {
+		z-index: 10;
 		background-color: var(--main-color);
 		position: fixed;
 		bottom: 0;

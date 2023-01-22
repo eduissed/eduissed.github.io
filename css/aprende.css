@@ -1,10 +1,5 @@
 @import url(style.css);
 
-.remark {
-	color: var(--remark-color);
-	font-weight: 600;
-}
-
 .subtema {
 	margin: 1rem;
 	padding: 1rem;
@@ -37,9 +32,7 @@
 }
 
 .subtema[open] p {
-	text-align: justify;
 	padding: 0.5rem 0 0.5rem 0;
-	margin: 0.5rem;
 }
 
 .instructions {
@@ -73,16 +66,14 @@ blockquote {
 	width: 40rem;
 }
 
-#info-43 {
-	width: 25rem;
-}
-
-#gen-ataque {
-	width: 25rem;
-}
-
+#info-43,
+#gen-ataque,
 #no-sign-no {
 	width: 25rem;
+}
+
+.subtema li {
+	margin-top: 1rem;
 }
 
 table.paleBlueRows {

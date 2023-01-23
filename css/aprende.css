@@ -5,6 +5,7 @@
 	padding: 1rem;
 	border: var(--main-color) 3px solid;
 	border-radius: 10px;
+	background-color: rgba(0, 0, 0, 0.1);
 }
 
 .subtema ul {
@@ -42,7 +43,7 @@
 }
 
 .marker {
-	width: 30rem;
+	width: 20rem;
 	cursor: pointer;
 }
 
@@ -52,7 +53,8 @@ blockquote {
 	font-weight: 600;
 }
 
-.infog {
+.infog,
+.marker {
 	border-radius: 15px;
 }
 
@@ -62,7 +64,10 @@ blockquote {
 
 #info-331,
 #info-332,
-#info-333 {
+#info-333,
+#info-63,
+#info-81,
+#info-52 {
 	width: 40rem;
 }
 

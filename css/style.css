@@ -91,14 +91,30 @@ main h1 {
 }
 
 main .copyright {
-	margin-top: auto;
-	font-size: 0.9rem;
+	font-size: 0.8rem;
+	margin-bottom: 2rem;
 }
 
 main .copyright span {
 	color: var(--main-color);
 	font-weight: 500;
 	cursor: pointer;
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	padding-top: 20rem;
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: -1;
+}
+
+footer img {
+	width: 100vw;
 }
 
 .sidebar-top {
@@ -247,11 +263,6 @@ nav:hover .shrink-btn,
 	transition: opacity 0.2s 0.2s, height 0.5s 0s;
 }
 
-.sidebar-footer {
-	position: relative;
-	margin-top: auto;
-}
-
 .tooltip {
 	background-color: var(--main-color);
 	position: absolute;
@@ -341,6 +352,10 @@ body.shrink .tooltip {
 .section {
 	margin-top: 1.5rem;
 	margin-bottom: 1.5rem;
+}
+
+.last-section {
+	margin-bottom: 5rem;
 }
 
 .section-title {
@@ -572,5 +587,14 @@ body.shrink .tooltip {
 		min-width: 100%;
 		min-height: 3rem;
 		transform: translateY(-4px);
+	}
+
+	footer {
+		bottom: var(--nav-height);
+		overflow: hidden;
+	}
+
+	footer img {
+		width: 200vw;
 	}
 }

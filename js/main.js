@@ -95,15 +95,17 @@ for (let i = 0; i < imgs.length; i++) {
 		let imgClone = this.cloneNode();
 		imgClone.id = "img-clone";
 
+		imgClone.classList.remove("infog", "marker");
+
 		let altText = document.createElement("a");
 		altText.id = "alt-text";
 		altText.href = this.src;
 		altText.download = `${this.alt}.png`;
-		altText.innerHTML = "Descárgalo aquí";
+		altText.innerHTML = "Descárga esta imagen";
 		altText.style.position = "relative";
 		altText.style.bottom = "1rem";
 		altText.style.left = "0";
-		altText.style.width = "100%";
+		altText.style.width = "20%";
 		altText.style.padding = "10px";
 		altText.style.color = "white";
 		altText.style.textAlign = "center";
@@ -117,7 +119,7 @@ for (let i = 0; i < imgs.length; i++) {
 		imgContainer.style.left = "0";
 		imgContainer.style.width = "100%";
 		imgContainer.style.height = "100%";
-		imgContainer.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+		imgContainer.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
 		imgContainer.style.display = "flex";
 		imgContainer.style.alignItems = "center";
 		imgContainer.style.justifyContent = "center";

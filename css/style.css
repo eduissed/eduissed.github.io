@@ -382,6 +382,15 @@ body.shrink .tooltip {
 	justify-content: center;
 }
 
+.zoomable {
+	border-radius: 15px;
+}
+
+.infog:hover,
+.marker:hover {
+	border: 2px dashed var(--main-color);
+}
+
 .remark {
 	color: var(--remark-color);
 	font-weight: 600;

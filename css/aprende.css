@@ -8,6 +8,11 @@
 	background-color: rgba(0, 0, 0, 0.1);
 }
 
+.subtema:hover:not([open]) {
+	background-color: rgba(0, 0, 0, 0.2);
+	transition: 100ms all ease-in-out;
+}
+
 .subtema ul {
 	list-style: disc;
 	margin-left: 3rem;
@@ -67,7 +72,8 @@ blockquote {
 #info-333,
 #info-63,
 #info-81,
-#info-52 {
+#info-52,
+#info-11 {
 	width: 40rem;
 }
 

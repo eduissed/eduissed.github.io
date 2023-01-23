@@ -1,46 +1,5 @@
 @import url(style.css);
 
-.subtema {
-	margin: 1rem;
-	padding: 1rem;
-	border: var(--main-color) 3px solid;
-	border-radius: 10px;
-	background-color: rgba(0, 0, 0, 0.1);
-}
-
-.subtema:hover:not([open]) {
-	background-color: rgba(0, 0, 0, 0.2);
-	transition: 100ms all ease-in-out;
-}
-
-.subtema ul {
-	list-style: disc;
-	margin-left: 3rem;
-	padding-right: 1rem;
-	text-align: justify;
-}
-
-.subtema h4 {
-	margin-top: 2rem;
-}
-
-.subtema summary {
-	font-size: var(--subtema-font-size);
-	font-weight: 700;
-	cursor: pointer;
-	transition: 0.1s all ease-in-out;
-}
-
-.subtema[open] summary {
-	border-bottom: 1px solid var(--main-color);
-	font-size: medium;
-	margin-bottom: 1rem;
-}
-
-.subtema[open] p {
-	padding: 0.5rem 0 0.5rem 0;
-}
-
 .instructions {
 	font-size: 1.5rem;
 	font-weight: 700;
@@ -73,7 +32,8 @@ blockquote {
 #info-63,
 #info-81,
 #info-52,
-#info-11 {
+#info-11,
+#info-22 {
 	width: 40rem;
 }
 
@@ -81,10 +41,6 @@ blockquote {
 #gen-ataque,
 #no-sign-no {
 	width: 25rem;
-}
-
-.subtema li {
-	margin-top: 1rem;
 }
 
 table.paleBlueRows {
@@ -128,11 +84,6 @@ table.paleBlueRows tfoot td {
 }
 
 @media (max-width: 915px) {
-	.subtema[open] {
-		margin-left: 0;
-		margin-right: 0;
-	}
-
 	table.paleBlueRows {
 		font-family: var(--body-font);
 		border: 1px solid #000000;

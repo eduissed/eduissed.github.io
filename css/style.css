@@ -406,7 +406,20 @@ body.shrink .tooltip {
 	color: var(--main-color);
 }
 
-.app-link:after {
+.app-link[href^="https://"]::after,
+.app-link[href^="http"]::after {
+	content: "";
+	width: 1rem;
+	height: 1rem;
+	margin-left: 4px;
+	background-image: url("../resources/images/bx-link-external.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	display: inline-block;
+}
+
+.app-link::before {
 	content: "";
 	position: absolute;
 	width: 100%;
@@ -419,7 +432,7 @@ body.shrink .tooltip {
 	transition: transform 0.25s ease-out;
 }
 
-.app-link:hover:after {
+.app-link:hover::before {
 	transform: scaleX(1);
 	transform-origin: bottom left;
 }

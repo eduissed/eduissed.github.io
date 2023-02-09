@@ -1,1 +1,3 @@
 .hintrc
+markdownlint.config
+.markdownlint.jsonc

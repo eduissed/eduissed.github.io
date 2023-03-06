@@ -20,6 +20,7 @@ function moveTab() {
 	}
 }
 
+//Loading the shrinked state
 function loadShrink() {
 	let shrinked = localStorage.getItem("shrinked");
 	if (shrinked == "true") {
@@ -31,6 +32,7 @@ function loadShrink() {
 	}
 }
 
+//Shrink and unshrink the sidebar
 shrink_btn.addEventListener("click", () => {
 	document.body.classList.toggle("shrink");
 	if (document.body.classList.contains("shrink")) {
@@ -71,6 +73,7 @@ function changeLinkState() {
 changeLinkState();
 window.addEventListener("scroll", changeLinkState);
 
+//Hide and show the tool tip bar
 function showTooltip() {
 	let tooltip = this.parentNode.lastElementChild;
 	let spans = tooltip.children;
@@ -144,6 +147,21 @@ for (let i = 0; i < imgs.length; i++) {
 		});
 	});
 }
+
+//Add a p element that has the text of the alt attribute inside all the images with the .resource class inside the .qrs div
+let qrsResource = document.querySelectorAll("img.resource");
+qrsResource.forEach((img) => {
+	let p = document.createElement("p");
+	p.innerHTML = img.alt;
+	img.parentNode.appendChild(p);
+});
+
+let qrsList = document.querySelectorAll("img.marker");
+qrsList.forEach((img) => {
+	let p = document.createElement("p");
+	p.innerHTML = img.alt;
+	img.parentNode.appendChild(p);
+});
 
 //loading the shrinked state
 if (minWidth) {

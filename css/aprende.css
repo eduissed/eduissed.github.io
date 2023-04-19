@@ -63,11 +63,11 @@ table.paleBlueRows tbody td {
 	font-size: 13px;
 }
 table.paleBlueRows tr:nth-child(even) {
-	background: var(--main-color-light);
+	background: var(--main-blue-color-light);
 }
 
 table.paleBlueRows thead {
-	background: var(--main-color);
+	background: var(--main-blue-color);
 	border-bottom: 2px solid #000000;
 }
 table.paleBlueRows thead th {

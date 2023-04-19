@@ -13,6 +13,7 @@ function moveTab() {
 	if (!minWidth) {
 		active_tab.style.top = `2.5px`;
 		active_tab.style.left = `${activeIndex * 48}px`;
+		loadShrink();
 	} else {
 		active_tab.style.left = `2.5px`;
 		active_tab.style.top = `${activeIndex * 58 + 2.5}px`;
@@ -23,11 +24,15 @@ function moveTab() {
 //Loading the shrinked state
 function loadShrink() {
 	let shrinked = localStorage.getItem("shrinked");
-	if (shrinked == "true") {
-		localStorage.setItem("shrinked", "true");
-		document.body.classList.add("shrink");
+	if (minWidth) {
+		if (shrinked == "true") {
+			localStorage.setItem("shrinked", "true");
+			document.body.classList.add("shrink");
+		} else {
+			localStorage.setItem("shrinked", "false");
+			document.body.classList.remove("shrink");
+		}
 	} else {
-		localStorage.setItem("shrinked", "false");
 		document.body.classList.remove("shrink");
 	}
 }
@@ -48,6 +53,8 @@ shrink_btn.addEventListener("click", () => {
 	}, 500);
 });
 
+//Change the state of the link as you srcoll or click on it
+
 function changeLink() {
 	sidebar_links.forEach((sideLink) => sideLink.classList.remove("active"));
 	this.classList.add("active");
@@ -66,11 +73,9 @@ function changeLinkState() {
 	sidebar_links[index].classList.add("active");
 
 	activeIndex = index;
-
 	moveTab();
 }
 
-changeLinkState();
 window.addEventListener("scroll", changeLinkState);
 
 //Hide and show the tool tip bar
@@ -164,6 +169,7 @@ qrsList.forEach((img) => {
 });
 
 //loading the shrinked state
-if (minWidth) {
+window.addEventListener("resize", () => {
+	minWidth = window.matchMedia("(min-width: 915px)").matches;
 	loadShrink();
-}
+});

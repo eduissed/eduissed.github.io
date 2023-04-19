@@ -623,6 +623,7 @@ body.shrink .tooltip {
 	border: var(--main-blue-color) 3px solid;
 	border-radius: 10px;
 	background-color: var(--subtema-bg-color);
+	color: white;
 }
 
 .subtema:hover:not([open]) {
@@ -806,6 +807,11 @@ body.shrink .tooltip {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		min-width: 100%;
+		min-height: 7rem;
+	}
+
+	.tema a div {
 		min-width: 100%;
 		min-height: 7rem;
 	}

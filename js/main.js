@@ -154,7 +154,7 @@ for (let i = 0; i < imgs.length; i++) {
 }
 
 //Add a p element that has the text of the alt attribute inside all the images with the .resource class inside the .qrs div
-let qrsResource = document.querySelectorAll("img.resource");
+let qrsResource = document.querySelectorAll("img.qr");
 qrsResource.forEach((img) => {
 	let p = document.createElement("p");
 	p.innerHTML = img.alt;

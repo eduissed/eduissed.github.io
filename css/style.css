@@ -9,7 +9,8 @@
 	--main-blue-color: #2a3487;
 	--main-blue-color-dark: #1b2155;
 	--main-blue-color-darker: #000154;
-	--main-blue-color-light: #33abcd;
+	--main-blue-color-light: #4a4f9e;
+	--main-blue-color-lighter: #33abcd;
 
 	--main-green-color: #77b254;
 	--main-red-color: #de2e43;
@@ -100,6 +101,7 @@ main .copyright {
 	font-size: 0.8rem;
 	margin-top: 2rem;
 	margin-bottom: 5rem;
+	text-align: center;
 }
 
 main .copyright span {
@@ -415,9 +417,9 @@ body.shrink .tooltip {
 	min-width: 100%;
 }
 
-#referencias {
+#recursos {
 	padding-top: 5rem;
-	padding-bottom: rem;
+	padding-bottom: 5rem;
 	background-color: var(--main-green-color);
 	clip-path: polygon(
 		43% 0,
@@ -435,15 +437,11 @@ body.shrink .tooltip {
 	color: white;
 }
 
-#referencias .app-link {
-	color: white;
-}
-
-#recursos {
+#referencias {
 	padding-top: 5rem;
 	padding-bottom: 5rem;
 	color: white;
-	background-color: var(--main-brown-color);
+	background-color: var(--main-blue-color-lighter);
 	clip-path: polygon(
 		62% 0,
 		89% 2%,
@@ -456,6 +454,31 @@ body.shrink .tooltip {
 		0 0,
 		37% 2%
 	);
+}
+
+#referencias .app-link {
+	color: white;
+}
+
+#referencias ul {
+	list-style: none;
+	padding: 0;
+}
+
+#referencias ul li::before {
+	content: "\2022";
+	color: var(--main-blue-color-lighter);
+	font-weight: bold;
+	display: inline-block;
+	width: 1em;
+	margin-left: -1em;
+}
+
+#referencias-holder {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	flex-wrap: wrap;
 }
 
 .text {
@@ -491,7 +514,7 @@ body.shrink .tooltip {
 	padding: 0;
 	width: -moz-fit-content;
 	width: fit-content;
-	color: var(--main-blue-color-light);
+	color: var(--main-blue-color-lighter);
 }
 
 .app-link[href^="https://"]::after,
@@ -505,6 +528,7 @@ body.shrink .tooltip {
 	background-repeat: no-repeat;
 	background-size: contain;
 	display: inline-block;
+	filter: hue-rotate(220deg);
 }
 
 .app-link::before {
@@ -561,6 +585,7 @@ body.shrink .tooltip {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex-wrap: wrap;
 	color: white;
 	border-radius: 10px;
 	transition: all 0.2s;
@@ -581,11 +606,11 @@ body.shrink .tooltip {
 }
 
 .tema:last-child {
-	background-color: var(--main-blue-color-light);
+	background-color: var(--main-blue-color-lighter);
 }
 
 .tema:first-child {
-	background-color: var(--main-blue-color-light);
+	background-color: var(--main-blue-color-lighter);
 }
 
 .tema:nth-child(5n-3) {
@@ -598,12 +623,13 @@ body.shrink .tooltip {
 }
 
 .tema a {
+	min-width: 100%;
 	color: white;
 	text-decoration: none;
 }
 
 .tema a div {
-	min-width: 14rem;
+	min-width: 100%;
 	min-height: 6rem;
 	display: flex;
 	align-items: center;
@@ -624,6 +650,7 @@ body.shrink .tooltip {
 	border-radius: 10px;
 	background-color: var(--subtema-bg-color);
 	color: white;
+	transition: 300ms all ease-in-out;
 }
 
 .subtema:hover:not([open]) {
@@ -702,6 +729,21 @@ body.shrink .tooltip {
 
 	main > .section {
 		padding: 1.5rem;
+	}
+
+	.section,
+	.section-title,
+	#aprende.section p,
+	#recursos.section p {
+		text-align: center;
+	}
+
+	.section p {
+		text-align: justify;
+	}
+
+	.section .section-title {
+		font-size: 2.5rem;
 	}
 
 	.active-tab {
@@ -807,13 +849,8 @@ body.shrink .tooltip {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		min-width: 100%;
-		min-height: 7rem;
-	}
-
-	.tema a div {
-		min-width: 100%;
-		min-height: 7rem;
+		min-width: 6rem;
+		min-height: 6rem;
 	}
 
 	.search {

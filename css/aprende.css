@@ -22,6 +22,10 @@ blockquote {
 	border-radius: 15px;
 }
 
+.app-link {
+	color: var(--main-blue-color-dark);
+}
+
 #info-31 {
 	width: 30rem;
 }

@@ -8,6 +8,13 @@ const sections = document.querySelectorAll("div.section");
 let activeIndex;
 let minWidth = window.matchMedia("(min-width: 915px)").matches;
 
+let colors = [
+	"var(--main-blue-color-lighter)",
+	"var(--main-red-color)",
+	"var(--main-green-color)",
+	"var(--main-blue-color-dark)",
+];
+
 //Moving the active tab to the active link
 function moveTab() {
 	if (!minWidth) {
@@ -128,6 +135,7 @@ for (let i = 0; i < imgs.length; i++) {
 		imgContainer.style.width = "100%";
 		imgContainer.style.height = "100%";
 		imgContainer.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+		imgContainer.style.backdropFilter = "blur(3px)";
 		imgContainer.style.display = "flex";
 		imgContainer.style.alignItems = "center";
 		imgContainer.style.justifyContent = "center";
@@ -157,6 +165,8 @@ for (let i = 0; i < imgs.length; i++) {
 let qrsResource = document.querySelectorAll("img.qr");
 qrsResource.forEach((img) => {
 	let p = document.createElement("p");
+	p.style.color = `${colors[Math.floor(Math.random() * colors.length)]}`;
+	p.style.fontWeight = "bold";
 	p.innerHTML = img.alt;
 	img.parentNode.appendChild(p);
 });

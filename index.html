@@ -19,6 +19,9 @@
 </head>
 
 <body>
+    <div id="loading-screen">
+        <div id="loading-icon"></div>
+    </div>
     <nav id="nav-index">
         <div class="sidebar-top">
             <span class="shrink-btn">
@@ -49,8 +52,8 @@
                 <li class="tooltip-element" data-tooltip="1">
                     <a href="#aprende" data-active="1">
                         <div class="icon">
-                            <i class='bx bx-pencil'></i>
-                            <i class='bx bxs-pencil'></i>
+                            <i class='bx bx-book-open'></i>
+                            <i class='bx bxs-book-open'></i>
                         </div>
                         <span class="link hide noselect">Aprende</span>
                     </a>
@@ -85,32 +88,43 @@
     <main>
         <div id="inicio" class="section">
             <h1 class="section-title">¿Qué es SEXi?</h1>
-            <p>
-                Actualmente, las estrategias de enseñanza-aprendizaje que el sistema educativo desarrolla a través de
-                los
-                docentes, suelen ser repetitivas y aburridas para los estudiantes, lo que ocasiona que no sean
-                atractivas,
-                pierdan el interés por realizar las actividades y como consecuencia, no se logré el aprendizaje y
-                comprensión esperado sobre los temas</p>
-            <p>
-                Es por eso que nosotros, EDUISSED <span class="remark">(Educación Integral Socioemocional en
-                    Sexualidad Digitalizada)</span>, decidimos diseñar <b>SEXi</b> <span class="remark">Sexualidad
-                    Digitalizada</span>
-                una herramienta tecnopedagógica, específicamente una pagina
-                web, que tiene como objetivo coadyuvar a la adquisición de habilidades socioemocionales en sexualidad.
-                Lo
-                que la hace diferente y más atractiva, es que cuenta con realidad aumentada para facilitar el
-                aprendizaje y
-                a su vez, hacerlo más didáctico y de interés para los estudiantes.</p>
+            <div id="inicio-content">
+                <img src="./resources/images/char1.png" alt="welcoming-people" class="characs">
+                <div>
+                    <p>
+                        Actualmente, las estrategias de enseñanza-aprendizaje que el sistema educativo desarrolla a
+                        través de
+                        los
+                        docentes, suelen ser repetitivas y aburridas para los estudiantes, lo que ocasiona que no sean
+                        atractivas,
+                        pierdan el interés por realizar las actividades y como consecuencia, no se logré el aprendizaje
+                        y
+                        comprensión esperado sobre los temas</p>
+                    <p>
+                        Es por eso que nosotros, EDUISSED <span class="remark">(Educación Integral Socioemocional en
+                            Sexualidad Digitalizada)</span>, decidimos diseñar <b>SEXi</b> <span
+                            class="remark">Sexualidad
+                            Digitalizada</span>
+                        una herramienta tecnopedagógica, específicamente una pagina
+                        web, que tiene como objetivo coadyuvar a la adquisición de habilidades socioemocionales en
+                        sexualidad.
+                        Lo
+                        que la hace diferente y más atractiva, es que cuenta con realidad aumentada para facilitar el
+                        aprendizaje y
+                        a su vez, hacerlo más didáctico y de interés para los estudiantes.</p>
 
-            <p>
-                Es importante utilizar metodologías interactivas que estimulen la participación activa, y no solo
-                transmitir
-                información, es también adquirir habilidades socioemocionales en sexualidad.
-            </p>
-            <p>Nuestro trabajo está basado principalmente en la información y temas proporcionados por la <span
-                    class="remark">UNESCO</span>, por lo que es recomendable revisar los <a href="#referencias"
-                    class="app-link">links y referencias</a></p>
+                    <p>
+                        Es importante utilizar metodologías interactivas que estimulen la participación activa, y no
+                        solo
+                        transmitir
+                        información, es también adquirir habilidades socioemocionales en sexualidad.
+                    </p>
+                    <p>Nuestro trabajo está basado principalmente en la información y temas proporcionados por la <span
+                            class="remark">UNESCO</span>, por lo que es recomendable revisar los <a href="#referencias"
+                            class="app-link">links y referencias</a>.</p>
+                </div>
+            </div>
+
         </div>
         <div id="aprende" class="section">
             <h1 class="section-title">Aprende</h1>
@@ -205,7 +219,7 @@
                             class="zoomable  resource qr">
                     </div>
                     <div>
-                        <img src="./resources/images/qrs/qr_musculos.jpeg" alt="Musculos del cuerpo"
+                        <img src="./resources/images/qrs/qr_musculos.jpeg" alt="Músculos del cuerpo"
                             class="zoomable  resource qr">
                     </div>
                     <div>
@@ -368,10 +382,19 @@
 
 
     <footer>
-        <img src="../resources/images/footer-image.png" alt="footer">
+        <img src="./resources/images/char_footer.png" alt="people hugging" id="people" class="characs">
+        <img id="grass" src="../resources/images/footer-image.png" alt="footer">
     </footer>
 
+
+
     <script src="./js/main.js"></script>
+    <script>
+        window.addEventListener("load", function () {
+            const loadingScreen = document.getElementById("loading-screen");
+            loadingScreen.classList.add("hide");
+        });
+    </script>
 </body>
 
 </html>

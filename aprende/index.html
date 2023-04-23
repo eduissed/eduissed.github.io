@@ -19,6 +19,10 @@
 </head>
 
 <body>
+
+    <div id="loading-screen">
+        <div id="loading-icon"></div>
+    </div>
     <nav>
         <div class="sidebar-top">
             <span class="shrink-btn">
@@ -1909,11 +1913,18 @@
         </p>
     </main>
     <footer>
-        <img src="../resources/images/footer-image.png" alt="footer">
+        <img src="../resources/images/char_footer.png" alt="people hugging" id="people" class="characs">
+        <img id="grass" src="../resources/images/footer-image.png" alt="footer">
     </footer>
 
 
     <script src="../js/main.js"></script>
+    <script>
+        window.addEventListener("load", function () {
+            const loadingScreen = document.getElementById("loading-screen");
+            loadingScreen.classList.add("hide");
+        });
+    </script>
 </body>
 
 </html>

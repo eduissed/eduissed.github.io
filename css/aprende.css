@@ -17,11 +17,6 @@ blockquote {
 	font-weight: 600;
 }
 
-.infog,
-.marker {
-	border-radius: 15px;
-}
-
 .app-link {
 	color: var(--main-blue-color-dark);
 }

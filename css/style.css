@@ -17,6 +17,7 @@
 	--main-brown-color: #662112;
 	--main-yellow-color: #ffde49;
 
+	--nav-width: 16rem;
 	--nav-height: 100vh;
 }
 
@@ -30,6 +31,7 @@
 
 ::-webkit-scrollbar {
 	width: 10px;
+	background: rgba(0, 0, 0, 0.3);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -123,7 +125,7 @@ nav {
 	left: 0;
 	height: var(--nav-height);
 	background-color: var(--main-blue-color);
-	width: 16rem;
+	width: var(--nav-width);
 	padding: 1.8rem 0.85rem;
 	color: #fff;
 	display: flex;
@@ -174,12 +176,13 @@ footer {
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	width: 100vw;
+	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 	z-index: -1;
+	transition: 100ms all;
 }
 
 footer #grass {
@@ -187,11 +190,12 @@ footer #grass {
 	z-index: -2;
 }
 
-footer #people {
+#people {
 	position: absolute;
 	bottom: 0;
 	width: 60vmax;
-	z-index: -1;
+	max-width: 100%;
+	z-index: 1;
 }
 
 .sidebar-top {
@@ -544,15 +548,6 @@ body.shrink .tooltip {
 	padding: 0;
 }
 
-#referencias ul li::before {
-	content: "\2022";
-	color: var(--main-blue-color);
-	font-weight: bold;
-	display: inline-block;
-	width: 1rem;
-	margin-left: 1rem;
-}
-
 #referencias-holder {
 	display: flex;
 	flex-direction: row;
@@ -863,18 +858,19 @@ body.shrink .tooltip {
 	}
 
 	nav {
-		z-index: 10;
-		background-color: var(--main-blue-color);
 		position: fixed;
 		bottom: 0;
+		left: 0;
 		top: auto;
-		width: 100vw;
-		height: var(--nav-height);
 		padding: 1rem;
 		margin: 0;
+		background-color: var(--main-blue-color);
+		width: 100vw;
+		height: var(--nav-height);
 		flex-direction: row;
 		overflow-x: auto;
 		overflow-y: hidden;
+		z-index: 10;
 	}
 
 	nav::before {
@@ -975,16 +971,19 @@ body.shrink .tooltip {
 		transform: translateY(-4px);
 	}
 
+	#referencias-holder {
+		justify-content: flex-start;
+	}
+
+	#referencias-holder ul {
+		padding: 0px;
+	}
+
 	footer {
 		bottom: var(--nav-height);
-		/* overflow: hidden; */
 	}
 
 	footer #grass {
-		width: 200vw;
-	}
-
-	footer #people {
-		bottom: 5px;
+		width: 100vw;
 	}
 }

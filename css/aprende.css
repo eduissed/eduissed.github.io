@@ -1,5 +1,25 @@
 @import url(style.css);
 
+main > .section:nth-child(1n) {
+	background-color: var(--main-red-color);
+	color: white;
+}
+
+main > .section:nth-child(3),
+main > .section:nth-child(7) {
+	background-color: var(--main-yellow-color-dark);
+	color: white;
+}
+
+main > .section:nth-child(2n) {
+	background-color: var(--main-green-color);
+	color: white;
+}
+main > .section:nth-child(4n) {
+	background-color: var(--main-blue-color-lighter);
+	color: white;
+}
+
 .instructions {
 	font-size: 1.5rem;
 	font-weight: 700;

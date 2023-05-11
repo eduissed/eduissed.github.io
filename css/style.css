@@ -449,9 +449,83 @@ body.shrink .tooltip {
 	user-select: none;
 }
 
-.section {
-	margin-top: 1.5rem;
-	margin-bottom: 1.5rem;
+main > .section {
+	position: relative;
+	padding: 1rem;
+	margin: 4rem 0;
+}
+
+main > .section::before {
+	position: absolute;
+	content: "";
+	height: 2.5rem;
+	width: 100%;
+	transform: translateY(-2rem);
+	left: 0;
+	top: 0;
+	background-color: inherit;
+	clip-path: polygon(
+		50% 0%,
+		68% 58%,
+		82% 0,
+		100% 32%,
+		100% 100%,
+		0 100%,
+		0 33%,
+		16% 0,
+		30% 52%
+	);
+	z-index: -1;
+}
+
+main > .section::after {
+	position: absolute;
+	content: "";
+	height: 2.5rem;
+	width: 100%;
+	transform: translateY(2rem);
+	left: 0;
+	bottom: 0;
+	background-color: inherit;
+	clip-path: polygon(
+		0 0,
+		100% 1%,
+		100% 100%,
+		80% 50%,
+		56% 65%,
+		40% 100%,
+		19% 71%,
+		0 100%
+	);
+	z-index: -1;
+}
+
+main > .section:nth-child(2n)::before {
+	clip-path: polygon(
+		49% 47%,
+		64% 0,
+		80% 19%,
+		100% 0,
+		100% 100%,
+		0 100%,
+		0 0,
+		17% 57%,
+		27% 26%
+	);
+}
+
+main > .section:nth-child(2n)::after {
+	clip-path: polygon(
+		0 0,
+		100% 0,
+		100% 71%,
+		85% 100%,
+		71% 59%,
+		52% 90%,
+		31% 36%,
+		20% 97%,
+		0 69%
+	);
 }
 
 .last-section {
@@ -483,62 +557,20 @@ body.shrink .tooltip {
 }
 
 #aprende {
-	padding-top: 5rem;
-	padding-bottom: 5rem;
 	background-color: var(--main-blue-color-darker);
-	clip-path: polygon(
-		0 0,
-		0 100%,
-		9% 98%,
-		39% 100%,
-		81% 97%,
-		100% 100%,
-		100% 0,
-		82% 1%,
-		52% 0,
-		23% 3%
-	);
 	color: #fff;
 	min-width: 100%;
 }
 
 #recursos {
-	padding-top: 5rem;
-	padding-bottom: 5rem;
 	background-color: var(--main-green-color);
-	clip-path: polygon(
-		43% 0,
-		70% 2%,
-		100% 0,
-		100% 100%,
-		90% 98%,
-		65% 100%,
-		38% 99%,
-		0 100%,
-		0 0,
-		28% 2%
-	);
 	min-width: 100%;
 	color: white;
 }
 
 #referencias {
-	padding-top: 5rem;
-	padding-bottom: 5rem;
 	color: white;
 	background-color: var(--main-blue-color-lighter);
-	clip-path: polygon(
-		62% 0,
-		89% 2%,
-		100% 0,
-		100% 100%,
-		81% 98%,
-		41% 100%,
-		16% 98%,
-		0 100%,
-		0 0,
-		37% 2%
-	);
 }
 
 #referencias .app-link {

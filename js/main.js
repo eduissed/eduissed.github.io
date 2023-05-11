@@ -4,9 +4,11 @@ const sidebar_links = document.querySelectorAll(".sidebar-links a");
 const active_tab = document.querySelector(".active-tab");
 const tooltip_elements = document.querySelectorAll(".tooltip-element");
 const sections = document.querySelectorAll("div.section");
+const OPEN = document.getElementById("last-open");
 
 let activeIndex;
 let minWidth = window.matchMedia("(min-width: 915px)").matches;
+let widthOpen = window.matchMedia("(max-width: 715px)").matches;
 
 let colors = [
 	"var(--main-blue-color-lighter)",
@@ -14,6 +16,15 @@ let colors = [
 	"var(--main-green-color)",
 	"var(--main-blue-color-dark)",
 ];
+
+window.addEventListener("load", function () {
+	const loadingScreen = document.getElementById("loading-screen");
+	loadingScreen.classList.add("hide");
+});
+
+if (widthOpen && OPEN) {
+	OPEN.open = true;
+}
 
 //Moving the active tab to the active link
 function moveTab() {

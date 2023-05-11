@@ -43,6 +43,7 @@
 
 html {
 	scroll-behavior: smooth;
+	scroll-padding: 3rem;
 }
 
 body {
@@ -453,6 +454,10 @@ main > .section {
 	position: relative;
 	padding: 1rem;
 	margin: 4rem 0;
+}
+
+main > .section:first-child {
+	margin-top: 0;
 }
 
 main > .section::before {
@@ -1019,5 +1024,11 @@ main > .section:nth-child(2n)::after {
 
 	footer #grass {
 		width: 100vw;
+	}
+}
+
+@media (max-width: 715px) {
+	main .copyright {
+		min-height: 10rem;
 	}
 }

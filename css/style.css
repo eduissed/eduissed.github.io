@@ -4,7 +4,7 @@
 	--body-font: "Poppins", sans-serif;
 	--title-font-size: 2.5rem;
 	--subtema-font-size: 1.3rem;
-	--subtema-bg-color: #8b94a3;
+	--subtema-bg-color: #6a6e77;
 
 	--main-blue-color: #2a3487;
 	--main-blue-color-dark: #1b2155;
@@ -134,7 +134,7 @@ nav {
 	display: flex;
 	flex-direction: column;
 	transition: width 0.5s ease-in-out;
-	z-index: 3;
+	z-index: 100;
 }
 
 nav::before {
@@ -460,7 +460,7 @@ main > .section:first-child {
 	margin-top: 0;
 }
 
-main > .section::before {
+main > .section:not(#inicio):before {
 	position: absolute;
 	content: "";
 	height: 2.5rem;
@@ -483,7 +483,7 @@ main > .section::before {
 	z-index: -1;
 }
 
-main > .section::after {
+main > .section:not(#inicio):after {
 	position: absolute;
 	content: "";
 	height: 2.5rem;
@@ -692,6 +692,7 @@ main > .section:nth-child(2n)::after {
 	font-size: 2.5rem;
 	grid-area: title;
 	color: var(--main-yellow-color);
+	padding: 1rem;
 }
 
 #temas {
@@ -721,7 +722,9 @@ main > .section:nth-child(2n)::after {
 	min-height: 6rem;
 }
 
-.tema:hover {
+.tema:hover,
+.tema:focus-within,
+.tema:active {
 	transform: translateY(-5px);
 	box-shadow: 0 5px rgb(255, 255, 255);
 }
@@ -849,6 +852,10 @@ main > .section:nth-child(2n)::after {
 }
 
 @media (max-width: 915px) {
+	p {
+		line-height: 1.6rem;
+	}
+
 	:root {
 		--title-font-size: 2rem;
 
@@ -871,12 +878,17 @@ main > .section:nth-child(2n)::after {
 		text-align: center;
 	}
 
+	#inicio {
+		margin: 0;
+	}
+
 	#inicio-content {
-		flex-direction: column;
+		flex-direction: column-reverse;
 	}
 
 	#inicio-content img {
-		display: none;
+		margin-top: 2rem;
+		min-width: 100%;
 	}
 
 	.section p {
@@ -909,7 +921,7 @@ main > .section:nth-child(2n)::after {
 		flex-direction: row;
 		overflow-x: auto;
 		overflow-y: hidden;
-		z-index: 10;
+		z-index: 100;
 	}
 
 	nav::before {

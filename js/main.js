@@ -1,9 +1,9 @@
-const shrink_btn = document.querySelector(".shrink-btn");
-const search = document.querySelector(".search");
-const sidebar_links = document.querySelectorAll(".sidebar-links a");
-const active_tab = document.querySelector(".active-tab");
-const tooltip_elements = document.querySelectorAll(".tooltip-element");
-const sections = document.querySelectorAll("div.section");
+const SHRINK_BTN = document.querySelector(".shrink-btn");
+const SEARCH = document.querySelector(".search");
+const SIDEBAR_LINKS = document.querySelectorAll(".sidebar-links a");
+const ACTTIVE_TAB = document.querySelector(".active-tab");
+const TOOLTIP_ELEMENTS = document.querySelectorAll(".tooltip-element");
+const SECTIONS = document.querySelectorAll("div.section");
 const OPEN = document.getElementById("last-open");
 
 let activeIndex;
@@ -29,12 +29,12 @@ if (widthOpen && OPEN) {
 //Moving the active tab to the active link
 function moveTab() {
 	if (!minWidth) {
-		active_tab.style.top = `2.5px`;
-		active_tab.style.left = `${activeIndex * 48}px`;
+		ACTTIVE_TAB.style.top = `2.5px`;
+		ACTTIVE_TAB.style.left = `${activeIndex * 48}px`;
 		loadShrink();
 	} else {
-		active_tab.style.left = `2.5px`;
-		active_tab.style.top = `${activeIndex * 58 + 2.5}px`;
+		ACTTIVE_TAB.style.left = `2.5px`;
+		ACTTIVE_TAB.style.top = `${activeIndex * 58 + 2.5}px`;
 		loadShrink();
 	}
 }
@@ -56,7 +56,7 @@ function loadShrink() {
 }
 
 //Shrink and unshrink the sidebar
-shrink_btn.addEventListener("click", () => {
+SHRINK_BTN.addEventListener("click", () => {
 	document.body.classList.toggle("shrink");
 	if (document.body.classList.contains("shrink")) {
 		localStorage.setItem("shrinked", "true");
@@ -64,31 +64,31 @@ shrink_btn.addEventListener("click", () => {
 		localStorage.setItem("shrinked", "false");
 	}
 
-	shrink_btn.classList.add("hovered");
+	SHRINK_BTN.classList.add("hovered");
 
 	setTimeout(() => {
-		shrink_btn.classList.remove("hovered");
+		SHRINK_BTN.classList.remove("hovered");
 	}, 500);
 });
 
 //Change the state of the link as you srcoll or click on it
 
 function changeLink() {
-	sidebar_links.forEach((sideLink) => sideLink.classList.remove("active"));
+	SIDEBAR_LINKS.forEach((sideLink) => sideLink.classList.remove("active"));
 	this.classList.add("active");
 
 	activeIndex = this.dataset.active;
 }
 
-sidebar_links.forEach((link) => link.addEventListener("click", changeLink));
+SIDEBAR_LINKS.forEach((link) => link.addEventListener("click", changeLink));
 
 function changeLinkState() {
-	let index = sections.length;
+	let index = SECTIONS.length;
 
-	while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
+	while (--index && window.scrollY + 50 < SECTIONS[index].offsetTop) {}
 
-	sidebar_links.forEach((link) => link.classList.remove("active"));
-	sidebar_links[index].classList.add("active");
+	SIDEBAR_LINKS.forEach((link) => link.classList.remove("active"));
+	SIDEBAR_LINKS[index].classList.add("active");
 
 	activeIndex = index;
 	moveTab();
@@ -110,7 +110,7 @@ function showTooltip() {
 	}%`;
 }
 
-tooltip_elements.forEach((elem) => {
+TOOLTIP_ELEMENTS.forEach((elem) => {
 	elem.addEventListener("mouseover", showTooltip);
 });
 
@@ -120,7 +120,6 @@ for (let i = 0; i < imgs.length; i++) {
 	imgs[i].addEventListener("click", function () {
 		let imgClone = this.cloneNode();
 		imgClone.id = "img-clone";
-
 		imgClone.classList.remove("infog", "marker");
 
 		let altText = document.createElement("a");
@@ -131,8 +130,8 @@ for (let i = 0; i < imgs.length; i++) {
 		altText.style.position = "relative";
 		altText.style.bottom = "1rem";
 		altText.style.left = "0";
-		altText.style.width = "20%";
-		altText.style.padding = "10px";
+		altText.style.width = "30%";
+		altText.style.margin = "1rem 0";
 		altText.style.color = "white";
 		altText.style.textAlign = "center";
 		altText.style.textDecoration = "underline";

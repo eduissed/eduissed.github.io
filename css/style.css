@@ -548,6 +548,10 @@ main > .section:nth-child(2n)::after {
 	cursor: pointer;
 }
 
+#inicio {
+	margin-bottom: 1rem;
+}
+
 #inicio::after,
 #inicio::before {
 	content: none;
@@ -576,7 +580,7 @@ main > .section:nth-child(2n)::after {
 }
 
 #inicio-content .characs {
-	max-width: 30%;
+	max-width: 20%;
 }
 
 #aprende {

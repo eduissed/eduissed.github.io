@@ -14,14 +14,16 @@
     <meta content="https://eduissed.org/resources/images/preview.jpg" property="twitter:image" />
     <title>Aprende - SEXi</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
-    <link rel="stylesheet" href="../css/aprende.css" />
-    <link rel="shortcut icon" href="../resources/favicon_color.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/aprende.css" />
+    <link rel="shortcut icon" href="./resources/favicon_color.ico" type="image/x-icon" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
 
+
     <div id="loading-screen">
-        <img src="../resources/images/logo.png" alt="logo" id="loading-logo">
+        <img src="./resources/images/logo.png" alt="logo" id="loading-logo">
         <div id="loading-icon"></div>
     </div>
     <nav>
@@ -29,15 +31,16 @@
             <span class="shrink-btn">
                 <i class='bx bx-chevron-left'></i>
             </span>
-            <a href="../index.html" class="logo"><img src="../resources/images/logo.png" alt="SEXi"></a>
+            <a href="./index.html" class="logo"><img src="./resources/images/logo.png" alt="SEXi"></a>
             <div class="logo-text hide noselect">
                 <h3>SEXi</h3>
                 <h4>de EDUISSED</h4>
             </div>
         </div>
+       
 
         <div class="search noselect">
-            <a href="../index.html" id="regresar">
+            <a href="./index.html" id="regresar">
                 <i class="bx bx-arrow-back"></i>
                 <span class="link hide">Regresar a inicio</span>
             </a>
@@ -46,7 +49,7 @@
         <div class="sidebar-links">
             <ul>
                 <div class="active-tab"></div>
-                <li class="tooltip-element" data-tooltip="0">
+                <li class="tooltip-element" data-tooltip="0" data-audio="Audios\Relaciones.mp3">
                     <a href="#relaciones" data-active="0">
                         <div class="icon">
                             <i class='bx bx-group'></i>
@@ -55,7 +58,7 @@
                         <span class="link hide noselect">Relaciones</span>
                     </a>
                 </li>
-                <li class="tooltip-element" data-tooltip="1">
+                <li class="tooltip-element" data-tooltip="1" data-audio="Audios\Valores.mp3">
                     <a href="#valores" data-active="1">
                         <div class="icon">
                             <i class='bx bx-book-heart'></i>
@@ -64,7 +67,7 @@
                         <span class="link hide noselect">Valores</span>
                     </a>
                 </li>
-                <li class="tooltip-element" data-tooltip="2">
+                <li class="tooltip-element" data-tooltip="2" data-audio="Audios\genero.mp3">
                     <a href="#genero" data-active="2">
                         <div class="icon">
                             <i class='bx bx-user'></i>
@@ -73,7 +76,7 @@
                         <span class="link hide noselect">Género</span>
                     </a>
                 </li>
-                <li class="tooltip-element" data-tooltip="3">
+                <li class="tooltip-element" data-tooltip="3" data-audio="Audios\violencia.mp3">
                     <a href="#violencia" data-active="3">
                         <div class="icon">
                             <i class='bx bx-mask'></i>
@@ -82,7 +85,7 @@
                         <span class="link hide noselect">Violencia</span>
                     </a>
                 </li>
-                <li class="tooltip-element" data-tooltip="4">
+                <li class="tooltip-element" data-tooltip="4" data-audio="Audios\salud.mp3">
                     <a href="#salud" data-active="4">
                         <div class="icon">
                             <i class='bx bx-injection'></i>
@@ -91,7 +94,7 @@
                         <span class="link hide noselect">Salud y Bienestar</span>
                     </a>
                 </li>
-                <li class="tooltip-element" data-tooltip="5">
+                <li class="tooltip-element" data-tooltip="5" data-audio="Audios\cuerpo humano.mp3">
                     <a href="#cuerpo" data-active="5">
                         <div class="icon">
                             <i class='bx bx-body'></i>
@@ -100,7 +103,7 @@
                         <span class="link hide noselect">El Cuerpo Humano</span>
                     </a>
                 </li>
-                <li class="tooltip-element" data-tooltip="6">
+                <li class="tooltip-element" data-tooltip="6" data-audio="Audios\Sexualidad.mp3">
                     <a href="#sexualidad" data-active="6">
                         <div class="icon">
                             <i class='bx bx-heart'></i>
@@ -109,7 +112,7 @@
                         <span class="link hide noselect">Sexualidad</span>
                     </a>
                 </li>
-                <li class="tooltip-element" data-tooltip="7">
+                <li class="tooltip-element" data-tooltip="7" data-audio="Audios\salud sexual.mp3">
                     <a href="#salud-sexual" data-active="7">
                         <div class="icon">
                             <i class='bx bx-leaf'></i>
@@ -130,6 +133,7 @@
                 </div>
             </ul>
         </div>
+        
     </nav>
     <main>
         <div id="relaciones" class="section">
@@ -154,7 +158,7 @@
                     historia, sus integrantes se han agrupado para formar estructuras capaces de enfrentar los desafíos
                     propios de cada época y comunidad en que han vivido, con el objetivo de asegurar su subsistencia y
                     seguridad.(CNDH, 2018, pp 1-2)</blockquote>
-                <div class="wrapper"><img class="infog zoomable" src="../resources/images/1.1_info.jpg"
+                <div class="wrapper"><img class="infog zoomable" src="./resources/images/1.1_info.jpg"
                         alt="tipos-de-familias" id="info-11" /></div>
 
                 <p>Algunas cosas que son importantes de la familia:</p>
@@ -301,6 +305,8 @@
                     obcaecati, nostrum accusantium ipsam.</p>
             </details> -->
         </div>
+    
+           
         <div id="valores" class="section">
             <h2 class="section-title">2. Valores, derechos, cultura y sexualidad</h2>
             <p>Los derechos sexuales son una respuesta a diferentes necesidades humanas relacionadas con la
@@ -370,7 +376,7 @@
                 <p>El conocimiento de los derechos implica que las personas puedan exigir a su efectividad
                     a las instituciones.
                 </p>
-                <div class="wrapper"><img class="infog zoomable" src="../resources/images/2.2_info.jpg"
+                <div class="wrapper"><img class="infog zoomable" src="./resources/images/2.2_info.jpg"
                         alt="derechos-humanos-sexualidad" id="info-22" /></div>
             </details>
 
@@ -409,6 +415,7 @@
                 </p>
             </details>
         </div>
+
         <div id="genero" class="section">
             <h2 class="section-title">3. Cómo entender el género</h2>
             <p>
@@ -416,7 +423,7 @@
                 históricamente se han formado y aceptado. La importancia de informarnos acerca de estos temas, radica en
                 que así podremos ser capaces de cuestionarnos para no caer en la credulidad y poder formar una propia
                 visión y opinión.</p>
-            <div class="wrapper"><img class="zoomable marker" src="../resources/images/qrs/qr_que_genero.jpeg"
+            <div class="wrapper"><img class="zoomable marker" src="./resources/images/qrs/qr_que_genero.jpeg"
                     alt="¿Qué es el género?" id="que-genero" /></div>
 
             <details class="subtema">
@@ -425,7 +432,7 @@
                     etnia, edad y marco político de cada persona.
                 </p>
 
-                <div class="wrapper"><img class="zoomable" src="../resources/images/genero-ataque.png"
+                <div class="wrapper"><img class="zoomable" src="./resources/images/genero-ataque.png"
                         alt="batalla de generos" id="gen-ataque" /></div>
                 <h4>Conceptos básicos</h4>
                 <p><span class="remark">El género</span> determina lo que una sociedad espera del
@@ -494,7 +501,7 @@
 
                 <div class="wrapper">
                     <p class="instructions">Haz clic en la imagen para agrandarla</p>
-                    <img class="infog zoomable" id="info-31" src="../resources/images/3.1_info.jpg"
+                    <img class="infog zoomable" id="info-31" src="./resources/images/3.1_info.jpg"
                         alt="infografia_3.1" />
                 </div>
             </details>
@@ -504,7 +511,7 @@
                 <p>Es nuestra responsabilidad ver por un mundo mejor y con más oportunidades para todos y todas, luchar
                     por los derechos que nos corresponden y cuestionar si lo que nos enseñan está bien, pero para eso,
                     primero hay que informarnos correctamente.</p>
-                <div class="wrapper"><img class="zoomable" src="../resources/images/estereotipos-de-genero.png"
+                <div class="wrapper"><img class="zoomable" src="./resources/images/estereotipos-de-genero.png"
                         alt="estereotipos" id="estereotipos" /></div>
                 <p>La UNICEF define a la <span class="remark">igualdad de género</span> como “el hecho de que mujeres,
                     hombres, niñas y niños deban
@@ -560,9 +567,9 @@
                     identifica y describe los distintos tipos y modalidades de violencia, que indica el entorno en que
                     se desarrolla la violencia, si públicamente o de manera privada, así como las formas específicas que
                     hay de agresión.</p>
-                <div class="wrapper"><img class="zoomable infog" src="../resources/images/3.3_1_info.jpg"
+                <div class="wrapper"><img class="zoomable infog" src="./resources/images/3.3_1_info.jpg"
                         alt="modalidades-de-la-violencia-1" id="info-331" />
-                    <img class="zoomable infog" src="../resources/images/3.3_2_info.jpg"
+                    <img class="zoomable infog" src="./resources/images/3.3_2_info.jpg"
                         alt="modalidades-de-la-violencia-2" id="info-332" />
                 </div>
                 <h4>Tipos de violencia</h4>
@@ -658,13 +665,14 @@
                     violencia de género son inaceptables.</p>
 
                 <div class="wrapper">
-                    <img class="zoomable infog" src="../resources/images/3.3_3_info.jpg"
+                    <img class="zoomable infog" src="./resources/images/3.3_3_info.jpg"
                         alt="ejemplos-tipos-de-violencia" id="info-333" />
                 </div>
 
             </details>
 
         </div>
+
         <div id="violencia" class="section">
             <h2 class="section-title">4. Violencia y Seguridad personal</h2>
             <p>La importancia de informarnos para protegernos radica en poder identificar en qué momento y
@@ -791,7 +799,7 @@
                 <p>En este apartado te enseñamos los conceptos básicos para que aprendas a ser capaz de
                     poner límites y salvaguardar tu integridad como persona al no dejar que ninguna persona ajena atente
                     en contra tuya</p>
-                <div class="wrapper"><img class="zoomable" src="../resources/images/no-significa-no.png"
+                <div class="wrapper"><img class="zoomable" src="./resources/images/no-significa-no.png"
                         alt="no-significa-no" id="no-sign-no" />
                 </div>
                 <p>El <span class="remark">consentimiento</span> se define como un tipo de acuerdo para ser
@@ -861,7 +869,7 @@
 
 
 
-                <div class="wrapper"><img class="zoomable infog" src="../resources/images/4.3_info.png"
+                <div class="wrapper"><img class="zoomable infog" src="./resources/images/4.3_info.png"
                         alt="Uso-de-las-tics" id="info-43" />
                 </div>
 
@@ -903,6 +911,7 @@
                 </p>
             </details>
         </div>
+
         <div id="salud" class="section">
             <h2 class="section-title">5. Habilidades para la salud y bienestar</h2>
             <p>El bienestar es la experimentación de salud, felicidad y prosperidad. Incluye tener buena
@@ -998,7 +1007,7 @@
                     como la estructura de personalidad, el desarrollo, la madurez y la etapa de la vida en la que se
                     esté.
                 </p>
-                <div class="wrapper"><img class="infog zoomable" src="../resources/images/5.2_info.jpg"
+                <div class="wrapper"><img class="infog zoomable" src="./resources/images/5.2_info.jpg"
                         alt="toma-de-decisiones" id="info-52" />
                 </div>
                 <h4>Tipos de toma de decisiones</h4>
@@ -1240,6 +1249,7 @@
                 </p>
             </details>
         </div>
+
         <div id="cuerpo" class="section">
             <h2 class="section-title">6. El cuerpo humano y el desarrollo</h2>
             <p>Las etapas del desarrollo humano son una serie de cambios biológicos, físicos, emocionales y
@@ -1381,10 +1391,10 @@
                     y los testículos al cuerpo
                     cuando tienes frío, cuando te excitas o cuando recibes caricias en la parte interna del muslo.</p>
                 <div class="wrapper">
-                    <img class="marker zoomable" src="../resources/images/qrs/qr_fem.jpg" alt="Aparato Femenino" />
+                    <img class="marker zoomable" src="./resources/images/qrs/qr_fem.jpg" alt="Aparato Femenino" />
                 </div>
                 <div class="wrapper">
-                    <img class="marker zoomable" src="../resources/images/qrs/qr_fem.jpg" alt="Vulva" />
+                    <img class="marker zoomable" src="./resources/images/qrs/qr_fem.jpg" alt="Vulva" />
                 </div>
             </details>
 
@@ -1454,7 +1464,7 @@
                 </p>
                 <div class="wrapper">
                     <p class="instructions">Haz clic en el marcador para agrandarlo</p>
-                    <img class="marker zoomable" src="../resources/images/qrs/qr_feto.jpeg" alt="Feto" />
+                    <img class="marker zoomable" src="./resources/images/qrs/qr_feto.jpeg" alt="Feto" />
                 </div>
             </details>
 
@@ -1469,7 +1479,7 @@
                     19 años.
                 </p>
 
-                <div class="wrapper"><img class="zoomable infog" src="../resources/images/6.3_info.jpg" alt="pubertad"
+                <div class="wrapper"><img class="zoomable infog" src="./resources/images/6.3_info.jpg" alt="pubertad"
                         id="info-63" />
                 </div>
 
@@ -1575,7 +1585,7 @@
                 </p>
 
                 <div class="wrapper">
-                    <img class="infog zoomable" src="../resources/images/6.4_infog.jpg" alt="valora-tu-cuerpo"
+                    <img class="infog zoomable" src="./resources/images/6.4_infog.jpg" alt="valora-tu-cuerpo"
                         id="info-64" />
                 </div>
             </details>
@@ -1583,9 +1593,10 @@
 
             <div class="wrapper">
                 <p class="instructions">Haz clic en el marcador para agrandarlo</p>
-                <img class="marker zoomable" src="../resources/images/qrs/qr_musculos.jpeg" alt="Musculos del cuerpo" />
+                <img class="marker zoomable" src="./resources/images/qrs/qr_musculos.jpeg" alt="Musculos del cuerpo" />
             </div>
         </div>
+
         <div id="sexualidad" class="section">
             <h2 class="section-title">7. Sexualidad y conducta sexual</h2>
             <p>La sexualidad es un tema amplio y extenso que requiere de estudio para llegar a comprenderse
@@ -1660,7 +1671,7 @@
                 </p>
 
                 <div class="wrapper">
-                    <img class="infog zoomable" src="../resources/images/7.1_infog.jpg" alt="7-consejos" id="info-71" />
+                    <img class="infog zoomable" src="./resources/images/7.1_infog.jpg" alt="7-consejos" id="info-71" />
                 </div>
 
             </details>
@@ -1694,7 +1705,7 @@
 
                 <p><b>A continuación, la escala de Kinsey mencionada anteriormente:</b></p>
                 <div class="wrapper">
-                    <img class="infog zoomable" src="../resources/images/escala-de-kinsey.png" alt="escala-de-kinsey"
+                    <img class="infog zoomable" src="./resources/images/escala-de-kinsey.png" alt="escala-de-kinsey"
                         id="kinsey" />
                 </div>
                 <p>
@@ -1749,11 +1760,12 @@
                     hombres los niveles de testosterona se mantienen
                     constantes y por lo tanto su libido se mantiene estable a lo largo de su vida adulta. </p>
                 <div class="wrapper">
-                    <img class="marker zoomable" src="../resources/images/qrs/qr_conducta.jpeg" alt="Conducta Sexual"
+                    <img class="marker zoomable" src="./resources/images/qrs/qr_conducta.jpeg" alt="Conducta Sexual"
                         id="conducta" />
                 </div>
             </details>
         </div>
+
         <div id="salud-sexual" class="section last-section">
             <h2 class="section-title">8. Salud sexual y reproductiva</h2>
             <p>La salud sexual Implica que las personas pueden tener una vida sexual segura y
@@ -1778,7 +1790,7 @@
                 </p>
                 <div class="wrapper">
 
-                    <img class="infog zoomable" src="../resources/images/8.1_info.jpg" alt="metodos-anticonceptivos"
+                    <img class="infog zoomable" src="./resources/images/8.1_info.jpg" alt="metodos-anticonceptivos"
                         id="info-81" />
                 </div>
                 <p>No hay un método anticonceptivo perfecto. Asi que el uso de los condones más otro tipo
@@ -1788,7 +1800,7 @@
                 </p>
                 <div class="wrapper">
                     <p class="instructions">Haz clic en el marcador para agrandarlo</p>
-                    <img class="marker zoomable" src="../resources/images/qrs/qr_condom.jpeg" alt="Condón Masculino" />
+                    <img class="marker zoomable" src="./resources/images/qrs/qr_condom.jpeg" alt="Condón Masculino" />
                 </div>
             </details>
 
@@ -1906,20 +1918,137 @@
             </details>
             <div class="wrapper">
                 <p class="instructions">Haz clic en el marcador para agrandarlo</p>
-                <img class="marker zoomable" src="../resources/images/qrs/qr_esperma.jpeg" alt="Esperma" />
+                <img class="marker zoomable" src="./resources/images/qrs/qr_esperma.jpeg" alt="Esperma" />
             </div>
         </div>
+
         <p class="copyright">
             &copy; 2023 - <span>EDUISSED</span> Todos los derechos reservados
         </p>
     </main>
     <footer>
-        <img src="../resources/images/char_footer.png" alt="people hugging" id="people" class="characs">
-        <img id="grass" src="../resources/images/footer-image.png" alt="footer">
+        <img src="./resources/images/char_footer.png" alt="people hugging" id="people" class="characs">
+        <img id="grass" src="./resources/images/footer-image.png" alt="footer">
     </footer>
 
+    <script src="./js/Audio.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/Audio.js"></script>
+    <script> $(document).ready(function () {
+        var audioEnabled = true;
+        var audio;
+    
+        $("li.tooltip-element").hover(
+            function () {
+                if (audioEnabled) {
+                    var audioSrc = $(this).data("audio");
+                    audio = new Audio(audioSrc);
+                    audio.play();
+                }
+            },
+            function () {
+                if (audioEnabled && audio) {
+                    audio.pause();
+                    audio.currentTime = 0;
+                }
+            }
+        );
+    
+        $("#ajuste1").click(function () {
+            audioEnabled = !audioEnabled;
+            if (!audioEnabled && audio) {
+                audio.pause();
+                audio.currentTime = 0;
+            }
+        });
+    });</script>
+    <script>document.querySelectorAll('.button').forEach(button => {
 
-    <script src="../js/main.js"></script>
-</body>
+        let duration = 3000,
+            svg = button.querySelector('svg'),
+            svgPath = new Proxy({
+                y: null,
+                smoothing: null
+            }, {
+                set(target, key, value) {
+                    target[key] = value;
+                    if(target.y !== null && target.smoothing !== null) {
+                        svg.innerHTML = getPath(target.y, target.smoothing, null);
+                    }
+                    return true;
+                },
+                get(target, key) {
+                    return target[key];
+                }
+            });
+    
+        button.style.setProperty('--duration', duration);
+    
+        svgPath.y = 20;
+        svgPath.smoothing = 0;
+    
+        button.addEventListener('click', e => {
+            
+            e.preventDefault();
+    
+            if(!button.classList.contains('loading')) {
+    
+                button.classList.add('loading');
+    
+                gsap.to(svgPath, {
+                    smoothing: .3,
+                    duration: duration * .065 / 1000
+                });
+    
+                gsap.to(svgPath, {
+                    y: 12,
+                    duration: duration * .265 / 1000,
+                    delay: duration * .065 / 1000,
+                    ease: Elastic.easeOut.config(1.12, .4)
+                });
+    
+                setTimeout(() => {
+                    svg.innerHTML = getPath(0, 0, [
+                        [3, 14],
+                        [8, 19],
+                        [21, 6]
+                    ]);
+                }, duration / 2);
+    
+            }
+    
+        });
+    
+    });
+    
+    function getPoint(point, i, a, smoothing) {
+        let cp = (current, previous, next, reverse) => {
+                let p = previous || current,
+                    n = next || current,
+                    o = {
+                        length: Math.sqrt(Math.pow(n[0] - p[0], 2) + Math.pow(n[1] - p[1], 2)),
+                        angle: Math.atan2(n[1] - p[1], n[0] - p[0])
+                    },
+                    angle = o.angle + (reverse ? Math.PI : 0),
+                    length = o.length * smoothing;
+                return [current[0] + Math.cos(angle) * length, current[1] + Math.sin(angle) * length];
+            },
+            cps = cp(a[i - 1], a[i - 2], point, false),
+            cpe = cp(point, a[i - 1], a[i + 1], true);
+        return `C ${cps[0]},${cps[1]} ${cpe[0]},${cpe[1]} ${point[0]},${point[1]}`;
+    }
+    
+    function getPath(update, smoothing, pointsNew) {
+        let points = pointsNew ? pointsNew : [
+                [4, 12],
+                [12, update],
+                [20, 12]
+            ],
+            d = points.reduce((acc, point, i, a) => i === 0 ? `M ${point[0]},${point[1]}` : `${acc} ${getPoint(point, i, a, smoothing)}`, '');
+        return `<path d="${d}" />`;
+    }</script>
+        <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js'></script><script  src="./script.js"></script>
+
+    </body>
 
 </html>

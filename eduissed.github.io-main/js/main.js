@@ -114,6 +114,8 @@ TOOLTIP_ELEMENTS.forEach((elem) => {
 	elem.addEventListener("mouseover", showTooltip);
 });
 
+
+
 //Adding a zoom effect to the .zoomable class
 let imgs = document.getElementsByClassName("zoomable");
 for (let i = 0; i < imgs.length; i++) {
@@ -126,7 +128,110 @@ for (let i = 0; i < imgs.length; i++) {
 		altText.id = "alt-text";
 		altText.href = this.src;
 		altText.download = `${this.alt}.png`;
-		altText.innerHTML = "Descarga esta imagen";
+		altText.innerHTML = `<div class="container">
+  
+		<a href="" class="button dark">
+			<ul>
+				<li>&#68;escargar</li>
+				<li>&#68;escargando</li>
+				<li>&#68;escargado</li>
+			</ul>
+			<div>
+				<svg viewBox="0 0 24 24"></svg>
+			</div>
+		</a>
+	
+	</div>`;
+
+	// Attach the element to the DOM
+	document.body.appendChild(altText);
+
+	// Your JavaScript code from earlier
+	document.querySelectorAll('.button').forEach(button => {
+		let duration = 3000;
+	
+		let svg = button.querySelector('svg');
+		let svgPath = new Proxy(
+			{
+				y: null,
+				smoothing: null,
+			},
+			{
+				set(target, key, value) {
+					target[key] = value;
+					if (target.y !== null && target.smoothing !== null) {
+						svg.innerHTML = getPath(target.y, target.smoothing, null);
+					}
+					return true;
+				},
+				get(target, key) {
+					return target[key];
+				},
+			}
+		);
+	
+		button.style.setProperty('--duration', duration);
+	
+		svgPath.y = 20;
+		svgPath.smoothing = 0;
+	
+		button.addEventListener('click', e => {
+			e.preventDefault();
+	
+			if (!button.classList.contains('loading')) {
+				button.classList.add('loading');
+	
+				gsap.to(svgPath, {
+					smoothing: 0.3,
+					duration: duration * 0.065 / 1000,
+				});
+	
+				gsap.to(svgPath, {
+					y: 12,
+					duration: duration * 0.265 / 1000,
+					delay: duration * 0.065 / 1000,
+					ease: Elastic.easeOut.config(1.12, 0.4),
+				});
+	
+				setTimeout(() => {
+					svg.innerHTML = getPath(0, 0, [
+						[3, 14],
+						[8, 19],
+						[21, 6],
+					]);
+	
+					// Get the clicked image's alt attribute
+					const clickedImageAlt = button.querySelector('img').getAttribute('alt');
+	
+					// Generate a filename based on the clicked image's alt
+					const filename = `${clickedImageAlt}.png`;
+	
+					// Create a Data URL for the clicked image
+					const imgDataUrl = button.querySelector('img').src;
+	
+					// Create a temporary anchor element for download
+					const tempLink = document.createElement('a');
+					tempLink.href = imgDataUrl;
+					tempLink.download = filename;
+					tempLink.style.display = 'none';
+	
+					// Add the anchor to the body and simulate a click
+					document.body.appendChild(tempLink);
+					tempLink.click();
+	
+					// Clean up by removing the anchor
+					document.body.removeChild(tempLink);
+	
+					// Reset button state or perform any other desired actions
+					button.classList.remove('loading');
+					// ... additional actions ...
+				}, duration / 2);
+			}
+		});
+	});
+	
+
+	
 		altText.style.position = "relative";
 		altText.style.bottom = "1rem";
 		altText.style.left = "0";

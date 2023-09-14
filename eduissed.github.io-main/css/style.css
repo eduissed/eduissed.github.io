@@ -11,13 +11,15 @@
 	--main-blue-color-darker: #000154;
 	--main-blue-color-light: #4a4f9e;
 	--main-blue-color-lighter: #33abcd;
-
+    
+	--main-purple-color:#9B59B6;
 	--main-green-color: #77b254;
 	--main-red-color: #de2e43;
 	--main-brown-color: #662112;
 
 	--main-yellow-color: #ffde49;
 	--main-yellow-color-dark: #d1b433;
+	--main-grey-color-perl: #333333;
 
 	--nav-width: 16rem;
 	--nav-height: 100vh;
@@ -54,6 +56,7 @@ body {
 	display: flex;
 	position: relative;
 }
+
 
 #loading-screen {
 	position: fixed;
@@ -129,7 +132,7 @@ nav {
 	height: var(--nav-height);
 	background-color: var(--main-blue-color);
 	width: var(--nav-width);
-	padding: 1.8rem 0.85rem;
+	padding: .8rem 0.85rem;
 	color: #fff;
 	display: flex;
 	flex-direction: column;
@@ -402,6 +405,8 @@ nav:hover .shrink-btn,
 	pointer-events: all;
 }
 
+
+
 /* When the menu shrinks */
 
 .hide {
@@ -589,10 +594,22 @@ main > .section:nth-child(2n)::after {
 	min-width: 100%;
 }
 
+#chatbot {
+	background-color: var(--main-purple-color);
+	color: #fff;
+	min-width: 100%;
+}
+
 #recursos {
 	background-color: var(--main-green-color);
 	min-width: 100%;
 	color: white;
+}
+
+#Ajustes {
+	background-color: var(--main-grey-color-perl);
+	color: #fff;
+	min-width: 100%;
 }
 
 #referencias {
@@ -772,6 +789,20 @@ main > .section:nth-child(2n)::after {
 	background-color: var(--main-yellow-color);
 }
 
+/* inicio de botones de ajustes */
+#ajuste1 {
+  }
+
+  #temas {
+	user-select: none; /* Evita la selección de texto en el elemento con ID "temas" */
+  }
+  
+  .tema {
+	user-select: none; /* Evita la selección de texto en elementos con la clase "tema" */
+  }
+  
+/* final de botones de ajustes*/
+
 .tema a {
 	min-width: 100%;
 	color: white;
@@ -872,6 +903,60 @@ main > .section:nth-child(2n)::after {
 .resources div p {
 	text-align: center;
 }
+
+
+/*estilos del boton de audio*/
+
+.section-title {
+    display: flex; /* Utilizamos flexbox para alinear horizontalmente el texto y el í   cono */
+    align-items: center; /* Alinea verticalmente el contenido */
+}
+
+
+/*fin del estilo de audio*/
+
+
+
+
+/* CSS para el panel de opciones */
+#options-panel {
+    position: absolute;
+    background-color: rgba(42, 52, 135, 0.8); /* Fondo translúcido con un valor de opacidad */
+    padding: 10px;
+    display: none;
+    left: 100%; /* Coloca el panel a la derecha del icono de accesibilidad */
+    top: 200px; /* Ajusta la posición vertical más arriba */
+    min-width: 50px; /* Ancho mínimo del panel */
+    transition: transform 0.3s ease-in-out; /* Agrega una transición de transformación */
+    transform: translateX(10px); /* Desplaza el panel hacia la derecha al ocultarlo */
+    color: white;
+    border-radius: 3px;
+    backdrop-filter: blur(5px); /* Agrega un efecto de cristal al panel */
+    font-size: 15px;
+}
+
+    /* Estilos para la regleta de lectura */
+#reading-guide {
+    position: fixed;
+    width: 100%;
+    height: 4px; /* Cambiar la altura para que la línea esté acostada */
+    background: red;
+    opacity: 0.6;
+    z-index: 999999;
+    pointer-events: none;
+    top: 50%; /* Centrar la línea verticalmente */
+    transform: translateY(-50%); /* Alinear verticalmente al centro */
+}
+
+/* CSS para el botón de "Modo Oscuro" y el texto en #inicio */
+[data-active="3"] i.bx {
+    transition: transform 0.3s ease-in-out; /* Transición suave para la rotación del icono */
+}
+
+#inicio {
+    transition: color 0.3s ease-in-out; /* Transición suave para el cambio de color de texto */
+}
+
 
 @media (max-width: 915px) {
 	p {

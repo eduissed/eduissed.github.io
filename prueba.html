@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.0.7/css/boxicons.min.css">
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f0f0f0;
+    }
+    
+    .carousel-container {
+        position: relative;
+        max-width: 800px;
+        overflow: hidden;
+    }
+    
+    .carousel {
+        display: flex;
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .carousel img {
+        width: 100%;
+        height: auto;
+        
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-width: 10rem;
+	max-width: 20rem;
+	border: var(--main-blue-color) 2px solid;
+	border-radius: 15px;
+	background-color: white;
+	color: black;
+	transition: filter 200ms ease-in-out;
+    }
+    
+    .carousel-buttons {
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+    }
+    
+    .carousel-button {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+    }
+    
+    .carousel-button:hover {
+        background-color: #555;
+    }
+    </style>
+    <title>Responsive Carousel with Boxicons</title>
+</head>
+<body>
+    <div class="carousel-container">
+        <div class="carousel">
+            <img src="./resources/images/qrs/qr_que_genero.jpeg" alt="Qué es el género" class="zoomable resource qr">
+            <img src="./resources/images/qrs/qr_condom.jpeg" alt="Condón Masculino" class="zoomable resource qr">
+            <img src="./resources/images/qrs/qr_conducta.jpeg" alt="Conducta Sexual" class="zoomable resource qr">
+            <img src="./resources/images/qrs/qr_esperma.jpeg" alt="Esperma" class="zoomable resource qr">
+            <img src="./resources/images/qrs/qr_fem.jpg" alt="Aparato Femenino" class="zoomable resource qr">
+            <img src="./resources/images/qrs/qr_masc.jpeg" alt="Aparato Masculino" class="zoomable resource qr">
+            <img src="./resources/images/qrs/qr_musculos.jpeg" alt="Músculos del cuerpo" class="zoomable resource qr">
+        </div>
+        <div class="carousel-buttons">
+            <button class="carousel-button" id="prevButton"><i class='bx bx-chevron-left'></i></button>
+            <button class="carousel-button" id="nextButton"><i class='bx bx-chevron-right'></i></button>
+        </div>
+    </div>
+    <script>const carousel = document.querySelector('.carousel');
+        const prevButton = document.getElementById('prevButton');
+        const nextButton = document.getElementById('nextButton');
+        
+        let currentIndex = 0;
+        
+        prevButton.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+            } else {
+                currentIndex = carousel.children.length - 1;
+            }
+            updateCarousel();
+        });
+        
+        nextButton.addEventListener('click', () => {
+            if (currentIndex < carousel.children.length - 1) {
+                currentIndex++;
+            } else {
+                currentIndex = 0;
+            }
+            updateCarousel();
+        });
+        
+        function updateCarousel() {
+            const slideWidth = carousel.clientWidth;
+            carousel.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        }
+        </script>
+</body>
+</html>

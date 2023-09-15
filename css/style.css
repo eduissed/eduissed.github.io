@@ -11,8 +11,8 @@
 	--main-blue-color-darker: #000154;
 	--main-blue-color-light: #4a4f9e;
 	--main-blue-color-lighter: #33abcd;
-    
-	--main-purple-color:#9B59B6;
+
+	--main-purple-color: #9b59b6;
 	--main-green-color: #77b254;
 	--main-red-color: #de2e43;
 	--main-brown-color: #662112;
@@ -56,7 +56,6 @@ body {
 	display: flex;
 	position: relative;
 }
-
 
 #loading-screen {
 	position: fixed;
@@ -132,7 +131,7 @@ nav {
 	height: var(--nav-height);
 	background-color: var(--main-blue-color);
 	width: var(--nav-width);
-	padding: .8rem 0.85rem;
+	padding: 0.8rem 0.85rem;
 	color: #fff;
 	display: flex;
 	flex-direction: column;
@@ -404,8 +403,6 @@ nav:hover .shrink-btn,
 	opacity: 1;
 	pointer-events: all;
 }
-
-
 
 /* When the menu shrinks */
 
@@ -790,17 +787,15 @@ main > .section:nth-child(2n)::after {
 }
 
 /* inicio de botones de ajustes */
-#ajuste1 {
-  }
 
-  #temas {
+#temas {
 	user-select: none; /* Evita la selección de texto en el elemento con ID "temas" */
-  }
-  
-  .tema {
+}
+
+.tema {
 	user-select: none; /* Evita la selección de texto en elementos con la clase "tema" */
-  }
-  
+}
+
 /* final de botones de ajustes*/
 
 .tema a {
@@ -904,59 +899,60 @@ main > .section:nth-child(2n)::after {
 	text-align: center;
 }
 
-
 /*estilos del boton de audio*/
 
 .section-title {
-    display: flex; /* Utilizamos flexbox para alinear horizontalmente el texto y el í   cono */
-    align-items: center; /* Alinea verticalmente el contenido */
+	display: flex; /* Utilizamos flexbox para alinear horizontalmente el texto y el í   cono */
+	align-items: center; /* Alinea verticalmente el contenido */
 }
-
 
 /*fin del estilo de audio*/
 
-
-
-
 /* CSS para el panel de opciones */
 #options-panel {
-    position: absolute;
-    background-color: rgba(42, 52, 135, 0.8); /* Fondo translúcido con un valor de opacidad */
-    padding: 10px;
-    display: none;
-    left: 100%; /* Coloca el panel a la derecha del icono de accesibilidad */
-    top: 200px; /* Ajusta la posición vertical más arriba */
-    min-width: 50px; /* Ancho mínimo del panel */
-    transition: transform 0.3s ease-in-out; /* Agrega una transición de transformación */
-    transform: translateX(10px); /* Desplaza el panel hacia la derecha al ocultarlo */
-    color: white;
-    border-radius: 3px;
-    backdrop-filter: blur(5px); /* Agrega un efecto de cristal al panel */
-    font-size: 15px;
+	position: absolute;
+	background-color: rgba(
+		42,
+		52,
+		135,
+		0.8
+	); /* Fondo translúcido con un valor de opacidad */
+	padding: 10px;
+	display: none;
+	left: 100%; /* Coloca el panel a la derecha del icono de accesibilidad */
+	top: 200px; /* Ajusta la posición vertical más arriba */
+	min-width: 50px; /* Ancho mínimo del panel */
+	transition: transform 0.3s ease-in-out; /* Agrega una transición de transformación */
+	transform: translateX(
+		10px
+	); /* Desplaza el panel hacia la derecha al ocultarlo */
+	color: white;
+	border-radius: 3px;
+	backdrop-filter: blur(5px); /* Agrega un efecto de cristal al panel */
+	font-size: 15px;
 }
 
-    /* Estilos para la regleta de lectura */
+/* Estilos para la regleta de lectura */
 #reading-guide {
-    position: fixed;
-    width: 100%;
-    height: 4px; /* Cambiar la altura para que la línea esté acostada */
-    background: red;
-    opacity: 0.6;
-    z-index: 999999;
-    pointer-events: none;
-    top: 50%; /* Centrar la línea verticalmente */
-    transform: translateY(-50%); /* Alinear verticalmente al centro */
+	position: fixed;
+	width: 100%;
+	height: 4px; /* Cambiar la altura para que la línea esté acostada */
+	background: red;
+	opacity: 0.6;
+	z-index: 999999;
+	pointer-events: none;
+	top: 50%; /* Centrar la línea verticalmente */
+	transform: translateY(-50%); /* Alinear verticalmente al centro */
 }
 
 /* CSS para el botón de "Modo Oscuro" y el texto en #inicio */
 [data-active="3"] i.bx {
-    transition: transform 0.3s ease-in-out; /* Transición suave para la rotación del icono */
+	transition: transform 0.3s ease-in-out; /* Transición suave para la rotación del icono */
 }
 
 #inicio {
-    transition: color 0.3s ease-in-out; /* Transición suave para el cambio de color de texto */
+	transition: color 0.3s ease-in-out; /* Transición suave para el cambio de color de texto */
 }
-
 
 @media (max-width: 915px) {
 	p {

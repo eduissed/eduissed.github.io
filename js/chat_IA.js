@@ -2,7 +2,7 @@ const botui = new BotUI('help-bot');
 
 
 
-let name; // Vari able para almacenar el nombre del usuario
+let name; // Variable para almacenar el nombre del usuario
 
 // Función para mostrar el menú principal
 function showMainMenu() {

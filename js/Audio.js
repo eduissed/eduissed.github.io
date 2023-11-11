@@ -158,131 +158,122 @@ miAudio.addEventListener("ended", function() {
 
 
  // Elemento sobre el cual se activará el panel de opciones
- const targetElement = document.getElementById('regresar');
+ // Selección del icono de accesibilidad y el panel de opciones
+const accessibilityIcon = document.querySelector('.fa-universal-access');
+const optionsPanel = document.getElementById('options-panel');
 
- // Panel de opciones
- const optionsPanel = document.getElementById('options-panel');
- 
- // Texto dentro del panel
- const optionsText = optionsPanel.querySelector('ul');
- 
- // Variable para controlar el estado del panel
- let panelVisible = false;
- 
- // Función para alternar la visibilidad del panel con animación
- function toggleOptionsPanel() {
-     if (panelVisible) {
-         // Utilizar GSAP para animar la salida
-         gsap.to(optionsPanel, {
-             x: 10, // Desplazamiento horizontal hacia 10px
-             opacity: 0, // Hacer el panel menos opaco
-             duration: 0.3, // Duración de la animación en segundos
-             ease: 'power2.in', // Efecto de animación al ocultar
-             onComplete: () => {
-                 optionsPanel.style.display = 'none'; // Ocultar el panel después de la animación
-                 panelVisible = false;
-             },
-         });
- 
-         // Utilizar GSAP para animar la opacidad del texto (hacerlo invisible)
-         gsap.to(optionsText, {
-             opacity: 0,
-             duration: 0.3,
-             ease: 'power2.in',
-         });
-     } else {
-         optionsPanel.style.display = 'block';
- 
-         // Utilizar GSAP para animar el desplazamiento y opacidad del panel (entrada)
-         gsap.fromTo(
-             optionsPanel,
-             { x: -10, opacity: 0 }, // Valores iniciales (fuera de la pantalla y transparente)
-             {
-                 x: 0, // Desplazamiento horizontal hacia 0
-                 opacity: 1, // Hacer el panel completamente visible
-                 duration: 0.3, // Duración de la animación en segundos
-                 ease: 'power2.out', // Efecto de animación al mostrar
-                 onStart: () => {
-                     optionsPanel.style.display = 'block'; // Mostrar el panel al iniciar la animación
-                     panelVisible = true;
-                 },
-             }
-         );
- 
-         // Utilizar GSAP para animar la opacidad del texto (hacerlo gradualmente visible)
-         gsap.to(optionsText, {
-             opacity: 1,
-             duration: 0.3,
-             ease: 'power2.out',
-         });
-     }
- }
- 
- // Agregar evento de clic al icono
- targetElement.addEventListener('click', toggleOptionsPanel);
- 
- // Evento para ocultar inmediatamente el panel si se hace clic fuera de él
- document.addEventListener('click', (event) => {
-     if (!targetElement.contains(event.target) && event.target !== optionsPanel) {
-         // Utilizar GSAP para animar la salida
-         gsap.to(optionsPanel, {
-             x: 10, // Desplazamiento horizontal hacia 10px
-             opacity: 0, // Hacer el panel menos opaco
-             duration: 0.3, // Duración de la animación en segundos
-             ease: 'power2.in', // Efecto de animación al ocultar
-             onComplete: () => {
-                 optionsPanel.style.display = 'none'; // Ocultar el panel después de la animación
-                 panelVisible = false;
-             },
-         });
- 
-         // Utilizar GSAP para animar la opacidad del texto (hacerlo invisible)
-         gsap.to(optionsText, {
-             opacity: 0,
-             duration: 0.3,
-             ease: 'power2.in',
-         });
-     }
- });
- 
- // Evento para evitar que el panel se cierre al hacer clic en los íconos
- optionsPanel.addEventListener('click', (event) => {
-     event.stopPropagation();
- });
- 
- 
- const lectorButton = document.querySelector('[data-active="0"]');
- 
- // Variable para controlar el estado del lector de pantalla
- let lectorEnabled = true;
- 
- // Función para activar/desactivar el lector de pantalla
- // Función para activar/desactivar el lector de pantalla
- function toggleLector() {
-     const lectorIcon = lectorButton.querySelector('.icon i');
-     const lectorTooltip = lectorButton.querySelector('.link');
-     const tooltipText = document.querySelector('.tooltip .show'); // Elemento de texto del tooltip
- 
-     if (lectorIcon.classList.contains('bx-volume-full')) {
-         // Desactivar el lector de pantalla
-         lectorIcon.classList.remove('bx-volume-full');
-         lectorIcon.classList.add('bxs-volume-mute');
-         lectorTooltip.textContent = 'Lector desactivado';
-         tooltipText.textContent = 'Lector desactivado'; // Cambiar el texto en el tooltip
-         lectorEnabled = false;
-     } else {
-         // Activar el lector de pantalla
-         lectorIcon.classList.remove('bxs-volume-mute');
-         lectorIcon.classList.add('bx-volume-full');
-         lectorTooltip.textContent = 'Lector activado';
-         tooltipText.textContent = 'Lector activado'; // Cambiar el texto en el tooltip
-         lectorEnabled = true;
-     }
- }
- 
- 
- // Agregar evento de clic al botón de "Lector de pantalla"
- lectorButton.addEventListener('click', toggleLector);
+// Variable para controlar la visibilidad del panel
+let panelVisible = false;
+
+// Función para mostrar/ocultar el panel
+function toggleOptionsPanel() {
+    const optionsPanel = document.getElementById('options-panel');
+    optionsPanel.classList.toggle('show');
+}
+
+// Evento para mostrar/ocultar el panel al hacer clic en cualquier parte de la pantalla
+document.addEventListener('click', (event) => {
+    if (event.target.classList.contains('show-panel')) {
+        toggleOptionsPanel();
+    } else if (!event.target.closest('#options-panel')) {
+        const optionsPanel = document.getElementById('options-panel');
+        optionsPanel.classList.remove('show');
+    }
+});
+
+
+
+
+// Función para alternar la visibilidad del panel con animación
+function toggleOptionsPanel() {
+    if (panelVisible) {
+        // Animación para ocultar el panel
+        gsap.to(optionsPanel, {
+            y: 10,
+            opacity: 0,
+            duration: 0.3,
+            ease: 'power2.in',
+            onComplete: () => {
+                optionsPanel.style.display = 'none';
+                panelVisible = false;
+            },
+        });
+    } else {
+        // Animación para mostrar el panel
+        optionsPanel.style.display = 'block';
+        gsap.fromTo(
+            optionsPanel,
+            { y: -10, opacity: 0 },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 0.3,
+                ease: 'power2.out',
+                onStart: () => {
+                    optionsPanel.style.display = 'block';
+                    panelVisible = true;
+                },
+            }
+        );
+    }
+}
+
+// Agregar evento de clic al icono de accesibilidad para mostrar/ocultar el panel
+accessibilityIcon.addEventListener('click', toggleOptionsPanel);
+
+// Evento para ocultar inmediatamente el panel al hacer clic fuera de él
+document.addEventListener('click', (event) => {
+    if (!accessibilityIcon.contains(event.target) && event.target !== optionsPanel) {
+        gsap.to(optionsPanel, {
+            y: 10,
+            opacity: 0,
+            duration: 0.3,
+            ease: 'power2.in',
+            onComplete: () => {
+                optionsPanel.style.display = 'none';
+                panelVisible = false;
+            },
+        });
+    }
+});
+
+// Evento para evitar que el panel se cierre al hacer clic en los íconos dentro del panel
+optionsPanel.addEventListener('click', (event) => {
+    event.stopPropagation();
+});
+
+// Selección del botón del lector de pantalla
+const lectorButton = document.getElementById('ajuste1');
+
+// Variable para controlar el estado del lector de pantalla
+let lectorEnabled = true;
+
+// Función para activar/desactivar el lector de pantalla
+function toggleLector() {
+    const lectorIcon = lectorButton.querySelector('.icon i');
+    const lectorTooltip = lectorButton.querySelector('.link');
+    const tooltipText = document.querySelector('.tooltip .show');
+
+    if (lectorIcon.classList.contains('bx-volume-full')) {
+        // Desactivar el lector de pantalla
+        lectorIcon.classList.remove('bx-volume-full');
+        lectorIcon.classList.add('bxs-volume-mute');
+        lectorTooltip.textContent = 'Lector desactivado';
+        tooltipText.textContent = 'Lector desactivado';
+        lectorEnabled = false;
+    } else {
+        // Activar el lector de pantalla
+        lectorIcon.classList.remove('bxs-volume-mute');
+        lectorIcon.classList.add('bx-volume-full');
+        lectorTooltip.textContent = 'Lector activado';
+        tooltipText.textContent = 'Lector activado';
+        lectorEnabled = true;
+    }
+}
+
+// Agregar evento de clic al botón del lector de pantalla para activar/desactivar el lector
+lectorButton.addEventListener('click', toggleLector);
+
  
  
  
@@ -378,5 +369,9 @@ miAudio.addEventListener("ended", function() {
  
  // Agregar evento de clic al botón de "Modo Oscuro"
  darkModeButton.addEventListener('click', toggleDarkMode);
+ 
+
+ //codigo para mobiles
+ 
  
 

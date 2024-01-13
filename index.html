@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -21,8 +21,6 @@
     <script src="https://kit.fontawesome.com/7ae90fd583.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    
-
 
 </head>
 
@@ -36,293 +34,315 @@
             <span class="shrink-btn">
                 <i class='bx bx-chevron-left'></i>
             </span>
-            <a href="./index.html" class="logo" ><img src="./resources/images/logo.png" alt="SEXi" data-audio="Audios\Logotipo.mp3"></a>
+            <a href="./index.html" class="logo"><img src="./resources/images/logo.png" alt="SEXi"
+                    data-audio="Audios\Logotipo.mp3"></a>
             <div class="logo-text hide noselect">
                 <h3>SEXi</h3>
                 <h4>de EDUISSED</h4>
             </div>
         </div>
-        
+
         <div class="search">
         </div>
 
-       
-      <!-- Elemento de audio -->
-  <audio id="miAudio" autoplay>
-    <source src="Audios\Aauido1bienvenida.mp3" type="audio/mp3">
-    Tu navegador no soporta la reproducción de audio.
-  </audio>
 
+        <!-- Elemento de audio -->
+        <!--<audio id="miAudio" autoplay>
+            <source src="Audios\Aauido1bienvenida.mp3" type="audio/mp3">
+            Tu navegador no soporta la reproducción de audio.
+        </audio>-->
 
-  
-  
-  
-  <div class="drop-up-container">
-        <button class="drop-up-toggle"><i class='bx bxs-universal-access'></i></button>
-        <div class="drop-up-content">
-            <center>
-                <ul>
-                    <li style="font-size: 24px;">
-                        <i class='bx bx-volume-full' id="volume-icon"></i>
-                    </li>
-                    <br>
-                    <li style="font-size: 24px;">
-                        <i class='bx bx-droplet' id="icon"></i>
-                    </li>
-                    <br>
-                    <li style="font-size: 24px;">
-                        <i class='bx bx-underline' id="underline-icon"></i> 
-                    </li>                    
-                    <br>
-                    <li style="font-size: 24px;"> 
-                        <i class='bx bx-moon' id="dark-mode-icon" ></i> 
-                    </li>
-                    <br>
-                </ul>
-            </center>
+        <div class="drop-up-container">
+            <button class="drop-up-toggle"><i class='bx bxs-universal-access'></i></button>
+            <div class="drop-up-content">
+                <center>
+                    <ul>
+                        <li style="font-size: 24px;">
+                            <i class='bx bx-volume-full' id="volume-icon"></i>
+                        </li>
+                        <br>
+                        <li style="font-size: 24px;">
+                            <i class='bx bx-droplet' id="icon"></i>
+                        </li>
+                        <br>
+                        <li style="font-size: 24px;">
+                            <i class='bx bx-underline' id="underline-icon"></i>
+                        </li>
+                        <br>
+                        <li style="font-size: 24px;">
+                            <i class='bx bx-moon' id="dark-mode-icon"></i>
+                        </li>
+                        <br>
+                    </ul>
+                </center>
+            </div>
         </div>
-    </div>
 
-<style>
-.drop-up-container {
-    position: fixed;
-    right: 40px; /* Alinea el drop-up a la mitad del lado derecho */
-    transform: translateX(50%); /* Centra horizontalmente */
-    bottom: 400px; /* Ajusta la distancia desde la parte inferior según tus necesidades */
-    
-  }
-  
-  .drop-up-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
-  color: #5A5EB9;
-  border-radius: 50%;
-  font-size: 85px; /* Tamaño del ícono */
-  padding: 5px; /* Espacio entre el ícono y el fondo blanco */
-  border: none;
-  cursor: pointer;
-  width: 70px; /* Ancho del fondo blanco */
-  height: 70px; /* Alto del fondo blanco */
-  position: fixed;
-  left: -60px; /* Ajusta la posición hacia la izquierda según tus necesidades */
-  top: 180px; /* Ajusta la posición hacia abajo según tus necesidades */
-}
-@media (max-width: 768px) {
-  .drop-up-toggle {
-    top: 160px; /* Ajusta la posición hacia arriba en dispositivos móviles */
-  }
-}
-  
-.drop-up-content {
-  background: rgba(90, 94, 185, 0.8); /* Cambia el color a #5A5EB9 con una opacidad */
-  border: 1px solid rgba(90, 94, 185, 0.8); /* Color del borde coincidente con el fondo */
-  border-radius: 5px;
-  padding: 5px; /* Reduce el espaciado interno para hacerlo más delgado */
-  width: 65px; /* Reduce el ancho del drop-up para hacerlo más delgado */
-  position: absolute;
-  left: -58px; /* Ajusta el valor para mover el contenido hacia la izquierda */
-  transform: translateX(0); /* No hay necesidad de centrar horizontalmente */
-  top: -40px; /* Ajusta el valor negativo para mover el contenido más arriba */
-  backdrop-filter: blur(3px); /* Agrega un efecto de desenfoque */
-  z-index: -1;
-  opacity: 0; /* Agrega una propiedad de opacidad inicial */
-  transition: opacity 0.3s ease-in-out; /* Agrega una transición de opacidad suave */
-}
+        <style>
+            .drop-up-container {
+                position: fixed;
+                right: 40px;
+                /* Alinea el drop-up a la mitad del lado derecho */
+                transform: translateX(50%);
+                /* Centra horizontalmente */
+                bottom: 400px;
+                /* Ajusta la distancia desde la parte inferior según tus necesidades */
 
-.drop-up-container.open .drop-up-content {
-  opacity: 1; /* Cuando está abierto, la opacidad es 1 (completamente visible) */
-}
+            }
 
+            .drop-up-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: white;
+                color: #5A5EB9;
+                border-radius: 50%;
+                font-size: 85px;
+                /* Tamaño del ícono */
+                padding: 5px;
+                /* Espacio entre el ícono y el fondo blanco */
+                border: none;
+                cursor: pointer;
+                width: 70px;
+                /* Ancho del fondo blanco */
+                height: 70px;
+                /* Alto del fondo blanco */
+                position: fixed;
+                left: -60px;
+                /* Ajusta la posición hacia la izquierda según tus necesidades */
+                top: 180px;
+                /* Ajusta la posición hacia abajo según tus necesidades */
+            }
 
-  @media (max-width: 768px) {
-  .drop-up-content {
-    top: -66px; /* Ajusta la posición hacia arriba en dispositivos móviles */
-  }
-}
+            @media (max-width: 768px) {
+                .drop-up-toggle {
+                    top: 160px;
+                    /* Ajusta la posición hacia arriba en dispositivos móviles */
+                }
+            }
 
+            .drop-up-content {
+                background: rgba(90, 94, 185, 0.8);
+                /* Cambia el color a #5A5EB9 con una opacidad */
+                border: 1px solid rgba(90, 94, 185, 0.8);
+                /* Color del borde coincidente con el fondo */
+                border-radius: 5px;
+                padding: 5px;
+                /* Reduce el espaciado interno para hacerlo más delgado */
+                width: 65px;
+                /* Reduce el ancho del drop-up para hacerlo más delgado */
+                position: absolute;
+                left: -58px;
+                /* Ajusta el valor para mover el contenido hacia la izquierda */
+                transform: translateX(0);
+                /* No hay necesidad de centrar horizontalmente */
+                top: -40px;
+                /* Ajusta el valor negativo para mover el contenido más arriba */
+                backdrop-filter: blur(3px);
+                /* Agrega un efecto de desenfoque */
+                z-index: -1;
+                opacity: 0;
+                /* Agrega una propiedad de opacidad inicial */
+                transition: opacity 0.3s ease-in-out;
+                /* Agrega una transición de opacidad suave */
+            }
 
-  .drop-up-container.open .drop-up-content {
-    display: block;
-  }
-  </style>
-  
-  <script>
-
-// Elemento para la guía de lectura
-const readingGuide = document.createElement('div');
-readingGuide.id = 'reading-guide';
-
-// Establece el valor z-index para la guía de lectura
-readingGuide.style.zIndex = '999999';
-
-// Establece la posición como "fixed" para que no se mueva
-readingGuide.style.position = 'fixed';
-
-// Establece pointer-events en none para que no bloquee el cursor
-readingGuide.style.pointerEvents = 'none';
-
-// Agrega la guía de lectura al cuerpo del documento
-document.body.appendChild(readingGuide);
-
-// Función para mostrar/ocultar la guía de lectura y controlar su posición y tamaño
-function updateReadingGuidePosition(event) {
-    const x = event.clientX;
-    const y = event.clientY;
-
-    readingGuide.style.left = '0';
-    readingGuide.style.top = `${y}px`;
-    readingGuide.style.width = '100%';
-    readingGuide.style.height = '2px'; // Ajusta el grosor de la línea según tus preferencias
-    readingGuide.style.backgroundColor = 'red'; // Color de la línea
-}
-
-// Inicialmente, oculta la guía de lectura
-readingGuide.style.display = 'none';
-
-// Agrega un evento de clic al ícono de subrayado para mostrar/ocultar la guía de lectura
-document.querySelector("#underline-icon").addEventListener('click', function () {
-    if (readingGuide.style.display === 'none') {
-        readingGuide.style.display = 'block';
-    } else {
-        readingGuide.style.display = 'none';
-    }
-});
-
-// Agrega un evento de movimiento del mouse para actualizar la posición de la guía de lectura
-document.addEventListener('mousemove', updateReadingGuidePosition);
+            .drop-up-container.open .drop-up-content {
+                opacity: 1;
+                /* Cuando está abierto, la opacidad es 1 (completamente visible) */
+            }
 
 
-
-// Variables para controlar el estado del contraste de grises y el modo oscuro
-let grayscaleEnabled = false;
-let darkModeEnabled = false;
-
-// Función para activar/desactivar el contraste de grises
-function toggleGrayscale() {
-    const body = document.body;
-    if (grayscaleEnabled) {
-        // Desactivar el contraste de grises (restaurar colores originales)
-        body.style.filter = 'none';
-        grayscaleEnabled = false;
-    } else {
-        // Activar el contraste de grises (aplicar filtro de escala de grises)
-        body.style.filter = 'grayscale(100%)';
-        grayscaleEnabled = true;
-    }
-}
-
-// Función para activar/desactivar el modo oscuro
-// Función para activar/desactivar el modo oscuro
-function toggleDarkMode() {
-    const body = document.body;
-
-    if (darkModeEnabled) {
-        // Desactivar el modo oscuro (restaurar colores originales)
-        body.style.filter = 'none';
-        body.style.backgroundColor = '#e4e2f5'; // Cambia el color de fondo al valor original
-        darkModeEnabled = false;
-
-        // Restaurar el color del texto en #inicio
-        document.getElementById('inicio').style.color = 'black';
-    } else {
-        // Activar el modo oscuro (aplicar filtro de reducción de intensidad de colores)
-        body.style.filter = 'brightness(70%)'; // Ajusta el valor para la intensidad deseada
-        body.style.backgroundColor = '#313144'; // Cambia el color de fondo a gris oscuro
-        darkModeEnabled = true;
-
-        // Cambiar el color del texto en #inicio a blanco
-        document.getElementById('inicio').style.color = 'white';
-    }
-}
+            @media (max-width: 768px) {
+                .drop-up-content {
+                    top: -66px;
+                    /* Ajusta la posición hacia arriba en dispositivos móviles */
+                }
+            }
 
 
-// Evento de clic para el botón de "Contraste de grises"
-document.querySelector("#icon").addEventListener('click', toggleGrayscale);
+            .drop-up-container.open .drop-up-content {
+                display: block;
+            }
+        </style>
 
-// Evento de clic para el botón de "Modo Oscuro"
-document.querySelector("#dark-mode-icon").addEventListener('click', toggleDarkMode);
+        <script>
+
+            // Elemento para la guía de lectura
+            const readingGuide = document.createElement('div');
+            readingGuide.id = 'reading-guide';
+
+            // Establece el valor z-index para la guía de lectura
+            readingGuide.style.zIndex = '999999';
+
+            // Establece la posición como "fixed" para que no se mueva
+            readingGuide.style.position = 'fixed';
+
+            // Establece pointer-events en none para que no bloquee el cursor
+            readingGuide.style.pointerEvents = 'none';
+
+            // Agrega la guía de lectura al cuerpo del documento
+            document.body.appendChild(readingGuide);
+
+            // Función para mostrar/ocultar la guía de lectura y controlar su posición y tamaño
+            function updateReadingGuidePosition(event) {
+                const x = event.clientX;
+                const y = event.clientY;
+
+                readingGuide.style.left = '0';
+                readingGuide.style.top = `${y}px`;
+                readingGuide.style.width = '100%';
+                readingGuide.style.height = '2px'; // Ajusta el grosor de la línea según tus preferencias
+                readingGuide.style.backgroundColor = 'red'; // Color de la línea
+            }
+
+            // Inicialmente, oculta la guía de lectura
+            readingGuide.style.display = 'none';
+
+            // Agrega un evento de clic al ícono de subrayado para mostrar/ocultar la guía de lectura
+            document.querySelector("#underline-icon").addEventListener('click', function () {
+                if (readingGuide.style.display === 'none') {
+                    readingGuide.style.display = 'block';
+                } else {
+                    readingGuide.style.display = 'none';
+                }
+            });
+
+            // Agrega un evento de movimiento del mouse para actualizar la posición de la guía de lectura
+            document.addEventListener('mousemove', updateReadingGuidePosition);
 
 
 
+            // Variables para controlar el estado del contraste de grises y el modo oscuro
+            let grayscaleEnabled = false;
+            let darkModeEnabled = false;
 
-/////////
+            // Función para activar/desactivar el contraste de grises
+            function toggleGrayscale() {
+                const body = document.body;
+                if (grayscaleEnabled) {
+                    // Desactivar el contraste de grises (restaurar colores originales)
+                    body.style.filter = 'none';
+                    grayscaleEnabled = false;
+                } else {
+                    // Activar el contraste de grises (aplicar filtro de escala de grises)
+                    body.style.filter = 'grayscale(100%)';
+                    grayscaleEnabled = true;
+                }
+            }
+
+            // Función para activar/desactivar el modo oscuro
+            // Función para activar/desactivar el modo oscuro
+            function toggleDarkMode() {
+                const body = document.body;
+
+                if (darkModeEnabled) {
+                    // Desactivar el modo oscuro (restaurar colores originales)
+                    body.style.filter = 'none';
+                    body.style.backgroundColor = '#e4e2f5'; // Cambia el color de fondo al valor original
+                    darkModeEnabled = false;
+
+                    // Restaurar el color del texto en #inicio
+                    document.getElementById('inicio').style.color = 'black';
+                } else {
+                    // Activar el modo oscuro (aplicar filtro de reducción de intensidad de colores)
+                    body.style.filter = 'brightness(70%)'; // Ajusta el valor para la intensidad deseada
+                    body.style.backgroundColor = '#313144'; // Cambia el color de fondo a gris oscuro
+                    darkModeEnabled = true;
+
+                    // Cambiar el color del texto en #inicio a blanco
+                    document.getElementById('inicio').style.color = 'white';
+                }
+            }
+
+
+            // Evento de clic para el botón de "Contraste de grises"
+            document.querySelector("#icon").addEventListener('click', toggleGrayscale);
+
+            // Evento de clic para el botón de "Modo Oscuro"
+            document.querySelector("#dark-mode-icon").addEventListener('click', toggleDarkMode);
 
 
 
-  document.querySelector('.drop-up-toggle').addEventListener('click', function() {
-    const dropUpContainer = this.closest('.drop-up-container');
-    dropUpContainer.classList.toggle('open');
-  });
-  
-  document.querySelector('.close-drop-up').addEventListener('click', function() {
-    const dropUpContainer = this.closest('.drop-up-container');
-    dropUpContainer.classList.remove('open');
-  });
 
-  document.getElementById("volume-icon").addEventListener("click", function() {
-    let icon = this;
-    if (icon.classList.contains('bx-volume-full')) {
-        icon.classList.remove('bx-volume-full');
-        icon.classList.add('bx-volume-mute');
-    } else {
-        icon.classList.remove('bx-volume-mute');
-        icon.classList.add('bx-volume-full');
-    }
-});
+            /////////
 
 
 
-  </script>
-  
-  
+            document.querySelector('.drop-up-toggle').addEventListener('click', function () {
+                const dropUpContainer = this.closest('.drop-up-container');
+                dropUpContainer.classList.toggle('open');
+            });
+
+            document.querySelector('.close-drop-up').addEventListener('click', function () {
+                const dropUpContainer = this.closest('.drop-up-container');
+                dropUpContainer.classList.remove('open');
+            });
+
+            document.getElementById("volume-icon").addEventListener("click", function () {
+                let icon = this;
+                if (icon.classList.contains('bx-volume-full')) {
+                    icon.classList.remove('bx-volume-full');
+                    icon.classList.add('bx-volume-mute');
+                } else {
+                    icon.classList.remove('bx-volume-mute');
+                    icon.classList.add('bx-volume-full');
+                }
+            });
 
 
-<div class="fixed-div">
-    <p>Hola soy sexi bot</p>
-  </div>
-<div id="chat-circle" class="btn btn-raised">
-    <div id="chat-overlay"></div>
-        <i id="chat-icon"  class="material-icons"><i style="font-size: 40px; margin-left: -14px; margin-top: -11px;" class='bx bx-message-square-dots bx-flashing bx-flip-horizontal' ></i></i>
-</div>
 
-<div class="chat-box">
-<div class="chat-box-header">
-  SEXiBot
-  <span class="chat-box-toggle"><i style="font-size: 25px;" class="fa-regular fa-circle-xmark"></i></i></span>
-</div>
-<div class="chat-box-body">
-    <div class="chatbot-content">
-        <html>
-        <head>
-          <title> ChatBot </title>
-          <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-          <link rel="stylesheet" href="https://unpkg.com/botui@0.3.9/build/botui.min.css"; /> 
-          <link rel="stylesheet" href="https://unpkg.com/botui@0.3.9/build/botui-theme-default.css"; />
-        </head>
-        <body> 
-         
-          <div class="botui-app-container" id="help-bot">
-            <bot-ui> 
-            </bot-ui>
-          </div>
-          
-            <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script> 
-            <script src="https://cdn.jsdelivr.net/npm/botui@0.3.9/build/botui.min.js"></script> 
-          <script src="./bot-script.js">
-          </script>
-        </body>
-      </html>
-      </div>
-    
-</div>
+        </script>
 
-</div>
+        <div class="fixed-div">
+            <p>Hola soy sexi bot</p>
+        </div>
+        <div id="chat-circle" class="btn btn-raised">
+            <div id="chat-overlay"></div>
+            <i id="chat-icon" class="material-icons"><i style="font-size: 40px; margin-left: -14px; margin-top: -11px;"
+                    class='bx bx-message-square-dots bx-flashing bx-flip-horizontal'></i></i>
+        </div>
+
+        <div class="chat-box">
+            <div class="chat-box-header">
+                SEXiBot
+                <span class="chat-box-toggle"><i style="font-size: 25px;"
+                        class="fa-regular fa-circle-xmark"></i></i></span>
+            </div>
+            <div class="chat-box-body">
+                <div class="chatbot-content">
+                    <html>
+
+                    <head>
+                        <title> ChatBot </title>
+                        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+                        <link rel="stylesheet" href="https://unpkg.com/botui@0.3.9/build/botui.min.css" ; />
+                        <link rel="stylesheet" href="https://unpkg.com/botui@0.3.9/build/botui-theme-default.css" ; />
+                    </head>
+
+                    <body>
+
+                        <div class="botui-app-container" id="help-bot">
+                            <bot-ui>
+                            </bot-ui>
+                        </div>
+
+                        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
+                        <script src="https://cdn.jsdelivr.net/npm/botui@0.3.9/build/botui.min.js"></script>
+                        <script src="./bot-script.js">
+                        </script>
+                    </body>
+
+                    </html>
+                </div>
+
+            </div>
+
+        </div>
 
 
         <div class="sidebar-links">
-            
+
             <ul>
                 <div class="active-tab"></div>
                 <li class="tooltip-element" data-tooltip="0" data-audio="Audios\Inicio.mp3">
@@ -343,8 +363,17 @@ document.querySelector("#dark-mode-icon").addEventListener('click', toggleDarkMo
                         <span class="link hide noselect">Aprende</span>
                     </a>
                 </li>
-                <li class="tooltip-element" data-tooltip="2" data-audio="Audios\Recursos.mp3">
-                    <a href="#recursos" data-active="2">
+                <li class="tooltip-element" data-tooltip="2" data-audio="">
+                    <a href="#Juegos" data-active="2">
+                        <div class="icon">
+                            <i class='bx bx-joystick'></i>
+                            <i class='bx bxs-joystick'></i>
+                        </div>
+                        <span class="link hide noselect">Juegos</span>
+                    </a>
+                </li>
+                <li class="tooltip-element" data-tooltip="3" data-audio="Audios\Recursos.mp3">
+                    <a href="#recursos" data-active="3">
                         <div class="icon">
                             <i class='bx bx-folder'></i>
                             <i class='bx bxs-folder-open'></i>
@@ -352,8 +381,8 @@ document.querySelector("#dark-mode-icon").addEventListener('click', toggleDarkMo
                         <span class="link hide noselect">Recursos</span>
                     </a>
                 </li>
-                <li class="tooltip-element" data-tooltip="3" data-audio="Audios\Referecias.mp3">
-                    <a href="#referencias" data-active="3">
+                <li class="tooltip-element" data-tooltip="4" data-audio="Audios\Referecias.mp3">
+                    <a href="#referencias" data-active="4">
                         <div class="icon">
                             <i class='bx bxs-quote-right'></i>
                             <i class='bx bxs-quote-right'></i>
@@ -362,8 +391,8 @@ document.querySelector("#dark-mode-icon").addEventListener('click', toggleDarkMo
                     </a>
                 </li>
 
-                <li class="tooltip-element" data-tooltip="4" data-audio="Audios\contacto.mp3">
-                    <a href="#Ajustes" data-active="4">
+                <li class="tooltip-element" data-tooltip="5" data-audio="Audios\contacto.mp3">
+                    <a href="#Ajustes" data-active="5">
                         <div class="icon">
                             <i class='bx bx-phone'></i>
                             <i class='bx bxs-phone'></i>
@@ -371,10 +400,11 @@ document.querySelector("#dark-mode-icon").addEventListener('click', toggleDarkMo
                         <span class="link hide noselect">Contacto</span>
                     </a>
                 </li>
-                
+
                 <div class="tooltip">
                     <span class="show">Inicio</span>
                     <span>Aprende</span>
+                    <span>Juegos</span>
                     <span>Recursos</span>
                     <span>Referencias</span>
                     <span>Contacto</span>
@@ -383,18 +413,16 @@ document.querySelector("#dark-mode-icon").addEventListener('click', toggleDarkMo
         </div>
     </nav>
 
-    
-
 
     <main>
-        
-        <div id="inicio" class="section"> 
-            <h1 class="section-title">¿Qué es SEXi?</h1>   
-                 
+
+        <div id="inicio" class="section">
+            <h1 class="section-title">¿Qué es SEXi?</h1>
+
             <div id="inicio-content">
                 <img src="./resources/images/char1.png" alt="welcoming-people" class="characs">
                 <div>
-                    <p class="audio-trigger" data-audio="Audios\que es sexi.mp3"> 
+                    <p class="audio-trigger" data-audio="Audios\que es sexi.mp3">
                         Actualmente, las estrategias de enseñanza-aprendizaje que el sistema educativo desarrolla a
                         través de
                         los
@@ -428,61 +456,64 @@ document.querySelector("#dark-mode-icon").addEventListener('click', toggleDarkMo
                 </div>
             </div>
         </div>
-        
+
         <div id="aprende" class="section">
-            <h1 class="section-title">Aprende <i id="iconoSexi1" style="margin-left: 75px; vertical-align: middle; font-size: 34px;" class="bx bx-volume-full"></i>
-            </h1></h1>
+            <h1 class="section-title">Aprende <i id="iconoSexi1"
+                    style="margin-left: 75px; vertical-align: middle; font-size: 34px;" class="bx bx-volume-full"></i>
+            </h1>
+            </h1>
             <div>
-                
+
             </div>
             <p class="audio-trigger" data-audio="Audios\audios_de_parrafos\parrafo 1.mp3">
                 A continuación presentamos una serie de articulos y presentaciones interactivas que te permitirán
                 adquirir más conocimientos sobre éstos temas
             </p>
             <div id="temas-canvas">
-                <h3 id="temas-title" class="audio-trigger" data-audio="Audios\audios_de_parrafos\parrafo 1.mp3">¡Elije uno de estos!</h3>
+                <h3 id="temas-title" class="audio-trigger" data-audio="Audios\audios_de_parrafos\parrafo 1.mp3">¡Elije
+                    uno de estos!</h3>
                 <ul id="temas">
                     <li class="tema" id="subtema-1" data-audio="Audios\Relaciones.mp3">
-                        <a href="aprende.html#relaciones" rel="noopener" >
+                        <a href="aprende/aprende.html#relaciones" rel="noopener">
                             <div>Relaciones</div>
                         </a>
                     </li>
                     <li class="tema" id="subtema-2" data-audio="Audios\Valores.mp3">
-                        <a href="aprende.html#valores" rel="noopener">
+                        <a href="aprende/aprende.html#valores" rel="noopener">
                             <div>Valores</div>
                         </a>
                     </li>
                     <li class="tema" id="subtema-3" data-audio="Audios\genero.mp3">
-                        <a href="aprende.html#genero" rel="noopener">
+                        <a href="aprende/aprende.html#genero" rel="noopener">
                             <div>Género</div>
                         </a>
 
                     </li>
                     <li class="tema" id="subtema-4" data-audio="Audios\violencia.mp3">
-                        <a href="aprende.html#violencia" rel="noopener">
+                        <a href="aprende/aprende.html#violencia" rel="noopener">
                             <div>Violencia</div>
                     </li></a>
 
                     <li class="tema" id="subtema-5" data-audio="Audios\salud.mp3">
-                        <a href="aprende.html#salud" rel="noopener">
+                        <a href="aprende/aprende.html#salud" rel="noopener">
                             <div>Salud</div>
                         </a>
 
                     </li>
                     <li class="tema" id="subtema-6" data-audio="Audios\cuerpo humano.mp3">
-                        <a href="aprende.html#cuerpo" rel="noopener">
+                        <a href="aprende/aprende.html#cuerpo" rel="noopener">
                             <div>Cuerpo humano</div>
                         </a>
 
                     </li>
                     <li class="tema" id="subtema-7" data-audio="Audios\Sexualidad.mp3">
-                        <a href="aprende.html#sexualidad" rel="noopener">
+                        <a href="aprende/aprende.html#sexualidad" rel="noopener">
                             <div>Sexualidad</div>
                         </a>
 
                     </li>
                     <li class="tema" id="subtema-8" data-audio="Audios\salud sexual.mp3">
-                        <a href="aprende.html#salud-sexual" rel="noopener">
+                        <a href="aprende/aprende.html#salud-sexual" rel="noopener">
                             <div>Salud sexual</div>
                         </a>
 
@@ -491,7 +522,100 @@ document.querySelector("#dark-mode-icon").addEventListener('click', toggleDarkMo
             </div>
 
         </div>
-        
+
+        <div id="Juegos" class="section">
+            <h1 class="section-title">Juegos</h1> 
+            <p>
+                Conoce los increibles juegos con los cuales podras aprender aun mas;
+            </p>
+            <br>
+            <br>
+            <br>
+            <a href="Menudejuego\index.html"><button class="button-85" role="button" >VER CATALOGO</button></a>
+
+<style>
+.button-85 {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  
+  /* Centrar el botón */
+  display: block;
+  margin: 0 auto;
+  
+  /* Hacer el botón un poco más grande */
+  width: 250px; 
+  height: 90px;
+  font-weight: bold;
+}
+
+
+.button-85:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button-85:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+</style>
+
+
+        </div>
+
+
         <script>
             // Función para cambiar el ícono en un ciclo
             function cambiarIconoSecuencial(iconoId) {
@@ -499,12 +623,12 @@ document.querySelector("#dark-mode-icon").addEventListener('click', toggleDarkMo
                 const iconos = ["bx bxs-volume", "bx bxs-volume-low", "bx bxs-volume-full", "bx bxs-volume-low"];
                 let indiceIcono = 0;
                 let intervalo;
-        
+
                 function cambiarIcono() {
                     icono.className = iconos[indiceIcono];
                     indiceIcono = (indiceIcono + 1) % iconos.length;
                 }
-        
+
                 function alternarCambioIcono() {
                     if (!intervalo) {
                         intervalo = setInterval(cambiarIcono, 200);
@@ -515,15 +639,16 @@ document.querySelector("#dark-mode-icon").addEventListener('click', toggleDarkMo
                         intervalo = null;
                     }
                 }
-        
+
                 icono.addEventListener("click", alternarCambioIcono);
             }
-        
+
             // Iniciar el comportamiento de cambio de ícono para cada ícono
             cambiarIconoSecuencial("iconoSexi1");
             cambiarIconoSecuencial("iconoSexi2");
             cambiarIconoSecuencial("iconoSexi3");
         </script>
+
         <div id="recursos" class="section">
             <h1 class="section-title">Recursos</h1>
 
@@ -573,8 +698,7 @@ document.querySelector("#dark-mode-icon").addEventListener('click', toggleDarkMo
                                     class="zoomable  resource qr">
                             </div>
                             <div>
-                                <img src="./resources/images/qrs/qr_feto.jpeg" alt="Feto" 
-                                class="zoomable  resource qr">
+                                <img src="./resources/images/qrs/qr_feto.jpeg" alt="Feto" class="zoomable  resource qr">
                             </div>
                         </div>
                     </details>
@@ -637,8 +761,6 @@ document.querySelector("#dark-mode-icon").addEventListener('click', toggleDarkMo
 
             </div>
         </div>
-
-       
 
         <div id="referencias" class="last-section section">
             <h1 class="section-title">Referencias </h1>
@@ -732,113 +854,119 @@ document.querySelector("#dark-mode-icon").addEventListener('click', toggleDarkMo
             </details>
         </div>
 
-        <div id="Ajustes" class="section">
-        <h1 class="section-title">Contacto</h1>
-        <p>
-         Nos preocupamos en que tengas la mejor experiencia; personaliza la pagina a tu gusto.
-        </p>
-        <br>
+        <div id="Ajustes" class="section"> 
+            <h1 class="section-title">Contacto</h1> 
+            <p>
+                Nos preocupamos en que tengas la mejor experiencia; Contactanos para soporte.
+            </p>
+            <br>
 
-        <div class="row">
-            <center>
-            <div class="col-xl-8 col-md-4 mb-30">
-                <div class="single-cta">
-                    <a href="https://twitter.com/eduissed?t=9sbRf7w99IIqC6eZuXl3vA&s=09">
-                        <i class="fa-brands fa-x-twitter"></i>
-                        <div class="cta-text">
-                            <h4>Twitter</h4>
-                            <span>@eduissed</span>
+            <div class="row">
+                <center>
+                    <div class="col-xl-8 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <a href="https://twitter.com/eduissed?t=9sbRf7w99IIqC6eZuXl3vA&s=09">
+                                <i class="fa-brands fa-x-twitter"></i>
+                                <div class="cta-text">
+                                    <h4>Twitter</h4>
+                                    <span>@eduissed</span>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                </div>
-            </div>
-        <br>
-            <div class="col-xl-4 col-md-4 mb-30">
-                <div class="single-cta">
-                    <i class="fas fa-phone"></i>
-                    <div class="cta-text">
-                        <h4>Llamanos</h4>
-                        <span>961 255 5767 <br> 961 375 0079 <br> 961 375 3375 <br></span>
                     </div>
-                </div>
-            </div>
-        <br>
-            <div class="col-xl-4 col-md-4 mb-30">
-                <div class="single-cta text-center">
-                    <a href="https://mail.google.com/mail/u/0/#inbox?compose=XBcJlDLZZWcdLXcJzXGMfNnGQhXzWgVzctjCFsKFdZmXwfmlmtQHdTVtzfJPBLXSrJhmLFgsXbgrwTzG">
-                        <i class="far fa-envelope-open"></i>
-                        <div class="cta-text">
-                            <h4>Correo</h4>
-                            <span>eduissed@gmail.com</span>
+                    <br>
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="fas fa-phone"></i>
+                            <div class="cta-text">
+                                <h4>Llamanos</h4>
+                                <span>961 255 5767 <br> 961 375 0079 <br> 961 375 3375 <br></span>
+                            </div>
                         </div>
-                    </a>
-                </div>
+                    </div>
+                    <br>
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta text-center">
+                            <a
+                                href="https://mail.google.com/mail/u/0/#inbox?compose=XBcJlDLZZWcdLXcJzXGMfNnGQhXzWgVzctjCFsKFdZmXwfmlmtQHdTVtzfJPBLXSrJhmLFgsXbgrwTzG">
+                                <i class="far fa-envelope-open"></i>
+                                <div class="cta-text">
+                                    <h4>Correo</h4>
+                                    <span>eduissed@gmail.com</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
             </div>
+            </center>
+            <style>
+                .single-cta {
+                    text-align: center;
+                    background-color: #333333b9;
+                    padding: 20px;
+                    border-radius: 10px;
+                    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+                    transition: all 0.3s;
+                    /* Agregar transición suave */
+                    width: 450px;
+                    /* Aumentar el ancho en estado hover */
+                }
+
+                @media (max-width: 768px) {
+
+                    /* Establecer un ancho más pequeño para dispositivos móviles */
+                    .single-cta {
+                        width: 90%;
+                        /* Ancho del 90% para dispositivos móviles */
+                        max-width: none;
+                        /* Eliminar el ancho máximo para dispositivos móviles */
+                    }
+                }
+
+                .single-cta i {
+                    font-size: 40px;
+                    color: white;
+                    /* Color del icono */
+                }
+
+                .cta-text h4 {
+                    font-size: 24px;
+                    margin: 10px 0;
+                    color: white;
+                    /* Color del título */
+                }
+
+                .cta-text span {
+                    font-size: 18px;
+                    color: #777;
+                    /* Color del texto */
+                }
+
+                .single-cta:hover {
+                    background-color: #2a3487;
+                    /* Color de fondo al pasar el mouse */
+                    color: #fff;
+                    /* Color del texto al pasar el mouse */
+                    padding: 10px;
+                    /* Reducir el padding en estado hover */
+                }
+            </style>
+
 
         </div>
-        </center>
-        <style>
 
 
 
 
-
-
-
-
-            .single-cta {
-                text-align: center;
-                background-color: #333333b9;
-                padding: 20px;
-                border-radius: 10px;
-                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-                transition: all 0.3s; /* Agregar transición suave */
-                width: 450px; /* Aumentar el ancho en estado hover */
-            }
-
-            @media (max-width: 768px) {
-        /* Establecer un ancho más pequeño para dispositivos móviles */
-        .single-cta {
-            width: 90%; /* Ancho del 90% para dispositivos móviles */
-            max-width: none; /* Eliminar el ancho máximo para dispositivos móviles */
-        }
-    }
-        
-            .single-cta i {
-                font-size: 40px;
-                color: white; /* Color del icono */
-            }
-        
-            .cta-text h4 {
-                font-size: 24px;
-                margin: 10px 0;
-                color: white; /* Color del título */
-            }
-        
-            .cta-text span {
-                font-size: 18px;
-                color: #777; /* Color del texto */
-            }
-        
-            .single-cta:hover {
-                background-color: #2a3487; /* Color de fondo al pasar el mouse */
-                color: #fff; /* Color del texto al pasar el mouse */
-                padding: 10px; /* Reducir el padding en estado hover */
-            }
-        </style>
-        
-        
-    </div>
-
-
-
-
-    </div>
+        </div>
 
 
 
         <p class="copyright">
-            &copy; 2023 - <span>EDUISSED</span> Todos los derechos reservados <i class="fa-brands fa-creative-commons"></i><i class="fa-brands fa-creative-commons-by"></i><i class="fa-brands fa-creative-commons-sa"></i>
+            &copy; 2023 - <span>EDUISSED</span> Todos los derechos reservados <i
+                class="fa-brands fa-creative-commons"></i><i class="fa-brands fa-creative-commons-by"></i><i
+                class="fa-brands fa-creative-commons-sa"></i>
         </p>
     </main>
     <footer>
@@ -847,13 +975,14 @@ document.querySelector("#dark-mode-icon").addEventListener('click', toggleDarkMo
     </footer>
 
 
-  <!-- partial -->
-  <script src="./js/chat_IA.js"></script>
-  <script src="./js/main.js"></script> 
-  <script src="./js/Audio.js"></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js'></script>  
-  <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js'></script><script  src="./script.js"></script>
-  
+    <!-- partial -->
+    <script src="./js/chat_IA.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/Audio.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js'></script>
+    <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js'></script>
+    <script src="./script.js"></script>
+
 </body>
 
 </html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temporizador y reinicio de página</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #timer {
+            font-size: 24px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div id="timer">10</div>
+
+<script>
+    // Función que reinicia la página
+    function reiniciarPagina() {
+        location.reload(true);
+    }
+
+    // Función del temporizador
+    function iniciarTemporizador(segundos) {
+        let tiempoRestante = segundos;
+        const timerElemento = document.getElementById('timer');
+
+        function actualizarTemporizador() {
+            timerElemento.textContent = tiempoRestante;
+
+            if (tiempoRestante === 0) {
+                reiniciarPagina();
+            } else {
+                tiempoRestante--;
+                setTimeout(actualizarTemporizador, 1000);
+            }
+        }
+
+        actualizarTemporizador();
+    }
+
+    // Iniciar temporizador con 10 segundos al cargar la página
+    document.addEventListener('DOMContentLoaded', function () {
+        iniciarTemporizador(10);
+    });
+</script>
+
+</body>
+</html>

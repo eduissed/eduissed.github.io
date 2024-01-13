@@ -130,20 +130,7 @@ for (let i = 0; i < imgs.length; i++) {
 		altText.id = "alt-text";
 		altText.href = this.src;
 		altText.download = `${this.alt}.png`;
-		altText.innerHTML = `<div class="container">
-  
-		<a href="" class="button dark">
-			<ul>
-				<li>&#68;escargar</li>
-				<li>&#68;escargando</li>
-				<li>&#68;escargado</li>
-			</ul>
-			<div>
-				<svg viewBox="0 0 24 24"></svg>
-			</div>
-		</a>
-	
-	</div>`;
+		altText.innerHTML = `descargar`;
 
 	// Attach the element to the DOM
 	document.body.appendChild(altText);
@@ -485,5 +472,7 @@ document.addEventListener('click', function(event) {
         optionsPanel.style.display = 'none';
     }
 });
+
+
 
 			

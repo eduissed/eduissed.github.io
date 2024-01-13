@@ -1,0 +1,2051 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hi! I'm Dvd and this is my personal website!" />
+
+    <meta content="summary_large_image" property="twitter:card" />
+    <meta content="SEXi" property="twitter:title" />
+    <meta content="EDUISSED" property="twitter:creator" />
+    <meta content="Somos una plataforma que busca fomentar la educación sexual en adolescentes"
+        property="twitter:description" />
+    <meta content="https://eduissed.org/resources/images/preview.jpg" property="twitter:image" />
+    <title>Aprende - SEXi</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
+    <link rel="stylesheet" type="text/css" href="../css/aprende.css">
+    <link rel="shortcut icon" href="../resources/favicon_color.ico" type="image/x-icon" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    
+
+    <nav>
+        <div class="sidebar-top">
+            <span class="shrink-btn">
+                <i class='bx bx-chevron-left'></i>
+            </span>
+            <a href="../index.html" class="logo"><img src="../resources/images/logo.png" alt="SEXi"></a>
+            <div class="logo-text hide noselect">
+                <h3>SEXi</h3>
+                <h4>de EDUISSED</h4>
+            </div>
+        </div>
+       
+
+        <div class="search noselect">
+            <a href="../index.html" id="regresar">
+                <i class="bx bx-arrow-back"></i>
+                <span class="link hide">Regresar a inicio</span>
+            </a>
+        </div>
+
+        <div class="sidebar-links">
+            <ul>
+                <div class="active-tab"></div>
+                <li class="tooltip-element" data-tooltip="0" data-audio="Audios\Relaciones.mp3">
+                    <a href="#relaciones" data-active="0">
+                        <div class="icon">
+                            <i class='bx bx-group'></i>
+                            <i class='bx bxs-group'></i>
+                        </div>
+                        <span class="link hide noselect">Relaciones</span>
+                    </a>
+                </li>
+                <li class="tooltip-element" data-tooltip="1" data-audio="Audios\Valores.mp3">
+                    <a href="#valores" data-active="1">
+                        <div class="icon">
+                            <i class='bx bx-book-heart'></i>
+                            <i class='bx bxs-book-heart'></i>
+                        </div>
+                        <span class="link hide noselect">Valores</span>
+                    </a>
+                </li>
+                <li class="tooltip-element" data-tooltip="2" data-audio="Audios\genero.mp3">
+                    <a href="#genero" data-active="2">
+                        <div class="icon">
+                            <i class='bx bx-user'></i>
+                            <i class='bx bxs-user'></i>
+                        </div>
+                        <span class="link hide noselect">Género</span>
+                    </a>
+                </li>
+                <li class="tooltip-element" data-tooltip="3" data-audio="Audios\violencia.mp3">
+                    <a href="#violencia" data-active="3">
+                        <div class="icon">
+                            <i class='bx bx-mask'></i>
+                            <i class='bx bxs-mask'></i>
+                        </div>
+                        <span class="link hide noselect">Violencia</span>
+                    </a>
+                </li>
+                <li class="tooltip-element" data-tooltip="4" data-audio="Audios\salud.mp3">
+                    <a href="#salud" data-active="4">
+                        <div class="icon">
+                            <i class='bx bx-injection'></i>
+                            <i class='bx bxs-injection'></i>
+                        </div>
+                        <span class="link hide noselect">Salud y Bienestar</span>
+                    </a>
+                </li>
+                <li class="tooltip-element" data-tooltip="5" data-audio="Audios\cuerpo humano.mp3">
+                    <a href="#cuerpo" data-active="5">
+                        <div class="icon">
+                            <i class='bx bx-body'></i>
+                            <i class='bx bx-body'></i>
+                        </div>
+                        <span class="link hide noselect">El Cuerpo Humano</span>
+                    </a>
+                </li>
+                <li class="tooltip-element" data-tooltip="6" data-audio="Audios\Sexualidad.mp3">
+                    <a href="#sexualidad" data-active="6">
+                        <div class="icon">
+                            <i class='bx bx-heart'></i>
+                            <i class='bx bxs-heart'></i>
+                        </div>
+                        <span class="link hide noselect">Sexualidad</span>
+                    </a>
+                </li>
+                <li class="tooltip-element" data-tooltip="7" data-audio="Audios\salud sexual.mp3">
+                    <a href="#salud-sexual" data-active="7">
+                        <div class="icon">
+                            <i class='bx bx-leaf'></i>
+                            <i class='bx bxs-leaf'></i>
+                        </div>
+                        <span class="link hide noselect">Salud sexual</span>
+                    </a>
+                </li>
+                <div class="tooltip">
+                    <span>Relaciones</span>
+                    <span>Valores</span>
+                    <span>Género</span>
+                    <span>Violencia</span>
+                    <span>Salud y Bienestar</span>
+                    <span>El Cuerpo Humano</span>
+                    <span>Sexualidad</span>
+                    <span>Salud sexual</span>
+                </div>
+            </ul>
+        </div>
+        
+    </nav>
+    <main>
+        <div id="relaciones" class="section">
+            <h2 class="section-title">1. Relaciones</h2>
+            <p>Las relaciones son fundamentales entre seres humanos y nos permiten mantener una conexión
+                emocional con nosotros y el resto del mundo.
+            </p>
+            <details class="subtema">
+                <summary class="noselect">1.1 Familia</summary>
+                <p>La familia es la primera relación de la que somos parte como seres humanos. Es donde nos
+                    desarrollamos y
+                    donde pasamos la mayor cantidad de nuestro tiempo.
+                    Existen muchos tipos diferentes de familias en el mundo:
+                    (biparentales, monoparentales, encabezadas por menores o por tutores legales, extendidas, nucleares
+                    y no
+                    tradicionales).</p>
+                <p>Según la CNDH:</p>
+
+
+                <blockquote> Las familias son organizaciones dinámicas que se adaptan a los cambios demográficos,
+                    sociales, económicos y culturales que, continuamente, se presentan en la sociedad.1 A lo largo de la
+                    historia, sus integrantes se han agrupado para formar estructuras capaces de enfrentar los desafíos
+                    propios de cada época y comunidad en que han vivido, con el objetivo de asegurar su subsistencia y
+                    seguridad.(CNDH, 2018, pp 1-2)</blockquote>
+                <div class="wrapper"><img class="infog zoomable" src="../resources/images/1.1_info.jpg"
+                        alt="tipos-de-familias" id="info-11" /></div>
+
+                <p>Algunas cosas que son importantes de la familia:</p>
+                <ul>
+                    <li>El conflicto y los malentendidos entre los padres y tutores legales y los niños son comunes, en
+                        particular durante la adolescencia, y generalmente se pueden resolver</li>
+                    <li>El amor, la cooperación, la igualdad de género, el cuidado y el respeto mutuo son importantes
+                        para el funcionamiento de la familia y las relaciones saludables
+                    </li>
+                    <li>La familia es la célula básica de la sociedad que históricamente se había concebido como el
+                        grupo de personas que cohabitan y comparten una vivienda y, sobre todo, lazos de parentesco.
+                    </li>
+                    <li>La familia se define como grupo de personas, vinculadas generalmente por lazos de parentesco, ya
+                        sean de sangre o políticos, e independientemente de su grado, que hace vida en común, ocupando
+                        normalmente la totalidad de una vivienda. Se incluyen en la familia las personas del servicio
+                        doméstico que pernoctan en la vivienda y los huéspedes en régimen familiar. En la definición se
+                        incluyen, asimismo, las personas que viven solas, como familias unipersonales.</li>
+                </ul>
+
+                <p>La familia también posee <span class="remark">derechos y obligaciones</span>, como los son:</p>
+                <ul>
+                    <li>Derecho a fundar o a vivir en familia y a no ser separado(a)
+                        injustificadamente de ella, salvo riesgo o peligro grave.</li>
+                    <li>Derecho a contraer matrimonio libre y voluntariamente.</li>
+                    <li>Derecho a decidir la forma y estructura de su familia.</li>
+                    <li>Derecho y obligación de proporcionar y recibir alimentos.</li>
+                    <li>Derecho a heredar y ser heredero(a).</li>
+                    <li>Derechos de seguridad social (servicios médicos, pensiones
+                        entre otros)</li>
+                    <li>Derechos derivados de la patria potestad que se ejerce sobre las hijas e hijos (por ejemplo,
+                        educarlos(as), inculcarles valores, una religión, decidir su lugar de residencia, por
+                        mencionar algunos).</li>
+                    <li>Obligación de velar por las personas mayores.</li>
+                    <li>Obligación de respeto y consideración mutua, sin discriminación de sus integrantes por edad,
+                        ocupación, discapacidad o
+                        cualquier otra</li>
+                    <li>Obligación de respetar y cumplir los derechos de niñas, niños y adolescentes.</li>
+                    <li>Obligación de no ejercer ningún tipo de violencia contra
+                        ningún familiar.</li>
+                    <li>Obligación de asistencia, solidaridad, cuidados y protección
+                        mutua</li>
+                    <li> Deber de todas y todos de colaborar por igual con el trabajo
+                        en el hogar.</li>
+                </ul>
+            </details>
+
+            <details class="subtema">
+                <summary class="noselect">1.2 Amistad, amor y relaciones románticas</summary>
+                <ul>
+                    <li>Amar y ser amado enriquece nuestras vidas. Cuando la gente se siente sentimentalmente cerca de
+                        otra
+                        persona está más contenta e incluso más sana. El amor nos ayuda a sentirnos importantes,
+                        entendidos
+                        y seguros.</li>
+                    <li>Las amistades se basan en confianza, intercambio, respeto, empatía y solidaridad</li>
+                    <li>Las relaciones implican diferentes tipos de amor (por ej., amor entre amigos, entres padres,
+                        entre
+                        parejas románticas) y el amor se puede expresar de muchas maneras diferentes</li>
+                    <li> Las amistades y el amor ayudan a las personas a sentirse bien consigo mismas</li>
+                    <li> Los amigos se pueden influir mutuamente de maneras positivas y negativas <br><br></li>
+                    <li><span class="remark">Atracción</span>: es la parte "química" del amor. Se refiere al interés o
+                        deseo físico —o incluso sexual—
+                        que se experimenta por otra persona. La atracción es la responsable de las ganas que tenemos de
+                        besar y abrazar al objeto de nuestro afecto. La atracción también es lo que subyace a esa mezcla
+                        de
+                        turbación, nerviosismo y excitación que experimentamos cuando esa persona está cerca.</li>
+                    <li><span class="remark">Intimidad</span>: es el vínculo que desarrollamos cuando compartimos con
+                        una persona pensamientos y
+                        sentimientos que no compartimos con nadie más. Cuando experimentas esa sensación de intimidad
+                        con tu
+                        novio o novia, te sientes apoyado, cuidado, considerado y aceptado tal y como eres. La confianza
+                        es
+                        un componente esencial de la intimidad.</li>
+                    <li><span class="remark">Compromiso</span>: es la promesa o decisión de seguir al lado de esa
+                        persona a pesar de los altibajos que
+                        pueda haber en la relación. <br><br></li>
+                    <li>El amor romántico surge cuando se combinan la atracción y la intimidad. Muchas relaciones se
+                        desarrollan a partir de una atracción inicial (un enamoramiento o "amor a primera vista ") y
+                        luego
+                        evolucionan hacia la intimidad. También puede ocurrir que la intimidad de una amistad evolucione
+                        hacia la atracción, cuando dos personas se dan cuenta de que su relación no es solo de amigos y
+                        que
+                        han empezado a sentir un interés romántico mutuo.</li>
+
+                </ul>
+            </details>
+
+            <details class="subtema">
+                <summary class="noselect">1.3 Tolerancia, inclusión y respeto</summary>
+                <p>La <span class="remark">tolerancia</span> significa el respeto a las ideas, creencias o
+                    prácticas de los demás cuando son diferentes o contrarias a las propias, así como el
+                    reconocimiento, la aceptación y el aprecio al pluralismo cultural, a las formas de expresión, a
+                    los derechos humanos de los demás y a la diversidad del aspecto, situación, comportamiento y
+                    valores de todas las personas.</p>
+
+                <ul>
+                    <li>Todo ser humano es único, puede contribuir a la sociedad y tiene el derecho a ser respetado</li>
+                    <li>El estigma y la discriminación son dañinos</li>
+                    <li>Es irrespetuoso y dañino hostigar o acosar a cualquier persona en base a su condición social,
+                        económica o de salud, grupo étnico, raza, origen, orientación sexual, identidad de género u
+                        otras diferencias
+                    </li>
+                    <li>Una conducta tolerante implica un discernimiento individual para respetar y aceptar las
+                        diferencias raciales, políticas, sexuales y sociales de los demás. Asimismo, la tolerancia se
+                        encuentra estrechamente ligada al deber que tiene toda persona de respetar los derechos humanos
+                        de las otras personas. El derecho a la libertad e igualdad y la prohibición de la discriminación
+                        son derechos humanos reconocidos expresamente en tratados internacionales de los que México es
+                        parte, por lo que es necesario el fomento del respeto a los mismos, como parte de la cultura, en
+                        un proceso de aprendizaje e interiorización de los mismos por toda la población.
+                    </li>
+                    <li>
+                        Elementos para impulsar la tolerancia según la UNESCO:
+
+                        <ul>
+                            <li>Utilizar un lenguaje con la ausencia de calificativos raciales, étnicos o de sexo, lo
+                                que puede fomentarse evitando adjetivos y verbos que prejuzguen la descripción de
+                                acontecimientos o de personas. En México, un ejemplo lo podemos identificar con las
+                                modificaciones constitucionales, de junio de 2011, en donde se cambió el término
+                                “individuo” por el de “persona”, por ser más acorde a una perspectiva de género.
+                            </li>
+                            <li>La igualdad entre las personas para acceder a los beneficios sociales, a las actividades
+                                públicas y a las oportunidades educativas y económicas para todos los grupos, tanto
+                                hombres como mujeres, y de cualquier raza, etnia, religión, edad o clase social.</li>
+                            <li>El respeto mutuo a la dignidad humana de todas las personas de la sociedad.
+                            </li>
+                            <li>La igualdad de oportunidades para la participación de las minorías, hombres y mujeres,
+                                en el proceso democrático.</li>
+                            <li>Garantizar la preservación de la integridad cultural y de las lenguas minoritarias y
+                                fomentar su utilización; el respeto a la dignidad humana y a todos los derechos de las
+                                personas pertenecientes a minorías y pueblos indígenas.
+                            </li>
+                            <li>Los diálogos interétnicos e interreligiosos sobre los problemas comunes y sobre las
+                                relaciones entre grupos forman parte del discurso comunitario.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </details>
+
+            <!-- <details class="subtema">
+                <summary class="noselect">1.4 Compromisos a largo plazo y crianza</summary>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore necessitatibus impedit ex quia fuga
+                    dignissimos, veniam ducimus unde, deserunt illum inventore aut omnis. Iste dolorem voluptatum
+                    obcaecati, nostrum accusantium ipsam.</p>
+            </details> -->
+        </div>
+    
+           
+        <div id="valores" class="section">
+            <h2 class="section-title">2. Valores, derechos, cultura y sexualidad</h2>
+            <p>Los derechos sexuales son una respuesta a diferentes necesidades humanas relacionadas con la
+                sexualidad que sustentan los diferentes valores que nos enseñan desde niños hasta ser personas adultas.
+                ¡Conozcamos!
+            </p>
+            <details class="subtema">
+                <summary class="noselect">2.1 Valores y Sexualidad</summary>
+                <p>La sexualidad humana es uno de los modos más importantes de relacionarnos que existe
+                    para las personas, por lo cual, casi todos los valores humanos que fomentemos van a tener una
+                    importancia más o menos directa en el desarrollo psicosexual.
+                </p>
+                <p><span class="remark">Placer</span>: es importante transmitir que el placer forma parte
+                    de una sexualidad saludable. Si no hay placer en el ejercicio de la sexualidad de las personas
+                    seguramente hay algo que revisar.
+                </p>
+                <p><span class="remark">Intimidad</span>: Tiene que ver con la reserva que elegimos las
+                    personas para realizar algunas acciones más que otras, con entender que existe la intimidad física y
+                    también la intimidad espiritual y que las personas tienden a sentirse más plenas y felices cuando
+                    pueden gozar de ambas.
+                </p>
+                <p><span class="remark">Comunicación</span>: Como en cualquier otro aspecto de las
+                    relaciones humanas, se vuelve importantísimo poder comunicar gustos, deseos, emociones, fantasías,
+                    preferencias, etc. Si se fomenta en las personas la habilidad para transmitir lo que sientan y pedir
+                    lo que necesiten de manera respetuosa es mucho más probable que se desarrollen conductas sexuales
+                    saludables y placenteras.
+                </p>
+                <p><span class="remark">Respeto</span>: Es fundamental transmitir que mi derecho termina
+                    cuando el del otro empieza y viceversa. No es posible relacionarnos sexualmente de manera saludable
+                    si no tenemos incorporado el respeto en nuestro modo de vincularnos.
+                </p>
+                <p><span class="remark">Salud</span>: Es importante informar sobre las enfermedades de
+                    transmisión sexual más propagadas así como los medios óptimos para reducir al máximo estos riesgos.
+                    Al mismo tiempo, tener en cuenta que existen modos saludables y no saludables de ejercer nuestra
+                    sexualidad. Si en este ejercicio hay malestar, sufrimiento, dolor físico o moral, hay que pedir
+                    ayuda sin miedos ni prejuicios.
+                </p>
+                <p><span class="remark">Procreación responsable</span>: Al educar sexualmente a otro ser
+                    humano habremos de tener en cuenta que la relación sexual tiene como una de sus posibles
+                    consecuencias la reproducción. Es importante, además de informar sobre los distintos métodos
+                    anticonceptivos, recordar que es responsabilidad de las personas que la reproducción se desarrolle
+                    junto a una madurez emocional suficiente y acompañada por el deseo de paternidad/maternidad que
+                    necesita un bebé para desarrollarse sanamente.
+                </p>
+                <p><span class="remark">Diversidad</span>: Las personas vivimos la sexualidad de manera
+                    diversa. Es saludable que así sea, así como también es saludable que aprendamos a respetar esta
+                    diversidad en los otros y en uno mismo.
+                </p>
+            </details>
+
+            <details class="subtema">
+                <summary class="noselect">2.2 Derechos Humanos y Sexualidad</summary>
+                <p>La sexualidad es parte fundamental en la vida de las personas en los diferentes
+                    aspectos: biológicos, psicológicos y culturales. Mujeres y hombres decidimos como ejercemos nuestro
+                    cuerpo, nuestro erotismo y nuestro afecto a partir de las diferentes construcciones que escuchamos y
+                    vivimos a lo largo de nuestra vida ya sea de manera formal o informal.
+                </p>
+                <p>Los derechos sexuales son una respuesta a las distintas necesidades humanas en torno a
+                    la sexualidad, son el pilar de los diversos valores que nos enseñan en la infancia, adolescencia,
+                    juventud o en la vida adulta como es el respeto, la libertad, la empatía, la igualdad, la autonomía,
+                    etcétera.
+                </p>
+                <p>Por ello, en México como en otros países los derechos sexuales son derechos humanos, es
+                    decir cualquier persona tiene derecho a ejercer de forma plena y responsable aspectos de su
+                    sexualidad debido a que éstos están protegidos por tratados internacionales y nacionales.
+                </p>
+                <p>El conocimiento de los derechos implica que las personas puedan exigir a su efectividad
+                    a las instituciones.
+                </p>
+                <div class="wrapper"><img class="infog zoomable" src="../resources/images/2.2_info.jpg"
+                        alt="derechos-humanos-sexualidad" id="info-22" /></div>
+            </details>
+
+            <details class="subtema">
+                <summary class="noselect">2.3 Cultura, sociedad y sexualidad</summary>
+                <p>Las costumbres, el comportamiento social, los hábitos alimenticios y, en definitiva, el
+                    modo de vida, están altamente influenciados por la cultura. La sexualidad, como no podía ser de otro
+                    modo, establece también las bases de su fundamento en patrones culturales.
+                </p>
+                <p>Por cultura no nos referimos a la amalgama de conocimientos e ideas adquiridos debido al
+                    desarrollo de las facultades intelectuales, mediante la lectura, el estudio y/o el trabajo, sino a
+                    la totalidad de comprensiones, juicios, ideas, tradiciones y/o costumbres que caracterizan a un
+                    pueblo, a una clase social o a una época.
+                </p>
+                <p>La cultura, por su naturaleza, brinda normas y criterios racionales, pero también
+                    arrastra ciertos sesgos que, aunque se razonen como nocivos, son extremadamente difíciles de
+                    eliminar. La sexualidad no es el único ámbito perjudicado por determinados dogmas culturales, aunque
+                    sí uno de los más castigados.
+                </p>
+                <p>Muchos de los mitos sexuales se fundamentan en la cultura. Existen numerosas ideas
+                    erróneas sobre la sexualidad, algunas de ellas generales y otras específicas. De este modo, hay
+                    falsas creencias sobre la masturbación, la eyaculación precoz, la falta de erección o la falta de
+                    deseo.</p>
+                <p>Esto supone una barrera en el avance social en lo que a sexualidad se refiere. En este
+                    sentido, resulta evidente que, en las últimas décadas, se ha evolucionado enormemente en cuestiones,
+                    como, por ejemplo, de igualdad de género, pero la presencia de este tipo de ideas impide que el
+                    avance continúe. El resultado es que, en lugar de que el desarrollo de esto tipo de conceptos
+                    prosiga, se desvirtúa, creando múltiples ideas, a su vez erróneas, sobre lo que es o no es igualdad,
+                    derechos de las mujeres, etc.
+                </p>
+                <p>En conclusión, la cultura y su mitología pueden resultar muy perjudiciales para el
+                    avance social y para las personas con disfunciones sexuales y sus parejas, pero también puede
+                    trascender de estos dos aspectos, ya que puede ser la responsable de la aparición de problemas de
+                    pareja y de disfunciones sexuales tanto en el hombre como en la mujer, personas sin ningún tipo de
+                    patologías o problemas que pueden sufrir un enorme malestar únicamente por aceptar ideas erróneas.
+                </p>
+            </details>
+        </div>
+
+        <div id="genero" class="section">
+            <h2 class="section-title">3. Cómo entender el género</h2>
+            <p>
+                Al mencionar la palabra género, desplegamos principalmente conceptos y constructos sociales que
+                históricamente se han formado y aceptado. La importancia de informarnos acerca de estos temas, radica en
+                que así podremos ser capaces de cuestionarnos para no caer en la credulidad y poder formar una propia
+                visión y opinión.</p>
+            <div class="wrapper"><img class="zoomable marker" src="../resources/images/qrs/qr_que_genero.jpeg"
+                    alt="¿Qué es el género?" id="que-genero" /></div>
+
+            <details class="subtema">
+                <summary class="noselect">3.1 Construcción social del género y las normas del género</summary>
+                <p>La construcción social del género está vinculada con la cultura, clase social, religión, historia,
+                    etnia, edad y marco político de cada persona.
+                </p>
+
+                <div class="wrapper"><img class="zoomable" src="../resources/images/genero-ataque.png"
+                        alt="batalla de generos" id="gen-ataque" /></div>
+                <h4>Conceptos básicos</h4>
+                <p><span class="remark">El género</span> determina lo que una sociedad espera del
+                    comportamiento, vestir, pensar, de una persona de
+                    acuerdo a su sexo biológico.
+                </p>
+                <p>Se suele confundir la idea del género con el sexo biológico; sin embargo, son completamente
+                    diferentes. <span class="remark">El sexo biológico</span> refiere a las características fisiológicas
+                    con las que nacemos,
+                    basadas en los genes, hormonas y genitales.
+                </p>
+                <p>
+                    Por otro lado, <span class="remark">la identidad y la expresión de género</span>, son el cómo
+                    expresamos nuestro género por
+                    medio de nuestras actitudes, vestimenta, comportamiento, etcétera. La identidad se forma según el
+                    individuo tenga contacto con su entorno. Todas las personas tienen una identidad y expresión de
+                    género. Es importante respetar cada una de ellas.
+                </p>
+                <p><span class="remark">Los roles de género</span> son aquellas funciones y responsabilidades que se
+                    aprenden en un grupo social y
+                    que hacen que los integrantes estén sujetos a percibirlas como masculinas y femeninas. Y <span
+                        class="remark">los
+                        estereotipos de género</span> son las conductas y actitudes que son consideradas “apropiadas” o
+                    “adecuadas”
+                    para cada sexo.</p>
+                <p>“De aquí surgen también los conceptos de <span class="remark">masculinidad y feminidad</span>, los
+                    cuales determinan el
+                    comportamiento, las oportunidades, la valoración y las relaciones entre mujeres y hombres.”
+                    (INMUJERES, 2004)</p>
+                <p>Los roles de género responden a la pregunta de “¿Qué debo hacer si soy hombre/mujer?”, ejemplo:
+                    <br><br>
+                    Funciones de una mujer: Criar a hijas e hijos, cocinar, limpiar, atender al marido. <br>
+                    Funciones de un hombre: Proveer, realizar trabajos duros, ser jefe del hogar. <br><br>
+                    Y los estereotipos de género responden a “¿Cómo debo ser si soy mujer/hombre?”, ejemplo: <br><br>
+                    Comportamiento de una mujer: Amable, cariñosa, sumisa, delicada, sentimental. <br>
+                    Comportamiento de un hombre: Fuerte, frío, valiente, dominante, no es emotivo.
+                </p>
+                <p>Como puedes ver, a la mujer se le ha relacionado con las labores del hogar, en cambio, al hombre se
+                    relaciona con la agresividad; esto reduce las oportunidades de crecimiento, tanto la independencia
+                    de la mujer, y las habilidades emocionales del hombre. No obstante, ya que estas ideas son
+                    construcciones sociales, pueden cambiar y adaptarse conforme el contexto e historia de cada
+                    comunidad.
+                </p>
+                <h4>¿Cuáles son las principales fuentes de información en donde aprendemos estas nociones?
+                </h4>
+                <p>Nociones como estas, no son elecciones conscientes que podamos admitir o negar individualmente. <br>
+                    Las principales fuentes de donde se nos fomentan dichas nociones, son: La familia , la escuela,
+                    amigos y sobre todo, los medios de comunicación, pues con las imágenes que transitan en los medios,
+                    los usuarios conocen ciertos estereotipos y prejuicios que se perpetúan.
+                </p>
+                <h4>¿Cómo estos conceptos influyen en mi vida personal?
+                </h4>
+                <p>Al prácticamente, “definir” nuestra vida bajo estos valores, nuestra interacción y relaciones con los
+                    demás se ven afectadas. <br>
+                    Según la nota descriptiva: Género y salud publicada por la OMS, la ideología de género influye en la
+                    salud y el bienestar en tres distintos ámbitos:
+                </p>
+
+                <ul>
+                    <li>Los determinantes de la salud relacionados con el género, incluida la interacción con otros
+                        determinantes sociales y estructurales.</li>
+                    <li>Las conductas en la esfera de la salud en función del género.
+                    </li>
+                    <li>La respuesta del sistema de salud en función del género.</li>
+                </ul>
+
+                <div class="wrapper">
+                    <p class="instructions">Haz clic en la imagen para agrandarla</p>
+                    <img class="infog zoomable" id="info-31" src="../resources/images/3.1_info.jpg"
+                        alt="infografia_3.1" />
+                </div>
+            </details>
+
+            <details class="subtema">
+                <summary class="noselect">3.2 Igualdad, estereotipos y prejuicios del género</summary>
+                <p>Es nuestra responsabilidad ver por un mundo mejor y con más oportunidades para todos y todas, luchar
+                    por los derechos que nos corresponden y cuestionar si lo que nos enseñan está bien, pero para eso,
+                    primero hay que informarnos correctamente.</p>
+                <div class="wrapper"><img class="zoomable" src="../resources/images/estereotipos-de-genero.png"
+                        alt="estereotipos" id="estereotipos" /></div>
+                <p>La UNICEF define a la <span class="remark">igualdad de género</span> como “el hecho de que mujeres,
+                    hombres, niñas y niños deban
+                    gozar, por igual, de los mismos derechos, recursos, oportunidades y protecciones.” <br><br>
+                    En cambio, <span class="remark">la desigualdad de género</span> ocurre cuando se le conceden menos
+                    oportunidades y privilegios a
+                    una persona solamente por su género y los roles que se le asignan a este.
+                </p>
+                <p>
+                    Un claro ejemplo de desigualdad de género que podemos ver reflejado actualmente, es la brecha de
+                    desigualdad salarial y en oportunidades de trabajo: <br><br>
+                    Siguiendo el estudio que publicó INMUJERES, en 2018, 78 de cada 100 hombres y 44 de cada 100 mujeres
+                    fueron partícipes de actividades económicas <br>
+                <blockquote>
+                    A pesar del incremento durante las últimas décadas de la participación femenina en el trabajo
+                    remunerado, sigue estando muy por debajo de la participación masculina(...).
+                    El promedio de horas de trabajo remunerado a la semana por parte de los hombres fue de 45.8 y
+                    por
+                    parte de las mujeres 37.9 horas. (INMUJERES, 2022)
+                </blockquote>
+                </p>
+                <p>
+                    Y en 2022, la tasa de participación en trabajo no remunerado fue del 68.87 para los hombres y un
+                    95.39 en mujeres. <br><br>
+                    Por otro lado, los estereotipos de género también son perjudiciales en la participación y
+                    perpetuación de las desigualdades de género: <br><br>
+                    Fuese que se muestren explícitamente desfavorables como “Las mujeres son débiles” o que aparenten
+                    ser piadosos como “Las mujeres son cariñosas”. Por ejemplo, la costumbre de ver a las mujeres como
+                    cuidadoras, da a entender a los hombres que se pueden deslindar de su responsabilidad como padres.
+                    <br><br>
+                    Sabiendo todo esto, es importante reconocer que el trato injusto y desigual a las personas de
+                    diferentes géneros es erróneo y va en contra de los derechos humanos, debemos respetar los derechos
+                    de cualquier persona independientemente de cual sea su sexo o género.
+
+                </p>
+            </details>
+
+
+            <details class="subtema">
+                <summary class="noselect">3.3 Violencia de género</summary>
+                <p>El propósito de este apartado de información, es concientizar para ser capaces de identificar si
+                    sufrimos violencia y reconocer que todas las formas de violencia de género son inaceptables y que es
+                    posible romper ese ciclo. ¡Juntos y juntas podemos!
+                </p>
+                <p>Con <span class="remark">violencia de género</span> nos referimos al tipo de injusticia social, o
+                    bien, violencia estructural
+                    dirigida a las mujeres, con la finalidad de subyugarlas al género masculino. Podemos verla plasmada
+                    por medio de comportamientos, actitudes e ideas que están sustentadas en el mismo sistema el cual se
+                    basa en los estereotipos y prejuicios de género. <br><br>
+                    Para poder identificar si sufrimos violencia, primero habrá que saber cuáles son los tipos y las
+                    modalidades</p>
+                <p>El sexto artículo que aparece en la Ley General Acceso de las Mujeres a una Vida libre de Violencia,
+                    identifica y describe los distintos tipos y modalidades de violencia, que indica el entorno en que
+                    se desarrolla la violencia, si públicamente o de manera privada, así como las formas específicas que
+                    hay de agresión.</p>
+                <div class="wrapper"><img class="zoomable infog" src="../resources/images/3.3_1_info.jpg"
+                        alt="modalidades-de-la-violencia-1" id="info-331" />
+                    <img class="zoomable infog" src="../resources/images/3.3_2_info.jpg"
+                        alt="modalidades-de-la-violencia-2" id="info-332" />
+                </div>
+                <h4>Tipos de violencia</h4>
+                <ul>
+                    <li><span class="remark">Patrimonial: </span>Es cualquier acción para dañar a las pertenencias o
+                        propiedades de una persona. Puede presentarse como: robo, destrucción o retención de objetos,
+                        documentos personales, riquezas y/o derechos heredados de la víctima.
+                    </li>
+                    <li><span class="remark">Psicológica: </span>Cualquier suceso proveniente del agresor/a que llegue a
+                        perjudicar la seguridad o estabilidad psicológica de la víctima. Se manifiesta en abuso
+                        emocional/verbal, rechazo humillaciones, amenazas, prohibiciones, entre otros.</li>
+                    <li><span class="remark">Económica: </span>El agresor/a dificulta la estabilidad económica de la
+                        víctima, a través de limitaciones, controlando sus gastos e ingresos,con la brecha salarial.
+                    </li>
+                    <li><span class="remark">Física: </span>“Es cualquier acto que inflige daño no accidental, usando la
+                        fuerza física o algún tipo de arma u objeto, que pueda provocar o no lesiones ya sean internas,
+                        externas o ambas”. (INMUJERES, 2008)
+                    </li>
+                    <li><span class="remark">Sexual: </span>Considerada una forma de abuso sexual, es aquel acto que
+                        logra
+                        someter el cuerpo y la sexualidad de la víctima, pues atenta en contra de su libertad,
+                        integridad física y dignidad. </li>
+                </ul>
+
+                <h4>Derechos al sufrir violencia sexual</h4>
+                <p>La Norma Oficial Mexicana 046-SSA2-2005 Violencia familiar, sexual y contra las mujeres, establece
+                    ciertos criterios de atención de las personas víctimas de violencia, los cuales el personal
+                    encargado de la atención deberá seguir:
+                </p>
+                <ul>
+                    <li>Promover la estabilidad emocional de la persona garantizando la intervención en crisis y
+                        posterior atención psicológica.
+                    </li>
+                    <li>En caso de violación, se deberá ofrecer de inmediato y hasta en un máximo de 120 horas después
+                        del evento, la pastilla de anticoncepción de emergencia (PAE), previamente se dará información
+                        completa sobre la utilización de este método, a fin de que la persona tome una decisión libre e
+                        informada.
+                    </li>
+                    <li>Informar de los riesgos de posibles infecciones de transmisión sexual y de la prevención a
+                        través de la quimioprofilaxis
+                    </li>
+                    <li>Proporcionar consejería, seguimiento y orientación a la persona afectada sobre las instituciones
+                        públicas, sociales o privadas a las que puede acudir para recibir otros servicios.
+                    </li>
+                    <li>En caso de embarazo por violación, y previa autorización de la autoridad competente, se deberá
+                        prestar servicios de aborto médico a solicitud de la víctima interesada, en caso de ser menor de
+                        edad, a solicitud de su tutor.
+                    </li>
+                    <li>En todos los casos se deberá brindar a la víctima información completa sobre los posibles
+                        riesgos y consecuencias del aborto, a efecto de garantizar que la decisión de la víctima sea una
+                        decisión informada.
+                    </li>
+                </ul>
+                <h4>Estadísticas</h4>
+                <p>“Cuatro de cada 10 mujeres de 15 años y más han padecido hostigamiento, acoso, ofensas y abuso sexual
+                    en espacios comunitarios (calle, mercado, transporte, cine, iglesia, tienda, hospital, etcétera)”.
+                    (Endireh, 2006)
+                </p>
+                <div class="wrapper">
+                    <table class="paleBlueRows">
+                        <thead>
+                            <tr>
+                                <th>Tipo de Violencia</th>
+                                <th>Porcentaje a nivel nacional</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Física</td>
+                                <td>10.2</td>
+                            </tr>
+                            <tr>
+                                <td>Psicológica</td>
+                                <td>32.0</td>
+                            </tr>
+                            <tr>
+                                <td>Patrimonial</td>
+                                <td>5.8</td>
+                            </tr>
+                            <tr>
+                                <td>Económica</td>
+                                <td>22.9</td>
+                            </tr>
+                            <tr>
+                                <td>Sexual</td>
+                                <td>6.0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>(INMUJERES. Elaborado a partir de INEGI, Endireh, 2006.)</p>
+                </div>
+                <p>Después de hacer conciencia acerca de estos temas, debemos reconocer que todas las formas de
+                    violencia de género son inaceptables.</p>
+
+                <div class="wrapper">
+                    <img class="zoomable infog" src="./resources/images/3.3_3_info.jpg"
+                        alt="ejemplos-tipos-de-violencia" id="info-333" />
+                </div>
+
+            </details>
+
+        </div>
+
+        <div id="violencia" class="section">
+            <h2 class="section-title">4. Violencia y Seguridad personal</h2>
+            <p>La importancia de informarnos para protegernos radica en poder identificar en qué momento y
+                de qué manera actuar ante cualquier situación de violencia para de esta manera no permitir que se lleven
+                a cabo dichas situaciones. No estás solo/a.</p>
+
+
+            <details class="subtema">
+                <summary class="noselect">4.1 Violencia</summary>
+                <p>Es indispensable tener conocimiento y saber reconocer cualquier tipo de violencia, ya
+                    sea pasiva o
+                    agresiva. Si has sufrido algún tipo de violencia, no dudes en pedir apoyo, no te quedes callada/o.
+                </p>
+
+
+                <p>La Organización Mundial de la Salud (OMS), afirmó que la <span class="remark">violencia</span> como
+                    concepto en sí,
+                    es el “Uso deliberado de la fuerza física, ya sea en grado de amenaza, contra uno/a mismo/a, otra
+                    persona, grupo o comunidad, que cause o tenga muchas probabilidades de causar lesiones, muerte,
+                    daños psicológicos, trastornos del desarrollo o privaciones”.
+                </p>
+
+                <p>La <span class="remark">violencia sexual</span> se basa en aquellos actos capaces de
+                    dañar el cuerpo y sexualidad de
+                    una persona sin su consentimiento, por lo tanto atente dignidad e integridad.
+                </p>
+
+                <p>De acuerdo con la UNICEF:
+                </p>
+
+                <ul>
+                    <li>19.2 millones de mujeres fueron obligadas en algún momento a algún tipo de hostigamiento, acoso,
+                        abuso, intimidación, etc</li>
+                    <li>En el año 2018, 40,303 mujeres en México fueron víctimas de una violación sexual</li>
+                    <li> Aproximadamente el 32.8% de las adolescentes entre 15 - 17 ha sido víctima de cualquier forma
+                        de violencia sexual pública.</li>
+                </ul>
+                <p>Otra forma de violencia que existe es el <span class="remark">incesto</span>, consiste
+                    en las relaciones sexuales
+                    que realizan entre familiares, es decir, que comparten un lazo consanguíneo directo.
+                </p>
+                <p>Cuando una persona constantemente hostiga, molesta o persigue a alguien más, está
+                    ejerciendo algún tipo de <span class="remark">acoso</span>. Existen diferentes tipos de acoso:
+                    Físico, Sexual, Verbal,
+                    Psicológico, Social, Escolar y Ciberbullying.</p>
+                <p>Una <span class="remark">agresión sexual</span> o abuso consta de cualquier tipo de
+                    contacto sexual no consentido.
+                    Se le llama agresión sexual a la presión (física o emocional) de una persona a otra para realizar
+                    actos de índole sexual. La <span class="remark">violación</span> se define como la fuerza o presión
+                    que una persona ejerce hacia
+                    otra para obligarla a tener sexo
+                    (penetración vaginal, oral o anal forzada por una parte del cuerpo u objeto).</p>
+                <p>Las siguientes situaciones son algunos ejemplos considerados como abuso sexual, acoso o
+                    agresión:</p>
+                <ul>
+                    <li>Cuando alguien enseña sus genitales o somete a verlos o tocarlos.
+                    </li>
+                    <li>Que alguna persona frote sin consentimiento previo sus genitales contra otra persona (ocurre
+                        mucho en lugares públicos como el metro).
+                    </li>
+                    <li>Que toquen alguna parte del cuerpo como senos, glúteos o genitales sin consentimiento.</li>
+                </ul>
+                <p>La UNICEF menciona que la <span class="remark">explotación sexual</span> “se refiere a
+                    todo abuso o amenaza en una
+                    situación de vulnerabilidad, de relación de fuerza desigual, con propósitos sexuales, a los efectos,
+                    de aprovecharse material, social o políticamente de la explotación sexual de otra persona”.
+                </p>
+                <p>Según El Financiero, México es uno de los países que cumplen con mayor explotación
+                    sexual, sobre todo porque abarca la infantil, siendo entre 80 y 85 mil niños y niñas
+                    aproximadamente.</p>
+                <h4>¿Qué hacer si paso por alguna de las situaciones anteriores?</h4>
+                <p>Si algunas vez experimentas estas situaciones, es importante que de inmediato busques
+                    ayuda para proteger tu integridad, si eres menor de edad, puedes comunicarle lo que pasa a un adulto
+                    de confianza, para que se lo haga saber a las autoridades; en cambio, si eres mayor o crees que ya
+                    eres un poco más consciente de las situaciones, puedes buscar ayuda y directamente comunicarlo a las
+                    autoridades.</p>
+                <p>Como primera instancia, si estás en situación de violencia, siempre puedes llamar al 911
+                    sin importar en qué parte del mundo estés. El número 911 es uno de los modos para atender llamadas
+                    acerca de emergencias relacionadas a distintos tipos de violencia, como: abuso, acoso sexual,
+                    violación, violencia de pareja, violencia familiar, etc.</p>
+                <p>Así también, si estás experimentando algún tipo de violencia y requieres asesoría o
+                    cualquier otro apoyo, siempre puedes consultar a los sitios:
+                </p>
+                <ul>
+                    <li> Línea Mujeres de Locatel Teléfono: (55) 56 58 11 11, Opción 5
+                    </li>
+                    <li>Si sufres violencia digital o algún ciberdelito puedes denunciar al 088 de manera segura y
+                        confidencial. Conoce más en <a href="https://www.gob.mx/gncertmx" class="app-link"
+                            target="_blank" rel="noopener">la página del gobierno</a>
+                    </li>
+                    <li>Centro de atención ciudadana La Línea de la Vida para atención a problemas relacionados con la
+                        salud mental o adicciones: llama al <a href="tel:+52 01800 911 2000" class="app-link">01800 911
+                            2000</a> También
+                        puedes
+                        escribir a <a class="app-link"
+                            href="mailto:lalineadelavida@salud.gob.mx">lalineadelavida@salud.gob.mx</a>
+                    </li>
+                    <li> Centros de Justicia para las Mujeres (CJM). Los CJM son una iniciativa de la Comisión Nacional
+                        para Prevenir y Erradicar la Violencia contra las Mujeres (Conavim), de la Secretaría de
+                        Gobernación (Segob). Puede consultar su directorio aquí:
+                        <a href="https://www.gob.mx/cms/uploads/attachment/file/335501/CJM_Ubicacion_y_Datos_13may18.pdf"
+                            class="app-link" target="_blank" rel="noopener">Ubicación_y_datos.pdf</a>
+
+                    </li>
+                    <li>Institutos Estatales de Atención a la Violencia contra las Mujeres del INMUJERES
+                        <a href="https://bit.ly/3m3yRfR" class="app-link" target="_blank" rel="noopener">Directorio
+                            IMEF</a>
+                    </li>
+                    <li>Servicios de Atención a Mujeres, Niñas, Niños y Adolescentes en situación de violencia
+                        <a href="https://bit.ly/3iKNbJw" class="app-link" target="_blank" rel="noopener">Servicios de
+                            Atención a Mujeres, Niñas, Niños y Adolescentes en situación de violencia.</a>
+                    </li>
+                    <li> Micrositio ENAPEA Sitios de Interés: <a href="https://bit.ly/3iKNEvg" class="app-link"
+                            target="_blank" rel="noopener">Direcorio ENAPEA</a></li>
+                    <li>Servicios Especializados de Atención a la Violencia: <a href="https://bit.ly/3g6km8C"
+                            class="app-link" target="_blank" rel="noopener">Servicios Especializados de Atención a la
+                            Violencia</a> </li>
+                </ul>
+            </details>
+
+            <details class="subtema">
+                <summary class="noselect">4.2 Consentimiento, privacidad e integridad física
+                </summary>
+                <p>En este apartado te enseñamos los conceptos básicos para que aprendas a ser capaz de
+                    poner límites y salvaguardar tu integridad como persona al no dejar que ninguna persona ajena atente
+                    en contra tuya</p>
+                <div class="wrapper"><img class="zoomable" src="../resources/images/no-significa-no.png"
+                        alt="no-significa-no" id="no-sign-no" />
+                </div>
+                <p>El <span class="remark">consentimiento</span> se define como un tipo de acuerdo para ser
+                    partícipe de algo y
+                    confirmar que la o las personas participantes quieren hacerlo. El acuerdo se hace antes de realizar
+                    la acción.
+                </p>
+                <p>Consentir y pedir consentimiento consiste en establecer nuestros límites personales y
+                    saber respetar lo de las demás personas. Sin consentimiento, cualquier actividad (como las
+                    relaciones sexuales, caricias, besos, entre otros) son agresiones y violaciones a los derechos
+                    humanos.
+                </p>
+                <p>El consentimiento debe tener determinadas características:
+                </p>
+                <ul>
+                    <li><b>Se concede libremente</b>: Es una acción que debe darse sin presiones, manipulaciones,
+                        amenazas,
+                        etc. No se puede consentir algo estando bajo efectos de drogas, alcohol o estando inconsciente.
+                    </li>
+                    <li><b>Se da estando informado/a</b>: Debe saberse toda la información y las condiciones al
+                        respecto.
+                        Ejemplo, si alguien dice que al tener sexo será con protección y al final no utiliza, la acción
+                        no fue completamente consensuada.</li>
+                    <li><b>Es específico</b>: Ser consciente de cosas específicas, consentir una cosa no significa que
+                        estés de
+                        acuerdo con hacer otra. </li>
+                    <li><b>Es reversible</b>: El consentimiento siempre puede variar dependiendo de cómo se dé la
+                        situación,
+                        siempre se puede retirar y cambiar de opinión en cualquier momento.</li>
+                </ul>
+                <p>Usar el consentimiento crea espacios seguros y cómodos.</p>
+                <p>Algunas medidas sencillas que podemos tomar al poner límites son: decir explícitamente
+                    “no”, “no quiero”, “no lo haré”, o un simple “vete”. Cuando una persona acepta llevar a cabo algo,
+                    pero transmite preocupación o inseguridad, no hay consentimiento; un “no lo sé” o el silencio,
+                    también significa que no hay consentimiento.
+                </p>
+                <p>Por el contrario, cuando sí queremos consentir una acción, se nota un sentimiento de
+                    motivación y entusiasmo,hay que asegurarnos de recibir un “sí” activo o algún tipo de afirmación. Es
+                    importante ser directo y preguntar.
+                </p>
+                <p>La <span class="remark">privacidad</span> se entiende como la forma en la que cada uno
+                    relaciona su vida personal
+                    con los demás; sin embargo, cuando hablamos de privacidad, también nos referimos a un ámbito físico,
+                    ejemplo: que alguien más toque nuestro cuerpo sin consentimiento, además de ser violencia, también
+                    es una violación e invasión a la privacidad.
+                </p>
+                <p>Así como podemos elegir compartir nuestros pensamientos, secretos y experiencias con
+                    quien queramos, también podemos hacerlo con nuestro cuerpo.</p>
+                <p>La <span class="remark">integridad física</span> consta de los derechos que las personas
+                    tenemos a ser protegidas en
+                    casos de agresiones, abusos o lesiones que pueden dañar al cuerpo humano o afectar a la salud. Así
+                    como también, tenemos <span class="remark">derechos sobre nuestro propio cuerpo</span>. Tenemos
+                    derecho a decidir qué hacer
+                    con nuestro cuerpo (bajo nuestro propio criterio) sin ser juzgados. Siendo menor de edad, es
+                    recomendable consultar con algún adulto de confianza para salvaguardar nuestra integridad, seguridad
+                    y en algunos casos privacidad, de mejor manera.
+                </p>
+            </details>
+
+            <details class="subtema">
+                <summary class="noselect">4.3 Uso seguro de tecnologías de información y comunicación (TIC)
+                </summary>
+                <p>Es necesario comprender el alcance y la funcionalidad que pueden tener medios de
+                    comunicación como las redes sociales y el cómo emplearlos de manera responsable y segura, de forma
+                    que nuestra seguridad no se vea vulnerabilizada.
+                </p>
+
+
+
+                <div class="wrapper"><img class="zoomable infog" src="../resources/images/4.3_info.png"
+                        alt="Uso-de-las-tics" id="info-43" />
+                </div>
+
+
+                <p>En caso de que algún suceso ocurrido hacia ti a través de las redes sociales te haga
+                    sentir incómodo o incómoda, siempre puedes consultarlo con un adulto para que te asesore de la mejor
+                    manera.
+                </p>
+                <p>Siempre habrá que tener presente que si no cuidamos o le damos más importancia al uso
+                    (en cuanto a lo que compartimos) del internet y las redes sociales, podemos llegar a experimentar
+                    consecuencias graves. La forma en que utilizamos estas herramientas influye directa e indirectamente
+                    en nuestra vida, en cómo nos comportamos, lo que pensamos, nuestra vida social, etc.
+                </p>
+                <p>Y si eres o conoces a alguien que es víctima de ciberacoso, es recomendable hacer lo
+                    siguiente:</p>
+                <ul>
+                    <li>No interactuar ni responder, en su lugar, bloquear al atacante
+                    </li>
+                    <li>Guardar la evidencia para utilizarla en caso de ser necesaria
+                    </li>
+                    <li>Reportar el abuso a la plataforma y asimismo, reportar el perfil de la persona
+                    </li>
+                    <li>Involucrar a las autoridades correspondientes si es necesario
+                    </li>
+                </ul>
+                <p>Los medios sexualmente explícitos como la pornografía y el sexting pueden ser
+                    peligrosos, ya que principalmente la pornografía suele representar a las mujeres, los hombres y las
+                    relaciones sexuales de manera irreal e incorrecta, esto puede provocar estereotipos de género, baja
+                    autoestima al ver cuerpos hegemónicos y no tan “reales”, promover actitudes agresivas dentro de lo
+                    sexual, disminución en la satisfacción sexual, entre otras.
+                </p>
+                <p><span class="remark">Pornografía</span>: Se define como la descripción o representación
+                    abierta y explicita de
+                    escenas de actividad sexual
+                </p>
+                <p><span class="remark">Sexting</span>: Es la actividad de intercambio privado de fotos,
+                    video o mensajes de índole sexual y erótico que son autoproducidas a través de herramientas de
+                    comunicación como redes sociales, cualquier aplicación de mensajerías instantánea, etc.
+                </p>
+            </details>
+        </div>
+
+        <div id="salud" class="section">
+            <h2 class="section-title">5. Habilidades para la salud y bienestar</h2>
+            <p>El bienestar es la experimentación de salud, felicidad y prosperidad. Incluye tener buena
+                salud mental, sentirse altamente satisfecho con la vida, tener un sentido de significado o propósito.
+                Diviértete aprendiendo.</p>
+
+            <details class="subtema">
+                <summary class="noselect">5.1 Influencia de normas y grupos de pares en la conducta sexual</summary>
+                <h4>¿Qué es la presión de los pares?</h4>
+                <p>
+                    Es la fuerza, negativa o positiva, que ejerce un determinado grupo hacia una persona, Esta misma
+                    presión va a producir en muchas ocasiones, que el adolescente adopte o lleve a cabo conductas con
+                    las que no siempre estará completamente de acuerdo.
+                </p>
+                <p>Es posible que desees ser como tus pares, aun cuando no te estén presionando. Es normal
+                    querer encajar <br><br>
+                    Los pares afectan nuestra vida incluso de manera inconsciente, ya que con el simple hecho de pasar
+                    mucho tiempo en un grupo, empiezas a aprender costumbres y maneras de comportarse, al mismo tiempo
+                    que ellos aprenden de ti. Los pares pueden tener una influencia positiva mutua. Tal vez un niño de
+                    la clase de ciencias te enseñó una manera sencilla de recordar los planetas del sistema solar.
+                    Quizás admires a un amigo porque es bueno en los deportes y tu intentes parecerte más a él. Quizás
+                    entusiasmaste a otros con tu nuevo libro favorito y ahora todos lo están leyendo.
+                </p>
+                <p>Pero, así como pueden influir de manera positiva, también lo pueden hacer de manera
+                    negativa. Pueden influirnos a hacer cosas que no son tan buenas, como tomar sustancias, alcohol, o a
+                    realizar prácticas que ponen en riesgo nuestra salud y eventualmente, nuestra vida.
+                </p>
+                <h4>¿Cómo influyen los grupos de pares en mis decisiones sexuales?
+                </h4>
+                <p>Debido a la influencia que generan estos grupos en nuestra vida, es muy posible que nos
+                    dejemos llevar por lo que nos dicen e incitan a hacer, lo cual incluye nuestra vida sexual. Esto no
+                    es necesariamente malo, ya que, en muchos casos, nuestros padres actúan como par, y si se tiene la
+                    educación necesaria, pueden influir de manera positiva en la toma de decisiones y actitudes
+                    relacionadas a nuestra sexualidad.
+
+                </p>
+                <p>Una buena influencia de pares puede, por ejemplo, enseñarnos sobre el uso del condón,
+                    sobre los varios métodos anticonceptivos y demás temas relacionados a la sexualidad; e incluso si no
+                    nos enseña, puede guiarnos para encontrar la información por nuestra propia cuenta. Sin embargo, una
+                    mala influencia puede darnos la idea de que el uso del condón no es necesario, o que la vida sexual
+                    es algo poco importante que se puede tomar como un juego y que las ETS (enfermedades de transmisión
+                    sexual) no son reales o son irrelevantes.
+                </p>
+                <h4>Estrategias para desafiar las influencias negativas de los grupos de pares
+                </h4>
+                <p>Siempre es importante contar con una buena educación y confiar plenamente en nuestros
+                    conocimientos. Si dudamos de algo o no conocemos la respuesta a cierta cuestión, nunca es malo
+                    preguntar e investigar un poco para quitarnos una idea errónea de la cabeza
+                </p>
+                <ul>
+                    <li>Debes saber lo que es correcto. Confía en tus sentimientos sobre lo que está bien y lo
+                        que está mal. Pregúntate: "¿Esto es lo correcto?". Probablemente, ya sepas la respuesta. Cuando
+                        sabes qué es lo correcto, te ayuda a mantenerte firme.
+                    </li>
+                    <li>Ten un amigo que te apoye. Puede ser de mucha ayuda tener al menos un par que también
+                        esté dispuesto a decir "no". Esto reduce enormemente el poder de la presión de los pares. Es muy
+                        bueno tener amigos que te apoyen cuando no quieres hacer algo.
+                    </li>
+                    <li> Escoge buenos amigos. Tal vez uno de tus padres o un maestro te haya dicho: "Escoge
+                        bien a tus amigos". La presión de los pares es uno de los motivos por los que lo dicen. Si
+                        escoges
+                        amigos que no usan drogas, no faltan a clase, no fuman y no les mienten a sus padres,
+                        probablemente
+                        tú tampoco hagas estas cosas, aunque otros niños sí las hagan.
+                    </li>
+                    <li>Ayuda a un amigo. Tal vez te des cuenta de que un amigo tiene problemas para decir que
+                        no ante la presión de los pares. Puedes ayudar diciendo: "Yo estoy contigo. Vamos."
+
+                    </li>
+                    <li> Aléjate. Si te enfrentas a la presión de tus pares cuando estás solo, aún hay cosas que
+                        puedes hacer. Puedes alejarte de los niños que te presionan para que hagas cosas que sabes que
+                        no
+                        están bien. Puedes decirles "no" y simplemente alejarte. Mejor aún, busca amigos y compañeros de
+                        clase con los que puedas pasar el rato.
+                    </li>
+                    <li>Pídele consejo a un adulto. Si te enfrentas a la presión de tus pares y te es difícil
+                        manejarla, pídele consejos a un adulto en quien confíes. Habla con uno de tus padres, un maestro
+                        o
+                        un consejero escolar. Puede ayudarte a sentirte mucho mejor. Además, ellos pueden ayudarte a
+                        prepararte para la siguiente vez que debas enfrentar la presión de tus pares.
+                    </li>
+                </ul>
+
+            </details>
+
+            <details class="subtema">
+                <summary class="noselect">5.2 Toma de decisiones</summary>
+                <p>La toma de decisiones es un proceso que atraviesan las personas cuando deben elegir
+                    entre distintas opciones. Diariamente cada individuo está ante situaciones en las que debe optar por
+                    algo, y esa decisión no siempre resulta simple.</p>
+                <p>En el ámbito de la conducta y psiquis humana este es un tema fundamental, ya que las
+                    personas no responden de la misma forma a una situación problemática debido a diversos elementos
+                    como la estructura de personalidad, el desarrollo, la madurez y la etapa de la vida en la que se
+                    esté.
+                </p>
+                <div class="wrapper"><img class="infog zoomable" src="../resources/images/5.2_info.jpg"
+                        alt="toma-de-decisiones" id="info-52" />
+                </div>
+                <h4>Tipos de toma de decisiones</h4>
+                <p>El proceso de toma de decisiones se da de manera periódica y constante en la vida de un
+                    individuo. Muchas veces responde a conflictos que se presentan de manera diaria y otros son
+                    ocasionales.</p>
+                <p>Según las diferentes características, el proceso de toma de decisiones puede ser:</p>
+                <ul>
+                    <li><span class="remark">Racional</span>: Proceso en el que se analizan las posibles alternativas
+                        utilizando el raciocinio en base a fuentes y pruebas comprobables.</li>
+                    <li><span class="remark">Intuitivo</span>: Proceso en el que el individuo toma en cuenta la
+                        intuición y la experiencia personal para volcarse hacia alguna de las alternativas.
+                    </li>
+                    <li><span class="remark">Personal</span>: Proceso de toma de decisión de un individuo dentro del
+                        ámbito privado.</li>
+                    <li><span class="remark">De rutina</span>: Proceso que realiza un individuo o grupo de manera
+                        periódica, suelen ser situaciones que no resisten mucho análisis ni tratan sobre temas
+                        complejos.</li>
+                    <li><span class="remark">De emergencia</span>: Proceso que un individuo o grupo realiza para tomar
+                        una decisión frente a una situación nueva y excepcional.
+                    </li>
+                    <li><span class="remark">De grupo</span>: Proceso que se realiza en conjunto entre los miembros de
+                        un grupo en el que prima el consenso y se toma la alternativa que genera más adhesión.
+                    </li>
+                    <li><span class="remark">Individual</span>: Proceso que ejecuta una persona de manera autónoma
+                        dentro
+                        de un contexto como una organización o empresa.</li>
+                </ul>
+
+                <h4>Características de la toma de decisiones</h4>
+                <ul>
+                    <li><span class="remark">Claridad</span>: Refiere a la importancia de tener en claro el objetivo a
+                        alcanzar en el proceso y la situación a resolver.
+                    </li>
+                    <li><span class="remark">Impacto</span>: Refiere a las consecuencias que puede traer cada una de las
+                        alternativas a elegir. Es importante tener en cuenta que todas las opciones tendrán
+                        consecuencias, por lo que se debe elegir la alternativa que genere el impacto más favorable.
+                    </li>
+                    <li><span class="remark"> Periodicidad</span>: Refiere a la regularidad con la que los individuos o
+                        grupos toman decisiones, hay algunas decisiones que son diarias, y otras que se dan cada un
+                        cierto período de tiempo que puede ser aleatorio o determinado.</li>
+                    <li><span class="remark"> Actores</span>Refiere a los individuos que forman parte del proceso de
+                        toma de decisiones, que pueden ser tomadas de manera individual o grupal según cada caso.
+                    </li>
+                    <li><span class="remark">Reversibilidad</span>: Refiere a si se puede o no dar marcha atrás en la
+                        elección de una alternativa. Mientras más irreversibles sean las consecuencias de alguna de las
+                        alternativas a elegir, más atención se deberá prestar al proceso de decisión.</li>
+                </ul>
+                <h4>Importancia de la toma de decisiones</h4>
+                <p>Tomar decisiones es uno de los procesos más importantes en la vida de un ser humano, ya
+                    que es a través de las elecciones realizadas que el individuo va marcando su camino personal y
+                    profesional. Para esto es recomendable delimitar objetivos claros sobre los que basar las decisiones
+                    diarias y reconocer cuál es la manera más efectiva para llevar adelante el proceso.</p>
+                <p>Se debe trabajar en el miedo al error, la tolerancia a la frustración y a la
+                    incertidumbre, y en el reconocimiento del deseo para lograr los objetivos personales o profesionales
+                    propuestos.</p>
+            </details>
+
+            <details class="subtema">
+                <summary class="noselect">5.3 Habilidades de comunicación, rechazo y negociación</summary>
+                <p>La comunicación es el proceso por medio del cual se transmite información de un ente a
+                    otro. Es el intercambio de sentimientos, opiniones o cualquier otro tipo de información mediante el
+                    habla, escritura u otras señales.</p>
+                <p>Más allá de la personalidad de cada persona, hay muchos otros elementos que pueden
+                    determinar si las conversaciones y las interacciones sociales transcurren sin problemas o no. Buena
+                    parte de esto tiene que ver con las habilidades comunicativas básicas, un conjunto de aptitudes que
+                    hay que poner en práctica al relacionarnos con los demás para que los diálogos fluyan de la manera
+                    adecuada, sin dar pie a malentendidos ni generar resistencias innecesarias.</p>
+                <p>Es por ello por lo que comunicarse bien logrará que podamos gozar de unas mejores
+                    relaciones en el trabajo, relaciones de pareja, amistades, familia y en general, con todas las
+                    personas que nos rodean.
+                </p>
+                <p>Principales habilidades comunicativas a las que hay que prestar atención para enriquecer
+                    las relaciones personales</p>
+                <ul>
+                    <li><span class="remark">Asertividad</span>:
+                        La asertividad es el núcleo de las habilidades comunicativas básicas, y consiste en la capacidad
+                        de
+                        encontrar un equilibrio entre lo que se quiere decir y la consideración de los intereses y
+                        posibles
+                        vulnerabilidades del interlocutor. Es decir, que quien tiene un buen nivel de asertividad, es
+                        capaz
+                        de encontrar maneras respetuosas de decir algo que es relevante comunicar a pesar de que puede
+                        no
+                        ser agradable para el interlocutor, y de hacerlo de la manera menos dolorosa posible.</li>
+                    <li><span class="remark">Contacto visual</span>:
+                        El contacto visual es básico, y es el primer paso a la hora de establecer una conversación cara
+                        a cara que transcurra de manera fluida. No mirarse a los ojos a pesar de poder hacerlo (porque
+                        se tiene acceso visual a la cara de la otra persona) no solo significa echar a perder la
+                        oportunidad de conectar con alguien; además, probablemente creará un ambiente enrarecido, en el
+                        que hay desconfianza y emergen las inseguridades.
+                    </li>
+                    <li>
+                        <span class="remark">Adopción de la perspectiva del otro</span>:
+                        Esta habilidad comunicativa tiene que ver con lo que conocemos como teoría de la mente, que es
+                        la capacidad de saber en todo momento qué saben otros sujetos que no es uno mismo.
+                        Sin embargo, más allá del hecho de saber el conocimiento del que disponen los demás en cada
+                        momento (es decir, sin confundir esto con lo que sabe uno mismo), es muy importante ser capaz de
+                        tener en mente las motivaciones e intereses de los demás al tener una conversación.
+                    </li>
+                    <li>
+                        <span class="remark">Coherencia emoción-mensaje</span>:
+                        Esta es una de las habilidades comunicativas básicas, ya que los errores en este aspecto pueden
+                        degradar rápidamente el transcurso de una conversación. Consiste en mantener una coherencia
+                        entre lo que se dice y el modo en el que transmitimos emociones tanto desde nuestros gestos como
+                        desde la modulación de la voz.
+                    </li>
+                    <li>
+                        <span class="remark">Capacidad negociadora</span>:
+                        Poner en práctica la capacidad negociadora no significa implicarse en una negociación formal,
+                        sino que ocurre cada vez que nos involucramos en un diálogo en el que hay al menos dos personas
+                        con intereses parcialmente enfrentados. Implica rechazar las formas hostiles de comunicar este
+                        choque de intereses, y apostar por mantener el foco en todo momento en lo que ambas partes
+                        tienen en común, para llegar a acuerdos haciendo que todos pierdan algo y ganen algo a la vez.
+                    </li>
+                    <li>
+                        <span class="remark">Escucha activa</span>:
+                        La escucha activa es algo relativamente sencillo tender, espontáneamente, a dar muestras de que
+                        estamos escuchando lo que la otra persona nos dice. Implica afirmar con la cabeza de vez en
+                        cuando, mostrar reacciones ante lo que la otra persona dice, hacer pequeños comentarios que
+                        expresen interés pero que no lleguen a interrumpir el transcurso del diálogo, etc.
+                    </li>
+                    <li>
+                        <span class="remark">Empatía</span>:
+                        La empatía tiene que ver más con lo que se muestra y se hace que con lo que se dice. Consiste en
+                        la capacidad para hacer que la otra persona vea que lo que comunica es comprendido por nosotros
+                        a un nivel afectivo.
+                    </li>
+                    <li>
+                        <span class="remark">Ante los nervios, adopta un rol activo y pregunta</span>
+                        Por paradójico que parezca, si sientes nervios al participar en una conversación con alguien que
+                        no conoces bien o que te impone respeto, una buena manera de mantener el estrés a raya es no
+                        mantener una actitud pasiva, y plantear preguntas, interesarte por las ideas y opiniones del
+                        otro.
+                        <br><br>¿Por qué? Porque si te mantienes sin hacer nada, es más fácil que sientas más presión al
+                        no controlar absolutamente nada de lo que ocurre en el diálogo, mientras que, si haces pregunta,
+                        hablando relativamente poco serás capaz de hacer que la conversación vaya por los derroteros que
+                        te interesan, y que haya muchos menos momentos en los que te sientas bajo lupa.
+
+                    </li>
+                    <li>
+                        <span class="remark">Utiliza el humor</span>:
+                        Esta es una de las habilidades comunicativas básicas, el humor es un gran aliado para crear
+                        contextos de comunicación amigables y en los que no se acumula la tensión.
+                    </li>
+                    <li><span class="remark">Prevé los momentos de incomodidad de la otra persona</span>:
+                        Hay ideas o comentarios que, cuando se dicen en voz alta, pueden ser interpretados como un
+                        ataque. Por eso, para mejorar las habilidades comunicativas hay que acostumbrarse a prever esto
+                        clase de problemas, para utilizar las formulaciones lingüísticas adecuadas y dar las
+                        explicaciones necesarias.
+                    </li>
+                    <li>
+                        <span class="remark">Evita las posturas a la defensiva</span>:
+                        Si quieres transmitir honestidad y ganas de tender puentes, no utilices un lenguaje no verbal
+                        que dice lo contrario. No cruces los brazos ante tu pecho todo el rato, ni te posiciones de lado
+                        al hablar con alguien, no mantengas una postura tensa, etc.
+                    </li>
+                    <li>
+                        <span class="remark">Ten en mente las ideas importantes a comunicar, pero no memorices</span>:
+                        Excepto en el caso de los discursos dados ante un público, memorizar frases enteras de lo que se
+                        tiene que decir resulta contraproducente. En vez de eso, recuerda ideas básicas, conceptos que
+                        resuman lo que tienes que expresar, e improvisa en tu manera de comunicarlos.
+                    </li>
+                </ul>
+            </details>
+
+            <details class="subtema">
+                <summary class="noselect">5.4 Alfabetización mediática y sexualidad </summary>
+                <p>Según la UNESCO, la alfabetización mediática es el conjunto de habilidades,
+                    conocimientos y comprensión necesarios para que las personas interactúen con la información y los
+                    medios de comunicación.
+                </p>
+                <p>Dicho de otra manera: es un proceso de aprendizaje de habilidades y herramientas que nos
+                    permiten adoptar una actitud crítica hacia el contenido que consumimos. La alfabetización implica
+                    <span class="remark">definir, localizar, evaluar, organizar, juzgar y procesar la información que
+                        recibimos y/o emitimos</span>.
+                </p>
+                <p>La alfabetización mediática, por lo tanto, se trata de ayudar a las personas a adquirir
+                    competencias que les permitan ser críticas y alfabetizadas en todos los formatos mediáticos para que
+                    controlen la interpretación de lo que ven o escuchan en lugar de dejar que la interpretación las
+                    controle.
+                </p>
+                <h4>Los tabúes en la sexualidad
+                </h4>
+                <p>La ausencia de educación sexual hace que se mantengan y se creen mitos, ¡estereotipos y
+                    que se creen tabúes en la sexualidad que dificultan que nos relacionemos de manera natural, positiva
+                    y saludable!
+                    Se habla de sexualidad desde la parte más biológica, y normalmente desde los riesgos y peligros
+                    existentes.
+                </p>
+                <p>En cambio, no se habla de autoconocimiento, de autoestima, de las emociones relacionadas
+                    con la sexualidad, de las relaciones con otros e intimidad, de la aceptación y naturalidad de uno
+                    mismo y de los demás.
+                </p>
+                <h4>Para tener en cuenta</h4>
+                <p>Hablar con los jóvenes – Tenemos miedo de que no entiendan de lo que se habla, o que les
+                    pueda perjudicar, cuando ellos lo viven de la forma más natural, y el problema viene por nuestros
+                    propios condicionantes y educación, ya que castigamos conductas en vez de hablar y explicar de una
+                    manera adaptada a cada edad, algo tan natural como es la sexualidad.
+                </p>
+            </details>
+
+
+            <details class="subtema">
+                <summary class="noselect">5.5 Como encontrar ayuda y apoyo</summary>
+                <p>Todas las personas tienen derecho a recibir asistencia asequible, objetiva y respetuosa
+                    que mantenga la confidencialidad y proteja la privacidad.
+                    <br><br>Tarde o temprano, toda familia necesita ayuda. Aunque pedir no siempre sea fácil, reconocer
+                    las
+                    necesidades de su familia y buscar apoyo en otras personas es una señal de fortaleza. Abogar por su
+                    familia lo ayuda a desarrollar confianza en sí mismo y persistencia.
+                </p>
+                <h4>Cómo Pedir Ayuda:</h4>
+                <ul>
+                    <li> Observe lo que otros están haciendo y hacia dónde van.</li>
+                    <li>Escuche cuando otros hablan de recursos que usted podría necesitar.</li>
+                    <li>Pregunte. Sea persistente. Siga intentándolo.</li>
+                </ul>
+                <h4>Qué preguntar:</h4>
+                <ul>
+                    <li>Sea claro sobre lo que necesita.</li>
+                    <li>Sea razonable. Asegúrese de que le está pidiendo a la persona que tiene la capacidad o el
+                        recurso para darle.
+                    </li>
+                    <li>Sea cortés, pero firme.
+                    </li>
+                </ul>
+                <h4>A quién pedirle ayuda:</h4>
+                <ul>
+                    <li> Los amigos y parientes son una buena fuente de ayuda.
+                    </li>
+                    <li> Los conocidos pueden proporcionar un apoyo igualmente importante.
+                    </li>
+                    <li>Los profesionales proporcionan aún otro tipo de asistencia.
+                    </li>
+                </ul>
+                <p>Una herramienta clave que tiene para satisfacer las necesidades de su familia es la
+                    capacidad de encontrar información, recursos y solicitar ayuda.
+                </p>
+            </details>
+        </div>
+
+        <div id="cuerpo" class="section">
+            <h2 class="section-title">6. El cuerpo humano y el desarrollo</h2>
+            <p>Las etapas del desarrollo humano son una serie de cambios biológicos, físicos, emocionales y
+                sociales que atraviesan las personas a lo largo de su trayectoria vital. ¡Vamos a aprender!</p>
+            <details class="subtema">
+                <summary class="noselect">6.1 Anatomía y fisiología sexual y reproductiva
+                </summary>
+                <p>Se incluyen los órganos sexuales que están fuera del cuerpo y los órganos reproductivos
+                    y sexuales que están dentro del cuerpo.
+                </p>
+                <p>El cuerpo es la dimensión física a través de la cual existen los seres humanos. Es una
+                    herramienta para manifestar los sentidos, las emociones y el placer. El cuerpo siente, tiene
+                    necesidades, exige amor propio y es el lugar que permite la reproducción de la especie.</p>
+                <p>Quizá hayas escuchado que el cerebro es el órgano sexual más importante. Esto se debe a
+                    que es el órgano que controla la respuesta sexual de las personas, es decir, cómo reacciona tu
+                    cuerpo ante la excitación, el sexo o la masturbación. Además, es donde se alojan tus fantasías y tu
+                    identidad sexual.
+                </p>
+                <p>Con sus millones de terminaciones nerviosas, la piel también puede ser considerada un
+                    gran órgano sexual. Las partes del cuerpo que, al tocarlas, generan excitación se denominan "zonas
+                    erógenas".</p>
+                <h4>¿Cuáles son las partes de la anatomía sexual femenina externa?</h4>
+                <p><span class="remark">Labios vaginales</span>: Los labios vaginales son pliegues de piel
+                    alrededor de la abertura
+                    vaginal. Los labios mayores (labios externos) generalmente son carnosos y están cubiertos de vello
+                    púbico. Los labios menores (labios internos) están dentro de los externos. Empiezan en el clítoris y
+                    terminan debajo de la abertura vaginal.
+                </p>
+                <p><span class="remark">Clítoris</span>: La punta del clítoris se encuentra en la parte
+                    superior de la vulva, donde se
+                    juntan los labios internos. Su tamaño varía de persona a persona: puede ser pequeño como una arveja
+                    o tan grande como un pulgar. Su punta del clítoris está cubierta por el capuchón del clítoris. Tiene
+                    miles de terminaciones nerviosas, más que cualquier otra parte del cuerpo humano. ¿Y cuál es su
+                    único propósito? Hacerte sentir bien.
+                </p>
+                <p><span class="remark">Orificio uretral</span>: El orificio uretral es una pequeña
+                    abertura por donde se orina que
+                    está ubicada justo debajo del clítoris.</p>
+                <p><span class="remark">Abertura de la vagina</span>: La abertura vaginal se encuentra
+                    justo debajo del orificio
+                    uretral. Este lugar es por donde nacen los bebes y por donde la menstruación sale del cuerpo.
+                </p>
+                <p><span class="remark">Monte de Venus</span>: El monte de Venus es un montículo carnoso
+                    que se encuentra sobre la
+                    vulva. Después de atravesar la pubertad, está cubierto de vello púbico. Protege al hueso púbico.
+                </p>
+                <h4>¿Cuáles son las partes de la anatomía sexual femenina interna?</h4>
+                <p><span class="remark">Vagina</span>: La vagina es un conducto que conecta la vulva con el
+                    cervix y el útero. Por aquí
+                    salen los bebés y la menstruación. La vagina es realmente elástica y se expande durante la
+                    excitación sexual.
+                </p>
+                <p><span class="remark">Cuello uterino</span>: El cuello uterino divide la vagina y el
+                    útero, y está ubicado justo
+                    entre los dos. Tiene forma de rosquilla con una pequeña abertura en el medio. Esta abertura conecta
+                    el útero con la vagina y permite que la menstruación salga del cuerpo y que el esperma entre.
+                </p>
+                <p><span class="remark">Útero</span>: El útero es un órgano muscular en forma de pera del
+                    tamaño de un puño pequeño. A veces se lo denomina “matriz”, porque es donde se desarrolla el feto
+                    durante el embarazo.
+                </p>
+                <p><span class="remark">Trompas de Falopio</span>: Las trompas de Falopio son 2 conductos
+                    angostos que transportan los óvulos desde los ovarios hasta el útero. El esperma viaja a través de
+                    estas trompas para intentar fecundar el óvulo.
+                </p>
+                <p><span class="remark">Franjas ováricas</span>: Las franjas ováricas parecen dedos
+                    pequeños al final de cada trompa de Falopio. Cuando el ovario libera el óvulo, estas franjas lo
+                    empujan hasta la trompa.
+                </p>
+                <p><span class="remark">Ovarios</span>: Los ovarios almacenan los óvulos. También producen
+                    hormonas, entre ellas, el
+                    estrógeno, la progesterona y la testosterona. Estas hormonas controlan situaciones como el periodo
+                    menstrual y el embarazo. Durante la pubertad, los ovarios empiezan por liberar un óvulo por mes y
+                    hacen esto hasta que llega la menopausia.</p>
+                <p><span class="remark">Glándulas de Bartolino</span>: Las glándulas de Bartolino se
+                    encuentran a ambos lados de la
+                    abertura vaginal. Liberan un líquido que lubrica (moja) la vagina durante la excitación sexual.</p>
+                <p><span class="remark">Glándulas de Skene</span>: Las glándulas de Skene se encuentran a
+                    ambos lados del orificio
+                    uretral. Liberan un fluido durante la eyaculación femenina, lo que ocurre en algunos casos durante
+                    un orgasmo. También se denominan “próstata femenina”.</p>
+                <p><span class="remark">Himen</span>: El himen es un tejido delgado y carnoso que se
+                    extiende a través de una parte de
+                    la abertura de la vagina. Varía según cuánto cubra de la abertura vaginal.
+                </p>
+                <p><span class="remark">Punto G</span>: El punto G o punto Gräfenberg está ubicado algunas
+                    pulgadas dentro de tu
+                    vagina, en la pared frontal (la parte más cercana al abdomen). Tu punto G puede expandirse
+                    (hincharse) cuando te excitas.</p>
+                <h4>¿Cuáles son las partes de la anatomía sexual masculina externa?</h4>
+                <p><span class="remark">Glande</span>: El glande también se conoce como la cabeza o la
+                    punta del pene. Allí está
+                    ubicada la abertura de la uretra. Por este lugar, salen la pre-eyaculación (líquido
+                    preseminal), el semen (eyaculación) y la orina. Mucha gente cree que es la parte más sensible
+                    del pene.</p>
+                <p><span class="remark">Cuerpo</span>: El cuerpo se extiende desde la punta del pene hasta
+                    el lugar en donde se conecta
+                    con el abdomen. Tiene forma de tubo.</p>
+                <p><span class="remark">Prepucio</span>: El prepucio es una capa de piel que cubre y
+                    protege la cabeza (glande). Cuando
+                    tu pene se pone duro, el prepucio se retrae y deja la punta expuesta.</p>
+                <p><span class="remark">Frenillo</span>: El frenillo se encuentra donde el prepucio se
+                    junta con el revés del glande.
+                    Está justo debajo de la cabeza y tiene forma de una pequeña “V”.</p>
+                <p>
+                    <span class="remark">Escroto</span>: El escroto es una “bolsa” de piel que cuelga debajo del pene;
+                    contiene los testículos y los
+                    mantiene a la temperatura correcta. Si hace mucho frío, el escroto lleva los testículos más cerca
+                    del cuerpo. Si hace mucho calor, los aleja.
+                </p>
+                <h4>¿Cuáles son las partes de la anatomía sexual masculina interna?</h4>
+                <p><span class="remark">Testículos</span>: Los testículos son 2 glándulas con forma de
+                    pelota ubicadas dentro del
+                    escroto. Son los encargados de producir el esperma y hormonas como la testosterona.</p>
+                <p><span class="remark">Epidídimo</span>: El epidídimo es un conducto en el que el esperma
+                    madura. Conecta cada
+                    testículo con cada conducto deferente y almacena el esperma antes de eyacular.
+                </p>
+                <p><span class="remark">Conducto deferente</span>: Es un conducto largo y angosto que,
+                    durante la eyaculación,
+                    transporta el esperma desde el epidídimo hasta las vesículas seminales. Hay 2, uno conectado a cada
+                    epidídimo.</p>
+                <p><span class="remark">Vesículas seminales</span>: Las vesículas seminales son 2 órganos
+                    pequeños que producen el
+                    semen, el fluido por el cual se mueve el esperma. Se encuentran ubicadas debajo de la vejiga.</p>
+                <p><span class="remark">Próstata</span>: La próstata produce un líquido que ayuda al
+                    esperma a moverse; es
+                    aproximadamente del tamaño de una nuez o de una pelota de golf. Es muy sensible a la presión o al
+                    tacto.</p>
+                <p><span class="remark">Glándulas de Cowper</span>: Las glándulas de Cowper producen un
+                    fluido conocido como
+                    “preeyaculación”, o “líquido preeyaculatorio”, que prepara a la uretra para la eyaculación. Este
+                    líquido reduce la fricción para que el semen pueda desplazarse más fácilmente. Están ubicadas debajo
+                    de la próstata y conectadas a la uretra.</p>
+                <p><span class="remark">Uretra</span>: La uretra es un conducto que transporta la orina
+                    (pis), la preeyaculación y el
+                    semen a la abertura de la uretra para que salgan del cuerpo.</p>
+                <p><span class="remark">Cremáster</span>: El cremáster es un músculo que acerca el escroto
+                    y los testículos al cuerpo
+                    cuando tienes frío, cuando te excitas o cuando recibes caricias en la parte interna del muslo.</p>
+                <div class="wrapper">
+                    <img class="marker zoomable" src="../resources/images/qrs/qr_fem.jpg" alt="Aparato Femenino" />
+                </div>
+                <div class="wrapper">
+                    <img class="marker zoomable" src="../resources/images/qrs/qr_fem.jpg" alt="Vulva" />
+                </div>
+            </details>
+
+            <details class="subtema">
+                <summary class="noselect">6.2 Reproducción
+                </summary>
+                <p>La reproducción es un proceso biológico que permite la creación de nuevos organismos en
+                    todas las formas de vida.
+                </p>
+
+                <p>La reproducción humana es exclusivamente de tipo sexual, por lo que involucra siempre a
+                    dos progenitores: femenino y masculino. Cuando alcanzan la madurez sexual, cada uno produce sus
+                    gametos o células reproductivas: óvulos en el caso femenino y espermatozoides en el caso masculino.
+                </p>
+
+                <p>Como la fecundación es interna, debe producirse un coito, durante el cual el órgano
+                    sexual masculino (pene) se introduce en el femenino (vagina) hasta alcanzar el nivel de excitación
+                    adecuado para que se produzca la eyaculación de los gametos masculinos dentro de la vagina y el
+                    útero, donde se encontrarán con el óvulo y se producirá la fecundación, dando inicio al embarazo.
+                </p>
+
+                <p>El embarazo se divide en tres etapas y cada una es tan importante, estos son algunos
+                    cambios en el cuerpo de una mujer embarazada semana a semana.
+                </p>
+                <h4>Primer trimestre de embarazo</h4>
+                <p>Aproximadamente seis días después de la fecundación, el óvulo fecundado llega al útero
+                    para anidarse en él. Una parte de las células dará origen a la placenta, y, la otra parte, al
+                    embrión.</p>
+                <p><b>¡¿Qué pasa con mi cuerpo?!</b></p>
+                <p>Probablemente tu peso ya haya aumentado un poco, puedes sentirte agitada y con
+                    dificultad para respirar al hacer algunas actividades como subir escaleras o caminar largas
+                    distancias.</p>
+                <p>Algunas mujeres pueden notar como su ombligo se “salta”, además de sentir calambres e
+                    hinchazón en las piernas. El cansancio irá incrementando cada día más, es normal, el cuerpo crea un
+                    mecanismo de defensa para los meses que vienen.</p>
+                <p>Aunque cada mujer lo vive distinto, es en esta etapa en donde se pueden presentar
+                    náuseas, vómitos y mareos.
+                </p>
+                <p>Tus senos se sentirán más sensibles al tacto e irán teniendo mayor volumen. Es normal
+                    que aparezcan algunos pequeños nódulos en la aureola del pezón ya que estos se comienzan a preparar
+                    para amamantar.
+                </p>
+                <h4>Segundo trimestre de embarazo </h4>
+                <p>Los cambios en el cuerpo se notan cada vez más, tus caderas son más anchas y queda poco
+                    rastro de tu cintura.</p>
+                <p>A partir del quinto mes puedes comenzar a sentir a tu bebé.
+                    Tu piel puede comenzar a estirarse y evidenciar estrías.
+                </p>
+                <p>Tus órganos comienzan a tener menos espacio, por lo que debes estar atenta a síntomas
+                    como estreñimiento, gastritis, colitis y exceso de gas.
+                </p>
+                <h4>Tercer trimestre de embarazo
+                </h4>
+                <p>Estamos en la recta final y tu bebé crece más cada día, podrás notar el cambio en el
+                    tamaño de tu abdomen casi de un día para otro. ¡Tu bebé comienza a acomodarse para conocerte!</p>
+                <p>Debido al peso, tal vez sientas molestias en la espalda. Podrías sentir dificultad para
+                    respirar debido a que cada vez hay menos espacio para tus órganos.
+                </p>
+                <p>La placenta necesita sangre, por lo que tu corazón bombeará más rápido para
+                    transferirla. Es normal volver a sentir cansancio. Los cambios de humor vuelven a estar fuera de
+                    control, tus hormonas trabajan duro para el nacimiento del bebé.
+                </p>
+                <p>El embarazo humano tarda 9 meses en gestar nuevos individuos, que se nutren del cuerpo
+                    materno a través del cordón umbilical. Una vez cumplido este tiempo, se produce el parto, en el cual
+                    el útero inicia una serie de contracciones que desplazan al feto hacia afuera. Una vez fuera, el
+                    cordón umbilical deberá cortarse y el recién nacido iniciará su existencia independiente.
+                </p>
+                <div class="wrapper">
+                    <p class="instructions">Haz clic en el marcador para agrandarlo</p>
+                    <img class="marker zoomable" src="../resources/images/qrs/qr_feto.jpeg" alt="Feto" />
+                </div>
+            </details>
+
+            <details class="subtema">
+                <summary class="noselect">6.3 Pubertad
+                </summary>
+                <p>Pubertad es el momento de la vida cuando un niño o una niña madura sexualmente
+                </p>
+                <p>La adolescencia es una etapa de la vida que usualmente inicia entre los 13 y 15 años. En
+                    ella, hombres y mujeres experimentan cambios físicos, psicológicos, emocionales y sociales. La
+                    adolescencia empieza con la pubertad y termina cuando los cambios se estabilizan alrededor de los
+                    19 años.
+                </p>
+
+                <div class="wrapper"><img class="zoomable infog" src="../resources/images/6.3_info.jpg" alt="pubertad"
+                        id="info-63" />
+                </div>
+
+                <h4>Otros cambios físicos de las mujeres en la adolescencia:
+                </h4>
+
+                <ul>
+                    <li>Cambios en la vagina, el útero y los ovarios.
+                    </li>
+                    <li>Cambio en la forma pélvica, redistribución de la grasa corporal.
+                    </li>
+                    <li>Aumento de estatura.
+                    </li>
+                </ul>
+
+                <h4>Otros cambios físicos de los hombres en la adolescencia:</h4>
+                <ul>
+                    <li>Crecimiento del vello corporal (púbico, axilar, bigote, barba).</li>
+                    <li>Aparecen las primeras erecciones y la primera eyaculación.</li>
+                    <li>Crece en el cuello una protuberancia conocida como la manzana de Adán.</li>
+                    <li>Aumento de estatura.
+                    </li>
+                </ul>
+
+                <h4>Otros cambios psicológicos:
+                </h4>
+                <ul>
+                    <li>Crece la necesidad de sentirse admirado y valorado en los grupos a los cuales pertenecen.
+                    </li>
+                    <li>Empiezan a cuestionar las órdenes de sus padres, buscan libertad e independencia para escoger a
+                        sus amigos, amigas o pareja.</li>
+                    <li>Todos estos cambios físicos y emocionales son normales, si tenemos en cuenta que están expuestos
+                        a fuertes cambios hormonales que los hacen sentir en crisis con el mundo.</li>
+                </ul>
+                <h4>Nuevas experiencias durante esta etapa:
+                </h4>
+
+                <ul>
+                    <li><span class="remark">Deseo sexual</span>: sensación de impulso sexual ocasionada por estímulos
+                        externos que, en algunas
+                        situaciones, se satisface con una relación sexual.
+                    </li>
+                    <li><span class="remark">Erección</span>: cambio anatómico del pene, en el cual, éste aumenta de
+                        tamaño. La erección puede ser
+                        una parte de la respuesta erótica, ante un estímulo sexual.
+                    </li>
+                    <li><span class="remark">Eyaculación</span>: expulsión del semen (líquido que contiene
+                        espermatozoides) a través del pene por
+                        causa de la excitación sexual, acompañada de una sensación de placer.
+                    </li>
+                    <li><span class="remark">Menstruación</span>: es el sangrado que cada mes tiene la mujer a través
+                        del cual expulsa del cuerpo,
+                        por la vagina, el tejido que se desprende de la parte interna del útero. La mujer no menstrua
+                        por el mismo orificio por donde orina, son conductos diferentes. Durante tu ciclo menstrual, las
+                        hormonas hacen que tus óvulos maduren -cuando un óvulo madura quiere decir que está listo para
+                        ser fertilizado por un espermatozoide. <br>
+                        Las toallas sanitarias, los tampones, la ropa interior para el periodo y las copas menstruales
+                        son los productos que te ayudan a llevar una vida normal durante tu periodo, pues evitan que la
+                        ropa o las sábanas se manchen con sangre.
+
+                    </li>
+                    <li><span class="remarkk">Cólico</span>: dolor abdominal intermitente producido por las
+                        contracciones que el útero realiza para
+                        ayudar a desprender el endometrio cuando va a llegar la menstruación.
+                    </li>
+                    <li><span class="remark">Masturbación</span>: actividad mediante la cual una persona estimula sus
+                        genitales y otras partes del
+                        cuerpo para sentir placer. Masturbarse es una decisión personal y no un comportamiento que pueda
+                        calificarse como bueno o malo.
+                    </li>
+                    <li><span class="remark">Cambios en los senos</span>: están relacionados con las hormonas que
+                        produce el cuerpo de la mujer.
+                    </li>
+                    <li><span class="remark">Orgasmo</span>: intensa sensación de placer físico que se experimenta
+                        cuando se llega al “clímax” y
+                        estimulación sexual.
+                    </li>
+                </ul>
+            </details>
+
+            <details class="subtema">
+                <summary class="noselect">6.4 Imagen Corporal
+                </summary>
+                <p>Manera en la que una persona piensa acerca de su propio cuerpo y cómo lo ven los demás.
+                </p>
+                <p>La imagen corporal es la representación mental que cada persona tiene sobre su propio
+                    aspecto físico. Es cómo la persona se ve a sí misma y cómo se percibe cuando se mira al espejo, es
+                    decir, cómo la persona cree que es.
+                </p>
+                <p>El desarrollo de la imagen corporal depende en gran medida de nosotros mismos, pero
+                    inevitablemente se ve influenciada también por las personas de nuestro entorno y por la sociedad en
+                    general. A menudo recibimos mensajes, explícitos e implícitos, de familiares y amigos sobre nuestro
+                    cuerpo y sobre el valor de la imagen en la actualidad.
+                </p>
+                <p>Etapas vitales como la pubertad o la menopausia pueden alterar la imagen corporal de la
+                    persona, ya que cuando nuestro cuerpo cambia experimentamos cambios en nuestras emociones y
+                    sentimientos</p>
+                <p>Las personas con una imagen corporal negativa tienen más riesgo de padecer una baja
+                    autoestima, síntomas depresivos y aislarse socialmente. La clave para tener una imagen corporal
+                    positiva que favorezca nuestro bienestar es aceptar la forma natural del nuestro cuerpo, dominar las
+                    emociones y pensamientos negativos sobre el aspecto físico, y legitimar nuestro cuerpo y a nosotros
+                    mismos como personas valiosas dignas de ser queridas.
+                </p>
+
+                <div class="wrapper">
+                    <img class="infog zoomable" src="../resources/images/6.4_infog.jpg" alt="valora-tu-cuerpo"
+                        id="info-64" />
+                </div>
+            </details>
+
+
+            <div class="wrapper">
+                <p class="instructions">Haz clic en el marcador para agrandarlo</p>
+                <img class="marker zoomable" src="../resources/images/qrs/qr_musculos.jpeg" alt="Musculos del cuerpo" />
+            </div>
+        </div>
+
+        <div id="sexualidad" class="section">
+            <h2 class="section-title">7. Sexualidad y conducta sexual</h2>
+            <p>La sexualidad es un tema amplio y extenso que requiere de estudio para llegar a comprenderse
+                completamente. Estas herramientas te servirán de apoyo para alcanzar ese objetivo.
+            </p>
+            <details class="subtema">
+                <summary class="noselect">7.1 Relaciones Sexuales, Sexualidad y Ciclo de Vida Sexual
+                </summary>
+                <p>La sexualidad es principalmente la construcción social de un impulso biológico, que es además,
+                    multidimensional y dinámica, es decir, la experiencia que una persona tenga de la sexualidad está
+                    mediada por la biología, los roles de género y las relaciones de poder, como también por factores
+                    tales como la edad y la condición social y económica. Sin embargo, la influencia social más profunda
+                    sobre la sexualidad de una persona proviene de los roles de género prescritos, las normas y valores
+                    sociales que determinan el poder relativo, las responsabilidades y las conductas de hombres y
+                    mujeres por lo tanto, la experiencia individual de la sexualidad no es más que la expresión de ese
+                    desequilibrio.
+                </p>
+                <p>Es natural que los seres humanos disfruten de sus cuerpos y la cercanía de otras personas durante
+                    toda su vida, ya que los seres humanos nacen con la capacidad de disfrutar su sexualidad durante
+                    toda su vida
+                </p>
+                <p><b>Es natural sentir curiosidad acerca de la sexualidad y es importante hacerle preguntas a un adulto
+                        de confianza
+                    </b>
+                </p>
+                <p><br>El ciclo de respuesta sexual se desarrolla en cinco fases diferentes: deseo, excitación, meseta,
+                    orgasmo y resolución:</p>
+                <ul>
+                    <li><span class="remark">Deseo</span>: Los estímulos que generan el deseo pueden ser muy variados:
+                        un roce, con la piel del otro, el perfume, una mirada sostenida, el tono de la voz … pueden
+                        suscitar el deseo de mantener una relación sexual con otra persona. Por supuesto, también la
+                        imaginación y los pensamientos eróticos pueden despertar esta necesidad o la de masturbarse.
+                    </li>
+                    <li><span class="remark">Excitación</span>: No es más que la forma que tiene el cuerpo de responder
+                        al deseo y que induce la liberación de feromonas, cuyo olor imperceptible incrementa el
+                        sentimiento de atracción por la otra persona. Con la excitación se aceleran el ritmo cardíaco,
+                        la respiración y la presión sanguínea, al tiempo que los músculos se tensionan. En la mujer se
+                        agrandan los pechos y los pezones se ponen erectos, se hincha levemente el clítoris y los labios
+                        interiores de la vagina, separándose los labios exteriores, al tiempo que la vagina comienza a
+                        humedecerse y el útero se eleva un poco en relación a su posición habitual. En el hombre también
+                        los pezones se ponen erectos y se endurece el pene, se engrosa el escroto y se elevan los
+                        testículos.
+                    </li>
+                    <li><span class="remark">Meseta</span>: En la que la excitación se intensifica mediante la
+                        estimulación física de las zonas erógenas y la penetración. Se puede controlar su duración con
+                        diferentes técnicas, especialmente haciendo pequeñas pausas de relajación, pero, en cualquier
+                        caso, se caracteriza porque el ritmo cardíaco, la respiración y la presión sanguínea se aceleran
+                        aún más, al igual que la tensión muscular. En la mujer aumenta la lubricación vaginal, se
+                        agranda la areola de los pezones, el clítoris se esconde bajo el capuchón que forman los labios
+                        exteriores y se oscurecen los labios interiores. En el hombre también se humedece el pene y se
+                        agrandan el glande y los testículos.
+                    </li>
+                    <li><span class="remark">Orgasmo</span>: es la explosión final en la que se libera toda esa tensión
+                        acumulada en la fase de meseta y en la que el cerebro libera una carga de endorfinas que
+                        intensifican la sensación de placer. Es el momento en que el ritmo cardíaco, la respiración y la
+                        presión sanguínea alcanzan su máxima aceleración y se producen intensas contracciones
+                        musculares, especialmente en la zona de la pelvis; en las mujeres la vagina, el útero, el ano y
+                        los músculos pélvicos; mientras que en el hombre los hacen la uretra y el ano, además de la
+                        próstata y las vesículas seminales para inducir la eyaculación. La fase orgásmica es la más
+                        corta de todas las fases del ciclo de respuesta sexual
+                    </li>
+                    <li><span class="remark">Resolución</span>: en la que el cuerpo recupera el estado en que se
+                        encontraba antes de la fase de excitación. El ritmo cardíaco, la respiración y la presión
+                        sanguínea descienden incluso por debajo de los valores normales; suda todo el cuerpo; y, tras la
+                        liberación de la tensión sexual, los órganos genitales de ambos recuperan su expresión de
+                        normalidad.
+                    </li>
+                </ul>
+                <p>Hay que decir que el placer que se experimenta con el ciclo de respuesta sexual es muy saludable,
+                    tanto desde el punto de vista físico como emocional. Ayuda a dormir mejor, a eliminar el estrés y la
+                    tensión, a mejorar el estado físico, a envejecer mejor y a mantener un estado general saludable.
+                </p>
+
+                <div class="wrapper">
+                    <img class="infog zoomable" src="../resources/images/7.1_infog.jpg" alt="7-consejos" id="info-71" />
+                </div>
+
+            </details>
+
+            <details class="subtema">
+                <summary class="noselect">7.2 Conducta Sexual y Respuesta Sexual
+                </summary>
+                <p>La conducta sexual son comportamientos que pueden presentarse en cualquier etapa del ciclo vital
+                    humano, son todas aquellas actividades de una persona que puede realizar de manera individual, en
+                    pareja o incluso con un grupo de personas, donde los individuos expresan su sexualidad como
+                    masturbación, estimulación, oral-genital (sexo oral), relaciones pene-vagina (sexo vaginal),
+                    estimulación o penetración anal.</p>
+                <p>Las personas pueden mostrar amor mutuo mediante el contacto y la intimidad, pero es importante poder
+                    tomar decisiones fundamentadas acerca de la conducta sexual, cómo cuándo retrasar o iniciar la
+                    actividad sexual
+                </p>
+                <p>
+                    El ciclo de respuesta sexual consiste en cómo el cuerpo reacciona físicamente ante la estimulación
+                    sexual. Existen maneras de evitar o minimizar el riesgo de comportamientos sexuales que afecten
+                    negativamente la salud y el bienestar propios
+                </p>
+
+                <p>Un aspecto importante de la sexualidad es la orientación sexual, la cual se puede definir como la
+                    atracción sexual que siente un individuo hacia otro del sexo contrario o del mismo sexo. Alfred
+                    Kinsey diseñó en la década de los noventa una escala de orientación sexual basándose en 12 000
+                    entrevistas (6300 hombres y 5700 mujeres). En ella definió como 0 al comportamiento exclusivamente
+                    heterosexual (deseo por individuos del sexo opuesto), como 1 al contacto incidental homosexual
+                    (atracción sexual por individuos del mismo sexo) ya sea físico o psicológico, como 3 al contacto
+                    físico y psicológico igual de frecuente con hombres y mujeres, como 5 al contacto incidental
+                    heterosexual físico o psicológico y como 6 al contacto exclusivamente homosexua</p>
+
+                <p><b>A continuación, la escala de Kinsey mencionada anteriormente:</b></p>
+                <div class="wrapper">
+                    <img class="infog zoomable" src="../resources/images/escala-de-kinsey.png" alt="escala-de-kinsey"
+                        id="kinsey" />
+                </div>
+                <p>
+                    En la actualidad es importante agregar a la escala de orientación sexual de Kinsey a los individuos
+                    sin ninguna orientación sexual, los cuales se han denominado asexuales. Este grupo está constituido
+                    por hombres y mujeres que al llegar a la madurez sexual y sin presentar trastornos emocionales o
+                    físicos aparentes, no muestran ningún tipo de interés o deseo sexual
+                    por ningún individuo. En el caso de que estos sujetos hayan tenido relaciones sexuales no las
+                    reportan como placenteras y no muestran disposición a buscar nuevas experiencias. Sin embargo, los
+                    individuos asexuales sí manifiestan interés por la parte romántica de una relación y el componente
+                    afectivo de compañía.
+
+                </p>
+                <p>En cualquier caso, hay que tener claro que las investigaciones de Kinsey estaban llenas de
+                    limitaciones y fueron realizadas desde metodologías que hoy en día serían rechazadas; en parte es
+                    normal, dado que este investigador era hijo de su tiempo, y muchos de los debates que han servido
+                    para mejorar la calidad de los estudios en ciencias del comportamiento aún no habían tenido lugar
+                    cuando él desarrolló su escala. Lo que sí sigue vigente hoy en día es la idea de que las
+                    orientaciones sexuales no pueden ser categorizadas en categorías herméticas, y que sus límites son
+                    difusos y hasta cierto punto impredecibles.</p>
+                <h4>Influencias hormonales</h4>
+                <p>Las hormonas sexuales están presentes a lo largo de
+                    toda nuestra vida y desde antes del nacimiento. Son
+                    sustancias que se producen principalmente en las gónadas (ovarios y testículos), la placenta, la
+                    glándula
+                    adrenal y el cerebro. </p>
+                <p>Entre las hormonas sexuales
+                    más importantes están las consideradas femeninas:
+                    <span class="remark">el estradiol y la progesterona</span>. La hormona masculina es la <span
+                        class="remark">testosterona</span>.
+                </p>
+                <p>
+                    Estas hormonas están presentes a lo largo de nuestra vida como hombres y como mujeres, aunque la
+                    cantidad y concentración de cada una varía de acuerdo a la etapa de la vida en la que nos
+                    encontremos.
+                </p>
+                <p>Las hormonas sexuales intervienen en la diferenciación sexual del cerebro en las etapas tempranas
+                    de la vida, en la formación de los órganos sexuales
+                    externos y, durante la adolescencia, en la generaión de las características sexuales secundarias.
+                    La
+                    diferenciación sexual del cerebro incluye cambios
+                    en la organización neuronal, en el volumen de algunas estructuras denominadas núcleos sexualmente
+                    dimórficos, pues son áreas que varían de tamaño
+                    en los hombres y en las mujeres.</p>
+                <p>Las hormonas modulan nuestra conducta sexual al
+                    actuar en el sistema nervioso central. En la mujer el
+                    estradiol y la progesterona estimulan la ovulación
+                    y la conducta sexual femenina. Aunque la mujer puede tener relaciones sexuales durante todo su ciclo
+                    menstrual, varios estudios señalan que el deseo sexual
+                    se eleva cerca de la ovulación, cuando los niveles
+                    de progesterona y estradiol son más altos. En los
+                    hombres los niveles de testosterona se mantienen
+                    constantes y por lo tanto su libido se mantiene estable a lo largo de su vida adulta. </p>
+                <div class="wrapper">
+                    <img class="marker zoomable" src="../resources/images/qrs/qr_conducta.jpeg" alt="Conducta Sexual"
+                        id="conducta" />
+                </div>
+            </details>
+        </div>
+
+        <div id="salud-sexual" class="section last-section">
+            <h2 class="section-title">8. Salud sexual y reproductiva</h2>
+            <p>La salud sexual Implica que las personas pueden tener una vida sexual segura y
+                satisfactoria, pueden reproducirse, y tienen la libertad de decir si quieren hacerlo y con qué
+                frecuencia. Reforcemos el aprendizaje en este apartado.
+            </p>
+
+            <details class="subtema">
+                <summary class="noselect">8.1 Embarazo y prevención del embarazo
+                </summary>
+                <p>Los acontecimientos que conducen a un embarazo comienzan con la concepción, en la cual
+                    un espermatozoide penetra un óvulo.
+                </p>
+                <p>El embarazo comienza oficialmente cuando un óvulo fecundado se implanta en el tejido que
+                    cubre tu útero. Después de tener sexo, se tarda de 2 a 3 semanas para que el embarazo ocurra.</p>
+                <p>Puedes quedar embarazada cada vez que tienes sexo vaginal (pene-en-vagina), desde la
+                    primera vez que tienes sexo. Usa algún método anticonceptivo si tienes sexo vaginal -o piensas en
+                    hacerlo en un futuro cercano- y no quieres quedar embarazada.</p>
+                <p>Las personas que tienen sexo vaginal sin uso de anticonceptivos tienen un 85% de
+                    oportunidad de quedar embarazada en un año.
+                    Hay muchos tipos de métodos anticonceptivos. Cada uno tiene ventajas y desventajas.
+                </p>
+                <div class="wrapper">
+
+                    <img class="infog zoomable" src="../resources/images/8.1_info.jpg" alt="metodos-anticonceptivos"
+                        id="info-81" />
+                </div>
+                <p>No hay un método anticonceptivo perfecto. Asi que el uso de los condones más otro tipo
+                    de anticonceptivo (como el implante, el DIU, o pastilla) te dará una protección extra en caso de
+                    alguno de los dos falle. Y los condones reducen drásticamente las posibilidades de contraer toda
+                    clase de enfermedades de transmisión sexual, como el VIH, la gonorrea, clamidia y herpes.
+                </p>
+                <div class="wrapper">
+                    <p class="instructions">Haz clic en el marcador para agrandarlo</p>
+                    <img class="marker zoomable" src="../resources/images/qrs/qr_condom.jpeg" alt="Condón Masculino" />
+                </div>
+            </details>
+
+            <details class="subtema">
+                <summary class="noselect">8.2 Estigma del VIH y del sida, atención médica, tratamiento y apoyo
+                </summary>
+                <p>Se trata del prejuicio que se genera cuando se cataloga a alguien como parte de un grupo
+                    que se supone ser socialmente inaceptable.</p>
+                <p>El VIH (virus de la inmunodeficiencia humana) es un virus que ataca el sistema
+                    inmunitario del cuerpo. Si el VIH no se trata puede causar SIDA (síndrome de inmunodeficiencia
+                    adquirida).
+                </p>
+                <p>No hay en la actualidad una cura eficaz. Una vez que se contrae el VIH, se lo tiene de
+                    por vida. Sin embargo, con la atención médica adecuada, se puede controlar.
+                </p>
+                <h4>¿Qué es el estigma por el VIH?</h4>
+                <p>El estigma por el VIH se refiere a las actitudes negativas y suposiciones sobre las
+                    personas que tienen el VIH. Se trata del prejuicio que se genera cuando se cataloga a alguien como
+                    parte de un grupo que se supone ser socialmente inaceptable.
+                </p>
+                <h4>¿Cuáles son los efectos del estigma y la discriminación por el VIH?</h4>
+                <p>El estigma y la discriminación por el VIH afectan el bienestar emocional y la salud
+                    mental de las personas con el VIH. Aquellos que tienen el VIH a menudo interiorizan el estigma que
+                    sienten y comienzan a crear una imagen negativa de sí mismos.
+                    El estigma interiorizado del VIH puede producir sentimientos de vergüenza, temor a que se sepa,
+                    aislamiento y desesperación.
+                </p>
+                <h4>¿Qué causa la estima por el VIH?
+                </h4>
+                <p>La combinación de falta de conocimiento e información con la existencia de suposiciones
+                    obsoletas produce en la gente temor a contraer el VIH. Adicionalmente, muchas personas piensan que
+                    el VIH es una infección que solo contraen ciertos grupos de personas. Y esto lleva a que hagan
+                    juicios de valor negativos sobre las personas que tienen el VIH.</p>
+                <h4>Qué hacer cuando presencia estigmatización del VIH.</h4>
+                <p>El primer paso para detener el VIH es hablar abiertamente sobre este virus y abordar el
+                    estigma frontalmente. Es importante hacerse escuchar y actuar cuando presencie a otros comportarse
+                    de manera estigmatizante.
+                </p>
+                <p>A muchos de nosotros nos cuesta determinar cuál es la mejor manera de abordar el estigma
+                    del VIH y la discriminación cuando los experimentamos. A continuación, algunos consejos sobre cómo
+                    actuar contra el estigma en situaciones de la vida diaria.</p>
+                <p>Todos podemos ayudar a terminar con el estigma por el VIH con nuestras palabras y
+                    nuestras acciones en la vida diaria. Lidere a los demás con sus comportamientos de apoyo. </p>
+            </details>
+
+            <details class="subtema" n>
+                <summary class="noselect">8.3 Cómo entender, reconocer y reducir el riesgo de ITS, incluido el VIH
+                </summary>
+                <p>Las siglas ITS se emplean para referirse a las Infecciones de Transmisión Sexual.
+                </p>
+                <h4>¿Qué es una ETS?
+                </h4>
+                <p>Una ETS es una enfermedad de transmisión sexual. Las ETS se conocen como infecciones de
+                    transmisión sexual (ITS). Son infecciones que se propagan de una persona a otra por medio de la
+                    actividad sexual, incluso por relaciones sexuales por vía anal, vaginal u oral. Las ETS son causadas
+                    por bacterias, parásitos y virus.
+                </p>
+                <p>Muchos proveedores de atención médica usan el término "infección" en lugar de
+                    "enfermedad", porque una persona con una infección podría no presentar síntomas, pero aun así
+                    necesitar tratamiento. Si no se trata, una ITS puede convertirse en una enfermedad.
+                </p>
+                <p>El VIH es una infección de transmisión sexual, pero puede convertirse en una enfermedad
+                    conocida como síndrome de inmunodeficiencia adquirida (SIDA) cuando la infección por VIH no se trata
+                    con medicamentos contra el VIH. Otros ejemplos de enfermedades de transmisión sexual son clamidia,
+                    gonorrea, infección por el virus del papiloma humano (VPH) y sífilis.</p>
+                <h4>¿Cuál es la conexión entre el VIH y otras ETS?</h4>
+                <p>Los patrones de comportamiento que exponen a las personas a riesgo de contraer el VIH también pueden
+                    aumentar su riesgo de contraer otras ETS. Estos patrones de comportamiento incluyen los siguientes:
+                </p>
+                <ul>
+                    <li>Relaciones sexuales sin condón.
+                    </li>
+                    <li>Relaciones sexuales con muchas parejas, especialmente parejas anónimas.
+                    </li>
+                    <li>Relaciones sexuales bajo los efectos de drogas o de bebidas alcohólicas. El uso de las drogas y
+                        el alcohol puede afectar el juicio de las personas, lo que puede provocar comportamientos
+                        riesgosos.
+                    </li>
+                </ul>
+                <p>Cuando una persona tiene una ETS, puede contraer el VIH con más facilidad.
+                </p>
+                <h4>¿Cómo puede una persona reducir el riesgo de contraer una ETS?</h4>
+                <p>La abstinencia sexual (no tener relaciones sexuales vaginales, anales u orales) es la única forma de
+                    eliminar cualquier posibilidad de contraer una ETS. Sin embargo, si una persona tiene actividad
+                    sexual, puede tomar las siguientes medidas.
+                </p>
+                <ul>
+                    <li>Reduzca el número de personas con las que tiene relaciones sexuales.</li>
+                    <li>No consuma bebidas alcohólicas ni drogas antes de tener relaciones sexuales, ni durante las
+                        mismas.
+                    </li>
+                    <li>Use los condones correctamente cada vez que tenga relaciones sexuales.
+                    </li>
+                </ul>
+                <h4>¿Cómo puede una persona con VIH prevenir la transmisión del VIH a otras personas?</h4>
+                <p>Tome medicamentos contra el VIH a diario. El tratamiento con esos medicamentos (llamado tratamiento
+                    antirretroviral o TAR) ayuda a las personas con el VIH a llevar una vida más larga y sana. Unos de
+                    los objetivos importantes del TAR es reducir la carga viral de una persona a una concentración
+                    indetectable. Una carga viral indetectable significa que la concentración del VIH en la sangre es
+                    demasiada baja como para poder ser detectada mediante una prueba de carga viral.</p>
+                <h4>
+                    ¿Cuáles son los síntomas de las ETS?
+                </h4>
+                <p>Los síntomas de las ETS pueden ser diferentes dependiendo de la ETS, y no todas las personas
+                    experimentan los mismos síntomas. Entre los ejemplos de posibles síntomas de ETS cabe citar micción
+                    (orinar) dolorosa o frecuente, secreción rara de la vagina o del pene y fiebre.</p>
+                <p>Las ETS no siempre causan síntomas. Aun si una persona no presenta síntomas de ETS, es posible
+                    transmitir esas enfermedades a otras personas.
+                </p>
+                <h4>¿Cuál es el tratamiento para las ETS?
+                </h4>
+                <p>Las ETS causadas por bacterias o parásitos se pueden curar con medicinas. Las causadas por virus no
+                    tienen cura, pero el tratamiento puede aliviar o eliminar los síntomas y ayudar a controlarlas.
+                </p>
+            </details>
+            <div class="wrapper">
+                <p class="instructions">Haz clic en el marcador para agrandarlo</p>
+                <img class="marker zoomable" src="../resources/images/qrs/qr_esperma.jpeg" alt="Esperma" />
+            </div>
+        </div>
+
+        <p class="copyright">
+            &copy; 2023 - <span>EDUISSED</span> Todos los derechos reservados
+        </p>
+    </main>
+    <footer>
+        <img src="../resources/images/char_footer.png" alt="people hugging" id="people" class="characs">
+        <img id="grass" src="../resources/images/footer-image.png" alt="footer">
+    </footer>
+
+    <script src="../js/Audio.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/Audio.js"></script>
+    <script> $(document).ready(function () {
+        var audioEnabled = true;
+        var audio;
+    
+        $("li.tooltip-element").hover(
+            function () {
+                if (audioEnabled) {
+                    var audioSrc = $(this).data("audio");
+                    audio = new Audio(audioSrc);
+                    audio.play();
+                }
+            },
+            function () {
+                if (audioEnabled && audio) {
+                    audio.pause();
+                    audio.currentTime = 0;
+                }
+            }
+        );
+    
+        $("#ajuste1").click(function () {
+            audioEnabled = !audioEnabled;
+            if (!audioEnabled && audio) {
+                audio.pause();
+                audio.currentTime = 0;
+            }
+        });
+    });</script>
+    <script>document.querySelectorAll('.button').forEach(button => {
+
+        let duration = 3000,
+            svg = button.querySelector('svg'),
+            svgPath = new Proxy({
+                y: null,
+                smoothing: null
+            }, {
+                set(target, key, value) {
+                    target[key] = value;
+                    if(target.y !== null && target.smoothing !== null) {
+                        svg.innerHTML = getPath(target.y, target.smoothing, null);
+                    }
+                    return true;
+                },
+                get(target, key) {
+                    return target[key];
+                }
+            });
+    
+        button.style.setProperty('--duration', duration);
+    
+        svgPath.y = 20;
+        svgPath.smoothing = 0;
+    
+        button.addEventListener('click', e => {
+            
+            e.preventDefault();
+    
+            if(!button.classList.contains('loading')) {
+    
+                button.classList.add('loading');
+    
+                gsap.to(svgPath, {
+                    smoothing: .3,
+                    duration: duration * .065 / 1000
+                });
+    
+                gsap.to(svgPath, {
+                    y: 12,
+                    duration: duration * .265 / 1000,
+                    delay: duration * .065 / 1000,
+                    ease: Elastic.easeOut.config(1.12, .4)
+                });
+    
+                setTimeout(() => {
+                    svg.innerHTML = getPath(0, 0, [
+                        [3, 14],
+                        [8, 19],
+                        [21, 6]
+                    ]);
+                }, duration / 2);
+    
+            }
+    
+        });
+    
+    });
+    
+    function getPoint(point, i, a, smoothing) {
+        let cp = (current, previous, next, reverse) => {
+                let p = previous || current,
+                    n = next || current,
+                    o = {
+                        length: Math.sqrt(Math.pow(n[0] - p[0], 2) + Math.pow(n[1] - p[1], 2)),
+                        angle: Math.atan2(n[1] - p[1], n[0] - p[0])
+                    },
+                    angle = o.angle + (reverse ? Math.PI : 0),
+                    length = o.length * smoothing;
+                return [current[0] + Math.cos(angle) * length, current[1] + Math.sin(angle) * length];
+            },
+            cps = cp(a[i - 1], a[i - 2], point, false),
+            cpe = cp(point, a[i - 1], a[i + 1], true);
+        return `C ${cps[0]},${cps[1]} ${cpe[0]},${cpe[1]} ${point[0]},${point[1]}`;
+    }
+    
+    function getPath(update, smoothing, pointsNew) {
+        let points = pointsNew ? pointsNew : [
+                [4, 12],
+                [12, update],
+                [20, 12]
+            ],
+            d = points.reduce((acc, point, i, a) => i === 0 ? `M ${point[0]},${point[1]}` : `${acc} ${getPoint(point, i, a, smoothing)}`, '');
+        return `<path d="${d}" />`;
+    }</script>
+        <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js'></script><script  src="./script.js"></script>
+
+    </body>
+
+</html>

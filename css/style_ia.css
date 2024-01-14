@@ -207,3 +207,39 @@ header h2 {
     display: block;
   }
 }
+
+
+@media (max-width: 768px) {
+  .chatbot-toggler {
+    bottom: 10vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .chat-input textarea {
+    margin-bottom: 100px; 
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .chatbot {
+    height: 75vh; 
+    bottom: auto;
+    top: 38px; 
+  }
+
+  .chat-input {
+    margin-bottom: 0%; 
+  }
+}
+
+
+
+
+@media (max-width: 768px) {
+  .chatbot {
+    border-radius: 40px; 
+  }
+}

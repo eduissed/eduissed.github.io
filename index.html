@@ -408,13 +408,42 @@
 
 
         <div id="aprende" class="section">
-            <h1 class="section-title">Aprende <i id="iconoSexi1"
-                    style="margin-left: 75px; vertical-align: middle; font-size: 34px;" class="bx bx-volume-full"></i>
-            </h1>
+            <h1 class="section-title">Aprende <i  onclick="reproducirTexto()" id="iconoSexi1"
+                style="margin-left: 75px; vertical-align: middle; font-size: 34px;" class="bx bx-volume-full"></i>
+        </h1>
             </h1>
             <div>
 
             </div>
+
+            <!--script del lector de texto-->
+
+    <script>
+        function reproducirTexto() {
+            // Texto que se leerá en voz alta
+            var texto = "Hola, bienvenido a Sexi. a continuacion te damos un catalago de articulos y presentaciones intereactivas que te permitiran conocer mas sobre estos temas, da click en el boton de tu agrado..";
+
+            // Verifica si el navegador soporta la síntesis de voz
+            if ('speechSynthesis' in window) {
+                var synth = window.speechSynthesis;
+
+                // Crea un nuevo objeto de síntesis de voz
+                var utterance = new SpeechSynthesisUtterance(texto);
+
+                // Selecciona la voz predeterminada del navegador
+                utterance.voice = synth.getVoices()[0];
+
+                // Reproduce el texto al dar clic en el botón
+                synth.speak(utterance);
+            } else {
+                alert('Tu navegador no soporta la síntesis de voz. Por favor, utiliza un navegador más reciente.');
+            }
+        }
+    </script>
+
+    <!--termina codigo del lector de texto-->
+
+
             <p class="audio-trigger" data-audio="Audios\audios_de_parrafos\parrafo 1.mp3">
                 A continuación presentamos una serie de articulos y presentaciones interactivas que te permitirán
                 adquirir más conocimientos sobre éstos temas
@@ -474,7 +503,9 @@
         </div>
 
         <div id="Juegos" class="section">
-            <h1 class="section-title">Juegos</h1> 
+            <h1 class="section-title">Juegos <i  onclick="reproducirTextojuego()" id="iconoSexi1"
+                style="margin-left: 75px; vertical-align: middle; font-size: 34px;" class="bx bx-volume-full"></i>
+        </h1>
             <p>
                 Conoce los increibles juegos con los cuales podras aprender aun mas;
             </p>
@@ -483,6 +514,32 @@
             <br>
             <a href="Menudejuego\index.html"><button class="button-85" role="button" >VER CATALOGO</button></a>
 
+             <!--script del lector de texto-->
+
+    <script>
+        function reproducirTextojuego() {
+            // Texto que se leerá en voz alta
+            var texto = "Puedes interactuar con los juegos desarrollados para fortalecer tu conocimiento sobre este tema... sexualidad";
+
+            // Verifica si el navegador soporta la síntesis de voz
+            if ('speechSynthesis' in window) {
+                var synth = window.speechSynthesis;
+
+                // Crea un nuevo objeto de síntesis de voz
+                var utterance = new SpeechSynthesisUtterance(texto);
+
+                // Selecciona la voz predeterminada del navegador
+                utterance.voice = synth.getVoices()[0];
+
+                // Reproduce el texto al dar clic en el botón
+                synth.speak(utterance);
+            } else {
+                alert('Tu navegador no soporta la síntesis de voz. Por favor, utiliza un navegador más reciente.');
+            }
+        }
+    </script>
+
+    <!--termina codigo del lector de texto-->
 <style>
 .button-85 {
   padding: 0.6em 2em;
@@ -600,7 +657,36 @@
         </script>
 
         <div id="recursos" class="section">
-            <h1 class="section-title">Recursos</h1>
+            <h1 class="section-title">Recursos <i  onclick="reproducirTextorecursos()" id="iconoSexi1"
+                style="margin-left: 75px; vertical-align: middle; font-size: 34px;" class="bx bx-volume-full"></i>
+        </h1>
+
+        <!--script del lector de texto-->
+
+    <script>
+        function reproducirTextorecursos() {
+            // Texto que se leerá en voz alta
+            var texto = "Podras ver una lista de codigos qr, con la que pueden ver infografias e imaneges con realidad aumentada, podras descargar estos codigos qr desde aqui o dando click en las imagenes. ";
+
+            // Verifica si el navegador soporta la síntesis de voz
+            if ('speechSynthesis' in window) {
+                var synth = window.speechSynthesis;
+
+                // Crea un nuevo objeto de síntesis de voz
+                var utterance = new SpeechSynthesisUtterance(texto);
+
+                // Selecciona la voz predeterminada del navegador
+                utterance.voice = synth.getVoices()[0];
+
+                // Reproduce el texto al dar clic en el botón
+                synth.speak(utterance);
+            } else {
+                alert('Tu navegador no soporta la síntesis de voz. Por favor, utiliza un navegador más reciente.');
+            }
+        }
+    </script>
+
+    <!--termina codigo del lector de texto-->
 
             <div id="recursos-content">
 
@@ -713,7 +799,37 @@
         </div>
 
         <div id="referencias" class="last-section section">
-            <h1 class="section-title">Referencias </h1>
+            <h1 class="section-title">Referecias <i  onclick="reproducirTextoreferencias()" id="iconoSexi1"
+                style="margin-left: 75px; vertical-align: middle; font-size: 34px;" class="bx bx-volume-full"></i>
+        </h1>
+
+         <!--script del lector de texto-->
+
+    <script>
+        function reproducirTextoreferenciasde() {
+            // Texto que se leerá en voz alta
+            var texto = "Podras ver las referencias en las que nos basamos para la informacion de sexi, solo basta con darle click al texto de tu preferencia. ";
+
+            // Verifica si el navegador soporta la síntesis de voz
+            if ('speechSynthesis' in window) {
+                var synth = window.speechSynthesis;
+
+                // Crea un nuevo objeto de síntesis de voz
+                var utterance = new SpeechSynthesisUtterance(texto);
+
+                // Selecciona la voz predeterminada del navegador
+                utterance.voice = synth.getVoices()[0];
+
+                // Reproduce el texto al dar clic en el botón
+                synth.speak(utterance);
+            } else {
+                alert('Tu navegador no soporta la síntesis de voz. Por favor, utiliza un navegador más reciente.');
+            }
+        }
+    </script>
+
+    <!--termina codigo del lector de texto-->
+
             <details class="subtema" id="last-open">
                 <summary>La lista de links usados para elaborar este proyecto</summary>
                 <div id="referencias-holder">
@@ -805,7 +921,38 @@
         </div>
 
         <div id="Ajustes" class="section"> 
-            <h1 class="section-title">Contacto</h1> 
+            h1 class="section-title">Contacto <i  onclick="reproducirTextocontacto()" id="iconoSexi1"
+                style="margin-left: 75px; vertical-align: middle; font-size: 34px;" class="bx bx-volume-full"></i>
+        </h1> 
+
+         <!--script del lector de texto-->
+
+    <script>
+        function reproducirTextocontacto() {
+            // Texto que se leerá en voz alta
+            var texto = "En sexi nos preocupamos por ti, para que tengas la mejor experiencia, puedes contactarnos en las siguienes redes. da click en los botones si prefires contactarnos por X o por gmail. si deceas hacerlo por telefono copea el numero y llamanos. ";
+
+            // Verifica si el navegador soporta la síntesis de voz
+            if ('speechSynthesis' in window) {
+                var synth = window.speechSynthesis;
+
+                // Crea un nuevo objeto de síntesis de voz
+                var utterance = new SpeechSynthesisUtterance(texto);
+
+                // Selecciona la voz predeterminada del navegador
+                utterance.voice = synth.getVoices()[0];
+
+                // Reproduce el texto al dar clic en el botón
+                synth.speak(utterance);
+            } else {
+                alert('Tu navegador no soporta la síntesis de voz. Por favor, utiliza un navegador más reciente.');
+            }
+        }
+    </script>
+
+    <!--termina codigo del lector de texto-->
+    
+    
             <p>
                 Nos preocupamos en que tengas la mejor experiencia; Contactanos para soporte.
             </p>
@@ -830,7 +977,7 @@
                             <i class="fas fa-phone"></i>
                             <div class="cta-text">
                                 <h4>Llamanos</h4>
-                                <span>961 255 5767 <br> 961 375 0079 <br> 961 375 3375 <br></span>
+                                <span>961 255 5767 <br> 961 375 0079 <br> 961 375 3375 <br> 999 280 4729 <br></span>
                             </div>
                         </div>
                     </div>

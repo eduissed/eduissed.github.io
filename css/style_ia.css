@@ -225,21 +225,12 @@ header h2 {
 
 @media (max-width: 768px) {
   .chatbot {
-    height: 75vh; 
+    height: 70vh; 
     bottom: auto;
-    top: 38px; 
+    top: 8px; 
   }
 
   .chat-input {
     margin-bottom: 0%; 
-  }
-}
-
-
-
-
-@media (max-width: 768px) {
-  .chatbot {
-    border-radius: 40px; 
   }
 }

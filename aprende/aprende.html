@@ -21,7 +21,145 @@
 
 <body>
 
+    <script>
+
+        //////////////////////////////////////////////////
+        // script para hacer mas pequeño el menu lateral//
+        //////////////////////////////////////////////////
     
+        document.addEventListener('DOMContentLoaded', function () {
+                // Get the shrink-btn element
+                var shrinkBtn = document.querySelector('.shrink-btn');
+        
+                // Add click event listener to the shrink-btn
+                shrinkBtn.addEventListener('click', function () {
+                    // Toggle the 'shrink' class on the body
+                    document.body.classList.toggle('shrink');
+                });
+        
+                // Add the changeLink and changeLinkState functions
+                function changeLink() {
+                    SIDEBAR_LINKS.forEach((sideLink) => sideLink.classList.remove("active"));
+                    this.classList.add("active");
+        
+                    activeIndex = this.dataset.active;
+                }
+        
+                SIDEBAR_LINKS.forEach((link) => link.addEventListener("click", changeLink));
+        
+                function changeLinkState() {
+                    let index = SECTIONS.length;
+        
+                    while (--index && window.scrollY + 50 < SECTIONS[index].offsetTop) {}
+        
+                    SIDEBAR_LINKS.forEach((link) => link.classList.remove("active"));
+                    SIDEBAR_LINKS[index].classList.add("active");
+        
+                    activeIndex = index;
+                    moveTab();
+                }
+        
+                window.addEventListener("scroll", changeLinkState);
+            });
+    
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // script para mover la sombra del icono segun al icono que se le de click o scroll, con if y else para mobiles o pc//
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+        document.addEventListener('DOMContentLoaded', function () {
+            var tooltipElements = document.querySelectorAll('.tooltip-element');
+            var activeTab = document.querySelector('.active-tab');
+    
+            function handleTooltipClick(element) {
+                var tooltipValue = parseInt(element.getAttribute('data-tooltip'));
+    
+                if (window.innerWidth <= 915 && window.innerHeight <= 1024) {
+                    // Pantalla pequeña o igual: Mover hacia la derecha
+                    var leftPosition = 48 * tooltipValue;
+                    activeTab.style.left = leftPosition + 'px';
+                    activeTab.style.top = '2.5px';
+                } else {
+                    // Pantalla grande: Mover hacia abajo
+                    var topPosition = 2.5 + 58 * tooltipValue;
+                    activeTab.style.left = '2.5px';
+                    activeTab.style.top = topPosition + 'px';
+                }
+            }
+    
+            // Add click event listener to each tooltip element
+            tooltipElements.forEach(function (element) {
+                element.addEventListener('click', function () {
+                    handleTooltipClick(element);
+                });
+            });
+    
+            // Check screen size on resize
+            window.addEventListener('resize', function () {
+                handleTooltipClick(document.querySelector('.tooltip-element'));
+            });
+        });
+    
+        //////////////////////////////////////////////////////////////////////////////////////////////
+        // script para mostrar el nombre de la seccion cuando se pasa el cursor por encima del icono//
+        //////////////////////////////////////////////////////////////////////////////////////////////
+    
+        document.addEventListener('DOMContentLoaded', function () {
+            var tooltipElements = document.querySelectorAll('.tooltip-element');
+            var tooltipText = document.querySelector('.tooltip');
+    
+            function handleTooltipHover(element) {
+                var tooltipValue = parseInt(element.getAttribute('data-tooltip'));
+                var spanToShow = tooltipText.children[tooltipValue];
+    
+                // Add the "show" class to the corresponding span
+                spanToShow.classList.add('show');
+            }
+    
+            function handleTooltipLeave(element) {
+                var tooltipValue = parseInt(element.getAttribute('data-tooltip'));
+                var spanToHide = tooltipText.children[tooltipValue];
+    
+                // Remove the "show" class from the corresponding span
+                spanToHide.classList.remove('show');
+            }
+    
+            // Add mouseover event listener to each tooltip element
+            tooltipElements.forEach(function (element) {
+                element.addEventListener('mouseover', function () {
+                    handleTooltipHover(element);
+                });
+    
+                // Add mouseout event listener to each tooltip element
+                element.addEventListener('mouseout', function () {
+                    handleTooltipLeave(element);
+                });
+            });
+        });
+    
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////
+        // script para mover la sombra del nombre de la seccion cuando se pasa el cursor por encima del icono//
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+        document.addEventListener('DOMContentLoaded', function () {
+            var tooltipElements = document.querySelectorAll('.tooltip-element');
+            var tooltipContainer = document.querySelector('.tooltip');
+    
+            function handleTooltipHover(element) {
+                var tooltipValue = parseInt(element.getAttribute('data-tooltip'));
+                var topPosition = 5.33333 + 12.66667 * tooltipValue; // Calculate the top position based on the tooltip value
+    
+                // Set the top style of the tooltip container
+                tooltipContainer.style.top = topPosition + '%';
+            }
+    
+            // Add mouseover event listener to each tooltip element
+            tooltipElements.forEach(function (element) {
+                element.addEventListener('mouseover', function () {
+                    handleTooltipHover(element);
+                });
+            });
+        });
+    </script>
 
     <nav>
         <div class="sidebar-top">

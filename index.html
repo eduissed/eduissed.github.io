@@ -406,6 +406,74 @@
 
     <main>
 
+        <div id="inicio" class="section"> 
+            <h1 class="section-title">¿Qué es SEXi? <i  onclick="reproducirTextosexi()" id="iconoSexi1"
+                style="margin-left: 75px; vertical-align: middle; font-size: 34px;" class="bx bx-volume-full"></i>
+        </h1>  
+                 <!--script del lector de texto-->
+
+    <script>
+        function reproducirTextosexi() {
+            // Texto que se leerá en voz alta
+            var texto = "Actualmente las estrategias de enseñanza, aprendisaje que el sistema educativo desarrolla a traves de los docentes suelen ser repetitivas y aburridas para los estudiantes lo que ocaciona que no sean atractivas pierdan el interes para realizar las actividades y como concecuencia no se luege el aprendizaje y comprencion esperado sobre los temas.";
+
+            // Verifica si el navegador soporta la síntesis de voz
+            if ('speechSynthesis' in window) {
+                var synth = window.speechSynthesis;
+
+                // Crea un nuevo objeto de síntesis de voz
+                var utterance = new SpeechSynthesisUtterance(texto);
+
+                // Establece el idioma de la voz a español mexicano
+                utterance.lang = 'es-MX';
+
+                // Reproduce el texto al dar clic en el botón
+                synth.speak(utterance);
+            } else {
+                alert('Tu navegador no soporta la síntesis de voz. Por favor, utiliza un navegador más reciente.');
+            }
+        }
+    </script>
+
+    <!--termina codigo del lector de texto-->
+
+            <div id="inicio-content">
+                <img src="./resources/images/char1.png" alt="welcoming-people" class="characs">
+                <div>
+                    <p class="audio-trigger" data-audio="Audios\que es sexi.mp3"> 
+                        Actualmente, las estrategias de enseñanza-aprendizaje que el sistema educativo desarrolla a
+                        través de
+                        los
+                        docentes, suelen ser repetitivas y aburridas para los estudiantes, lo que ocasiona que no sean
+                        atractivas,
+                        pierdan el interés por realizar las actividades y como consecuencia, no se logré el aprendizaje
+                        y
+                        comprensión esperado sobre los temas</p>
+                    <p>
+                        Es por eso que nosotros, EDUISSED <span class="remark">(Educación Integral Socioemocional en
+                            Sexualidad Digitalizada)</span>, decidimos diseñar <b>SEXi</b> <span
+                            class="remark">Sexualidad
+                            Integral</span>
+                        una herramienta tecnopedagógica, específicamente una pagina
+                        web, que tiene como objetivo coadyuvar a la adquisición de habilidades socioemocionales en
+                        sexualidad.
+                        Lo
+                        que la hace diferente y más atractiva, es que cuenta con realidad aumentada para facilitar el
+                        aprendizaje y
+                        a su vez, hacerlo más didáctico y de interés para los estudiantes.</p>
+
+                    <p>
+                        Es importante utilizar metodologías interactivas que estimulen la participación activa, y no
+                        solo
+                        transmitir
+                        información, es también adquirir habilidades socioemocionales en sexualidad.
+                    </p>
+                    <p>Nuestro trabajo está basado principalmente en la información y temas proporcionados por la <span
+                            class="remark">UNESCO</span>, por lo que es recomendable revisar los <a href="#referencias"
+                            class="app-link">links y referencias</a>.</p>
+                </div>
+            </div>
+        </div>
 
         <div id="aprende" class="section">
             <h1 class="section-title">Aprende <i  onclick="reproducirTexto()" id="iconoSexi1"
@@ -421,7 +489,7 @@
     <script>
         function reproducirTexto() {
             // Texto que se leerá en voz alta
-            var texto = "Hola, bienvenido a Sexi. a continuacion te damos un catalago de articulos y presentaciones intereactivas que te permitiran conocer mas sobre estos temas, da click en el boton de tu agrado..";
+            var texto = "A continuacion presentamos una serie de articulos y presentaciones interactivas que te permitiran adquirir mas conocimiento sobre estos temas. elige uno de estos.";
 
             // Verifica si el navegador soporta la síntesis de voz
             if ('speechSynthesis' in window) {
@@ -666,7 +734,7 @@
     <script>
         function reproducirTextorecursos() {
             // Texto que se leerá en voz alta
-            var texto = "Podras ver una lista de codigos qr, con la que pueden ver infografias e imaneges con realidad aumentada, podras descargar estos codigos qr desde aqui o dando click en las imagenes. ";
+            var texto = "aqui te dejamos una lista de todos los codigos qr que pueden encontrar en la pagina asi como las infografias de cada tema, las puedes descargar desde aqui o dando click en cada una de mas imagenes mientras las vez, diviertete. ";
 
            // Verifica si el navegador soporta la síntesis de voz
            if ('speechSynthesis' in window) {
@@ -930,7 +998,7 @@
     <script>
         function reproducirTextocontacto() {
             // Texto que se leerá en voz alta
-            var texto = "En sexi nos preocupamos por ti, para que tengas la mejor experiencia, puedes contactarnos en las siguienes redes. da click en los botones si prefires contactarnos por X o por gmail. si deceas hacerlo por telefono copea el numero y llamanos. ";
+            var texto = "En sexi nos preocupamos por ti, para que tengas la mejor experiencia, puedes contactarnos en las siguienes redes. da click en los botones si prefires contactarnos por X - twitter o por gmail. si deceas hacerlo por telefono da click el numero y llamanos. ";
 
             /// Verifica si el navegador soporta la síntesis de voz
             if ('speechSynthesis' in window) {

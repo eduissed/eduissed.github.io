@@ -5,11 +5,11 @@ const chatInput = document.querySelector(".chat-input textarea");
 const sendChatBtn = document.querySelector(".chat-input span");
 
 let userMessage = null; // Donde El Mensaje Se Almacena
-const API_KEY = "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"; 
+const API_KEY = "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"; // Paste your API key here
 const inputInitHeight = chatInput.scrollHeight;
 
 const createChatLi = (message, className) => {
-    //Crea El Elemento <li>
+    // Crea El Elemento <li>
     const chatLi = document.createElement("li");
     chatLi.classList.add("chat", `${className}`);
     let chatContent = className === "outgoing" ? `<p></p>` : `<span class="material-symbols-outlined">smart_toy</span><p></p>`;
@@ -31,23 +31,23 @@ const generateResponse = (chatElement) => {
         body: JSON.stringify({
             model: "gpt-3.5-turbo",
             messages: [
-                { role: "system", content: "You are a helpful assistant." },
-                { role: "user", content: userMessage, language: "es" }
+                { role: "system", content: "You are a helpful assistant, and responses should be in Spanish." },
+                { role: "user", content: userMessage, language: "es" } // Set language to Spanish
             ],
             temperature: 0.7,
             max_tokens: 100
         })
-    }
+    };
 
-    // Se Envia El Mensaje Para Obtener Una Respuesta
+    // Envía el mensaje para obtener una respuesta
     fetch(API_URL, requestOptions)
         .then(res => res.json())
         .then(data => {
-            messageElement.textContent = data.choices[0].message.content.trim();
+            messageElement.textContent = data.choices[0].content.trim();
         })
         .catch(() => {
             messageElement.classList.add("error");
-            messageElement.textContent = "Lo siento:( Algo salio mal, verifica tu conexion e intenta de nuevo.";
+            messageElement.textContent = "Lo siento:( Algo salió mal, verifica tu conexión e intenta de nuevo.";
         })
         .finally(() => chatbox.scrollTo(0, chatbox.scrollHeight));
 }
@@ -91,6 +91,4 @@ sendChatBtn.addEventListener("click", handleChat);
 closeBtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
 chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
 
-
 console.log("API_KEY:", API_KEY);
-console.log("Request Options:", requestOptions);

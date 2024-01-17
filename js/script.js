@@ -5,7 +5,7 @@ const chatInput = document.querySelector(".chat-input textarea");
 const sendChatBtn = document.querySelector(".chat-input span");
 
 let userMessage = null; 
-const API_KEY = "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"; 
+const API_KEY = "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"; 
 const inputInitHeight = chatInput.scrollHeight;
 
 const createChatLi = (message, className) => {
@@ -34,6 +34,7 @@ const generateResponse = (chatElement) => {
             messages: [{role: "user", content: userMessage}],
         })
     }
+    
 
     // Send POST request to API, get response and set the reponse as paragraph text
     fetch(API_URL, requestOptions).then(res => res.json()).then(data => {

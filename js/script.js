@@ -37,7 +37,7 @@ const generateResponse = (chatElement) => {
             temperature: 0.7,
             max_tokens: 100
         })
-    }
+    };
 
     // Envía el mensaje para obtener una respuesta
     fetch(API_URL, requestOptions)
@@ -50,7 +50,8 @@ const generateResponse = (chatElement) => {
             messageElement.textContent = "Lo siento:( Algo salió mal, verifica tu conexión e intenta de nuevo.";
         })
         .finally(() => chatbox.scrollTo(0, chatbox.scrollHeight));
-}
+};
+
 
 const handleChat = () => {
     userMessage = chatInput.value.trim(); // Mensaje Ingresado Por El Usuario

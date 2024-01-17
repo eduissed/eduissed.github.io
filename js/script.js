@@ -31,15 +31,15 @@ const generateResponse = (chatElement) => {
         body: JSON.stringify({
             model: "gpt-3.5-turbo",
             messages: [
-                { role: "system", content: "You are a helpful assistant." },
-                { role: "user", content: userMessage }
+                { role: "system", content: "You are a helpful assistant, and responses should be in Spanish." },
+                { role: "user", content: userMessage, language: "es" } // Set language to Spanish
             ],
             temperature: 0.7,
             max_tokens: 100
         })
     }
 
-    // Se Envia El Mensaje Para Obtener Una Respuesta
+    // Envía el mensaje para obtener una respuesta
     fetch(API_URL, requestOptions)
         .then(res => res.json())
         .then(data => {
@@ -47,7 +47,7 @@ const generateResponse = (chatElement) => {
         })
         .catch(() => {
             messageElement.classList.add("error");
-            messageElement.textContent = "Lo siento:( Algo salio mal, verifica tu conexion e intenta de nuevo.";
+            messageElement.textContent = "Lo siento:( Algo salió mal, verifica tu conexión e intenta de nuevo.";
         })
         .finally(() => chatbox.scrollTo(0, chatbox.scrollHeight));
 }

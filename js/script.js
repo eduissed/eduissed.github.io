@@ -5,18 +5,8 @@ const chatInput = document.querySelector(".chat-input textarea");
 const sendChatBtn = document.querySelector(".chat-input span");
 
 let userMessage = null; // Donde El Mensaje Se Almacena
-let API_KEY = ""; // Variable para almacenar la API key ingresada por el usuario
+let API_KEY = "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"; // Variable para almacenar la API key ingresada por el usuario
 const inputInitHeight = chatInput.scrollHeight;
-
-// Función para solicitar la API key al usuario
-const requestAPIKey = () => {
-    API_KEY = prompt("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");
-};
-
-// Verificar si se proporciona una API key
-if (!API_KEY) {
-    requestAPIKey(); // Solicitar la API key si no está proporcionada
-}
 
 const createChatLi = (message, className) => {
     // Crea El Elemento <li>
@@ -101,5 +91,3 @@ chatInput.addEventListener("keydown", (e) => {
 sendChatBtn.addEventListener("click", handleChat);
 closeBtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
 chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
-
-console.log("API_KEY:", API_KEY);

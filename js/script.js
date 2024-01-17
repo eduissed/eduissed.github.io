@@ -5,7 +5,7 @@ const chatInput = document.querySelector(".chat-input textarea");
 const sendChatBtn = document.querySelector(".chat-input span");
 
 let userMessage = null; 
-const API_KEY = "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"; 
+const API_KEY = "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"; 
 const inputInitHeight = chatInput.scrollHeight;
 
 const createChatLi = (message, className) => {
@@ -58,7 +58,7 @@ const handleChat = () => {
     
     setTimeout(() => {
         // Display "Thinking..." message while waiting for the response
-        const incomingChatLi = createChatLi("Pensanso...", "incoming");
+        const incomingChatLi = createChatLi("Pensando...", "incoming");
         chatbox.appendChild(incomingChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
         generateResponse(incomingChatLi);

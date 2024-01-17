@@ -43,14 +43,15 @@ const generateResponse = (chatElement) => {
     fetch(API_URL, requestOptions)
         .then(res => res.json())
         .then(data => {
-            messageElement.textContent = data.choices[0].message.content.trim();
+            messageElement.textContent = data.choices[0].content.trim();
         })
         .catch(() => {
             messageElement.classList.add("error");
             messageElement.textContent = "Lo siento:( Algo salió mal, verifica tu conexión e intenta de nuevo.";
         })
         .finally(() => chatbox.scrollTo(0, chatbox.scrollHeight));
-};
+}
+
 
 
 const handleChat = () => {

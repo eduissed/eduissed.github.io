@@ -5,11 +5,11 @@ const chatInput = document.querySelector(".chat-input textarea");
 const sendChatBtn = document.querySelector(".chat-input span");
 
 let userMessage = null; // Donde El Mensaje Se Almacena
-let API_KEY = "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"; // Variable para almacenar la API key ingresada por el usuario
+const API_KEY = "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"; 
 const inputInitHeight = chatInput.scrollHeight;
 
 const createChatLi = (message, className) => {
-    // Crea El Elemento <li>
+    //Crea El Elemento <li>
     const chatLi = document.createElement("li");
     chatLi.classList.add("chat", `${className}`);
     let chatContent = className === "outgoing" ? `<p></p>` : `<span class="material-symbols-outlined">smart_toy</span><p></p>`;
@@ -31,24 +31,23 @@ const generateResponse = (chatElement) => {
         body: JSON.stringify({
             model: "gpt-3.5-turbo",
             messages: [
-                { role: "system", content: "You are a helpful assistant, and responses should be in Spanish." },
-                { role: "user", content: userMessage, language: "es" } // Set language to Spanish
+                { role: "system", content: "You are a helpful assistant." },
+                { role: "user", content: userMessage }
             ],
             temperature: 0.7,
             max_tokens: 100
         })
-    };
+    }
 
-    // Envía el mensaje para obtener una respuesta
+    // Se Envia El Mensaje Para Obtener Una Respuesta
     fetch(API_URL, requestOptions)
         .then(res => res.json())
         .then(data => {
-            // Accede a la respuesta de manera correcta
-            messageElement.textContent = data.choices[data.choices.length - 1].message.content.trim();
+            messageElement.textContent = data.choices[0].message.content.trim();
         })
         .catch(() => {
             messageElement.classList.add("error");
-            messageElement.textContent = "Lo siento:( Algo salió mal, verifica tu conexión e intenta de nuevo.";
+            messageElement.textContent = "Lo siento:( Algo salio mal, verifica tu conexion e intenta de nuevo.";
         })
         .finally(() => chatbox.scrollTo(0, chatbox.scrollHeight));
 }
@@ -91,3 +90,7 @@ chatInput.addEventListener("keydown", (e) => {
 sendChatBtn.addEventListener("click", handleChat);
 closeBtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
 chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
+
+
+console.log("API_KEY:", API_KEY);
+console.log("Request Options:", requestOptions);

@@ -240,6 +240,36 @@ table.paleBlueRows tfoot td {
     calc(var(--duration) * 0.065ms);
 }
 
+#newimg img {
+  height: 60%;
+  width: 60%;
+}
+
+@media only screen and (max-width: 767px) {
+  #img_ra {
+    width: 150%;
+    right: 105px;
+    top: 25px;
+  }
+}
+
+@media only screen and (max-width: 412px) {
+  #img_ra {
+    width: 150%;
+    right: 100px;
+    top: 25px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  #newimg {
+    width: 200%;
+    position: relative; /* o position: absolute; */
+    right: 80px;
+  }
+}
+
+
 @-webkit-keyframes text {
   10%,
   85% {

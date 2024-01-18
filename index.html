@@ -46,7 +46,7 @@
                     data-audio="Audios\Logotipo.mp3"></a>
             <div class="logo-text hide noselect">
                 <h3>SEXi</h3>
-                <h4>de EDUISSED</h4>
+                <h4>por EDUISSED</h4>
             </div>
         </div>
 
@@ -303,13 +303,13 @@
         </script>
 
         <!--chat con ia inicia-->
-        <button class="chatbot-toggler">
-            <span class="material-symbols-rounded">mode_comment</span>
+        <button class="chatbot-toggler" >
+            <span class="material-symbols-rounded"><i style="font-size: 40px;" class='bx bx-message-square-dots bx-flip-horizontal' ></i></span>
             <span class="material-symbols-outlined">close</span>
           </button>
           <div class="chatbot">
             <header>
-              <img src="Manzana Robot 1.png" class="logo">
+              <img src="Manzana Robot 1.png" class="logo_ia">
               <h2>SEXiBOT</h2>
               <span class="close-btn material-symbols-outlined">close</span>
             </header>
@@ -321,14 +321,24 @@
             </ul>
             <div class="chat-input">
               <textarea placeholder="Escribe tu duda..." spellcheck="false" required></textarea>
-              <span id="send-btn" class="material-symbols-rounded">send</span>
+              <span id="send-btn" ><i id="enviar_ia" class='bx bx-send'></i></span>
             </div>
           </div>
-    
-
-        
-
+          <script>
+            document.addEventListener('DOMContentLoaded', function() {
+              var sendBtn = document.getElementById('send-btn');
           
+              sendBtn.addEventListener('mouseover', function() {
+                var icon = sendBtn.querySelector('i');
+                icon.className = 'bx bxs-send';
+              });
+          
+              sendBtn.addEventListener('mouseout', function() {
+                var icon = sendBtn.querySelector('i');
+                icon.className = 'bx bx-send';
+              });
+            });
+          </script>
         <!--termina codigo de ia-->
 
 
@@ -409,7 +419,7 @@
 
         <div id="inicio" class="section"> 
             <h1 class="section-title">¿Qué es SEXi? <i  onclick="reproducirTextosexi()" id="iconoSexi1"
-                style="margin-left: 75px; vertical-align: middle; font-size: 34px;" class="bx bx-volume-full"></i>
+                style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i>
         </h1>  
                  <!--script del lector de texto-->
 
@@ -478,7 +488,7 @@
 
         <div id="aprende" class="section">
             <h1 class="section-title">Aprende <i  onclick="reproducirTexto()" id="iconoSexi1"
-                style="margin-left: 75px; vertical-align: middle; font-size: 34px;" class="bx bx-volume-full"></i>
+                style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i>
         </h1>
             </h1>
             <div>
@@ -573,7 +583,7 @@
 
         <div id="Juegos" class="section">
             <h1 class="section-title">Juegos <i  onclick="reproducirTextojuego()" id="iconoSexi1"
-                style="margin-left: 75px; vertical-align: middle; font-size: 34px;" class="bx bx-volume-full"></i>
+                style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i>
         </h1>
             <p>
                 Conoce los increibles juegos con los cuales podras aprender aun mas;
@@ -727,7 +737,7 @@
 
         <div id="recursos" class="section">
             <h1 class="section-title">Recursos <i  onclick="reproducirTextorecursos()" id="iconoSexi1"
-                style="margin-left: 75px; vertical-align: middle; font-size: 34px;" class="bx bx-volume-full"></i>
+                style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i>
         </h1>
 
         <!--script del lector de texto-->
@@ -869,7 +879,7 @@
 
         <div id="referencias" class="last-section section">
             <h1 class="section-title">Referecias <i  onclick="reproducirTextoreferencias()" id="iconoSexi1"
-                style="margin-left: 75px; vertical-align: middle; font-size: 34px;" class="bx bx-volume-full"></i>
+                style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i>
         </h1>
 
          <!--script del lector de texto-->
@@ -991,7 +1001,7 @@
 
         <div id="Ajustes" class="section"> 
             <h1 class="section-title">Contacto <i  onclick="reproducirTextocontacto()" id="iconoSexi1"
-                style="margin-left: 75px; vertical-align: middle; font-size: 34px;" class="bx bx-volume-full"></i>
+                style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i>
         </h1> 
 
          <!--script del lector de texto-->

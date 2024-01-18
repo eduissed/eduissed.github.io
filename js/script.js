@@ -26,7 +26,7 @@ const generateResponse = (chatElement) => {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${API_KEY}`
+            "Authorization": `Bearer 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`
         },
         body: JSON.stringify({
             model: "gpt-3.5-turbo",
@@ -79,3 +79,4 @@ sendChatBtn.addEventListener("click", handleChat);
 closeBtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
 chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
 
+  

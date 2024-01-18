@@ -5,7 +5,7 @@ const chatInput = document.querySelector(".chat-input textarea");
 const sendChatBtn = document.querySelector(".chat-input span");
 
 let userMessage = null; // Variable para almacenar el mensaje del usuario
-const API_KEY = "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"; 
+const API_KEY = "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"; 
 const inputInitHeight = chatInput.scrollHeight;
 
 const createChatLi = (message, className) => {
@@ -26,7 +26,7 @@ const generateResponse = (chatElement) => {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Authorization": `Bearer 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`
+            "Authorization": `Bearer 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`
         },
         body: JSON.stringify({
             model: "gpt-3.5-turbo",

@@ -197,37 +197,55 @@ body.show-chatbot .chatbot {
   }
 }
 
-/* Ajustes para pantallas medianas */
-@media (max-width: 768px) {
-
+/* Ajustes para dispositivos móviles */
+@media only screen and (max-width: 768px) {
   .chatbot-toggler {
-    right: 32px; /* Ajusta la distancia desde el borde derecho */
-    top: 689px;
-    bottom: 1px; /* Ajusta la distancia desde el borde inferior */
-    width: 64px; /* Ajusta el ancho del botón */
-    height: 64px; /* Ajusta la altura del botón */
+    position: fixed;
+    right: 32px;
+    top: 82vh; /* Ajusta la posición desde la parte superior en función de la altura de la ventana gráfica */
+    width: 70px; /* Ajusta el ancho del botón */
+    height: 70px; /* Ajusta la altura del botón */
   }
-  
-  .chat-input textarea {
-    margin-bottom: 50px; /* Ajusta según sea necesario */
+
+  .chatbot-toggler span {
+    font-size: 1.2rem;
   }
+
   .chatbot {
+    border-radius: 15px;
+    width: calc(100% - 20px);
+    right: 10px;
+    top: 80px; /* Ajusta la posición desde la parte superior */
     height: 70vh;
     bottom: auto;
-    top: 8px;
   }
+
+  .chatbot .chatbox {
+    height: 60%;
+  }
+
   .chat-input {
-    margin-bottom: 0%;
+    padding: 5px 15px;
+    margin-bottom: 10px;
+  }
+
+  .chat-input textarea {
+    height: 1px;
+  }
+}
+
+
+/* Ajustes para pantallas medianas y grandes */
+@media only screen and (min-width: 769px) {
+  .chatbot-toggler,
+  .chatbot {
+    right: 30px;
+  }
+
+  .chat-input textarea {
+    margin-bottom: 20px;
   }
 }
 
 
 /*codigo principal termina*/
-
-
-
-
-
-
-
-

@@ -167,6 +167,15 @@ body.show-chatbot .chatbot {
   vertical-align: middle;
 }
 
+#close-icon {
+  font-size: 30px; /* Tamaño del icono */
+  margin-left: auto; /* Coloca el icono al final de la barra de encabezado */
+  margin-right: 15px; /* Ajusta el espacio a la derecha del icono (ajusta según sea necesario) */
+  margin-top: -10px; /* Mueve el icono hacia arriba (ajusta según sea necesario) */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el icono */
+}
+
+
 /* Ajustes para dispositivos móviles */
 @media only screen and (max-width: 768px) {
   .chatbot-toggler {

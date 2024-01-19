@@ -79,4 +79,11 @@ sendChatBtn.addEventListener("click", handleChat);
 closeBtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
 chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
 
+
+/*scrip para el boton cerrar del chatbot*/
+const closeIcon = document.getElementById("close-icon");
+closeIcon.addEventListener("click", () => {
+    document.body.classList.remove("show-chatbot");
+});
+
   

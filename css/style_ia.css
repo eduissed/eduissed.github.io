@@ -168,41 +168,12 @@ body.show-chatbot .chatbot {
 }
 
 /* Ajustes para dispositivos móviles */
-@media (max-width: 490px) {
-  .chatbot {
-    border-radius: 15;
-    width: calc(100% - 20px);
-    right:10px;
-  }
-  .chatbot .chatbox {
-    height: 70%;
-  }
-  .chat-input {
-    padding: 5px 15px;
-  }
-  .chat-input textarea {
-    height: 1px;
-  }
-
-  /* Ajustes específicos para el botón en dispositivos móviles */
-  .chatbot-toggler {
-    right: 32px; /* Ajusta la distancia desde el borde derecho */
-    top: 689px;
-    bottom: 1px; /* Ajusta la distancia desde el borde inferior */
-    width: 64px; /* Ajusta el ancho del botón */
-    height: 64px; /* Ajusta la altura del botón */
-  }
-  .chatbot-toggler span {
-    font-size: 1.5rem; /* Ajusta el tamaño del icono */
-  }
-}
-
-/* Ajustes para dispositivos móviles */
 @media only screen and (max-width: 768px) {
   .chatbot-toggler {
     position: fixed;
-    right: 32px;
-    top: 82vh; /* Ajusta la posición desde la parte superior en función de la altura de la ventana gráfica */
+    right: 30px;
+    float: right;
+    bottom: 90px;
     width: 70px; /* Ajusta el ancho del botón */
     height: 70px; /* Ajusta la altura del botón */
   }
@@ -235,17 +206,6 @@ body.show-chatbot .chatbot {
 }
 
 
-/* Ajustes para pantallas medianas y grandes */
-@media only screen and (min-width: 769px) {
-  .chatbot-toggler,
-  .chatbot {
-    right: 30px;
-  }
-
-  .chat-input textarea {
-    margin-bottom: 20px;
-  }
-}
 
 
 /*codigo principal termina*/

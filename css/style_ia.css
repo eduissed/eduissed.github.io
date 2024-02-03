@@ -1,9 +1,9 @@
 /* Import Google font - Poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
 .chatbot-toggler {
   position: fixed;
-  bottom: 30px;
+  bottom: 60px;
   right: 30px;
   outline: none;
   border: none;
@@ -14,7 +14,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: #5A5EB9;
+  background: #5a5eb9;
   transition: all 0.2s ease;
 }
 body.show-chatbot .chatbot-toggler {
@@ -25,7 +25,7 @@ body.show-chatbot .chatbot-toggler {
   position: absolute;
 }
 .chatbot-toggler span:last-child,
-body.show-chatbot .chatbot-toggler span:first-child  {
+body.show-chatbot .chatbot-toggler span:first-child {
   opacity: 0;
 }
 body.show-chatbot .chatbot-toggler span:last-child {
@@ -34,7 +34,7 @@ body.show-chatbot .chatbot-toggler span:last-child {
 .chatbot {
   position: fixed;
   right: 35px;
-  bottom: 90px;
+  bottom: 130px;
   width: 420px;
   background: #fff;
   border-radius: 15px;
@@ -43,8 +43,8 @@ body.show-chatbot .chatbot-toggler span:last-child {
   pointer-events: none;
   transform: scale(0.5);
   transform-origin: bottom right;
-  box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
-              0 32px 64px -48px rgba(0,0,0,0.5);
+  box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
+    0 32px 64px -48px rgba(0, 0, 0, 0.5);
   transition: all 0.1s ease;
 }
 body.show-chatbot .chatbot {
@@ -53,12 +53,11 @@ body.show-chatbot .chatbot {
   transform: scale(1);
 }
 .chatbot header {
-  padding: 16px 0;
+  padding: 5px 0;
   position: relative;
   text-align: center;
   color: #fff;
   background: #39259c;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 .chatbot header span {
   position: absolute;
@@ -175,6 +174,235 @@ body.show-chatbot .chatbot {
   cursor: pointer; /* Cambia el cursor al pasar sobre el icono */
 }
 
+/*//////////////////////*/
+/* Estilos para el FAQ */
+body {
+  color: #000;
+}
+
+.faq-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.faq-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.faq-search {
+  position: relative;
+}
+
+.faq-search input[type="text"] {
+  width: 100%;
+  padding: 12px; /* Ajusta el padding según sea necesario */
+  font-size: 1rem; /* Ajusta el tamaño de la fuente según sea necesario */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.faq-search button {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.faq-button {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.faq-button:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.faq-item {
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  cursor: pointer;
+}
+
+.faq-content {
+  padding: 0 16px;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  max-height: 0;
+}
+
+.faq-question:hover {
+  text-decoration: underline;
+}
+
+.faq-question svg {
+  transition: transform 0.3s ease;
+}
+
+.faq-question.open svg {
+  transform: rotate(180deg);
+}
+
+.faq-content.open {
+  max-height: 200px; /* ajusta según tu necesidad */
+}
+
+/*fin del css de FAQ*/
+
+
+/*////////////////////////////*/
+/*estilo para el FAQ tap-bar*/
+.faqtext {
+  color: black;
+}
+.faq {
+  height: 350px;
+  max-height: 400px; /* Establece la altura máxima según sea necesario */
+  overflow-y: auto; /* Agrega una barra de desplazamiento vertical cuando sea necesario */
+}
+.faq::-webkit-scrollbar {
+  width: 7px; /* Ancho de la barra de desplazamiento */
+}
+
+/* Estilos CSS para la barra de pestañas */
+.tab-bar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.1px;
+}
+
+.tab-btn {
+  border-radius: 80px; /* Ajusta el radio de los bordes para hacerlos redondeados */
+  padding: 10px 20px; /* Ajusta el relleno según sea necesario */
+  background-color: #f0f0f0;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.hori-selector {
+  display: inline-block;
+  position: absolute;
+  bottom: 0px; /* Ajusta la posición vertical según sea necesario */
+  left: 49%; /* Centra horizontalmente */
+  transition-duration: 0.6s;
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  background-color: #fff;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  width: 91px; /* Ajusta el ancho del selector */
+  height: 38px; /* Ajusta la altura del selector */
+  margin-top: 20px; /* Ajusta el margen superior para bajarlo */
+}
+
+.faq-search {
+  position: relative;
+  display: inline-block;
+}
+
+.search-input {
+  padding-left: 30px; /* Ajusta según sea necesario para dar espacio al icono */
+}
+
+.faq-search i {
+  position: absolute;
+  left: 200px; /* Ajusta según sea necesario para alinear el icono */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+.hori-selector .right,
+.hori-selector .left {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-color: #fff;
+  bottom: 0px;
+}
+.hori-selector .right {
+  right: -25px;
+}
+.hori-selector .left {
+  left: -25px;
+}
+.hori-selector .right:before,
+.hori-selector .left:before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #39259c;
+}
+.hori-selector .right:before {
+  bottom: 0;
+  right: -25px;
+}
+.hori-selector .left:before {
+  bottom: 0;
+  left: -25px;
+}
+
+/* Estilos CSS para los botones */
+.tab-btn {
+  font-family: "Poppins", sans-serif;
+  font-size: 25px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 1px 20px;
+  margin-bottom: -5px; /* Ajusta el margen inferior según sea necesario */
+  margin-right: 10px;
+  color: #000;
+  transition: margin 0.3s ease;
+  position: relative; /* Añade posicionamiento relativo */
+  z-index: 2; /* Asegura que estén por encima del selector */
+}
+
+#chatbot-tab {
+  color: #39259c; /* Color del texto del botón "Chatbot" por defecto */
+}
+
+#faq-tab {
+  color: #ffffff; /* Color del texto del botón "FAQ" por defecto */
+}
+
+.tab-btn:nth-child(2) {
+  margin-right: 0;
+}
+
+/* Estilos CSS para esconder las FAQ inicialmente */
+.faq {
+  display: none;
+}
+/*fin del css tap-bar*/
+ol {
+  list-style-type: disc; /* Utiliza puntos como marcadores */
+  margin-left: 15px;
+}
+
 
 /* Ajustes para dispositivos móviles */
 @media only screen and (max-width: 768px) {
@@ -213,8 +441,5 @@ body.show-chatbot .chatbot {
     height: 1px;
   }
 }
-
-
-
 
 /*codigo principal termina*/

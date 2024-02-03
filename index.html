@@ -306,39 +306,228 @@
             <span class="material-symbols-rounded"><i style="font-size: 40px;" class='bx bx-message-square-dots bx-flip-horizontal' ></i></span>
             <span class="material-symbols-outlined">close</span>
           </button>
+          
+        
           <div class="chatbot">
             <header>
               <img src="Manzana Robot 1.png" class="logo_ia">
               <h2>SEXiBOT</h2>
-              <i id="close-icon" class='bx bxs-tag-x bx-flip-horizontal' ></i>
-              <span class="close-btn material-symbols-outlined"></span>
+              <span class="close-btn material-symbols-outlined">x</span>
+              <div class="tab-bar">
+                <div class="tab-container">
+                  <button class="tab-btn faq-btn active" id="faq-tab" onclick="toggleButton(this)"><i class='bx bx-question-mark'></i></button>
+                  <button class="tab-btn chatbot-btn" id="chatbot-tab" onclick="toggleButton(this)"><i class='bx bx-message-alt-dots' ></i></button>
+                  <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
+                </div>
+              </div>
             </header>
             <ul class="chatbox">
               <li class="chat incoming">
                 <span class="material-symbols-outlined">smart_toy</span>
-                <p>Hola soy SEXiBOT 👋<br>¿Como puedo ayudarte?</p>
+                <p>Hola soy SEXiBOT 👋<br>¿Cómo puedo ayudarte?</p>
               </li>
             </ul>
+            <div class="faq collapse show"> <!-- Utiliza la clase 'collapse' para la animación -->
+              <ul>
+                <br>
+                <div class="faq-container">
+                    <h1 style="color: #000;" class="faq-title">Preguntas <span style="border-bottom: 3px solid #39259C;">frecuentes</span></h1>
+                    <div class="faq-search">
+                      <input type="text" placeholder="Buscador de Preguntas" >
+                      <i style="color: #00000092;" class='bx bx-search-alt'></i>
+                    </div>
+                    <br>
+                    <div class="faq-items">
+                        <!-- primer elemento de la lista de FAQ -->
+                      <div class="faq-item">
+                        <div style="color: #000;" class="faq-question">
+                          ¿Que es EDUISSED?
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 transition-transform duration-200">
+                            <path d="m6 9 6 6 6-6"></path>
+                          </svg>
+                        </div>
+                        <div style="color: #000;" class="faq-content">
+                            EDUISSED es la <span style="border-bottom: 3px solid #39259C;">abreviatura</span> de “Educación Integral Socioemocional en Sexualidad Digitalizada”. 
+                            Es una organización, que tiene como objetivo <span style="border-bottom: 2px solid #39259C;">ayudar</span> 
+                            a la adquisición de habilidades socioemocionales en <span style="border-bottom: 3px solid #39259C;">sexualidad</span> a las y los jovenes.
+                        </div>
+                      </div>
+                      <!-- Elemento 2 de la lista de FAQ -->
+                      <div class="faq-item">
+                        <div style="color: #000;" class="faq-question">
+                          ¿Quienes conforman EDUISSED?
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 transition-transform duration-200">
+                            <path d="m6 9 6 6 6-6"></path>
+                          </svg>
+                        </div>
+                        <div style="color: #000;" class="faq-content">
+                          Somos una organización de jovenes del CETIS 138, que actualmente estamos <span style="border-bottom: 3px solid #39259C;">conformados</span> por: <br>
+                          <ol>
+                            <li><span style="border-bottom: 1px solid #39259C;">Angelica Montserrat Rodriguez Cano</span></li>
+                            <li><span style="border-bottom: 1px solid #39259C;">Roger Daniel Cruz Vazquez</span></li>
+                            <li><span style="border-bottom: 1px solid #39259C;">Eliann Artemio Grajeles Grene</span></li>
+                            <li><span style="border-bottom: 1px solid #39259C;">Josue Misael Torres Barrientos</span></li>
+                          </ol>
+                        </div>
+                      </div>
+                      <!-- Elemento 3 de la lista de FAQ -->
+                      <div class="faq-item">
+                        <div style="color: #000;" class="faq-question">
+                          ¿Que es SEXi por EDUISSED?
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 transition-transform duration-200">
+                            <path d="m6 9 6 6 6-6"></path>
+                          </svg>
+                        </div>
+                        <div style="color: #000;" class="faq-content">
+                            SEXi es una plataforma realizada por el equipo de <span style="border-bottom: 3px solid #39259C;">EDUISSED,</span> 
+                            que tiene como misión el <span style="border-bottom: 3px solid #39259C;">apoyar</span> a los jóvenes proveyéndolos con herramientas que les permitan aprender 
+                            <span style="border-bottom: 3px solid #39259C;">educación sexual de calidad</span> así como habilidades socioemocionales haciendo <span style="border-bottom: 3px solid #39259C;">uso de herramientas</span> de 
+                            realidad aumentada, infografias, juegos e IA.
+                        </div>
+                      </div>
+                      <!-- Elemento 4 de la lista de FAQ -->
+                      <div class="faq-item">
+                        <div style="color: #000;" class="faq-question">
+                          ¿Es confiable la informacion de SEXI?
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 transition-transform duration-200">
+                            <path d="m6 9 6 6 6-6"></path>
+                          </svg>
+                        </div>
+                        <div style="color: #000;" class="faq-content">
+                            <span style="border-bottom: 3px solid #39259C;">Si</span>, en EDUISSED nos <span style="border-bottom: 3px solid #39259C;">preucupamos</span> por el aprendizaje de nustros usuario por lo tanto <span style="border-bottom: 3px solid #39259C;">ofrecemos</span>
+                            informacion de <span style="border-bottom: 3px solid #39259C;">fuentes confiables</span> que puedes consulatar. Dando click <span style="border-bottom: 3px solid #39259C;"><a href="#referencias">aqui</a></span>
+                            podras consultar todas nustras fuentes de informacion.
+                        </div>
+                      </div>
+                      <!-- Elemento 5 de la lista de FAQ -->
+                      <div class="faq-item">
+                        <div style="color: #000;" class="faq-question">
+                          ¿Que es SEXiBOT?
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 transition-transform duration-200">
+                            <path d="m6 9 6 6 6-6"></path>
+                          </svg>
+                        </div>
+                        <div style="color: #000;" class="faq-content">
+                            <span style="border-bottom: 3px solid #39259C;">SEXiBOT</span> es nuestro servicio mas <span style="border-bottom: 3px solid #39259C;">nuevo</span> en EDUISSED, ademas de ser <span style="border-bottom: 3px solid #39259C;">nuestra mascota</span> de nuestra organizacion
+                            <br><center><img style=" height: 50%; width: 50%;" src="resources\sexibot.gif" alt="SEXiBOT gift"></center>
+                        </div>
+                      </div>
+                      <!-- Elemento 5 de la lista de FAQ -->
+                      <br>
+                    </div>
+                  </div>
+              </ul>
+            </div>
             <div class="chat-input">
               <textarea placeholder="Escribe tu duda..." spellcheck="false" required></textarea>
-              <span id="send-btn" ><i id="enviar_ia" class='bx bx-send'></i></span>
+              <span id="send-btn"><i id="enviar_ia" class='bx bx-send'></i></span>
             </div>
           </div>
+          
           <script>
-            document.addEventListener('DOMContentLoaded', function() {
-              var sendBtn = document.getElementById('send-btn');
+            document.addEventListener('DOMContentLoaded', function () {
+              const searchInput = document.querySelector('.faq-search input[type="text"]');
+              const faqItems = document.querySelectorAll('.faq-item');
           
-              sendBtn.addEventListener('mouseover', function() {
-                var icon = sendBtn.querySelector('i');
-                icon.className = 'bx bxs-send';
-              });
+              searchInput.addEventListener('input', function () {
+                const searchTerm = searchInput.value.trim().toLowerCase();
           
-              sendBtn.addEventListener('mouseout', function() {
-                var icon = sendBtn.querySelector('i');
-                icon.className = 'bx bx-send';
+                faqItems.forEach(function (item) {
+                  const questionText = item.querySelector('.faq-question').textContent.trim().toLowerCase();
+                  const contentText = item.querySelector('.faq-content').textContent.trim().toLowerCase();
+          
+                  if (questionText.includes(searchTerm) || contentText.includes(searchTerm)) {
+                    item.style.display = 'block'; // Mostrar el elemento si coincide con el término de búsqueda
+                  } else {
+                    item.style.display = 'none'; // Ocultar el elemento si no coincide con el término de búsqueda
+                  }
+                });
               });
             });
           </script>
+          
+
+
+<script>
+// Script para la funcionalidad de expansión y contracción de preguntas
+    document.addEventListener("DOMContentLoaded", function () {
+      const questions = document.querySelectorAll(".faq-question");
+    
+      questions.forEach((question) => {
+        question.addEventListener("click", () => {
+          question.classList.toggle("open");
+          const content = question.nextElementSibling;
+          if (question.classList.contains("open")) {
+            content.style.maxHeight = content.scrollHeight + "px";
+          } else {
+            content.style.maxHeight = 0;
+          }
+        });
+      });
+    });
+    
+    
+    
+    // scrip de tap-bar de faq //
+    
+    function toggleButton(button) {
+        var selector = document.querySelector('.hori-selector');
+        var offset = button.offsetLeft;
+        selector.style.left = offset + 'px';
+    
+        var buttons = document.querySelectorAll('.tab-btn');
+    buttons.forEach(function(btn) {
+    btn.classList.remove('active');
+    btn.style.transition = 'color 1.6s ease'; // Agrega una transición suave al color
+    btn.style.color = 'rgba(255, 255, 255, 1)'; // Restablece el color de todos los botones a blanco
+    });
+    button.classList.add('active');
+    button.style.transition = 'color 1.6s ease'; // Agrega una transición suave al color
+    button.style.color = 'rgba(57, 37, 156, 1)'; // Establece el color del botón activado
+    
+    // Si el botón Chatbot está activo y es de color #39259C, el botón FAQ debe estar blanco
+    if (button.id === 'chatbot-tab' && button.style.color === 'rgba(57, 37, 156, 1)') {
+    document.getElementById('faq-tab').style.color = 'rgba(255, 255, 255, 1)';
+    }
+    // Si el botón FAQ está activo y es de color #39259C, el botón Chatbot debe estar blanco
+    else if (button.id === 'faq-tab' && button.style.color === 'rgba(57, 37, 156, 1)') {
+    document.getElementById('chatbot-tab').style.color = 'rgba(255, 255, 255, 1)';
+    }
+    
+    
+        // Ajustar la posición del selector dependiendo del botón activo
+        if (button.id === "chatbot-tab") {
+            selector.style.left = "49%";
+        } else if (button.id === "faq-tab") {
+            selector.style.left = "30%";
+        }
+    }
+    
+    $(document).ready(function() {
+    // Funcionalidad para cambiar entre Chatbot y FAQ
+    $('#faq-tab').click(function() {
+    $('.chatbox').hide();
+    $('#send-btn').hide();
+    $('.chat-input').animate({ height: '0px' }, 300); // Establecer la altura a 0px con animación
+    $('.faq').show();
+    $('.chatbot-btn').removeClass('active');
+    $(this).addClass('active');
+    });
+    
+    $('#chatbot-tab').click(function() {
+    $('.faq').hide();
+    $('.chatbox').show();
+    $('#send-btn').show();
+    $('.chat-input').animate({ height: '63px' }, 300); // Animación para quitar la altura definida
+    $('.faq-btn').removeClass('active');
+    $(this).addClass('active');
+    });
+    });
+</script>
+
+  
+
+          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <!--termina codigo de ia-->
 
 
@@ -1147,7 +1336,7 @@
     </main>
     <footer>
         <img src="./resources/images/char_footer.png" alt="people hugging" id="people" class="characs">
-        <img id="grass" src="../resources/images/footer-image.png" alt="footer">
+        <img id="grass" src="resources\images\footer-image.png" alt="footer">
     </footer>
 
 

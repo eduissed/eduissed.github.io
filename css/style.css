@@ -1141,7 +1141,6 @@ main > .section:nth-child(2n)::after {
 
 
 
-
 @media only screen and (max-width: 500px) {
   .chat-logs {
     height: 40vh;
@@ -1367,7 +1366,9 @@ main > .section:nth-child(2n)::after {
 
   footer #grass {
     width: 100vw;
+  
   }
+
 }
 
 @media (max-width: 740px) {

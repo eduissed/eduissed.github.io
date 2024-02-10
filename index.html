@@ -65,7 +65,7 @@
                 <center>
                     <ul>
                         <li style="font-size: 24px;">
-                            <i class='bx bx-volume-full' id="volume-icon"></i>
+                           <i onclick="toggleMute()" class='bx bx-volume-full' id="volume-icon"></i>
                         </li>
                         <br>
                         <li style="font-size: 24px;">
@@ -285,17 +285,21 @@
                 const dropUpContainer = this.closest('.drop-up-container');
                 dropUpContainer.classList.remove('open');
             });
+            
 
-            document.getElementById("volume-icon").addEventListener("click", function () {
-                let icon = this;
-                if (icon.classList.contains('bx-volume-full')) {
-                    icon.classList.remove('bx-volume-full');
-                    icon.classList.add('bx-volume-mute');
-                } else {
-                    icon.classList.remove('bx-volume-mute');
-                    icon.classList.add('bx-volume-full');
-                }
-            });
+            
+            function toggleMute() {
+    var volumeIcon = document.getElementById('volume-icon');
+    var volumeIcons = document.querySelectorAll('.bx-volume:not(#volume_faq)');
+    var isMuted = volumeIcon.classList.contains('bx-volume-mute');
+    
+    volumeIcons.forEach(function(icon) {
+        icon.style.display = isMuted ? 'inline' : 'none';
+    });
+
+    volumeIcon.classList.toggle('bx-volume-mute', !isMuted);
+}
+
 
 
 
@@ -306,7 +310,6 @@
             <span class="material-symbols-rounded"><i style="font-size: 40px;" class='bx bx-message-square-dots bx-flip-horizontal' ></i></span>
             <span class="material-symbols-outlined">close</span>
           </button>
-          
         
           <div class="chatbot">
             <header>
@@ -315,8 +318,8 @@
               <span class="close-btn material-symbols-outlined">x</span>
               <div class="tab-bar">
                 <div class="tab-container">
-                  <button class="tab-btn faq-btn active" id="faq-tab" onclick="toggleButton(this)"><i class='bx bx-question-mark'></i></button>
-                  <button class="tab-btn chatbot-btn" id="chatbot-tab" onclick="toggleButton(this)"><i class='bx bx-message-alt-dots' ></i></button>
+                  <button class="tab-btn faq-btn active" id="faq-tab" onclick="toggleButton(this)"><i class="fa-solid fa-question"></i></button>
+                  <button class="tab-btn chatbot-btn" id="chatbot-tab" onclick="toggleButton(this)"><i class="fa-regular fa-comments" ></i></button>
                   <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
                 </div>
               </div>
@@ -329,7 +332,6 @@
             </ul>
             <div class="faq collapse show"> <!-- Utiliza la clase 'collapse' para la animación -->
               <ul>
-                <br>
                 <div class="faq-container">
                     <h1 style="color: #000;" class="faq-title">Preguntas <span style="border-bottom: 3px solid #39259C;">frecuentes</span></h1>
                     <div class="faq-search">
@@ -337,84 +339,349 @@
                       <i style="color: #00000092;" class='bx bx-search-alt'></i>
                     </div>
                     <br>
+                      <div class="slide">
+
+                            <button class="card" id="sobre_nosotros">
+                                <br>
+                                <svg style="width: 28px; height: 28px; fill: #39259c;" id="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+                                    <g transform="translate(0.000000,1080.000000) scale(0.100000,-0.100000)" fill="#39259c#000000" stroke="none">
+                                      <path d="M6160 10310 c0 -5 -8 -10 -17 -10 -10 0 -29 -9 -43 -20 -14 -11 -28
+                                      -20 -33 -20 -4 0 -35 -28 -70 -63 -158 -158 -316 -374 -434 -592 -70 -129
+                                      -113 -218 -159 -335 -19 -47 -39 -94 -44 -105 -9 -21 -51 -148 -89 -270 -12
+                                      -38 -21 -78 -21 -87 0 -9 -4 -20 -10 -23 -5 -3 -10 -23 -10 -44 0 -20 -7 -61
+                                      -15 -89 -17 -55 -53 -294 -61 -397 -8 -95 -16 -105 -88 -105 -34 1 -92 8 -131
+                                      16 -38 8 -86 18 -105 21 -19 3 -40 9 -45 14 -6 4 -31 11 -55 15 -25 4 -50 10
+                                      -56 15 -5 5 -35 15 -65 23 -30 8 -79 24 -109 36 -67 26 -238 65 -380 86 -190
+                                      29 -702 17 -865 -21 -16 -3 -57 -10 -90 -15 -52 -8 -221 -47 -265 -62 -8 -2
+                                      -53 -17 -100 -33 -91 -30 -348 -146 -392 -176 -14 -11 -31 -19 -36 -19 -6 0
+                                      -36 -18 -68 -40 -33 -23 -70 -48 -84 -58 -129 -86 -303 -251 -414 -392 -115
+                                      -146 -171 -239 -254 -420 -59 -129 -134 -351 -152 -450 -4 -25 -15 -83 -25
+                                      -130 -9 -47 -20 -123 -26 -170 -16 -141 -21 -170 -30 -170 -5 0 -9 -138 -9
+                                      -320 0 -249 3 -320 13 -320 8 0 7 -4 -3 -10 -10 -7 -12 -12 -4 -17 15 -10 33
+                                      -142 38 -273 5 -121 22 -295 36 -371 6 -28 10 -71 10 -95 0 -23 4 -54 10 -69
+                                      5 -14 15 -65 21 -113 19 -148 43 -280 77 -417 11 -44 27 -116 37 -160 10 -44
+                                      28 -120 41 -170 13 -49 33 -126 44 -170 12 -44 25 -89 29 -100 5 -11 21 -65
+                                      36 -120 15 -55 31 -109 36 -120 13 -30 77 -210 104 -290 26 -79 76 -206 99
+                                      -250 9 -17 16 -34 16 -38 0 -5 7 -25 16 -45 9 -21 25 -55 34 -77 60 -135 129
+                                      -280 163 -345 21 -41 51 -97 65 -125 57 -111 138 -254 181 -320 25 -38 52 -82
+                                      61 -97 41 -72 214 -316 290 -409 30 -37 77 -96 105 -131 68 -87 283 -297 395
+                                      -388 98 -79 126 -99 197 -141 24 -14 52 -33 63 -42 11 -9 23 -17 27 -17 4 0
+                                      44 -18 88 -40 45 -21 99 -43 121 -49 21 -5 59 -17 84 -26 64 -24 260 -31 443
+                                      -15 84 7 159 16 168 21 9 5 49 13 89 20 40 6 109 25 154 41 44 17 99 36 121
+                                      42 22 7 51 17 65 24 74 33 124 52 139 52 9 0 28 7 43 14 107 56 518 58 668 4
+                                      8 -3 47 -16 85 -28 39 -13 84 -29 100 -36 135 -58 265 -101 365 -118 47 -9
+                                      103 -20 124 -27 55 -15 469 -17 521 -2 22 6 67 19 100 28 53 14 206 84 260
+                                      118 10 6 55 35 100 63 154 97 367 292 540 494 89 104 307 391 327 430 7 14 29
+                                      47 50 74 21 27 38 53 38 58 0 5 11 24 25 42 14 18 25 36 25 40 0 3 12 24 26
+                                      46 14 22 34 53 43 69 9 17 43 79 76 138 60 110 235 459 235 470 0 4 13 34 30
+                                      67 16 34 45 102 64 153 20 50 43 108 52 130 33 76 53 129 99 268 13 39 32 95
+                                      43 125 11 30 32 96 47 145 15 50 32 101 36 115 5 14 18 59 28 100 11 41 33
+                                      127 50 190 17 63 31 127 31 142 0 15 4 29 9 33 6 3 13 27 16 53 4 26 14 76 22
+                                      112 20 86 61 316 74 409 5 41 12 78 14 82 4 6 20 134 31 244 2 22 10 90 18
+                                      150 8 61 15 146 15 190 1 90 21 235 33 235 4 0 8 149 8 330 0 188 -4 330 -9
+                                      330 -9 0 -11 11 -30 165 -10 82 -28 190 -51 305 -12 60 -54 208 -68 243 -7 16
+                                      -12 31 -12 35 0 37 -136 320 -203 420 -9 15 -23 39 -30 53 -46 95 -302 371
+                                      -427 460 -25 18 -47 35 -50 39 -7 9 -128 90 -134 90 -3 0 -29 15 -58 33 -52
+                                      33 -262 137 -276 137 -4 0 -18 7 -30 16 -23 16 -23 16 -4 30 10 7 41 18 68 25
+                                      125 31 560 227 702 316 28 19 60 37 70 40 9 4 36 20 58 35 23 15 46 28 51 28
+                                      6 0 18 9 28 20 10 11 22 20 28 20 5 0 43 21 85 48 42 26 84 52 93 57 66 40
+                                      142 101 152 122 11 24 8 29 -33 65 -142 125 -481 297 -710 360 -354 98 -576
+                                      125 -930 114 -198 -6 -300 -15 -385 -35 -22 -6 -83 -20 -135 -32 -127 -29
+                                      -315 -92 -420 -141 -47 -22 -105 -49 -130 -61 -25 -11 -69 -35 -98 -54 -29
+                                      -18 -56 -33 -61 -33 -11 0 -159 -92 -254 -158 -127 -87 -313 -248 -480 -415
+                                      -43 -43 -81 -76 -84 -73 -3 3 2 36 11 73 9 37 21 88 26 113 29 137 103 342
+                                      186 518 30 62 54 114 54 116 0 2 24 43 53 91 28 48 61 102 73 121 11 18 29 44
+                                      40 56 11 13 41 52 66 88 25 36 80 101 122 143 92 94 129 165 129 247 0 98 -62
+                                      188 -164 236 -21 11 -39 22 -39 27 0 4 -27 7 -60 7 -33 0 -60 -4 -60 -10z
+                                      m-419 -1906 c5 -6 28 -14 52 -18 23 -3 62 -10 87 -15 25 -6 104 -22 175 -35
+                                      155 -31 185 -41 164 -60 -17 -16 -111 -52 -159 -62 -19 -3 -39 -10 -45 -14 -5
+                                      -4 -76 -20 -157 -34 -177 -33 -188 -30 -181 41 2 26 8 66 13 88 5 22 12 67 15
+                                      100 9 71 19 92 23 50 2 -16 8 -35 13 -41z m989 -1559 c118 -14 313 -36 432
+                                      -50 153 -17 226 -29 243 -41 53 -35 54 -44 76 -527 11 -248 17 -466 14 -484
+                                      -3 -19 -20 -44 -41 -62 -50 -45 -110 -44 -161 2 -35 33 -36 35 -44 133 -4 54
+                                      -10 197 -14 317 -4 119 -11 219 -15 222 -7 4 -782 -708 -788 -724 -1 -4 19
+                                      -39 44 -77 104 -152 180 -352 211 -549 17 -115 12 -324 -11 -441 -79 -393
+                                      -345 -743 -704 -924 -103 -52 -264 -105 -372 -122 l-85 -14 -3 -312 -2 -312
+                                      240 0 c258 0 280 -4 314 -52 24 -34 21 -109 -6 -143 -39 -50 -67 -55 -318 -55
+                                      l-230 0 0 -212 c0 -196 -2 -216 -20 -246 -20 -32 -71 -62 -107 -62 -33 0 -86
+                                      36 -105 71 -16 29 -18 59 -18 241 l0 208 -227 0 c-197 0 -233 2 -262 18 -95
+                                      48 -101 173 -10 219 17 9 93 13 262 13 l237 0 -2 313 -3 312 -30 3 c-280 26
+                                      -596 186 -803 408 -178 190 -284 398 -344 679 -19 90 -16 361 5 467 137 689
+                                      768 1151 1457 1068 210 -26 463 -127 625 -249 44 -34 86 -59 92 -56 7 2 188
+                                      168 403 367 268 249 385 364 373 366 -10 1 -150 18 -312 36 -323 37 -330 40
+                                      -365 110 -23 48 -15 93 23 130 29 28 78 45 116 39 11 -2 117 -14 235 -28z"/>
+                                      <path d="M5197 5870 c-236 -40 -490 -190 -641 -379 -159 -199 -235 -412 -236
+                                      -662 0 -306 98 -547 310 -760 207 -208 449 -309 744 -309 200 0 332 31 496
+                                      116 506 262 714 873 475 1391 -69 148 -162 269 -284 370 -198 163 -428 244
+                                      -686 242 -71 -1 -152 -5 -178 -9z"/>
+                                  </g>
+                                  </svg>
+                                <div class="name">Sobre nosotros</div>
+                                <div class="description">¿Quienes somos?</div>
+                            </button>
+
+                            <button class="card" id="sobre_la_pagina">
+                                <br>
+                                <i id="option_faq" class="fa-solid fa-person-chalkboard"></i>
+                                <div class="name">Sobre la pagina</div>
+                                <div class="description">¿Como usar la pagina?</div>
+                            </button>
+
+                            <button class="card" id="preguntas_sexualidad">
+                                <br>
+                                <i id="option_faq" class="fa-solid fa-person-circle-question"></i>
+                                <div class="name">Preguntas de sexualidad</div>
+                                <div class="description">Información sexual básica</div>
+                            </button>
+
+                      </div>
+                    <br>
                     <div class="faq-items">
-                        <!-- primer elemento de la lista de FAQ -->
-                      <div class="faq-item">
-                        <div style="color: #000;" class="faq-question">
-                          ¿Que es EDUISSED?
-                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 transition-transform duration-200">
-                            <path d="m6 9 6 6 6-6"></path>
-                          </svg>
+                        <!-- Primer elemento de la lista de FAQ -->
+                        <div class="faq-item" id="sobre_nosotros_card_1">
+                            <div style="color: #000;" class="faq-question">
+                                ¿Qué es EDUISSED?
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    class="h-4 w-4 shrink-0 transition-transform duration-200">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </div>
+                            <div style="color: #000;" class="faq-content">
+                                EDUISSED es la <span style="border-bottom: 3px solid #39259C;">abreviatura</span> de “Educación Integral
+                                Socioemocional en Sexualidad Digitalizada”. Es una organización que tiene como objetivo <span
+                                    style="border-bottom: 2px solid #39259C;">ayudar</span> a la adquisición de habilidades socioemocionales
+                                en <span style="border-bottom: 3px solid #39259C;">sexualidad</span> a las y los jóvenes. <i style="color: white;"
+                                    class="fa-solid fa-otter"></i>
+                            </div>
                         </div>
-                        <div style="color: #000;" class="faq-content">
-                            EDUISSED es la <span style="border-bottom: 3px solid #39259C;">abreviatura</span> de “Educación Integral Socioemocional en Sexualidad Digitalizada”. 
-                            Es una organización, que tiene como objetivo <span style="border-bottom: 2px solid #39259C;">ayudar</span> 
-                            a la adquisición de habilidades socioemocionales en <span style="border-bottom: 3px solid #39259C;">sexualidad</span> a las y los jovenes.
+                        <!-- Elemento 2 de la lista de FAQ -->
+                        <div class="faq-item" id="sobre_nosotros_card_2">
+                            <div style="color: #000;" class="faq-question">
+                                ¿Quiénes conforman EDUISSED?
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    class="h-4 w-4 shrink-0 transition-transform duration-200">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </div>
+                            <div style="color: #000;" class="faq-content">
+                                Somos una organización de jóvenes del CETIS 138, que actualmente estamos <span
+                                    style="border-bottom: 3px solid #39259C;">conformados</span> por: <br>
+                                <ol>
+                                    <li><span style="border-bottom: 1px solid #39259C;">Angélica Montserrat Rodríguez Cano</span></li>
+                                    <li><span style="border-bottom: 1px solid #39259C;">Roger Daniel Cruz Vázquez</span></li>
+                                    <li><span style="border-bottom: 1px solid #39259C;">Eliann Artemio Grajeles Greene</span></li>
+                                    <li><span style="border-bottom: 1px solid #39259C;">Josué Misael Torres Barrientos</span></li>
+                                </ol>
+                            </div>
                         </div>
-                      </div>
-                      <!-- Elemento 2 de la lista de FAQ -->
-                      <div class="faq-item">
-                        <div style="color: #000;" class="faq-question">
-                          ¿Quienes conforman EDUISSED?
-                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 transition-transform duration-200">
-                            <path d="m6 9 6 6 6-6"></path>
-                          </svg>
+                        <!-- Elemento 3 de la lista de FAQ -->
+                        <div class="faq-item" id="sobre_nosotros_card_3">
+                            <div style="color: #000;" class="faq-question">
+                                ¿Qué es SEXi por EDUISSED?
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    class="h-4 w-4 shrink-0 transition-transform duration-200">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </div>
+                            <div style="color: #000;" class="faq-content">
+                                SEXi es una plataforma realizada por el equipo de <span style="border-bottom: 3px solid #39259C;">EDUISSED,</span>
+                                que tiene como misión <span style="border-bottom: 3px solid #39259C;">apoyar</span> a los jóvenes proveyéndolos
+                                con herramientas que les permitan aprender <span style="border-bottom: 3px solid #39259C;">educación sexual de
+                                    calidad,</span> así como habilidades socioemocionales haciendo <span
+                                    style="border-bottom: 3px solid #39259C;">uso de herramientas</span> de realidad aumentada, infografías,
+                                juegos e IA.
+                            </div>
                         </div>
-                        <div style="color: #000;" class="faq-content">
-                          Somos una organización de jovenes del CETIS 138, que actualmente estamos <span style="border-bottom: 3px solid #39259C;">conformados</span> por: <br>
-                          <ol>
-                            <li><span style="border-bottom: 1px solid #39259C;">Angelica Montserrat Rodriguez Cano</span></li>
-                            <li><span style="border-bottom: 1px solid #39259C;">Roger Daniel Cruz Vazquez</span></li>
-                            <li><span style="border-bottom: 1px solid #39259C;">Eliann Artemio Grajeles Grene</span></li>
-                            <li><span style="border-bottom: 1px solid #39259C;">Josue Misael Torres Barrientos</span></li>
-                          </ol>
+                        <!-- Elemento 4 de la lista de FAQ -->
+                        <div class="faq-item" id="sobre_nosotros_card_4">
+                            <div style="color: #000;" class="faq-question">
+                                ¿Es confiable la información de SEXi?
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    class="h-4 w-4 shrink-0 transition-transform duration-200">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </div>
+                            <div style="color: #000;" class="faq-content">
+                                <span style="border-bottom: 3px solid #39259C;">Sí</span>, en EDUISSED nos <span
+                                    style="border-bottom: 3px solid #39259C;">preocupamos</span> por el aprendizaje de nuestros usuarios;
+                                por lo tanto, <span style="border-bottom: 3px solid #39259C;">ofrecemos</span> información de <span
+                                    style="border-bottom: 3px solid #39259C;">fuentes confiables</span> que puedes consultar. Los temas y
+                                subtemas que presentamos están basados en el documento "Orientaciones Técnicas Internacionales sobre
+                                Educación en Sexualidad" propuesto por la UNESCO en 2018. Dando click <span
+                                    style="border-bottom: 3px solid #39259C;"><a href="#referencias">aquí</a></span> podrás consultar todas
+                                nuestras fuentes de información.
+                            </div>
                         </div>
-                      </div>
-                      <!-- Elemento 3 de la lista de FAQ -->
-                      <div class="faq-item">
-                        <div style="color: #000;" class="faq-question">
-                          ¿Que es SEXi por EDUISSED?
-                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 transition-transform duration-200">
-                            <path d="m6 9 6 6 6-6"></path>
-                          </svg>
+                        <!-- Elemento 5 de la lista de FAQ -->
+                        <div class="faq-item" id="sobre_nosotros_card_5">
+                            <div style="color: #000;" class="faq-question">
+                                ¿Qué es SEXiBOT?
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    class="h-4 w-4 shrink-0 transition-transform duration-200">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </div>
+                            <div style="color: #000;" class="faq-content">
+                                <span style="border-bottom: 3px solid #39259C;">SEXiBOT</span> es nuestro servicio más <span
+                                    style="border-bottom: 3px solid #39259C;">nuevo</span> en EDUISSED, además de ser <span
+                                    style="border-bottom: 3px solid #39259C;">nuestra mascota</span> de nuestra organización
+                                <br><center><img style="height: 50%; width: 50%;" src="resources\Manzana_Robot_1_CH.gif"
+                                        alt="SEXiBOT mascota gif"></center>
+                            </div>
                         </div>
-                        <div style="color: #000;" class="faq-content">
-                            SEXi es una plataforma realizada por el equipo de <span style="border-bottom: 3px solid #39259C;">EDUISSED,</span> 
-                            que tiene como misión el <span style="border-bottom: 3px solid #39259C;">apoyar</span> a los jóvenes proveyéndolos con herramientas que les permitan aprender 
-                            <span style="border-bottom: 3px solid #39259C;">educación sexual de calidad</span> así como habilidades socioemocionales haciendo <span style="border-bottom: 3px solid #39259C;">uso de herramientas</span> de 
-                            realidad aumentada, infografias, juegos e IA.
+                        <!-- Elemento 6 de la lista de FAQ -->
+                        <div class="faq-item" id="faq_pag_card_1">
+                            <div style="color: #000;" class="faq-question">
+                                ¿Cómo utilizar la realidad aumentada (R.A.)?
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    class="h-4 w-4 shrink-0 transition-transform duration-200">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </div>
+                            <div style="color: #000;" class="faq-content">
+                                Dentro de nuestra plataforma <span style="border-bottom: 3px solid #39259C;">encontrarás</span> diversos <span
+                                    style="border-bottom: 3px solid #39259C;">QR</span> que al <span
+                                    style="border-bottom: 3px solid #39259C;">escanearlos</span> con un lector QR te enviarán a <span
+                                    style="border-bottom: 3px solid #39259C;">DEVAR.</span> Una vez ahí, dale click al botón <span
+                                    style="border-bottom: 3px solid #39259C;">launch</span> y vuelve a escanear el QR para ver el objeto en
+                                3D.
+                            </div>
                         </div>
-                      </div>
-                      <!-- Elemento 4 de la lista de FAQ -->
-                      <div class="faq-item">
-                        <div style="color: #000;" class="faq-question">
-                          ¿Es confiable la informacion de SEXI?
-                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 transition-transform duration-200">
-                            <path d="m6 9 6 6 6-6"></path>
-                          </svg>
+                        <!-- Elemento 7 de la lista de FAQ -->
+                        <div class="faq-item" id="faq_pag_card_2">
+                            <div style="color: #000;" class="faq-question">
+                                ¿Cómo funciona el lector de pantalla?
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    class="h-4 w-4 shrink-0 transition-transform duration-200">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </div>
+                            <div style="color: #000;" class="faq-content">
+                                En nuestra página principal encontrarás iconos como este: <i style="font-size: 35px;"
+                                    id="volume_faq" class="bx bx-volume"></i>, en nuestras secciones que al darle click reproducirá el
+                                texto de la sección.
+                            </div>
                         </div>
-                        <div style="color: #000;" class="faq-content">
-                            <span style="border-bottom: 3px solid #39259C;">Si</span>, en EDUISSED nos <span style="border-bottom: 3px solid #39259C;">preucupamos</span> por el aprendizaje de nustros usuario por lo tanto <span style="border-bottom: 3px solid #39259C;">ofrecemos</span>
-                            informacion de <span style="border-bottom: 3px solid #39259C;">fuentes confiables</span> que puedes consulatar. Dando click <span style="border-bottom: 3px solid #39259C;"><a href="#referencias">aqui</a></span>
-                            podras consultar todas nustras fuentes de informacion.
+                        <!-- Elemento 8 de la lista de FAQ -->
+                        <div class="faq-item" id="faq_pag_card_3">
+                            <div style="color: #000;" class="faq-question">
+                                ¿Para qué sirve el apartado de accesibilidad?
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    class="h-4 w-4 shrink-0 transition-transform duration-200">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </div>
+                            <div style="color: #000;" class="faq-content">
+                                Del lado inferior derecho de la pantalla encontrarás el botón de accesibilidad que te permitirá desactivar
+                                los botones de audio, activar o desactivar el alto contraste, una guía de lectura y un modo nocturno.
+                            </div>
                         </div>
-                      </div>
-                      <!-- Elemento 5 de la lista de FAQ -->
-                      <div class="faq-item">
-                        <div style="color: #000;" class="faq-question">
-                          ¿Que es SEXiBOT?
-                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 transition-transform duration-200">
-                            <path d="m6 9 6 6 6-6"></path>
-                          </svg>
+                        <!-- Elemento 9 de la lista de FAQ -->
+                        <div class="faq-item" id="faq_pag_card_4">
+                            <div style="color: #000;" class="faq-question">
+                                ¿Cómo puedo utilizar los juegos de SEXiTRIVIA?
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    class="h-4 w-4 shrink-0 transition-transform duration-200">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </div>
+                            <div style="color: #000;" class="faq-content">
+                                Para potenciar el aprendizaje contamos con SEXiTRIVIA, nuestra sección de gamificación en la cual podrás
+                                jugar aprendiendo sobre los diversos temas de sexualidad. Al entrar a ver nuestro catálogo de juegos podrás
+                                observar que en cada juego entre más sea la cantidad de estrellas será más difícil. Selecciona el que te
+                                interesa y dale click a jugar y diviértete aprendiendo.
+                            </div>
                         </div>
-                        <div style="color: #000;" class="faq-content">
-                            <span style="border-bottom: 3px solid #39259C;">SEXiBOT</span> es nuestro servicio mas <span style="border-bottom: 3px solid #39259C;">nuevo</span> en EDUISSED, ademas de ser <span style="border-bottom: 3px solid #39259C;">nuestra mascota</span> de nuestra organizacion
-                            <br><center><img style=" height: 50%; width: 50%;" src="resources/Manzana_Robot_1_CH.gif" alt="SEXiBOT gift"></center>
+                        <!-- Elemento 10 de la lista de FAQ -->
+                        <div class="faq-item" id="faq_sex_card_1">
+                            <div style="color: #000;" class="faq-question">
+                                ¿Qué es un condón masculino y para qué sirve?
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    class="h-4 w-4 shrink-0 transition-transform duration-200">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </div>
+                            <div style="color: #000;" class="faq-content">
+                                El <span style="border-bottom: 3px solid #39259C;">condón masculino</span> es una funda de látex que <span
+                                    style="border-bottom: 3px solid #39259C;">se coloca en el pene</span> erecto antes de la relación sexual
+                                y que lo cubre por completo. <span style="border-bottom: 3px solid #39259C;">¿Cómo actúa?</span> Impide que
+                                los espermatozoides entren al interior de la vagina en la relación sexual, pues <span
+                                    style="border-bottom: 3px solid #39259C;">actúa como barrera y con esto evita el embarazo.</span>
+                            </div>
                         </div>
-                      </div>
-                      <!-- Elemento 5 de la lista de FAQ -->
-                      <br>
+                        <!-- Elemento 11 de la lista de FAQ -->
+                        <div class="faq-item" id="faq_sex_card_2">
+                            <div style="color: #000;" class="faq-question">
+                                ¿Para qué sirve y cómo se usa un condón femenino?
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    class="h-4 w-4 shrink-0 transition-transform duration-200">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </div>
+                            <div style="color: #000;" class="faq-content">
+                                El condón femenino es un método anticonceptivo de barrera que se utiliza para prevenir el embarazo y
+                                protegerse contra las infecciones de transmisión sexual (ITS). Se inserta en la vagina antes de la
+                                actividad sexual. Tiene un aro flexible en cada extremo: uno se coloca en el fondo de la vagina y el otro
+                                en el exterior para cubrir los genitales externos. Esto crea una barrera que evita que los espermatozoides
+                                entren en la vagina y reduce el contacto piel a piel, disminuyendo así el riesgo de transmisión de ITS.
+                            </div>
+                        </div>
+                        <!-- Elemento 12 de la lista de FAQ -->
+                        <div class="faq-item" id="faq_sex_card_3">
+                            <div style="color: #000;" class="faq-question">
+                                ¿Qué son y para qué sirven las barreras bucales?
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    class="h-4 w-4 shrink-0 transition-transform duration-200">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </div>
+                            <div style="color: #000;" class="faq-content">
+                                Las barreras bucales son películas de látex o poliuretano que se usan entre la boca y la vagina o el ano
+                                durante el sexo oral.
+                            </div>
+                        </div>
+                        <!-- Elemento 13 de la lista de FAQ -->
+                        <div class="faq-item" id="faq_sex_card_4">
+                            <div style="color: #000;" class="faq-question">
+                                ¿Cuáles son los tipos de métodos anticonceptivos que existen?
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    class="h-4 w-4 shrink-0 transition-transform duration-200">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </div>
+                            <div style="color: #000;" class="faq-content">
+                                Hay varios tipos de métodos anticonceptivos disponibles, y cada uno tiene sus propias características y
+                                nivel de eficacia. Algunos de los tipos más comunes incluyen: <br>
+                                <ul>
+                                    <li><strong>Hormonales:</strong> <br> <span style="font-size: small; color: gray;">Píldoras, parches,
+                                            inyecciones, implantes y anillos que liberan hormonas para prevenir la ovulación.</span></li>
+                                    <li><strong>De barrera:</strong> <br> <span style="font-size: small; color: gray;">Condones
+                                            (masculinos y femeninos), diafragma, capuchón cervical y esponja, que crean una barrera física
+                                            contra los espermatozoides.</span></li>
+                                    <li><strong>Dispositivos intrauterinos (DIU):</strong> <br> <span style="font-size: small; color: gray;">De cobre o hormonales, se colocan en el útero para prevenir el embarazo.</span></li>
+                                    <li><strong>Métodos de fertilidad natural:</strong> <br> <span style="font-size: small; color: gray;">Monitoreo del ciclo menstrual para identificar los días fértiles y evitar relaciones sexuales durante ese tiempo.</span></li>
+                                    <li><strong>Esterilización quirúrgica:</strong> <br> <span style="font-size: small; color: gray;">Vasectomía para hombres y ligadura de trompas para mujeres, opciones permanentes.</span></li>
+                                    <li><strong>Anticonceptivos de emergencia:</strong> <br> <span style="font-size: small; color: gray;">Píldora del día después, para prevenir el embarazo después de una relación sexual sin protección o fallo anticonceptivo.</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Elemento 14 de la lista de FAQ -->
+                        <br>
                     </div>
+                    
                   </div>
               </ul>
             </div>
@@ -423,116 +690,173 @@
               <span id="send-btn"><i id="enviar_ia" class='bx bx-send'></i></span>
             </div>
           </div>
-          
+
           <script>
-            document.addEventListener('DOMContentLoaded', function () {
-              const searchInput = document.querySelector('.faq-search input[type="text"]');
-              const faqItems = document.querySelectorAll('.faq-item');
-          
-              searchInput.addEventListener('input', function () {
-                const searchTerm = searchInput.value.trim().toLowerCase();
-          
-                faqItems.forEach(function (item) {
-                  const questionText = item.querySelector('.faq-question').textContent.trim().toLowerCase();
-                  const contentText = item.querySelector('.faq-content').textContent.trim().toLowerCase();
-          
-                  if (questionText.includes(searchTerm) || contentText.includes(searchTerm)) {
-                    item.style.display = 'block'; // Mostrar el elemento si coincide con el término de búsqueda
-                  } else {
-                    item.style.display = 'none'; // Ocultar el elemento si no coincide con el término de búsqueda
-                  }
-                });
-              });
-            });
-          </script>
-          
+            
+//script para el buscador de FAQ
+document.addEventListener("DOMContentLoaded", function () {
+	const searchInput = document.querySelector('.faq-search input[type="text"]');
+	const faqItems = document.querySelectorAll(".faq-item");
+  
+	searchInput.addEventListener("input", function () {
+	  const searchTerm = searchInput.value.trim().toLowerCase();
+  
+	  faqItems.forEach(function (item) {
+		const questionText = item
+		  .querySelector(".faq-question")
+		  .textContent.trim()
+		  .toLowerCase();
+		const contentText = item
+		  .querySelector(".faq-content")
+		  .textContent.trim()
+		  .toLowerCase();
+  
+		if (
+		  questionText.includes(searchTerm) ||
+		  contentText.includes(searchTerm)
+		) {
+		  item.style.display = "block"; // Mostrar el elemento si coincide con el término de búsqueda
+		} else {
+		  item.style.display = "none"; // Ocultar el elemento si no coincide con el término de búsqueda
+		}
+	  });
+	});
+  });
+  
+  // Script para la funcionalidad de expansión y contracción de preguntas
+  document.addEventListener("DOMContentLoaded", function () {
+	const questions = document.querySelectorAll(".faq-question");
+  
+	questions.forEach((question) => {
+	  question.addEventListener("click", () => {
+		question.classList.toggle("open");
+		const content = question.nextElementSibling;
+		if (question.classList.contains("open")) {
+		  content.style.maxHeight = content.scrollHeight + "px";
+		} else {
+		  content.style.maxHeight = 0;
+		}
+	  });
+	});
+  });
+  
+  // scrip de tap-bar de faq //
+  
+  function toggleButton(button) {
+	var selector = document.querySelector(".hori-selector");
+	var offset = button.offsetLeft;
+	selector.style.left = offset + "px";
+  
+	var buttons = document.querySelectorAll(".tab-btn");
+	buttons.forEach(function (btn) {
+	  btn.classList.remove("active");
+	  btn.style.transition = "color 1.6s ease"; // Agrega una transición suave al color
+	  btn.style.color = "rgba(255, 255, 255, 1)"; // Restablece el color de todos los botones a blanco
+	});
+	button.classList.add("active");
+	button.style.transition = "color 1.6s ease"; // Agrega una transición suave al color
+	button.style.color = "rgba(57, 37, 156, 1)"; // Establece el color del botón activado
+  
+	// Si el botón Chatbot está activo y es de color #39259C, el botón FAQ debe estar blanco
+	if (
+	  button.id === "chatbot-tab" &&
+	  button.style.color === "rgba(57, 37, 156, 1)"
+	) {
+	  document.getElementById("faq-tab").style.color = "rgba(255, 255, 255, 1)";
+	}
+	// Si el botón FAQ está activo y es de color #39259C, el botón Chatbot debe estar blanco
+	else if (
+	  button.id === "faq-tab" &&
+	  button.style.color === "rgba(57, 37, 156, 1)"
+	) {
+	  document.getElementById("chatbot-tab").style.color =
+		"rgba(255, 255, 255, 1)";
+	}
+  
+	// Ajustar la posición del selector dependiendo del botón activo
+	if (button.id === "chatbot-tab") {
+	  selector.style.left = "49%";
+	} else if (button.id === "faq-tab") {
+	  selector.style.left = "30%";
+	}
+  }
+  
+  $(document).ready(function () {
+	// Funcionalidad para cambiar entre Chatbot y FAQ
+	$("#faq-tab").click(function () {
+	  $(".chatbox").hide();
+	  $("#send-btn").hide();
+	  $(".chat-input").animate({ height: "0px" }, 300); // Establecer la altura a 0px con animación
+	  $(".faq").show();
+	  $(".chatbot-btn").removeClass("active");
+	  $(this).addClass("active");
+	});
+  
+	$("#chatbot-tab").click(function () {
+	  $(".faq").hide();
+	  $(".chatbox").show();
+	  $("#send-btn").show();
+	  $(".chat-input").animate({ height: "63px" }, 300); // Animación para quitar la altura definida
+	  $(".faq-btn").removeClass("active");
+	  $(this).addClass("active");
+	});
+  });
+  
+  //script para desactivar los botones
+  $(document).ready(function () {
+	$(".card").click(function () {
+	  var $clickedButton = $(this);
+	  if (!$clickedButton.hasClass("selected")) {
+		$(".card").not($clickedButton).addClass("disabled"); // Desactiva los botones no seleccionados
+		$clickedButton.addClass("selected").removeClass("disabled"); // Activa el botón seleccionado
+	  } else {
+		$(".card").removeClass("disabled"); // Si ya está seleccionado, activa todos los botones
+		$clickedButton.removeClass("selected");
+	  }
+	});
+  });
+  
+  //script para mostrar los faq de los temas en especifico
+  $(document).ready(function () {
+    var sobreNosotrosVisible = false;
+    var sobrepagVisible = false;
+    var sobresexVisible = false;
 
+    $("#sobre_nosotros").click(function () {
+        toggleVisibility("#faq_pag_card_1, #faq_pag_card_2, #faq_pag_card_3, #faq_pag_card_4, #faq_sex_card_1, #faq_sex_card_2, #faq_sex_card_3, #faq_sex_card_4");
+        toggleClass($(this), sobreNosotrosVisible);
+        sobreNosotrosVisible = !sobreNosotrosVisible;
+    });
 
-<script>
-// Script para la funcionalidad de expansión y contracción de preguntas
-    document.addEventListener("DOMContentLoaded", function () {
-      const questions = document.querySelectorAll(".faq-question");
-    
-      questions.forEach((question) => {
-        question.addEventListener("click", () => {
-          question.classList.toggle("open");
-          const content = question.nextElementSibling;
-          if (question.classList.contains("open")) {
-            content.style.maxHeight = content.scrollHeight + "px";
-          } else {
-            content.style.maxHeight = 0;
-          }
-        });
-      });
+    $("#sobre_la_pagina").click(function () {
+        toggleVisibility("#sobre_nosotros_card_1, #sobre_nosotros_card_2, #sobre_nosotros_card_3, #sobre_nosotros_card_4, #sobre_nosotros_card_5, #faq_sex_card_1, #faq_sex_card_2, #faq_sex_card_3, #faq_sex_card_4");
+        toggleClass($(this), sobrepagVisible);
+        sobrepagVisible = !sobrepagVisible;
     });
-    
-    
-    
-    // scrip de tap-bar de faq //
-    
-    function toggleButton(button) {
-        var selector = document.querySelector('.hori-selector');
-        var offset = button.offsetLeft;
-        selector.style.left = offset + 'px';
-    
-        var buttons = document.querySelectorAll('.tab-btn');
-    buttons.forEach(function(btn) {
-    btn.classList.remove('active');
-    btn.style.transition = 'color 1.6s ease'; // Agrega una transición suave al color
-    btn.style.color = 'rgba(255, 255, 255, 1)'; // Restablece el color de todos los botones a blanco
+
+    $("#preguntas_sexualidad").click(function () {
+        toggleVisibility("#sobre_nosotros_card_1, #sobre_nosotros_card_2, #sobre_nosotros_card_3, #sobre_nosotros_card_4, #sobre_nosotros_card_5, #faq_pag_card_1, #faq_pag_card_2, #faq_pag_card_3, #faq_pag_card_4");
+        toggleClass($(this), sobresexVisible);
+        sobresexVisible = !sobresexVisible;
     });
-    button.classList.add('active');
-    button.style.transition = 'color 1.6s ease'; // Agrega una transición suave al color
-    button.style.color = 'rgba(57, 37, 156, 1)'; // Establece el color del botón activado
-    
-    // Si el botón Chatbot está activo y es de color #39259C, el botón FAQ debe estar blanco
-    if (button.id === 'chatbot-tab' && button.style.color === 'rgba(57, 37, 156, 1)') {
-    document.getElementById('faq-tab').style.color = 'rgba(255, 255, 255, 1)';
+
+    function toggleVisibility(elements) {
+        $(elements).toggle();
     }
-    // Si el botón FAQ está activo y es de color #39259C, el botón Chatbot debe estar blanco
-    else if (button.id === 'faq-tab' && button.style.color === 'rgba(57, 37, 156, 1)') {
-    document.getElementById('chatbot-tab').style.color = 'rgba(255, 255, 255, 1)';
-    }
-    
-    
-        // Ajustar la posición del selector dependiendo del botón activo
-        if (button.id === "chatbot-tab") {
-            selector.style.left = "49%";
-        } else if (button.id === "faq-tab") {
-            selector.style.left = "30%";
+
+    function toggleClass(element, isVisible) {
+        $(".card").removeClass("selected");
+        if (!isVisible) {
+            element.addClass("selected");
         }
     }
-    
-    $(document).ready(function() {
-    // Funcionalidad para cambiar entre Chatbot y FAQ
-    $('#faq-tab').click(function() {
-    $('.chatbox').hide();
-    $('#send-btn').hide();
-    $('.chat-input').animate({ height: '0px' }, 300); // Establecer la altura a 0px con animación
-    $('.faq').show();
-    $('.chatbot-btn').removeClass('active');
-    $(this).addClass('active');
-    });
-    
-    $('#chatbot-tab').click(function() {
-    $('.faq').hide();
-    $('.chatbox').show();
-    $('#send-btn').show();
-    $('.chat-input').animate({ height: '63px' }, 300); // Animación para quitar la altura definida
-    $('.faq-btn').removeClass('active');
-    $(this).addClass('active');
-    });
-    });
-</script>
+});
+          </script>
 
-  
-
-          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <!--termina codigo de ia-->
+          <!--termina codigo de ia-->
 
 
         <div class="sidebar-links">
-
             <ul>
                 <div class="active-tab"></div>
                 <li class="tooltip-element" data-tooltip="0" data-audio="Audios\Inicio.mp3">
@@ -603,37 +927,57 @@
         </div>
     </nav>
 
-
     <main>
 
         <div id="inicio" class="section"> 
-            <h1 class="section-title">¿Qué es SEXi? <i  onclick="reproducirTextosexi()" id="iconoSexi1"
-                style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i>
-        </h1>  
-                 <!--script del lector de texto-->
+    <h1 class="section-title">¿Qué es SEXi? 
+        <i onclick="toggleReproducirTextosexi()" id="iconoSexi1"
+            style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume"></i>
+    </h1>  
+</div>
 
-    <script>
-        function reproducirTextosexi() {
-            // Texto que se leerá en voz alta
-            var texto = "Actualmente las estrategias de enseñanza, aprendisaje que el sistema educativo desarrolla a traves de los docentes suelen ser repetitivas y aburridas para los estudiantes lo que ocaciona que no sean atractivas pierdan el interes para realizar las actividades y como concecuencia no se luege el aprendizaje y comprencion esperado sobre los temas.";
+<!-- Script del lector de texto -->
+<script>
+    var reproduciendo = false;
+    var utterance = null;
 
-            // Verifica si el navegador soporta la síntesis de voz
-            if ('speechSynthesis' in window) {
-                var synth = window.speechSynthesis;
-
-                // Crea un nuevo objeto de síntesis de voz
-                var utterance = new SpeechSynthesisUtterance(texto);
-
-                // Establece el idioma de la voz a español mexicano
-                utterance.lang = 'es-MX';
-
-                // Reproduce el texto al dar clic en el botón
-                synth.speak(utterance);
-            } else {
-                alert('Tu navegador no soporta la síntesis de voz. Por favor, utiliza un navegador más reciente.');
-            }
+    function toggleReproducirTextosexi() {
+        if (!reproduciendo) {
+            reproducirTextosexi();
+        } else {
+            detenerReproduccion();
         }
-    </script>
+        reproduciendo = !reproduciendo;
+    }
+
+    function reproducirTextosexi() {
+        // Texto que se leerá en voz alta
+        var texto = "Actualmente las estrategias de enseñanza, aprendisaje que el sistema educativo desarrolla a traves de los docentes suelen ser repetitivas y aburridas para los estudiantes lo que ocaciona que no sean atractivas pierdan el interes para realizar las actividades y como concecuencia no se luege el aprendizaje y comprencion esperado sobre los temas.";
+
+        // Verifica si el navegador soporta la síntesis de voz
+        if ('speechSynthesis' in window) {
+            var synth = window.speechSynthesis;
+
+            // Crea un nuevo objeto de síntesis de voz
+            utterance = new SpeechSynthesisUtterance(texto);
+
+            // Establece el idioma de la voz a español mexicano
+            utterance.lang = 'es-MX';
+
+            // Reproduce el texto
+            synth.speak(utterance);
+        } else {
+            alert('Tu navegador no soporta la síntesis de voz. Por favor, utiliza un navegador más reciente.');
+        }
+    }
+
+    function detenerReproduccion() {
+        if ('speechSynthesis' in window && utterance !== null) {
+            window.speechSynthesis.cancel();
+        }
+    }
+</script>
+
 
     <!--termina codigo del lector de texto-->
 
@@ -676,38 +1020,52 @@
         </div>
 
         <div id="aprende" class="section">
-            <h1 class="section-title">Aprende <i  onclick="reproducirTexto()" id="iconoSexi1"
-                style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i>
-        </h1>
+            <h1 class="section-title">Aprende 
+                <i onclick="toggleReproducirTexto()" id="iconoSexi2"
+                    style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume"></i>
             </h1>
-            <div>
-
-            </div>
-
-            <!--script del lector de texto-->
-
-    <script>
-        function reproducirTexto() {
-            // Texto que se leerá en voz alta
-            var texto = "A continuacion presentamos una serie de articulos y presentaciones interactivas que te permitiran adquirir mas conocimiento sobre estos temas. elige uno de estos.";
-
-            // Verifica si el navegador soporta la síntesis de voz
-            if ('speechSynthesis' in window) {
-                var synth = window.speechSynthesis;
-
-                // Crea un nuevo objeto de síntesis de voz
-                var utterance = new SpeechSynthesisUtterance(texto);
-
-                // Establece el idioma de la voz a español mexicano
-                utterance.lang = 'es-MX';
-
-                // Reproduce el texto al dar clic en el botón
-                synth.speak(utterance);
-            } else {
-                alert('Tu navegador no soporta la síntesis de voz. Por favor, utiliza un navegador más reciente.');
+        
+        <!-- Script del lector de texto -->
+        <script>      
+            var reproduciendoAprende = false;
+            var utteranceAprende = null;
+        
+            function toggleReproducirTexto() {
+                if (!reproduciendoAprende) {
+                    reproducirTexto();
+                } else {
+                    detenerReproduccionAprende();
+                }
+                reproduciendoAprende = !reproduciendoAprende;
             }
-        }
-    </script>
+        
+            function reproducirTexto() {
+                // Texto que se leerá en voz alta
+                var texto = "A continuacion presentamos una serie de articulos y presentaciones interactivas que te permitiran adquirir mas conocimiento sobre estos temas. elige uno de estos.";
+        
+                // Verifica si el navegador soporta la síntesis de voz
+                if ('speechSynthesis' in window) {
+                    var synth = window.speechSynthesis;
+        
+                    // Crea un nuevo objeto de síntesis de voz
+                    utteranceAprende = new SpeechSynthesisUtterance(texto);
+        
+                    // Establece el idioma de la voz a español mexicano
+                    utteranceAprende.lang = 'es-MX';
+        
+                    // Reproduce el texto
+                    synth.speak(utteranceAprende);
+                } else {
+                    alert('Tu navegador no soporta la síntesis de voz. Por favor, utiliza un navegador más reciente.');
+                }
+            }
+        
+            function detenerReproduccionAprende() {
+                if ('speechSynthesis' in window && utteranceAprende !== null) {
+                    window.speechSynthesis.cancel();
+                }
+            }
+        </script>
 
     <!--termina codigo del lector de texto-->
 
@@ -771,41 +1129,60 @@
         </div>
 
         <div id="Juegos" class="section">
-            <h1 class="section-title">Juegos <i  onclick="reproducirTextojuego()" id="iconoSexi1"
-                style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i>
-        </h1>
+            <h1 class="section-title">Juegos 
+                <i onclick="toggleReproducirTextojuego()" id="iconoSexi3"
+                    style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume"></i>
+            </h1>
             <p>
-                Conoce los increibles juegos con los cuales podras aprender aun mas;
+                Conoce los increíbles juegos con los cuales podrás aprender aún más.
             </p>
             <br>
             <br>
             <br>
-            <a href="Menudejuego\index.html"><button class="button-85" role="button" >VER CATALOGO</button></a>
-
-             <!--script del lector de texto-->
-
-    <script>
-        function reproducirTextojuego() {
-            // Texto que se leerá en voz alta
-            var texto = "Puedes interactuar con los juegos desarrollados para fortalecer tu conocimiento sobre este tema... sexualidad";
-
-            // Verifica si el navegador soporta la síntesis de voz
-            if ('speechSynthesis' in window) {
-                var synth = window.speechSynthesis;
-
-                // Crea un nuevo objeto de síntesis de voz
-                var utterance = new SpeechSynthesisUtterance(texto);
-
-                // Establece el idioma de la voz a español mexicano
-                utterance.lang = 'es-MX';
-
-                // Reproduce el texto al dar clic en el botón
-                synth.speak(utterance);
-            } else {
-                alert('Tu navegador no soporta la síntesis de voz. Por favor, utiliza un navegador más reciente.');
+            <a href="Menudejuego\index.html"><button class="button-85" role="button">VER CATÁLOGO</button></a>
+        
+        <!-- Script del lector de texto -->
+        <script>
+            var reproduciendoJuegos = false;
+            var utteranceJuegos = null;
+        
+            function toggleReproducirTextojuego() {
+                if (!reproduciendoJuegos) {
+                    reproducirTextojuego();
+                } else {
+                    detenerReproduccionJuegos();
+                }
+                reproduciendoJuegos = !reproduciendoJuegos;
             }
-        }
-    </script>
+        
+            function reproducirTextojuego() {
+                // Texto que se leerá en voz alta
+                var texto = "Puedes interactuar con los juegos desarrollados para fortalecer tu conocimiento sobre este tema... sexualidad";
+        
+                // Verifica si el navegador soporta la síntesis de voz
+                if ('speechSynthesis' in window) {
+                    var synth = window.speechSynthesis;
+        
+                    // Crea un nuevo objeto de síntesis de voz
+                    utteranceJuegos = new SpeechSynthesisUtterance(texto);
+        
+                    // Establece el idioma de la voz a español mexicano
+                    utteranceJuegos.lang = 'es-MX';
+        
+                    // Reproduce el texto
+                    synth.speak(utteranceJuegos);
+                } else {
+                    alert('Tu navegador no soporta la síntesis de voz. Por favor, utiliza un navegador más reciente.');
+                }
+            }
+        
+            function detenerReproduccionJuegos() {
+                if ('speechSynthesis' in window && utteranceJuegos !== null) {
+                    window.speechSynthesis.cancel();
+                }
+            }
+        </script>
+        
 
     <!--termina codigo del lector de texto-->
 <style>
@@ -890,69 +1267,54 @@
 
         </div>
 
-
-        <script>
-            // Función para cambiar el ícono en un ciclo
-            function cambiarIconoSecuencial(iconoId) {
-                const icono = document.getElementById(iconoId);
-                const iconos = ["bx bxs-volume", "bx bxs-volume-low", "bx bxs-volume-full", "bx bxs-volume-low"];
-                let indiceIcono = 0;
-                let intervalo;
-
-                function cambiarIcono() {
-                    icono.className = iconos[indiceIcono];
-                    indiceIcono = (indiceIcono + 1) % iconos.length;
-                }
-
-                function alternarCambioIcono() {
-                    if (!intervalo) {
-                        intervalo = setInterval(cambiarIcono, 200);
-                    } else {
-                        clearInterval(intervalo);
-                        icono.className = "bx bx-volume";
-                        indiceIcono = 0;
-                        intervalo = null;
-                    }
-                }
-
-                icono.addEventListener("click", alternarCambioIcono);
-            }
-
-            // Iniciar el comportamiento de cambio de ícono para cada ícono
-            cambiarIconoSecuencial("iconoSexi1");
-            cambiarIconoSecuencial("iconoSexi2");
-            cambiarIconoSecuencial("iconoSexi3");
-        </script>
-
         <div id="recursos" class="section">
-            <h1 class="section-title">Recursos <i  onclick="reproducirTextorecursos()" id="iconoSexi1"
-                style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i>
-        </h1>
-
-        <!--script del lector de texto-->
-
-    <script>
-        function reproducirTextorecursos() {
-            // Texto que se leerá en voz alta
-            var texto = "aqui te dejamos una lista de todos los codigos qr que pueden encontrar en la pagina asi como las infografias de cada tema, las puedes descargar desde aqui o dando click en cada una de mas imagenes mientras las vez, diviertete. ";
-
-           // Verifica si el navegador soporta la síntesis de voz
-           if ('speechSynthesis' in window) {
-                var synth = window.speechSynthesis;
-
-                // Crea un nuevo objeto de síntesis de voz
-                var utterance = new SpeechSynthesisUtterance(texto);
-
-                // Establece el idioma de la voz a español mexicano
-                utterance.lang = 'es-MX';
-
-                // Reproduce el texto al dar clic en el botón
-                synth.speak(utterance);
-            } else {
-                alert('Tu navegador no soporta la síntesis de voz. Por favor, utiliza un navegador más reciente.');
+            <h1 class="section-title">Recursos 
+                <i onclick="toggleReproducirTextorecursos()" id="iconoSexi4"
+                    style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume"></i>
+            </h1>
+        
+        <!-- Script del lector de texto -->
+        <script>
+            var reproduciendoRecursos = false;
+            var utteranceRecursos = null;
+        
+            function toggleReproducirTextorecursos() {
+                if (!reproduciendoRecursos) {
+                    reproducirTextorecursos();
+                } else {
+                    detenerReproduccionRecursos();
+                }
+                reproduciendoRecursos = !reproduciendoRecursos;
             }
-        }
-    </script>
+        
+            function reproducirTextorecursos() {
+                // Texto que se leerá en voz alta
+                var texto = "Aquí te dejamos una lista de todos los códigos QR que puedes encontrar en la página, así como las infografías de cada tema. Puedes descargarlas desde aquí o haciendo clic en cada una de las imágenes mientras las ves. ¡Diviértete!";
+        
+                // Verifica si el navegador soporta la síntesis de voz
+                if ('speechSynthesis' in window) {
+                    var synth = window.speechSynthesis;
+        
+                    // Crea un nuevo objeto de síntesis de voz
+                    utteranceRecursos = new SpeechSynthesisUtterance(texto);
+        
+                    // Establece el idioma de la voz a español mexicano
+                    utteranceRecursos.lang = 'es-MX';
+        
+                    // Reproduce el texto
+                    synth.speak(utteranceRecursos);
+                } else {
+                    alert('Tu navegador no soporta la síntesis de voz. Por favor, utiliza un navegador más reciente.');
+                }
+            }
+        
+            function detenerReproduccionRecursos() {
+                if ('speechSynthesis' in window && utteranceRecursos !== null) {
+                    window.speechSynthesis.cancel();
+                }
+            }
+        </script>
+        
 
     <!--termina codigo del lector de texto-->
 
@@ -1067,34 +1429,53 @@
         </div>
 
         <div id="referencias" class="last-section section">
-            <h1 class="section-title">Referecias <i  onclick="reproducirTextoreferencias()" id="iconoSexi1"
-                style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i>
-        </h1>
-
-         <!--script del lector de texto-->
-
-    <script>
-        function reproducirTextoreferencias() {
-            // Texto que se leerá en voz alta
-            var texto = "Podras ver las referencias en las que nos basamos para la informacion de sexi, solo basta con darle click al texto de tu preferencia. ";
-
-           // Verifica si el navegador soporta la síntesis de voz
-           if ('speechSynthesis' in window) {
-                var synth = window.speechSynthesis;
-
-                // Crea un nuevo objeto de síntesis de voz
-                var utterance = new SpeechSynthesisUtterance(texto);
-
-                // Establece el idioma de la voz a español mexicano
-                utterance.lang = 'es-MX';
-
-                // Reproduce el texto al dar clic en el botón
-                synth.speak(utterance);
-            } else {
-                alert('Tu navegador no soporta la síntesis de voz. Por favor, utiliza un navegador más reciente.');
+            <h1 class="section-title">Referencias 
+                <i onclick="toggleReproducirTextoreferencias()" id="iconoSexi5"
+                    style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume"></i>
+            </h1>
+        
+        <!-- Script del lector de texto -->
+        <script>
+            var reproduciendoReferencias = false;
+            var utteranceReferencias = null;
+        
+            function toggleReproducirTextoreferencias() {
+                if (!reproduciendoReferencias) {
+                    reproducirTextoreferencias();
+                } else {
+                    detenerReproduccionReferencias();
+                }
+                reproduciendoReferencias = !reproduciendoReferencias;
             }
-        }
-    </script>
+        
+            function reproducirTextoreferencias() {
+                // Texto que se leerá en voz alta
+                var texto = "Podrás ver las referencias en las que nos basamos para la información de SEXi, solo basta con darle clic al texto de tu preferencia.";
+        
+                // Verifica si el navegador soporta la síntesis de voz
+                if ('speechSynthesis' in window) {
+                    var synth = window.speechSynthesis;
+        
+                    // Crea un nuevo objeto de síntesis de voz
+                    utteranceReferencias = new SpeechSynthesisUtterance(texto);
+        
+                    // Establece el idioma de la voz a español mexicano
+                    utteranceReferencias.lang = 'es-MX';
+        
+                    // Reproduce el texto
+                    synth.speak(utteranceReferencias);
+                } else {
+                    alert('Tu navegador no soporta la síntesis de voz. Por favor, utiliza un navegador más reciente.');
+                }
+            }
+        
+            function detenerReproduccionReferencias() {
+                if ('speechSynthesis' in window && utteranceReferencias !== null) {
+                    window.speechSynthesis.cancel();
+                }
+            }
+        </script>
+        
 
     <!--termina codigo del lector de texto-->
 
@@ -1189,34 +1570,53 @@
         </div>
 
         <div id="Ajustes" class="section"> 
-            <h1 class="section-title">Contacto <i  onclick="reproducirTextocontacto()" id="iconoSexi1"
-                style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i>
-        </h1> 
-
-         <!--script del lector de texto-->
-
-    <script>
-        function reproducirTextocontacto() {
-            // Texto que se leerá en voz alta
-            var texto = "En sexi nos preocupamos por ti, para que tengas la mejor experiencia, puedes contactarnos en las siguienes redes. da click en los botones si prefires contactarnos por X - twitter o por gmail. si deceas hacerlo por telefono da click el numero y llamanos. ";
-
-            /// Verifica si el navegador soporta la síntesis de voz
-            if ('speechSynthesis' in window) {
-                var synth = window.speechSynthesis;
-
-                // Crea un nuevo objeto de síntesis de voz
-                var utterance = new SpeechSynthesisUtterance(texto);
-
-                // Establece el idioma de la voz a español mexicano
-                utterance.lang = 'es-MX';
-
-                // Reproduce el texto al dar clic en el botón
-                synth.speak(utterance);
-            } else {
-                alert('Tu navegador no soporta la síntesis de voz. Por favor, utiliza un navegador más reciente.');
+            <h1 class="section-title">Contacto 
+                <i onclick="toggleReproducirTextocontacto()" id="iconoSexi6"
+                    style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume"></i>
+            </h1>
+        
+        <!-- Script del lector de texto -->
+        <script>
+            var reproduciendoContacto = false;
+            var utteranceContacto = null;
+        
+            function toggleReproducirTextocontacto() {
+                if (!reproduciendoContacto) {
+                    reproducirTextocontacto();
+                } else {
+                    detenerReproduccionContacto();
+                }
+                reproduciendoContacto = !reproduciendoContacto;
             }
-        }
-    </script>
+        
+            function reproducirTextocontacto() {
+                // Texto que se leerá en voz alta
+                var texto = "En SEXi nos preocupamos por ti, para que tengas la mejor experiencia. Puedes contactarnos en las siguientes redes. Da clic en los botones si prefieres contactarnos por X - Twitter o por Gmail. Si deseas hacerlo por teléfono, da clic en el número y llámanos.";
+        
+                // Verifica si el navegador soporta la síntesis de voz
+                if ('speechSynthesis' in window) {
+                    var synth = window.speechSynthesis;
+        
+                    // Crea un nuevo objeto de síntesis de voz
+                    utteranceContacto = new SpeechSynthesisUtterance(texto);
+        
+                    // Establece el idioma de la voz a español mexicano
+                    utteranceContacto.lang = 'es-MX';
+        
+                    // Reproduce el texto
+                    synth.speak(utteranceContacto);
+                } else {
+                    alert('Tu navegador no soporta la síntesis de voz. Por favor, utiliza un navegador más reciente.');
+                }
+            }
+        
+            function detenerReproduccionContacto() {
+                if ('speechSynthesis' in window && utteranceContacto !== null) {
+                    window.speechSynthesis.cancel();
+                }
+            }
+        </script>
+        
 
     <!--termina codigo del lector de texto-->
     
@@ -1265,68 +1665,63 @@
 
             </div>
             </center>
-            <style>
-                .single-cta {
-                    text-align: center;
-                    background-color: #333333b9;
-                    padding: 20px;
-                    border-radius: 10px;
-                    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-                    transition: all 0.3s;
-                    /* Agregar transición suave */
-                    width: 450px;
-                    /* Aumentar el ancho en estado hover */
+        </div>
+
+        <script>
+                // Función para reproducir el audio de bienvenida
+    function reproducirAudioBienvenida() {
+        // Aquí colocarías el código para reproducir el audio de bienvenida
+        // Por ejemplo, utilizando la etiqueta <audio> de HTML5
+        var audio = new Audio('../resources\ElevenLabs_2024-02-10T06_25_58_Michael_pre_s50_sb75_m1.mp3');
+        audio.play();
+    }
+
+    // Llama a la función de reproducción de audio de bienvenida cuando la página se carga
+    document.addEventListener('DOMContentLoaded', function() {
+        reproducirAudioBienvenida();
+    });
+
+            // Función para cambiar el ícono en un ciclo
+            function cambiarIconoSecuencial(iconoId) {
+                const icono = document.getElementById(iconoId);
+                const iconos = ["bx bxs-volume", "bx bxs-volume-low", "bx bxs-volume-full", "bx bxs-volume-low"];
+                let indiceIcono = 0;
+                let intervalo;
+        
+                function cambiarIcono() {
+                    icono.className = iconos[indiceIcono];
+                    indiceIcono = (indiceIcono + 1) % iconos.length;
                 }
-
-                @media (max-width: 768px) {
-
-                    /* Establecer un ancho más pequeño para dispositivos móviles */
-                    .single-cta {
-                        width: 90%;
-                        /* Ancho del 90% para dispositivos móviles */
-                        max-width: none;
-                        /* Eliminar el ancho máximo para dispositivos móviles */
+        
+                function alternarCambioIcono() {
+                    if (!intervalo) {
+                        intervalo = setInterval(cambiarIcono, 200);
+                        setTimeout(() => {
+                            clearInterval(intervalo);
+                            icono.className = "bx bx-volume";
+                            indiceIcono = 0;
+                            intervalo = null;
+                        }, 10000); // Detener la animación después de 10 segundos
+                    } else {
+                        clearInterval(intervalo);
+                        icono.className = "bx bx-volume";
+                        indiceIcono = 0;
+                        intervalo = null;
                     }
                 }
-
-                .single-cta i {
-                    font-size: 40px;
-                    color: white;
-                    /* Color del icono */
-                }
-
-                .cta-text h4 {
-                    font-size: 24px;
-                    margin: 10px 0;
-                    color: white;
-                    /* Color del título */
-                }
-
-                .cta-text span {
-                    font-size: 18px;
-                    color: #777;
-                    /* Color del texto */
-                }
-
-                .single-cta:hover {
-                    background-color: #2a3487;
-                    /* Color de fondo al pasar el mouse */
-                    color: #fff;
-                    /* Color del texto al pasar el mouse */
-                    padding: 10px;
-                    /* Reducir el padding en estado hover */
-                }
-            </style>
-
-
-        </div>
-
-
-
-
-        </div>
-
-
+        
+                icono.addEventListener("click", alternarCambioIcono);
+            }
+        
+            // Iniciar el comportamiento de cambio de ícono para cada ícono con los siguientes id
+            cambiarIconoSecuencial("iconoSexi1");
+            cambiarIconoSecuencial("iconoSexi2");
+            cambiarIconoSecuencial("iconoSexi3");
+            cambiarIconoSecuencial("iconoSexi4");
+            cambiarIconoSecuencial("iconoSexi5");
+            cambiarIconoSecuencial("iconoSexi6");
+        </script> 
+        
 
         <p class="copyright">
             &copy; 2023 - <span>EDUISSED</span> Todos los derechos reservados <i
@@ -1344,7 +1739,7 @@
     <script src="./js/main.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js'></script>
     <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js'></script>
-    <script src="./script.js"></script>
+    <script src="./js/script.js"></script>
 
 </body>
 

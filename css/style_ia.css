@@ -205,6 +205,25 @@ body {
   border: 1px solid #ccc;
   border-radius: 5px;
   outline: none;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+/* Estilo del input cuando está enfocado */
+input[type="text"]:focus { 
+  border-color: #39259C; /* Color del borde al enfocar */
+  box-shadow: 0 0 5px rgba(57, 37, 156, 0.5); /* Color de la sombra al enfocar */
+}
+
+/* Estilo del placeholder */
+input[type="text"]::placeholder {
+  color: #999;
+  transition: color 0.3s ease;
+}
+
+/* Estilo del placeholder cuando el input está enfocado */
+input[type="text"]:focus::placeholder {
+  color: #666;
 }
 
 .faq-search button {
@@ -279,6 +298,7 @@ body {
   height: 350px;
   max-height: 400px; /* Establece la altura máxima según sea necesario */
   overflow-y: auto; /* Agrega una barra de desplazamiento vertical cuando sea necesario */
+  transition: max-height 0.5s ease; /* Animación de transición */
 }
 .faq::-webkit-scrollbar {
   width: 7px; /* Ancho de la barra de desplazamiento */
@@ -401,6 +421,76 @@ body {
 ol {
   list-style-type: disc; /* Utiliza puntos como marcadores */
   margin-left: 15px;
+}
+
+/*css para las cartas faq*/
+.slider {
+  width: 500px; /* Ajusta el ancho del carrusel según tu preferencia */
+  overflow: hidden;
+  position: relative;
+}
+
+.slide {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slide ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.card {
+  width: 106px;
+  height: 140px;
+  margin: 5px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border: none;
+  align-items: center;
+  text-align: center;
+  transition: background-color 0.8s ease; /* Agrega una transición suave */
+  cursor: pointer;
+}
+
+.card:hover{
+  box-shadow: 0 8px 16px #2a3387a5;
+}
+
+.card.selected {
+  background-color: #ffffff; /* Cambia el color de fondo cuando está seleccionado */
+  transition: background-color 0.5s ease; /* Agrega una transición suave */
+  box-shadow: 0 8px 16px #2a3387a5;
+}
+
+.card.disabled {
+  background-color: #ccc; /* Cambia el color de fondo cuando está desactivado */
+  transition: background-color 0.5s ease; /* Agrega una transición suave */
+  pointer-events: none; /* Desactiva los eventos de clic */
+}
+
+.name {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.description {
+  font-size: 10.78px;
+  color: #666;
+}
+
+#option_faq {
+  font-size: 28px;
+  color: #39259c;
 }
 
 

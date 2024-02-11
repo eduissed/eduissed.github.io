@@ -927,53 +927,37 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
     </nav>
 
+<style>
+        /* Estilos para ocultar los controles del reproductor */
+        audio {
+            display: none;
+        }
+    </style>
+
     <main>
 
         <div id="inicio" class="section"> 
     <h1 class="section-title">¿Qué es SEXi? 
-        <i onclick="toggleReproducirTextosexi()" id="iconoSexi1"
+        <i onclick="toggleAudio('audio1')" id="iconoSexi1"
             style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume"></i>
     </h1>  
+    <audio id="audio1" src="/audios/que es sexi.mp3" preload="none"></audio>
 </div>
 
 <!-- Script del lector de texto -->
 <script>
-    var reproduciendo = false;
-    var utterance = null;
+    function toggleAudio(audioId) {
+        const reproductor = document.getElementById(audioId);
+        const icono = document.getElementById("icono" + audioId);
 
-    function toggleReproducirTextosexi() {
-        if (!reproduciendo) {
-            reproducirTextosexi();
+        if (reproductor.paused) {
+            reproductor.play();
+            icono.classList.remove("bx-volume-full");
+            icono.classList.add("bx-pause");
         } else {
-            detenerReproduccion();
-        }
-        reproduciendo = !reproduciendo;
-    }
-
-    function reproducirTextosexi() {
-        // Texto que se leerá en voz alta
-        var texto = "Actualmente las estrategias de enseñanza, aprendisaje que el sistema educativo desarrolla a traves de los docentes suelen ser repetitivas y aburridas para los estudiantes lo que ocaciona que no sean atractivas pierdan el interes para realizar las actividades y como concecuencia no se luege el aprendizaje y comprencion esperado sobre los temas.";
-
-        // Verifica si el navegador soporta la síntesis de voz
-        if ('speechSynthesis' in window) {
-            var synth = window.speechSynthesis;
-
-            // Crea un nuevo objeto de síntesis de voz
-            utterance = new SpeechSynthesisUtterance(texto);
-
-            // Establece el idioma de la voz a español mexicano
-            utterance.lang = 'es-MX';
-
-            // Reproduce el texto
-            synth.speak(utterance);
-        } else {
-            alert('Tu navegador no soporta la síntesis de voz. Por favor, utiliza un navegador más reciente.');
-        }
-    }
-
-    function detenerReproduccion() {
-        if ('speechSynthesis' in window && utterance !== null) {
-            window.speechSynthesis.cancel();
+            reproductor.pause();
+            icono.classList.remove("bx-pause");
+            icono.classList.add("bx-volume-full");
         }
     }
 </script>
@@ -1021,48 +1005,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
         <div id="aprende" class="section">
             <h1 class="section-title">Aprende 
-                <i onclick="toggleReproducirTexto()" id="iconoSexi2"
+                <i onclick="toggleAudio2('audio2')" id="iconoSexi2"
                     style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume"></i>
             </h1>
+            <audio id="audio2" src="/audios/aprende.mp3" preload="none"></audio>
+
         
         <!-- Script del lector de texto -->
-        <script>      
-            var reproduciendoAprende = false;
-            var utteranceAprende = null;
-        
-            function toggleReproducirTexto() {
-                if (!reproduciendoAprende) {
-                    reproducirTexto();
+        <script>
+            function toggleAudio2(audioId) {
+                const reproductor = document.getElementById(audioId);
+                const icono = document.getElementById("icono" + audioId);
+    
+                if (reproductor.paused) {
+                    reproductor.play();
+                    icono.classList.remove("bx-volume-full");
+                    icono.classList.add("bx-pause");
                 } else {
-                    detenerReproduccionAprende();
-                }
-                reproduciendoAprende = !reproduciendoAprende;
-            }
-        
-            function reproducirTexto() {
-                // Texto que se leerá en voz alta
-                var texto = "A continuacion presentamos una serie de articulos y presentaciones interactivas que te permitiran adquirir mas conocimiento sobre estos temas. elige uno de estos.";
-        
-                // Verifica si el navegador soporta la síntesis de voz
-                if ('speechSynthesis' in window) {
-                    var synth = window.speechSynthesis;
-        
-                    // Crea un nuevo objeto de síntesis de voz
-                    utteranceAprende = new SpeechSynthesisUtterance(texto);
-        
-                    // Establece el idioma de la voz a español mexicano
-                    utteranceAprende.lang = 'es-MX';
-        
-                    // Reproduce el texto
-                    synth.speak(utteranceAprende);
-                } else {
-                    alert('Tu navegador no soporta la síntesis de voz. Por favor, utiliza un navegador más reciente.');
-                }
-            }
-        
-            function detenerReproduccionAprende() {
-                if ('speechSynthesis' in window && utteranceAprende !== null) {
-                    window.speechSynthesis.cancel();
+                    reproductor.pause();
+                    icono.classList.remove("bx-pause");
+                    icono.classList.add("bx-volume-full");
                 }
             }
         </script>

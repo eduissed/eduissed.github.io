@@ -194,7 +194,28 @@
           </div>
 
         <div id="relaciones" class="section">
-            <h2 class="section-title">1. Relaciones</h2>
+            <h2 class="section-title">1. Relaciones
+                i onclick="toggleAudio3('audio3')" id="iconoSexi1"
+            style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume"></i>
+            </h2>
+            <audio id="audio3" src="/audios/1.relaciones.mp3" preload="none"></audio>
+
+            <script>
+                            function toggleAudio3(audioId) {
+                                const reproductor = document.getElementById(audioId);
+                                const icono = document.getElementById("icono" + audioId);
+                    
+                                if (reproductor.paused) {
+                                    reproductor.play();
+                                    icono.classList.remove("bx-volume-full");
+                                    icono.classList.add("bx-pause");
+                                } else {
+                                    reproductor.pause();
+                                    icono.classList.remove("bx-pause");
+                                    icono.classList.add("bx-volume-full");
+                                }
+                            }
+                        </script>
             <p>Las relaciones son fundamentales entre seres humanos y nos permiten mantener una conexión
                 emocional con nosotros y el resto del mundo.
             </p>
@@ -370,7 +391,28 @@
     
            
         <div id="valores" class="section">
-            <h2 class="section-title">2. Valores, derechos, cultura y sexualidad</h2>
+            <h2 class="section-title">2. Valores, derechos, cultura y sexualidad
+                <i onclick="toggleAudio4('audio4')" id="iconoSexi1"
+            style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume"></i>
+            </h2>
+            <audio id="audio4" src="/audios/2.Valores, derechos, cultura y sexualidad.mp3" preload="none"></audio>
+
+<script>
+                function toggleAudio4(audioId) {
+                    const reproductor = document.getElementById(audioId);
+                    const icono = document.getElementById("icono" + audioId);
+        
+                    if (reproductor.paused) {
+                        reproductor.play();
+                        icono.classList.remove("bx-volume-full");
+                        icono.classList.add("bx-pause");
+                    } else {
+                        reproductor.pause();
+                        icono.classList.remove("bx-pause");
+                        icono.classList.add("bx-volume-full");
+                    }
+                }
+            </script>
             <p>Los derechos sexuales son una respuesta a diferentes necesidades humanas relacionadas con la
                 sexualidad que sustentan los diferentes valores que nos enseñan desde niños hasta ser personas adultas.
                 ¡Conozcamos!

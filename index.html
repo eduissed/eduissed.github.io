@@ -1092,9 +1092,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
         <div id="Juegos" class="section">
             <h1 class="section-title">Juegos 
-                <i onclick="toggleReproducirTextojuego()" id="iconoSexi3"
-                    style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume"></i>
+<i onclick="toggleAudio5('audio5')" id="iconoSexi1"
+style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume"></i>
             </h1>
+            <audio id="audio5" src="/audios/juegos.mp3" preload="none"></audio>
+
+            <script>
+                            function toggleAudio5(audioId) {
+                                const reproductor = document.getElementById(audioId);
+                                const icono = document.getElementById("icono" + audioId);
+                    
+                                if (reproductor.paused) {
+                                    reproductor.play();
+                                    icono.classList.remove("bx-volume-full");
+                                    icono.classList.add("bx-pause");
+                                } else {
+                                    reproductor.pause();
+                                    icono.classList.remove("bx-pause");
+                                    icono.classList.add("bx-volume-full");
+                                }
+                            }
+                        </script>
+            
             <p>
                 Conoce los increíbles juegos con los cuales podrás aprender aún más.
             </p>
@@ -1103,50 +1122,6 @@ document.addEventListener("DOMContentLoaded", function () {
             <br>
             <a href="Menudejuego\index.html"><button class="button-85" role="button">VER CATÁLOGO</button></a>
         
-        <!-- Script del lector de texto -->
-        <script>
-            var reproduciendoJuegos = false;
-            var utteranceJuegos = null;
-        
-            function toggleReproducirTextojuego() {
-                if (!reproduciendoJuegos) {
-                    reproducirTextojuego();
-                } else {
-                    detenerReproduccionJuegos();
-                }
-                reproduciendoJuegos = !reproduciendoJuegos;
-            }
-        
-            function reproducirTextojuego() {
-                // Texto que se leerá en voz alta
-                var texto = "Puedes interactuar con los juegos desarrollados para fortalecer tu conocimiento sobre este tema... sexualidad";
-        
-                // Verifica si el navegador soporta la síntesis de voz
-                if ('speechSynthesis' in window) {
-                    var synth = window.speechSynthesis;
-        
-                    // Crea un nuevo objeto de síntesis de voz
-                    utteranceJuegos = new SpeechSynthesisUtterance(texto);
-        
-                    // Establece el idioma de la voz a español mexicano
-                    utteranceJuegos.lang = 'es-MX';
-        
-                    // Reproduce el texto
-                    synth.speak(utteranceJuegos);
-                } else {
-                    alert('Tu navegador no soporta la síntesis de voz. Por favor, utiliza un navegador más reciente.');
-                }
-            }
-        
-            function detenerReproduccionJuegos() {
-                if ('speechSynthesis' in window && utteranceJuegos !== null) {
-                    window.speechSynthesis.cancel();
-                }
-            }
-        </script>
-        
-
-    <!--termina codigo del lector de texto-->
 <style>
 .button-85 {
   padding: 0.6em 2em;
@@ -1231,51 +1206,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
         <div id="recursos" class="section">
             <h1 class="section-title">Recursos 
-                <i onclick="toggleReproducirTextorecursos()" id="iconoSexi4"
-                    style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume"></i>
+<i onclick="toggleAudio6('audio6')" id="iconoSexi1"
+style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume"></i>
             </h1>
         
         <!-- Script del lector de texto -->
-        <script>
-            var reproduciendoRecursos = false;
-            var utteranceRecursos = null;
+        <audio id="audio6" src="/audios/recursos.mp3" preload="none"></audio>
+
+<script>
+                function toggleAudio6(audioId) {
+                    const reproductor = document.getElementById(audioId);
+                    const icono = document.getElementById("icono" + audioId);
         
-            function toggleReproducirTextorecursos() {
-                if (!reproduciendoRecursos) {
-                    reproducirTextorecursos();
-                } else {
-                    detenerReproduccionRecursos();
+                    if (reproductor.paused) {
+                        reproductor.play();
+                        icono.classList.remove("bx-volume-full");
+                        icono.classList.add("bx-pause");
+                    } else {
+                        reproductor.pause();
+                        icono.classList.remove("bx-pause");
+                        icono.classList.add("bx-volume-full");
+                    }
                 }
-                reproduciendoRecursos = !reproduciendoRecursos;
-            }
-        
-            function reproducirTextorecursos() {
-                // Texto que se leerá en voz alta
-                var texto = "Aquí te dejamos una lista de todos los códigos QR que puedes encontrar en la página, así como las infografías de cada tema. Puedes descargarlas desde aquí o haciendo clic en cada una de las imágenes mientras las ves. ¡Diviértete!";
-        
-                // Verifica si el navegador soporta la síntesis de voz
-                if ('speechSynthesis' in window) {
-                    var synth = window.speechSynthesis;
-        
-                    // Crea un nuevo objeto de síntesis de voz
-                    utteranceRecursos = new SpeechSynthesisUtterance(texto);
-        
-                    // Establece el idioma de la voz a español mexicano
-                    utteranceRecursos.lang = 'es-MX';
-        
-                    // Reproduce el texto
-                    synth.speak(utteranceRecursos);
-                } else {
-                    alert('Tu navegador no soporta la síntesis de voz. Por favor, utiliza un navegador más reciente.');
-                }
-            }
-        
-            function detenerReproduccionRecursos() {
-                if ('speechSynthesis' in window && utteranceRecursos !== null) {
-                    window.speechSynthesis.cancel();
-                }
-            }
-        </script>
+            </script>
         
 
     <!--termina codigo del lector de texto-->
@@ -1392,51 +1345,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
         <div id="referencias" class="last-section section">
             <h1 class="section-title">Referencias 
-                <i onclick="toggleReproducirTextoreferencias()" id="iconoSexi5"
-                    style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume"></i>
+                <i onclick="toggleAudio7('audio7')" id="iconoSexi1"
+            style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume"></i>
             </h1>
         
         <!-- Script del lector de texto -->
-        <script>
-            var reproduciendoReferencias = false;
-            var utteranceReferencias = null;
+        <audio id="audio7" src="/audios/referencias.mp3" preload="none"></audio>
+
+<script>
+                function toggleAudio7(audioId) {
+                    const reproductor = document.getElementById(audioId);
+                    const icono = document.getElementById("icono" + audioId);
         
-            function toggleReproducirTextoreferencias() {
-                if (!reproduciendoReferencias) {
-                    reproducirTextoreferencias();
-                } else {
-                    detenerReproduccionReferencias();
+                    if (reproductor.paused) {
+                        reproductor.play();
+                        icono.classList.remove("bx-volume-full");
+                        icono.classList.add("bx-pause");
+                    } else {
+                        reproductor.pause();
+                        icono.classList.remove("bx-pause");
+                        icono.classList.add("bx-volume-full");
+                    }
                 }
-                reproduciendoReferencias = !reproduciendoReferencias;
-            }
-        
-            function reproducirTextoreferencias() {
-                // Texto que se leerá en voz alta
-                var texto = "Podrás ver las referencias en las que nos basamos para la información de SEXi, solo basta con darle clic al texto de tu preferencia.";
-        
-                // Verifica si el navegador soporta la síntesis de voz
-                if ('speechSynthesis' in window) {
-                    var synth = window.speechSynthesis;
-        
-                    // Crea un nuevo objeto de síntesis de voz
-                    utteranceReferencias = new SpeechSynthesisUtterance(texto);
-        
-                    // Establece el idioma de la voz a español mexicano
-                    utteranceReferencias.lang = 'es-MX';
-        
-                    // Reproduce el texto
-                    synth.speak(utteranceReferencias);
-                } else {
-                    alert('Tu navegador no soporta la síntesis de voz. Por favor, utiliza un navegador más reciente.');
-                }
-            }
-        
-            function detenerReproduccionReferencias() {
-                if ('speechSynthesis' in window && utteranceReferencias !== null) {
-                    window.speechSynthesis.cancel();
-                }
-            }
-        </script>
+            </script>
         
 
     <!--termina codigo del lector de texto-->
@@ -1533,52 +1464,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
         <div id="Ajustes" class="section"> 
             <h1 class="section-title">Contacto 
-                <i onclick="toggleReproducirTextocontacto()" id="iconoSexi6"
-                    style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume"></i>
+                <i onclick="toggleAudio8('audio8')" id="iconoSexi1"
+            style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume"></i>
             </h1>
         
         <!-- Script del lector de texto -->
-        <script>
-            var reproduciendoContacto = false;
-            var utteranceContacto = null;
+        <audio id="audio8" src="/audios/contacto.mp3" preload="none"></audio>
+
+<script>
+                function toggleAudio8(audioId) {
+                    const reproductor = document.getElementById(audioId);
+                    const icono = document.getElementById("icono" + audioId);
         
-            function toggleReproducirTextocontacto() {
-                if (!reproduciendoContacto) {
-                    reproducirTextocontacto();
-                } else {
-                    detenerReproduccionContacto();
+                    if (reproductor.paused) {
+                        reproductor.play();
+                        icono.classList.remove("bx-volume-full");
+                        icono.classList.add("bx-pause");
+                    } else {
+                        reproductor.pause();
+                        icono.classList.remove("bx-pause");
+                        icono.classList.add("bx-volume-full");
+                    }
                 }
-                reproduciendoContacto = !reproduciendoContacto;
-            }
-        
-            function reproducirTextocontacto() {
-                // Texto que se leerá en voz alta
-                var texto = "En SEXi nos preocupamos por ti, para que tengas la mejor experiencia. Puedes contactarnos en las siguientes redes. Da clic en los botones si prefieres contactarnos por X - Twitter o por Gmail. Si deseas hacerlo por teléfono, da clic en el número y llámanos.";
-        
-                // Verifica si el navegador soporta la síntesis de voz
-                if ('speechSynthesis' in window) {
-                    var synth = window.speechSynthesis;
-        
-                    // Crea un nuevo objeto de síntesis de voz
-                    utteranceContacto = new SpeechSynthesisUtterance(texto);
-        
-                    // Establece el idioma de la voz a español mexicano
-                    utteranceContacto.lang = 'es-MX';
-        
-                    // Reproduce el texto
-                    synth.speak(utteranceContacto);
-                } else {
-                    alert('Tu navegador no soporta la síntesis de voz. Por favor, utiliza un navegador más reciente.');
-                }
-            }
-        
-            function detenerReproduccionContacto() {
-                if ('speechSynthesis' in window && utteranceContacto !== null) {
-                    window.speechSynthesis.cancel();
-                }
-            }
-        </script>
-        
+            </script>
 
     <!--termina codigo del lector de texto-->
     

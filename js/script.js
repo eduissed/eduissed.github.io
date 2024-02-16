@@ -1,1 +1,65 @@
-const _0x3aadc0=_0x7147;function _0x7147(_0x2aeb4d,_0x30d024){const _0x56f315=_0x56f3();return _0x7147=function(_0x7147e7,_0x3f1492){_0x7147e7=_0x7147e7-0xd8;let _0x1f9e51=_0x56f315[_0x7147e7];return _0x1f9e51;},_0x7147(_0x2aeb4d,_0x30d024);}function _0x56f3(){const _0x359abc=['545494EWTTVS','shiftKey','scrollTo','https://api.openai.com/v1/chat/completions','addEventListener','3245oHdvTn','innerWidth','createElement','Escribiendo...','choices','1BMrQOA','remove','<span\x20class=\x22material-symbols-outlined\x22>smart_toy</span><p></p>','2693624cZAxzK','preventDefault','.chatbox','add','7MsKyky','.chat-input\x20span','then','show-chatbot','3969840FlcSXq','chat','innerHTML','error','13161JtOePg','application/json','217446umpbZy','gpt-3.5-turbo','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','catch','json','toggle','outgoing','stringify','message','POST','finally','querySelector','45816TVzuLg','value','input','keydown','.chatbot-toggler','incoming','textContent','key','appendChild','1293561YGivYA','content','classList','height','trim','.close-btn','style','15KmxVWU','click','user','380UziKwx','scrollHeight'];_0x56f3=function(){return _0x359abc;};return _0x56f3();}(function(_0x6a675b,_0x565d87){const _0x24c6f4=_0x7147,_0x4e43d6=_0x6a675b();while(!![]){try{const _0x40ed6b=parseInt(_0x24c6f4(0x10b))/0x1*(-parseInt(_0x24c6f4(0x101))/0x2)+-parseInt(_0x24c6f4(0xde))/0x3*(-parseInt(_0x24c6f4(0xff))/0x4)+parseInt(_0x24c6f4(0xfc))/0x5*(-parseInt(_0x24c6f4(0xe0))/0x6)+-parseInt(_0x24c6f4(0x112))/0x7*(parseInt(_0x24c6f4(0x10e))/0x8)+-parseInt(_0x24c6f4(0xf5))/0x9+-parseInt(_0x24c6f4(0xda))/0xa+parseInt(_0x24c6f4(0x106))/0xb*(parseInt(_0x24c6f4(0xec))/0xc);if(_0x40ed6b===_0x565d87)break;else _0x4e43d6['push'](_0x4e43d6['shift']());}catch(_0x116683){_0x4e43d6['push'](_0x4e43d6['shift']());}}}(_0x56f3,0x4561d));const chatbotToggler=document['querySelector'](_0x3aadc0(0xf0)),closeBtn=document[_0x3aadc0(0xeb)](_0x3aadc0(0xfa)),chatbox=document[_0x3aadc0(0xeb)](_0x3aadc0(0x110)),chatInput=document[_0x3aadc0(0xeb)]('.chat-input\x20textarea'),sendChatBtn=document[_0x3aadc0(0xeb)](_0x3aadc0(0x113));let userMessage=null;const API_KEY=_0x3aadc0(0xe2),inputInitHeight=chatInput['scrollHeight'],createChatLi=(_0x390674,_0x43859e)=>{const _0x582d5a=_0x3aadc0,_0x5a334f=document[_0x582d5a(0x108)]('li');_0x5a334f[_0x582d5a(0xf7)][_0x582d5a(0x111)](_0x582d5a(0xdb),''+_0x43859e);let _0x57cf29=_0x43859e==='outgoing'?'<p></p>':_0x582d5a(0x10d);return _0x5a334f[_0x582d5a(0xdc)]=_0x57cf29,_0x5a334f['querySelector']('p')[_0x582d5a(0xf2)]=_0x390674,_0x5a334f;},generateResponse=_0x14c996=>{const _0x39a76d=_0x3aadc0,_0x7378cd=_0x39a76d(0x104),_0x5f4172=_0x14c996[_0x39a76d(0xeb)]('p'),_0x3779f6={'method':_0x39a76d(0xe9),'headers':{'Content-Type':_0x39a76d(0xdf),'Authorization':'Bearer\x20'+API_KEY},'body':JSON[_0x39a76d(0xe7)]({'model':_0x39a76d(0xe1),'messages':[{'role':_0x39a76d(0xfe),'content':userMessage}]})};fetch(_0x7378cd,_0x3779f6)[_0x39a76d(0xd8)](_0x31baf5=>_0x31baf5[_0x39a76d(0xe4)]())[_0x39a76d(0xd8)](_0x30578e=>{const _0xf34810=_0x39a76d;_0x5f4172[_0xf34810(0xf2)]=_0x30578e[_0xf34810(0x10a)][0x0][_0xf34810(0xe8)][_0xf34810(0xf6)]['trim']();})[_0x39a76d(0xe3)](()=>{const _0x1c0fa6=_0x39a76d;_0x5f4172[_0x1c0fa6(0xf7)][_0x1c0fa6(0x111)](_0x1c0fa6(0xdd)),_0x5f4172[_0x1c0fa6(0xf2)]='Lo\x20siento:(\x20Algo\x20salio\x20mal\x20intenta\x20de\x20nuevo.';})[_0x39a76d(0xea)](()=>chatbox[_0x39a76d(0x103)](0x0,chatbox[_0x39a76d(0x100)]));},handleChat=()=>{const _0x2eb3c0=_0x3aadc0;userMessage=chatInput[_0x2eb3c0(0xed)][_0x2eb3c0(0xf9)](),chatInput[_0x2eb3c0(0xed)]='',chatInput[_0x2eb3c0(0xfb)][_0x2eb3c0(0xf8)]=inputInitHeight+'px',chatbox[_0x2eb3c0(0xf4)](createChatLi(userMessage,_0x2eb3c0(0xe6))),chatbox[_0x2eb3c0(0x103)](0x0,chatbox[_0x2eb3c0(0x100)]),setTimeout(()=>{const _0x51ab87=_0x2eb3c0,_0x8fb660=createChatLi(_0x51ab87(0x109),_0x51ab87(0xf1));chatbox[_0x51ab87(0xf4)](_0x8fb660),chatbox[_0x51ab87(0x103)](0x0,chatbox['scrollHeight']),generateResponse(_0x8fb660);},0x258);};chatInput[_0x3aadc0(0x105)](_0x3aadc0(0xee),()=>{const _0x4a5661=_0x3aadc0;chatInput[_0x4a5661(0xfb)][_0x4a5661(0xf8)]=inputInitHeight+'px',chatInput[_0x4a5661(0xfb)][_0x4a5661(0xf8)]=chatInput['scrollHeight']+'px';}),chatInput[_0x3aadc0(0x105)](_0x3aadc0(0xef),_0x45d644=>{const _0x247bf3=_0x3aadc0;_0x45d644[_0x247bf3(0xf3)]==='Enter'&&!_0x45d644[_0x247bf3(0x102)]&&window[_0x247bf3(0x107)]>0x320&&(_0x45d644[_0x247bf3(0x10f)](),handleChat());}),sendChatBtn['addEventListener'](_0x3aadc0(0xfd),handleChat),closeBtn['addEventListener'](_0x3aadc0(0xfd),()=>document['body'][_0x3aadc0(0xf7)][_0x3aadc0(0x10c)]('show-chatbot')),chatbotToggler['addEventListener'](_0x3aadc0(0xfd),()=>document['body'][_0x3aadc0(0xf7)][_0x3aadc0(0xe5)](_0x3aadc0(0xd9)));
+const chatbotToggler = document.querySelector(".chatbot-toggler");
+const closeBtn = document.querySelector(".close-btn");
+const chatbox = document.querySelector(".chatbox");
+const chatInput = document.querySelector(".chat-input textarea");
+const sendChatBtn = document.querySelector(".chat-input span");
+let userMessage = null; // Variable del mensajee
+const API_KEY = "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"; // la api de nombre chatbot
+const inputInitHeight = chatInput.scrollHeight;
+const createChatLi = (message, className) => {
+    // Crea un nuevo elemeno
+    const chatLi = document.createElement("li");
+    chatLi.classList.add("chat", `${className}`);
+    let chatContent = className === "outgoing" ? `<p></p>` : `<span class="material-symbols-outlined">smart_toy</span><p></p>`;
+    chatLi.innerHTML = chatContent;
+    chatLi.querySelector("p").textContent = message;
+    return chatLi; // regresa el elemento
+}
+const generateResponse = (chatElement) => {
+    const API_URL = "https://api.openai.com/v1/chat/completions";
+    const messageElement = chatElement.querySelector("p");
+    // Define la api
+    const requestOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${API_KEY}`
+        },
+        body: JSON.stringify({
+            model: "gpt-3.5-turbo",
+            messages: [{role: "user", content: userMessage}],
+        })
+    }
+    fetch(API_URL, requestOptions).then(res => res.json()).then(data => {
+        messageElement.textContent = data.choices[0].message.content.trim();
+    }).catch(() => {
+        messageElement.classList.add("error");
+        messageElement.textContent = "Lo siento:( Algo salio mal intenta de nuevo.";
+    }).finally(() => chatbox.scrollTo(0, chatbox.scrollHeight));
+}
+const handleChat = () => {
+    userMessage = chatInput.value.trim(); 
+    chatInput.value = "";
+    chatInput.style.height = `${inputInitHeight}px`;
+    chatbox.appendChild(createChatLi(userMessage, "outgoing"));
+    chatbox.scrollTo(0, chatbox.scrollHeight);
+    setTimeout(() => {
+        const incomingChatLi = createChatLi("Escribiendo...", "incoming");
+        chatbox.appendChild(incomingChatLi);
+        chatbox.scrollTo(0, chatbox.scrollHeight);
+        generateResponse(incomingChatLi);
+    }, 600);
+}
+chatInput.addEventListener("input", () => {
+    chatInput.style.height = `${inputInitHeight}px`;
+    chatInput.style.height = `${chatInput.scrollHeight}px`;
+});
+chatInput.addEventListener("keydown", (e) => {
+    if(e.key === "Enter" && !e.shiftKey && window.innerWidth > 800) {
+        e.preventDefault();
+        handleChat();
+    }
+});
+sendChatBtn.addEventListener("click", handleChat);
+closeBtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
+chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));

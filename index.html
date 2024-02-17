@@ -854,8 +854,7 @@ document.addEventListener("DOMContentLoaded", function () {
           </script>
 
           <!--termina codigo de ia-->
-
-
+          
         <div class="sidebar-links">
             <ul>
                 <div class="active-tab"></div>
@@ -899,7 +898,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     <a href="#referencias" data-active="4">
                         <div class="icon">
                             <i class='bx bxs-quote-right'></i>
-                            <i class='bx bxs-quote-right'></i>
+                            <i class='bx bxs-quote-left' ></i>
                         </div>
                         <span class="link hide noselect">Referencias</span>
                     </a>
@@ -939,7 +938,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div id="inicio" class="section"> 
     <h1 class="section-title">¿Qué es SEXi? 
         <i onclick="toggleAudio('audio1')" id="iconoSexi1"
-            style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume"></i>
+            style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i>
     </h1>  
     <audio id="audio1" src="/audios/que es sexi.mp3" preload="none"></audio>
 </div>
@@ -1006,7 +1005,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div id="aprende" class="section">
             <h1 class="section-title">Aprende 
                 <i onclick="toggleAudio2('audio2')" id="iconoSexi2"
-                    style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume"></i>
+                    style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i>
             </h1>
             <audio id="audio2" src="/audios/aprende.mp3" preload="none"></audio>
 
@@ -1092,8 +1091,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         <div id="Juegos" class="section">
             <h1 class="section-title">Juegos 
-<i onclick="toggleAudio5('audio5')" id="iconoSexi1"
-style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume"></i>
+<i onclick="toggleAudio5('audio5')" id="iconoSexi3"
+style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i>
             </h1>
             <audio id="audio5" src="/audios/juegos.mp3" preload="none"></audio>
 
@@ -1206,8 +1205,8 @@ style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx
 
         <div id="recursos" class="section">
             <h1 class="section-title">Recursos 
-<i onclick="toggleAudio6('audio6')" id="iconoSexi1"
-style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume"></i>
+<i onclick="toggleAudio6('audio6')" id="iconoSexi4"
+style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i>
             </h1>
         
         <!-- Script del lector de texto -->
@@ -1345,8 +1344,8 @@ style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx
 
         <div id="referencias" class="last-section section">
             <h1 class="section-title">Referencias 
-                <i onclick="toggleAudio7('audio7')" id="iconoSexi1"
-            style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume"></i>
+                <i onclick="toggleAudio7('audio7')" id="iconoSexi5"
+            style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i>
             </h1>
         
         <!-- Script del lector de texto -->
@@ -1464,8 +1463,8 @@ style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx
 
         <div id="Ajustes" class="section"> 
             <h1 class="section-title">Contacto 
-                <i onclick="toggleAudio8('audio8')" id="iconoSexi1"
-            style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume"></i>
+                <i onclick="toggleAudio8('audio8')" id="iconoSexi6"
+            style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i>
             </h1>
         
         <!-- Script del lector de texto -->
@@ -1574,7 +1573,7 @@ style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx
                         }, 10000); // Detener la animación después de 10 segundos
                     } else {
                         clearInterval(intervalo);
-                        icono.className = "bx bx-volume";
+                        icono.className = "bx bx-volume-full";
                         indiceIcono = 0;
                         intervalo = null;
                     }
@@ -1592,7 +1591,6 @@ style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx
             cambiarIconoSecuencial("iconoSexi6");
         </script> 
         
-
         <p class="copyright">
             &copy; 2023 - <span>EDUISSED</span> Todos los derechos reservados <i
                 class="fa-brands fa-creative-commons"></i><i class="fa-brands fa-creative-commons-by"></i><i

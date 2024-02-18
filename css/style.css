@@ -1265,6 +1265,11 @@ main > .section:nth-child(2n)::after {
     align-items: center;
   }
 
+  #inicio-content {
+    padding: 15px; /* Reduce el espacio alrededor del contenido */
+    text-align: center;
+}
+
   #inicio-content img {
     margin: 2rem 0;
     min-width: 80%;

@@ -286,22 +286,20 @@
                 dropUpContainer.classList.remove('open');
             });
             
-
-            
             function toggleMute() {
     var volumeIcon = document.getElementById('volume-icon');
-    var volumeIcons = document.querySelectorAll('.bx-volume:not(#volume_faq)');
+    var volumeIcons = document.querySelectorAll('.bx-volume-full:not(#volume_faq)');
     var isMuted = volumeIcon.classList.contains('bx-volume-mute');
     
     volumeIcons.forEach(function(icon) {
-        icon.style.display = isMuted ? 'inline' : 'none';
+        // Verificar si el icono es diferente de volume-icon antes de ocultarlo
+        if (icon.id !== 'volume-icon') {
+            icon.style.display = isMuted ? 'inline' : 'none';
+        }
     });
 
     volumeIcon.classList.toggle('bx-volume-mute', !isMuted);
 }
-
-
-
 
         </script>
 

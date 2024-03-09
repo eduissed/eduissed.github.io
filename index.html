@@ -41,7 +41,7 @@
             <span class="shrink-btn">
                 <i class='bx bx-chevron-left'></i>
             </span>
-            <a href="./index.html" class="logo"><img src="./resources/images/logo.png" alt="SEXi"
+            <a href="./index.html" class="logo"><img src="./resources/images/logo.png" alt="Logo de SEXi"
                     data-audio="Audios\Logotipo.mp3"></a>
             <div class="logo-text hide noselect">
                 <h3>SEXi</h3>
@@ -86,6 +86,10 @@
         </div>
 
         <style>
+            #dark-mode-icon {
+    transition: all 0.3s ease; /* Cambia la duración y la función de la transición según desees */
+}
+ 
             .drop-up-container {
                 position: fixed;
                 right: 40px;
@@ -224,43 +228,80 @@
             let grayscaleEnabled = false;
             let darkModeEnabled = false;
 
+
+
             // Función para activar/desactivar el contraste de grises
-            function toggleGrayscale() {
-                const body = document.body;
-                if (grayscaleEnabled) {
-                    // Desactivar el contraste de grises (restaurar colores originales)
-                    body.style.filter = 'none';
-                    grayscaleEnabled = false;
-                } else {
-                    // Activar el contraste de grises (aplicar filtro de escala de grises)
-                    body.style.filter = 'grayscale(100%)';
-                    grayscaleEnabled = true;
-                }
-            }
+function toggleGrayscale() {
+    const mainElement = document.querySelector('main');
+    const footerElement = document.querySelector('footer');
+    const dropletIcon = document.getElementById('icon');
 
-            // Función para activar/desactivar el modo oscuro
-            // Función para activar/desactivar el modo oscuro
+    if (grayscaleEnabled) {
+        // Desactivar el contraste de grises (restaurar colores originales)
+        mainElement.style.filter = 'none';
+        footerElement.style.filter = 'none';
+        grayscaleEnabled = false;
+        // Cambiar el ícono del droplet a su estado normal
+        dropletIcon.className = 'bx bx-droplet';
+    } else {
+        // Activar el contraste de grises (aplicar filtro de escala de grises)
+        mainElement.style.filter = 'grayscale(100%)';
+        footerElement.style.filter = 'grayscale(100%)';
+        grayscaleEnabled = true;
+        // Cambiar el ícono del droplet al ícono específico para escala de grises
+        dropletIcon.className = 'bx bxs-droplet';
+    }
+}
+
+
+
             function toggleDarkMode() {
-                const body = document.body;
+    const mainElement = document.querySelector('main');
+    const footerElement = document.querySelector('footer');
+    const darkicon = document.getElementById('dark-mode-icon');
+    if (darkModeEnabled) {
+        // Desactivar el modo oscuro (restaurar colores originales)
+        mainElement.style.filter = 'none';
+        mainElement.style.backgroundColor = '#e4e2f5'; // Restaurar el color de fondo original
+        footerElement.style.filter = 'none';
+        footerElement.style.backgroundColor = '#e4e2f5'; // Restaurar el color de fondo original
 
-                if (darkModeEnabled) {
-                    // Desactivar el modo oscuro (restaurar colores originales)
-                    body.style.filter = 'none';
-                    body.style.backgroundColor = '#e4e2f5'; // Cambia el color de fondo al valor original
-                    darkModeEnabled = false;
+        darkModeEnabled = false;
+        // Restaurar el color del texto en #inicio
+        document.getElementById('inicio-content').style.color = 'black';
+        document.getElementById('inicio').style.color = 'black';
+        document.getElementById('derechos').style.color = 'black';
 
-                    // Restaurar el color del texto en #inicio
-                    document.getElementById('inicio').style.color = 'black';
-                } else {
-                    // Activar el modo oscuro (aplicar filtro de reducción de intensidad de colores)
-                    body.style.filter = 'brightness(70%)'; // Ajusta el valor para la intensidad deseada
-                    body.style.backgroundColor = '#313144'; // Cambia el color de fondo a gris oscuro
-                    darkModeEnabled = true;
+        // Agregar estilos al pseudo-elemento ::before
+        mainElement.querySelectorAll('.section').forEach(section => {
+            section.style.position = 'relative';
+            section.style.zIndex = '0';
+        });
 
-                    // Cambiar el color del texto en #inicio a blanco
-                    document.getElementById('inicio').style.color = 'white';
-                }
-            }
+        // Agregar estilos al pseudo-elemento ::after
+        mainElement.querySelectorAll('.section').forEach(section => {
+            section.style.position = 'relative';
+            section.style.zIndex = '0';
+        });
+         // Cambiar el ícono del droplet a su estado normal
+         darkicon.className = 'bx bx-moon';
+    } else {
+        // Activar el modo oscuro (aplicar filtro de reducción de intensidad de colores)
+        mainElement.style.filter = 'brightness(80%)'; // Ajusta el valor para la intensidad deseada
+        mainElement.style.backgroundColor = '#313144'; // Cambia el color de fondo a gris oscuro
+        footerElement.style.filter = 'brightness(70%)'; // Ajusta el valor para la intensidad deseada
+        footerElement.style.backgroundColor = '#313144'; // Cambia el color de fondo a gris oscuro
+
+        darkModeEnabled = true;
+
+        // Cambiar el color del texto en #inicio a blanco
+        document.getElementById('inicio-content').style.color = 'white';
+        document.getElementById('inicio').style.color = 'white';
+        document.getElementById('derechos').style.color = 'white';
+        // Cambiar el ícono del droplet al ícono específico para escala de grises
+        darkicon.className = 'bx bx-sun';
+    }
+}
 
 
             // Evento de clic para el botón de "Contraste de grises"
@@ -286,6 +327,8 @@
                 dropUpContainer.classList.remove('open');
             });
             
+
+            
             function toggleMute() {
     var volumeIcon = document.getElementById('volume-icon');
     var volumeIcons = document.querySelectorAll('.bx-volume-full:not(#volume_faq)');
@@ -301,12 +344,15 @@
     volumeIcon.classList.toggle('bx-volume-mute', !isMuted);
 }
 
+
+
+
         </script>
 
         <!--chat con ia inicia-->
         <button class="chatbot-toggler" >
             <span class="material-symbols-rounded"><i style="font-size: 40px;" class='bx bx-message-square-dots bx-flip-horizontal' ></i></span>
-            <span class="material-symbols-outlined">close</span>
+            <span class="material-symbols-outlined" alt="chatbot">close</span>
           </button>
         
           <div class="chatbot">
@@ -852,7 +898,7 @@ document.addEventListener("DOMContentLoaded", function () {
           </script>
 
           <!--termina codigo de ia-->
-          
+
         <div class="sidebar-links">
             <ul>
                 <div class="active-tab"></div>
@@ -975,10 +1021,10 @@ document.addEventListener("DOMContentLoaded", function () {
                         y
                         comprensión esperado sobre los temas</p>
                     <p>
-                        Es por eso que nosotros, EDUISSED <span class="remark">(Educación Integral Socioemocional en
+                        Es por eso que nosotros, <b>EDUISSED</b> <span class="remark">(Educación Integral Socioemocional en
                             Sexualidad Digitalizada)</span>, decidimos diseñar <b>SEXi</b> <span
-                            class="remark">Sexualidad
-                            Integral</span>
+                            class="remark">(Sexualidad
+                            Integral)</span>
                         una herramienta tecnopedagógica, específicamente una pagina
                         web, que tiene como objetivo coadyuvar a la adquisición de habilidades socioemocionales en
                         sexualidad.
@@ -1589,13 +1635,71 @@ style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx
             cambiarIconoSecuencial("iconoSexi6");
         </script> 
         
-        <p class="copyright">
+            
+        <p class="copyright" id="derechos">
             &copy; 2023 - <span>EDUISSED</span> Todos los derechos reservados <i
-                class="fa-brands fa-creative-commons"></i><i class="fa-brands fa-creative-commons-by"></i><i
-                class="fa-brands fa-creative-commons-sa"></i>
+            class="fa-brands fa-creative-commons"></i><i class="fa-brands fa-creative-commons-by"></i><i class="fa-brands fa-creative-commons-nc"></i><i class="fa-brands fa-creative-commons-sa"></i> 
+            <button id="toggleButton">
+                <i class="fa-solid fa-chevron-down"></i>
+                <i class="fa-solid fa-chevron-up" style="display: none;"></i>
+            </button>
+            
+            <script>
+                $(document).ready(function() {
+                    $('#toggleButton').click(function() {
+                        $('.fa-chevron-down, .fa-chevron-up').toggle();
+                    });
+                });
+            </script>
+           <style>
+            /* Estilos opcionales para el botón */
+            #toggleButton {
+                cursor: pointer;
+                border: none;
+                background: none;
+                font-size: 18px;
+                outline: none;
+            }
+        </style>
+        
+
+            <script>
+                document.getElementById('toggleButton').addEventListener('click', function() {
+                    var content = document.getElementById('contentm');
+                    if (content.style.opacity === '0') {
+                        content.style.opacity = '1';
+                    } else {
+                        content.style.opacity = '0';
+                    }
+                });
+            </script>
         </p>
+        <div class="copyright" id="contentm" style="opacity: 0;">
+            <span xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
+                <a property="dct:title" rel="cc:attributionURL" href="https://eduissed.org">SEXi por EDUISSED</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://eduissed.org/">Angélica Montserrat Rodríguez Cano, Eliann Artemio Grajeles Grene, Roger Daniel Cruz Vázquez, Josué Misael Torres Barrientos.</a> is licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1">
+                    </a>
+            </span>
+        </div>
+
+        <style>#contentm {
+            transition: opacity 0.5s ease;
+        }
+
+                    /* Margen para dispositivos de pantalla grande */
+#contentm {
+    margin-top: -440px;
+}
+
+/* Media query para dispositivos de pantalla pequeña o móviles */
+@media only screen and (max-width: 768px) {
+    #contentm {
+        margin-top: -280px;
+    }
+}
+
+        </style>
     </main>
-    <footer>
+    <footer style="z-index: 9;">
         <img src="./resources/images/char_footer.png" alt="people hugging" id="people" class="characs">
         <img id="grass" src="resources\images\footer-image.png" alt="footer">
     </footer>

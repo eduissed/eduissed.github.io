@@ -607,6 +607,8 @@ main > .section:nth-child(2n)::after {
 #inicio-content {
   display: flex;
   flex-direction: row;
+  text-align: justify;
+  margin-right: 40px;
 }
 
 #recursos-content {
@@ -1267,7 +1269,8 @@ main > .section:nth-child(2n)::after {
 
   #inicio-content {
     padding: 15px; /* Reduce el espacio alrededor del contenido */
-    text-align: center;
+    text-align: justify;
+    margin-right: 0px;
 }
 
   #inicio-content img {

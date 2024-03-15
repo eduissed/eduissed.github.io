@@ -17,6 +17,9 @@
     <link rel="stylesheet" type="text/css" href="../css/aprende.css">
     <link rel="shortcut icon" href="../resources/favicon_color.ico" type="image/x-icon" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
         .image-overlay {
             position: fixed;
@@ -70,7 +73,144 @@
 <body>
 
     
-    
+    <script>
+        let isPlaying = false;
+        let paused = false;
+        let utterance;
+        let lectores = {
+          seccion1: {
+            texto: 'Relaciones... Las relaciones son fundamentales entre seres humanos y nos permiten mantener una conexión emocional con nosotros y el resto del mundo.'
+          },
+          seccion2: {
+            texto: '1.1 Familia... La familia es la primera relación de la que somos parte como seres humanos. Es donde nos desarrollamos y donde pasamos la mayor cantidad de nuestro tiempo. Existen muchos tipos diferentes de familias en el mundo: (biparentales, monoparentales, encabezadas por menores o por tutores legales, extendidas, nucleares y no tradicionales). Según la CNDH: Las familias son organizaciones dinámicas que se adaptan a los cambios demográficos, sociales, económicos y culturales que, continuamente, se presentan en la sociedad.1 A lo largo de la historia, sus integrantes se han agrupado para formar estructuras capaces de enfrentar los desafíos propios de cada época y comunidad en que han vivido, con el objetivo de asegurar su subsistencia y seguridad.(CNDH, 2018, pp 1-2) tipos-de-familias Algunas cosas que son importantes de la familia: El conflicto y los malentendidos entre los padres y tutores legales y los niños son comunes, en particular durante la adolescencia, y generalmente se pueden resolver El amor, la cooperación, la igualdad de género, el cuidado y el respeto mutuo son importantes para el funcionamiento de la familia y las relaciones saludables La familia es la célula básica de la sociedad que históricamente se había concebido como el grupo de personas que cohabitan y comparten una vivienda y, sobre todo, lazos de parentesco. La familia se define como grupo de personas, vinculadas generalmente por lazos de parentesco, ya sean de sangre o políticos, e independientemente de su grado, que hace vida en común, ocupando normalmente la totalidad de una vivienda. Se incluyen en la familia las personas del servicio doméstico que pernoctan en la vivienda y los huéspedes en régimen familiar. En la definición se incluyen, asimismo, las personas que viven solas, como familias unipersonales. relaciones La familia también posee derechos y obligaciones, como los son: Derecho a fundar o a vivir en familia y a no ser separado(a) injustificadamente de ella, salvo riesgo o peligro grave. Derecho a contraer matrimonio libre y voluntariamente. Derecho a decidir la forma y estructura de su familia. Derecho y obligación de proporcionar y recibir alimentos. Derecho a heredar y ser heredero(a). Derechos de seguridad social (servicios médicos, pensiones entre otros) Derechos derivados de la patria potestad que se ejerce sobre las hijas e hijos (por ejemplo, educarlos(as), inculcarles valores, una religión, decidir su lugar de residencia, por mencionar algunos). Obligación de velar por las personas mayores. Obligación de respeto y consideración mutua, sin discriminación de sus integrantes por edad, ocupación, discapacidad o cualquier otra Obligación de respetar y cumplir los derechos de niñas, niños y adolescentes. Obligación de no ejercer ningún tipo de violencia contra ningún familiar. Obligación de asistencia, solidaridad, cuidados y protección mutua Deber de todas y todos de colaborar por igual con el trabajo en el hogar.'
+          },
+          seccion3: {
+            texto: ' 1.2 Amistad, amor y relaciones romanticas...Amar y ser amado enriquece nuestras vidas. Cuando la gente se siente sentimentalmente cerca de otra persona está más contenta e incluso más sana. El amor nos ayuda a sentirnos importantes, entendidos y seguros.Las amistades se basan en confianza, intercambio, respeto, empatía y solidaridad Las relaciones implican diferentes tipos de amor (por ej., amor entre amigos, entres padres, entre parejas románticas) y el amor se puede expresar de muchas maneras diferentes Las amistades y el amor ayudan a las personas a sentirse bien consigo mismas Los amigos se pueden influir mutuamente de maneras positivas y negativas Atracción: es la parte "química" del amor. Se refiere al interés o deseo físico —o incluso sexual— que se experimenta por otra persona. La atracción es la responsable de las ganas que tenemos de besar y abrazar al objeto de nuestro afecto. La atracción también es lo que subyace a esa mezcla de turbación, nerviosismo y excitación que experimentamos cuando esa persona está cerca. Intimidad: es el vínculo que desarrollamos cuando compartimos con una persona pensamientos y sentimientos que no compartimos con nadie más. Cuando experimentas esa sensación de intimidad con tu novio o novia, te sientes apoyado, cuidado, considerado y aceptado tal y como eres. La confianza es un componente esencial de la intimidad. Compromiso: es la promesa o decisión de seguir al lado de esa persona a pesar de los altibajos que pueda haber en la relación. El amor romántico surge cuando se combinan la atracción y la intimidad. Muchas relaciones se desarrollan a partir de una atracción inicial (un enamoramiento o "amor a primera vista ") y luego evolucionan hacia la intimidad. También puede ocurrir que la intimidad de una amistad evolucione hacia la atracción, cuando dos personas se dan cuenta de que su relación no es solo de amigos y que han empezado a sentir un interés romántico mutuo.'
+          },
+          seccion4: {
+            texto: '1.3 tolerancia, inclusion y respeto...La tolerancia significa el respeto a las ideas, creencias o prácticas de los demás cuando son diferentes o contrarias a las propias, así como el reconocimiento, la aceptación y el aprecio al pluralismo cultural, a las formas de expresión, a los derechos humanos de los demás y a la diversidad del aspecto, situación, comportamiento y valores de todas las personas. Todo ser humano es único, puede contribuir a la sociedad y tiene el derecho a ser respetado. El estigma y la discriminación son dañinos. Es irrespetuoso y dañino hostigar o acosar a cualquier persona en base a su condición social, económica o de salud, grupo étnico, raza, origen, orientación sexual, identidad de género u otras diferencias. Una conducta tolerante implica un discernimiento individual para respetar y aceptar las diferencias raciales, políticas, sexuales y sociales de los demás. Asimismo, la tolerancia se encuentra estrechamente ligada al deber que tiene toda persona de respetar los derechos humanos de las otras personas. El derecho a la libertad e igualdad y la prohibición de la discriminación son derechos humanos reconocidos expresamente en tratados internacionales de los que México es parte, por lo que es necesario el fomento del respeto a los mismos, como parte de la cultura, en un proceso de aprendizaje e interiorización de los mismos por toda la población. Elementos para impulsar la tolerancia según la UNESCO: Utilizar un lenguaje con la ausencia de calificativos raciales, étnicos o de sexo, lo que puede fomentarse evitando adjetivos y verbos que prejuzguen la descripción de acontecimientos o de personas. En México, un ejemplo lo podemos identificar con las modificaciones constitucionales, de junio de 2011, en donde se cambió el término “individuo” por el de “persona”, por ser más acorde a una perspectiva de género. La igualdad entre las personas para acceder a los beneficios sociales, a las actividades públicas y a las oportunidades educativas y económicas para todos los grupos, tanto hombres como mujeres, y de cualquier raza, etnia, religión, edad o clase social. El respeto mutuo a la dignidad humana de todas las personas de la sociedad. La igualdad de oportunidades para la participación de las minorías, hombres y mujeres, en el proceso democrático. Garantizar la preservación de la integridad cultural y de las lenguas minoritarias y fomentar su utilización; el respeto a la dignidad humana y a todos los derechos de las personas pertenecientes a minorías y pueblos indígenas. Los diálogos interétnicos e interreligiosos sobre los problemas comunes y sobre las relaciones entre grupos forman parte del discurso comunitario.'
+          },
+          seccion5: {
+            texto: 'Valores, derechos, cultura y sexualidad. Los derechos sexuales son una respuesta a diferentes necesidades humanas relacionadas con la sexualidad que sustentan los diferentes valores que nos enseñan desde niños hasta ser personas adultas. ¡Conozcamos!'
+          },
+          seccion6: {
+            texto: '2.1 valores y sexualidad... La sexualidad humana es uno de los modos más importantes de relacionarnos que existe para las personas, por lo cual, casi todos los valores humanos que fomentemos van a tener una importancia más o menos directa en el desarrollo psicosexual. Placer: es importante transmitir que el placer forma parte de una sexualidad saludable. Si no hay placer en el ejercicio de la sexualidad de las personas seguramente hay algo que revisar. Intimidad: Tiene que ver con la reserva que elegimos las personas para realizar algunas acciones más que otras, con entender que existe la intimidad física y también la intimidad espiritual y que las personas tienden a sentirse más plenas y felices cuando pueden gozar de ambas. Comunicación: Como en cualquier otro aspecto de las relaciones humanas, se vuelve importantísimo poder comunicar gustos, deseos, emociones, fantasías, preferencias, etc. Si se fomenta en las personas la habilidad para transmitir lo que sientan y pedir lo que necesiten de manera respetuosa es mucho más probable que se desarrollen conductas sexuales saludables y placenteras. Respeto: Es fundamental transmitir que mi derecho termina cuando el del otro empieza y viceversa. No es posible relacionarnos sexualmente de manera saludable si no tenemos incorporado el respeto en nuestro modo de vincularnos. Salud: Es importante informar sobre las enfermedades de transmisión sexual más propagadas así como los medios óptimos para reducir al máximo estos riesgos. Al mismo tiempo, tener en cuenta que existen modos saludables y no saludables de ejercer nuestra sexualidad. Si en este ejercicio hay malestar, sufrimiento, dolor físico o moral, hay que pedir ayuda sin miedos ni prejuicios. Procreación responsable: Al educar sexualmente a otro ser humano habremos de tener en cuenta que la relación sexual tiene como una de sus posibles consecuencias la reproducción. Es importante, además de informar sobre los distintos métodos anticonceptivos, recordar que es responsabilidad de las personas que la reproducción se desarrolle junto a una madurez emocional suficiente y acompañada por el deseo de paternidad/maternidad que necesita un bebé para desarrollarse sanamente. Diversidad: Las personas vivimos la sexualidad de manera diversa. Es saludable que así sea, así como también es saludable que aprendamos a respetar esta diversidad en los otros y en uno mismo.'
+          },
+          seccion7: {
+            texto: '2.2 derechos humanos y sexualidad La sexualidad es parte fundamental en la vida de las personas en los diferentes aspectos: biológicos, psicológicos y culturales. Mujeres y hombres decidimos como ejercemos nuestro cuerpo, nuestro erotismo y nuestro afecto a partir de las diferentes construcciones que escuchamos y vivimos a lo largo de nuestra vida ya sea de manera formal o informal. Los derechos sexuales son una respuesta a las distintas necesidades humanas en torno a la sexualidad, son el pilar de los diversos valores que nos enseñan en la infancia, adolescencia, juventud o en la vida adulta como es el respeto, la libertad, la empatía, la igualdad, la autonomía, etcétera. Por ello, en México como en otros países los derechos sexuales son derechos humanos, es decir cualquier persona tiene derecho a ejercer de forma plena y responsable aspectos de su sexualidad debido a que éstos están protegidos por tratados internacionales y nacionales. El conocimiento de los derechos implica que las personas puedan exigir a su efectividad a las instituciones. derechos-humanos-sexualidad' 
+          },
+          seccion8: {
+            texto: '2.3 cultura, sociedad y sexualidad Las costumbres, el comportamiento social, los hábitos alimenticios y, en definitiva, el modo de vida, están altamente influenciados por la cultura. La sexualidad, como no podía ser de otro modo, establece también las bases de su fundamento en patrones culturales. Por cultura no nos referimos a la amalgama de conocimientos e ideas adquiridos debido al desarrollo de las facultades intelectuales, mediante la lectura, el estudio y/o el trabajo, sino a la totalidad de comprensiones, juicios, ideas, tradiciones y/o costumbres que caracterizan a un pueblo, a una clase social o a una época. La cultura, por su naturaleza, brinda normas y criterios racionales, pero también arrastra ciertos sesgos que, aunque se razonen como nocivos, son extremadamente difíciles de eliminar. La sexualidad no es el único ámbito perjudicado por determinados dogmas culturales, aunque sí uno de los más castigados. Muchos de los mitos sexuales se fundamentan en la cultura. Existen numerosas ideas erróneas sobre la sexualidad, algunas de ellas generales y otras específicas. De este modo, hay falsas creencias sobre la masturbación, la eyaculación precoz, la falta de erección o la falta de deseo. Esto supone una barrera en el avance social en lo que a sexualidad se refiere. En este sentido, resulta evidente que, en las últimas décadas, se ha evolucionado enormemente en cuestiones, como, por ejemplo, de igualdad de género, pero la presencia de este tipo de ideas impide que el avance continúe. El resultado es que, en lugar de que el desarrollo de esto tipo de conceptos prosiga, se desvirtúa, creando múltiples ideas, a su vez erróneas, sobre lo que es o no es igualdad, derechos de las mujeres, etc. En conclusión, la cultura y su mitología pueden resultar muy perjudiciales para el avance social y para las personas con disfunciones sexuales y sus parejas, pero también puede trascender de estos dos aspectos, ya que puede ser la responsable de la aparición de problemas de pareja y de disfunciones sexuales tanto en el hombre como en la mujer, personas sin ningún tipo de patologías o problemas que pueden sufrir un enorme malestar únicamente por aceptar ideas erróneas.'
+          },
+          seccion9: {
+            texto: '3. como entender le genero... Al mencionar la palabra género, desplegamos principalmente conceptos y constructos sociales que históricamente se han formado y aceptado. La importancia de informarnos acerca de estos temas, radica en que así podremos ser capaces de cuestionarnos para no caer en la credulidad y poder formar una propia visión y opinión.'
+          },
+          seccion10: {
+            texto: '3.1 construccion social del genero y las normas del genero'
+          },
+          seccion11: {
+            texto: '3.2 igualdad, estereotipos y prejuicios del genero'
+          },
+          seccion12: {
+            texto: '3.3Violencia del genro'
+          },
+          seccion13: {
+            texto: '4.Violencia y seguridad personal'
+          },
+          seccion14: {
+            texto: '4.1 violencia'
+          },
+          seccion15: {
+            texto: '4.2 consentimiento, privacidad e integridad fisica'
+          },
+          seccion16: {
+            texto: '4.3 uso seguro de las tecnologias de informacion y comunicacion (tic)'
+          },
+          seccion17: {
+            texto: '5.Habilidades para la salud y bienestar'
+          },
+          seccion18: {
+            texto: '5.1 influencia de normas y grupos de partes en la conducta secual'
+          },
+          seccion19: {
+            texto: '5.2 toma de decisiones'
+          },
+          seccion20: {
+            texto: '5.3 habilidades de comunicacion, rechazo y negociacion'
+          },
+          seccion21: {
+            texto: '5.4 alfabetizacion mediatica y sexualidad'
+          },
+          seccion22: {
+            texto: '5.5 como encontrar ayuda y apoyo'
+          },
+          seccion23: {
+            texto: '6. el cuerpo humano y el desarrollo'
+          },
+          seccion24: {
+            texto: '6.1 anatomia y fisiologia sexaul reproductiva'
+          },
+          seccion25: {
+            texto: '6.2 reproduccion'
+          },
+          seccion26: {
+            texto: '6.3 pubertad'
+          },
+          seccion27: {
+            texto: '6.4 imagen corporal'
+          },
+          seccion28: {
+            texto: '7. sexualidad y conducta sexual'
+          },
+          seccion29: {
+            texto: '7.1 relaciones sexuales, sexualidad y ciclo de vida sexual'
+          },
+          seccion30: {
+            texto: '7.2 conducta sexual y respuesta sexal'
+          },
+          seccion31: {
+            texto: '8. salud sexual y reproductiva'
+          },
+          seccion32: {
+            texto: '8.1 embarazo y prevencion del embarazo'
+          },
+          seccion33: {
+            texto: 'estigma del vih y del sida, atencion medica, tratamiento y apoyo'
+          },
+          seccion34: {
+            texto: '8.3 como entender, reconocer y reducir el riesgo de las its, incluido el vih'
+          },
+
+        };
+        let seccionActual = '';
+      
+        function togglePlayback(seccion) {
+          if (seccion === seccionActual) {
+            if (isPlaying && !paused) {
+              window.speechSynthesis.pause();
+              paused = true;
+            } else {
+              window.speechSynthesis.resume();
+              paused = false;
+            }
+          } else {
+            if (isPlaying) {
+              window.speechSynthesis.cancel();
+            }
+            seccionActual = seccion;
+            let lectura = lectores[seccion];
+            utterance = new SpeechSynthesisUtterance(lectura.texto);
+            window.speechSynthesis.speak(utterance);
+            isPlaying = true;
+            paused = false;
+            utterance.onend = function() {
+              isPlaying = false;
+              paused = false;
+              seccionActual = '';
+            }
+          }
+        }
+      </script>
 
     <nav>
         <div class="sidebar-top">
@@ -195,12 +335,17 @@
 
         <div id="relaciones" class="section">
             <h2 class="section-title">1. Relaciones</h2>
-            <p>Las relaciones son fundamentales entre seres humanos y nos permiten mantener una conexión
+            <p><i id="iconoSexi1" onclick="togglePlayback('seccion1')"
+                style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i>
+                Las relaciones son fundamentales entre seres humanos y nos permiten mantener una conexión
                 emocional con nosotros y el resto del mundo.
             </p>
             <details class="subtema">
                 <summary class="noselect">1.1 Familia</summary>
-                <p>La familia es la primera relación de la que somos parte como seres humanos. Es donde nos
+                <p>
+                    <i id="iconoSexi1" onclick="togglePlayback('seccion2')"
+                style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>
+                La familia es la primera relación de la que somos parte como seres humanos. Es donde nos
                     desarrollamos y
                     donde pasamos la mayor cantidad de nuestro tiempo.
                     Existen muchos tipos diferentes de familias en el mundo:
@@ -268,7 +413,10 @@
             <details class="subtema">
                 <summary class="noselect">1.2 Amistad, amor y relaciones románticas</summary>
                 <ul>
-                    <li>Amar y ser amado enriquece nuestras vidas. Cuando la gente se siente sentimentalmente cerca de
+                    <li>
+                        <i id="iconoSexi1" onclick="togglePlayback('seccion3')"
+                style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>
+                Amar y ser amado enriquece nuestras vidas. Cuando la gente se siente sentimentalmente cerca de
                         otra
                         persona está más contenta e incluso más sana. El amor nos ayuda a sentirnos importantes,
                         entendidos
@@ -308,7 +456,9 @@
 
             <details class="subtema">
                 <summary class="noselect">1.3 Tolerancia, inclusión y respeto</summary>
-                <p>La <span class="remark">tolerancia</span> significa el respeto a las ideas, creencias o
+                <p><i id="iconoSexi1" onclick="togglePlayback('seccion4')"
+                    style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>
+                    La <span class="remark">tolerancia</span> significa el respeto a las ideas, creencias o
                     prácticas de los demás cuando son diferentes o contrarias a las propias, así como el
                     reconocimiento, la aceptación y el aprecio al pluralismo cultural, a las formas de expresión, a
                     los derechos humanos de los demás y a la diversidad del aspecto, situación, comportamiento y
@@ -370,14 +520,17 @@
     
            
         <div id="valores" class="section">
-            <h2 class="section-title">2. Valores, derechos, cultura y sexualidad</h2>
+            <h2 class="section-title">2. Valores, derechos, cultura y sexualidad<i id="iconoSexi1" onclick="togglePlayback('seccion5')"
+                style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i></h2>
             <p>Los derechos sexuales son una respuesta a diferentes necesidades humanas relacionadas con la
                 sexualidad que sustentan los diferentes valores que nos enseñan desde niños hasta ser personas adultas.
                 ¡Conozcamos!
             </p>
             <details class="subtema">
                 <summary class="noselect">2.1 Valores y Sexualidad</summary>
-                <p>La sexualidad humana es uno de los modos más importantes de relacionarnos que existe
+                <p><i id="iconoSexi1" onclick="togglePlayback('seccion6')"
+                    style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>
+                    La sexualidad humana es uno de los modos más importantes de relacionarnos que existe
                     para las personas, por lo cual, casi todos los valores humanos que fomentemos van a tener una
                     importancia más o menos directa en el desarrollo psicosexual.
                 </p>
@@ -421,7 +574,9 @@
 
             <details class="subtema">
                 <summary class="noselect">2.2 Derechos Humanos y Sexualidad</summary>
-                <p>La sexualidad es parte fundamental en la vida de las personas en los diferentes
+                <p><i id="iconoSexi1" onclick="togglePlayback('seccion7')"
+                    style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>
+                    La sexualidad es parte fundamental en la vida de las personas en los diferentes
                     aspectos: biológicos, psicológicos y culturales. Mujeres y hombres decidimos como ejercemos nuestro
                     cuerpo, nuestro erotismo y nuestro afecto a partir de las diferentes construcciones que escuchamos y
                     vivimos a lo largo de nuestra vida ya sea de manera formal o informal.
@@ -444,7 +599,10 @@
 
             <details class="subtema">
                 <summary class="noselect">2.3 Cultura, sociedad y sexualidad</summary>
-                <p>Las costumbres, el comportamiento social, los hábitos alimenticios y, en definitiva, el
+                <p>
+                    <i id="iconoSexi1" onclick="togglePlayback('seccion8')"
+                style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>
+                Las costumbres, el comportamiento social, los hábitos alimenticios y, en definitiva, el
                     modo de vida, están altamente influenciados por la cultura. La sexualidad, como no podía ser de otro
                     modo, establece también las bases de su fundamento en patrones culturales.
                 </p>
@@ -479,7 +637,8 @@
         </div>
 
         <div id="genero" class="section">
-            <h2 class="section-title">3. Cómo entender el género</h2>
+            <h2 class="section-title">3. Cómo entender el género<i id="iconoSexi1" onclick="togglePlayback('seccion9')"
+                style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i></h2>
             <p>
                 Al mencionar la palabra género, desplegamos principalmente conceptos y constructos sociales que
                 históricamente se han formado y aceptado. La importancia de informarnos acerca de estos temas, radica en
@@ -490,7 +649,9 @@
 
             <details class="subtema">
                 <summary class="noselect">3.1 Construcción social del género y las normas del género</summary>
-                <p>La construcción social del género está vinculada con la cultura, clase social, religión, historia,
+                <p><i id="iconoSexi1" onclick="togglePlayback('seccion10')"
+                    style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>
+                    La construcción social del género está vinculada con la cultura, clase social, religión, historia,
                     etnia, edad y marco político de cada persona.
                 </p>
 
@@ -570,7 +731,9 @@
 
             <details class="subtema">
                 <summary class="noselect">3.2 Igualdad, estereotipos y prejuicios del género</summary>
-                <p>Es nuestra responsabilidad ver por un mundo mejor y con más oportunidades para todos y todas, luchar
+                <p><i id="iconoSexi1" onclick="togglePlayback('seccion11')"
+                    style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>
+                    Es nuestra responsabilidad ver por un mundo mejor y con más oportunidades para todos y todas, luchar
                     por los derechos que nos corresponden y cuestionar si lo que nos enseñan está bien, pero para eso,
                     primero hay que informarnos correctamente.</p>
                 <div class="wrapper" id="newimg"><img  class="zoomable" id="newimg" src="../resources/images/estereotipos-de-genero.png"
@@ -614,7 +777,10 @@
 
             <details class="subtema">
                 <summary class="noselect">3.3 Violencia de género</summary>
-                <p>El propósito de este apartado de información, es concientizar para ser capaces de identificar si
+                <p>
+                    <i id="iconoSexi1" onclick="togglePlayback('seccion12')"
+                style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>
+                El propósito de este apartado de información, es concientizar para ser capaces de identificar si
                     sufrimos violencia y reconocer que todas las formas de violencia de género son inaceptables y que es
                     posible romper ese ciclo. ¡Juntos y juntas podemos!
                 </p>
@@ -730,7 +896,8 @@
         </div>
 
         <div id="violencia" class="section">
-            <h2 class="section-title">4. Violencia y Seguridad personal</h2>
+            <h2 class="section-title">4. Violencia y Seguridad personal<i id="iconoSexi1" onclick="togglePlayback('seccion13')"
+                style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i></h2>
             <p>La importancia de informarnos para protegernos radica en poder identificar en qué momento y
                 de qué manera actuar ante cualquier situación de violencia para de esta manera no permitir que se lleven
                 a cabo dichas situaciones. No estás solo/a.</p>
@@ -738,7 +905,9 @@
 
             <details class="subtema">
                 <summary class="noselect">4.1 Violencia</summary>
-                <p>Es indispensable tener conocimiento y saber reconocer cualquier tipo de violencia, ya
+                <p><i id="iconoSexi1" onclick="togglePlayback('seccion14')"
+                    style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>
+                    Es indispensable tener conocimiento y saber reconocer cualquier tipo de violencia, ya
                     sea pasiva o
                     agresiva. Si has sufrido algún tipo de violencia, no dudes en pedir apoyo, no te quedes callada/o.
                 </p>
@@ -852,7 +1021,9 @@
             <details class="subtema">
                 <summary class="noselect">4.2 Consentimiento, privacidad e integridad física
                 </summary>
-                <p>En este apartado te enseñamos los conceptos básicos para que aprendas a ser capaz de
+                <p><i id="iconoSexi1" onclick="togglePlayback('seccion15')"
+                    style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>
+                    En este apartado te enseñamos los conceptos básicos para que aprendas a ser capaz de
                     poner límites y salvaguardar tu integridad como persona al no dejar que ninguna persona ajena atente
                     en contra tuya</p>
                 <div class="wrapper"><img class="zoomable" src="../resources/images/no-significa-no.png"
@@ -918,7 +1089,9 @@
             <details class="subtema">
                 <summary class="noselect">4.3 Uso seguro de tecnologías de información y comunicación (TIC)
                 </summary>
-                <p>Es necesario comprender el alcance y la funcionalidad que pueden tener medios de
+                <p><i id="iconoSexi1" onclick="togglePlayback('seccion16')"
+                    style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>
+                    Es necesario comprender el alcance y la funcionalidad que pueden tener medios de
                     comunicación como las redes sociales y el cómo emplearlos de manera responsable y segura, de forma
                     que nuestra seguridad no se vea vulnerabilizada.
                 </p>
@@ -969,14 +1142,16 @@
         </div>
 
         <div id="salud" class="section">
-            <h2 class="section-title">5. Habilidades para la salud y bienestar</h2>
+            <h2 class="section-title">5. Habilidades para la salud y bienestar<i id="iconoSexi1" onclick="togglePlayback('seccion17')"
+                style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i></h2>
             <p>El bienestar es la experimentación de salud, felicidad y prosperidad. Incluye tener buena
                 salud mental, sentirse altamente satisfecho con la vida, tener un sentido de significado o propósito.
                 Diviértete aprendiendo.</p>
 
             <details class="subtema">
                 <summary class="noselect">5.1 Influencia de normas y grupos de pares en la conducta sexual</summary>
-                <h4>¿Qué es la presión de los pares?</h4>
+                <h4><i id="iconoSexi1" onclick="togglePlayback('seccion18')"
+                    style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>¿Qué es la presión de los pares?</h4>
                 <p>
                     Es la fuerza, negativa o positiva, que ejerce un determinado grupo hacia una persona, Esta misma
                     presión va a producir en muchas ocasiones, que el adolescente adopte o lleve a cabo conductas con
@@ -1055,7 +1230,9 @@
 
             <details class="subtema">
                 <summary class="noselect">5.2 Toma de decisiones</summary>
-                <p>La toma de decisiones es un proceso que atraviesan las personas cuando deben elegir
+                <p><i id="iconoSexi1" onclick="togglePlayback('seccion19')"
+                    style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>
+                    La toma de decisiones es un proceso que atraviesan las personas cuando deben elegir
                     entre distintas opciones. Diariamente cada individuo está ante situaciones en las que debe optar por
                     algo, y esa decisión no siempre resulta simple.</p>
                 <p>En el ámbito de la conducta y psiquis humana este es un tema fundamental, ya que las
@@ -1124,7 +1301,9 @@
 
             <details class="subtema">
                 <summary class="noselect">5.3 Habilidades de comunicación, rechazo y negociación</summary>
-                <p>La comunicación es el proceso por medio del cual se transmite información de un ente a
+                <p><i id="iconoSexi1" onclick="togglePlayback('seccion20')"
+                    style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>
+                    La comunicación es el proceso por medio del cual se transmite información de un ente a
                     otro. Es el intercambio de sentimientos, opiniones o cualquier otro tipo de información mediante el
                     habla, escritura u otras señales.</p>
                 <p>Más allá de la personalidad de cada persona, hay muchos otros elementos que pueden
@@ -1232,7 +1411,9 @@
 
             <details class="subtema">
                 <summary class="noselect">5.4 Alfabetización mediática y sexualidad </summary>
-                <p>Según la UNESCO, la alfabetización mediática es el conjunto de habilidades,
+                <p><i id="iconoSexi1" onclick="togglePlayback('seccion21')"
+                    style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>
+                    Según la UNESCO, la alfabetización mediática es el conjunto de habilidades,
                     conocimientos y comprensión necesarios para que las personas interactúen con la información y los
                     medios de comunicación.
                 </p>
@@ -1269,7 +1450,9 @@
 
             <details class="subtema">
                 <summary class="noselect">5.5 Como encontrar ayuda y apoyo</summary>
-                <p>Todas las personas tienen derecho a recibir asistencia asequible, objetiva y respetuosa
+                <p><i id="iconoSexi1" onclick="togglePlayback('seccion22')"
+                    style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>
+                    Todas las personas tienen derecho a recibir asistencia asequible, objetiva y respetuosa
                     que mantenga la confidencialidad y proteja la privacidad.
                     <br><br>Tarde o temprano, toda familia necesita ayuda. Aunque pedir no siempre sea fácil, reconocer
                     las
@@ -1307,13 +1490,15 @@
         </div>
 
         <div id="cuerpo" class="section">
-            <h2 class="section-title">6. El cuerpo humano y el desarrollo</h2>
+            <h2 class="section-title">6. El cuerpo humano y el desarrollo<i id="iconoSexi1" onclick="togglePlayback('seccion23')"
+                style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i></h2>
             <p>Las etapas del desarrollo humano son una serie de cambios biológicos, físicos, emocionales y
                 sociales que atraviesan las personas a lo largo de su trayectoria vital. ¡Vamos a aprender!</p>
             <details class="subtema">
                 <summary class="noselect">6.1 Anatomía y fisiología sexual y reproductiva
                 </summary>
-                <p>Se incluyen los órganos sexuales que están fuera del cuerpo y los órganos reproductivos
+                <p><i id="iconoSexi1" onclick="togglePlayback('seccion24')"
+                    style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>Se incluyen los órganos sexuales que están fuera del cuerpo y los órganos reproductivos
                     y sexuales que están dentro del cuerpo.
                 </p>
                 <p>El cuerpo es la dimensión física a través de la cual existen los seres humanos. Es una
@@ -1457,7 +1642,8 @@
             <details class="subtema">
                 <summary class="noselect">6.2 Reproducción
                 </summary>
-                <p>La reproducción es un proceso biológico que permite la creación de nuevos organismos en
+                <p><i id="iconoSexi1" onclick="togglePlayback('seccion25')"
+                    style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>La reproducción es un proceso biológico que permite la creación de nuevos organismos en
                     todas las formas de vida.
                 </p>
 
@@ -1527,7 +1713,9 @@
             <details class="subtema">
                 <summary class="noselect">6.3 Pubertad
                 </summary>
-                <p>Pubertad es el momento de la vida cuando un niño o una niña madura sexualmente
+                <p><i id="iconoSexi1" onclick="togglePlayback('seccion26')"
+                    style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>
+                    Pubertad es el momento de la vida cuando un niño o una niña madura sexualmente
                 </p>
                 <p>La adolescencia es una etapa de la vida que usualmente inicia entre los 13 y 15 años. En
                     ella, hombres y mujeres experimentan cambios físicos, psicológicos, emocionales y sociales. La
@@ -1619,7 +1807,9 @@
             <details class="subtema">
                 <summary class="noselect">6.4 Imagen Corporal
                 </summary>
-                <p>Manera en la que una persona piensa acerca de su propio cuerpo y cómo lo ven los demás.
+                <p><i id="iconoSexi1" onclick="togglePlayback('seccion27')"
+                    style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>
+                    Manera en la que una persona piensa acerca de su propio cuerpo y cómo lo ven los demás.
                 </p>
                 <p>La imagen corporal es la representación mental que cada persona tiene sobre su propio
                     aspecto físico. Es cómo la persona se ve a sí misma y cómo se percibe cuando se mira al espejo, es
@@ -1654,14 +1844,17 @@
         </div>
 
         <div id="sexualidad" class="section">
-            <h2 class="section-title">7. Sexualidad y conducta sexual</h2>
+            <h2 class="section-title">7. Sexualidad y conducta sexual<i id="iconoSexi1" onclick="togglePlayback('seccion28')"
+                style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i></h2>
             <p>La sexualidad es un tema amplio y extenso que requiere de estudio para llegar a comprenderse
                 completamente. Estas herramientas te servirán de apoyo para alcanzar ese objetivo.
             </p>
             <details class="subtema">
                 <summary class="noselect">7.1 Relaciones Sexuales, Sexualidad y Ciclo de Vida Sexual
                 </summary>
-                <p>La sexualidad es principalmente la construcción social de un impulso biológico, que es además,
+                <p><i id="iconoSexi1" onclick="togglePlayback('seccion29')"
+                    style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>
+                    La sexualidad es principalmente la construcción social de un impulso biológico, que es además,
                     multidimensional y dinámica, es decir, la experiencia que una persona tenga de la sexualidad está
                     mediada por la biología, los roles de género y las relaciones de poder, como también por factores
                     tales como la edad y la condición social y económica. Sin embargo, la influencia social más profunda
@@ -1735,7 +1928,9 @@
             <details class="subtema">
                 <summary class="noselect">7.2 Conducta Sexual y Respuesta Sexual
                 </summary>
-                <p>La conducta sexual son comportamientos que pueden presentarse en cualquier etapa del ciclo vital
+                <p><i id="iconoSexi1" onclick="togglePlayback('seccion30')"
+                    style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>
+                    La conducta sexual son comportamientos que pueden presentarse en cualquier etapa del ciclo vital
                     humano, son todas aquellas actividades de una persona que puede realizar de manera individual, en
                     pareja o incluso con un grupo de personas, donde los individuos expresan su sexualidad como
                     masturbación, estimulación, oral-genital (sexo oral), relaciones pene-vagina (sexo vaginal),
@@ -1823,7 +2018,8 @@
         </div>
 
         <div id="salud-sexual" class="section last-section">
-            <h2 class="section-title">8. Salud sexual y reproductiva</h2>
+            <h2 class="section-title">8. Salud sexual y reproductiva<i id="iconoSexi1" onclick="togglePlayback('seccion31')"
+                style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i></h2>
             <p>La salud sexual Implica que las personas pueden tener una vida sexual segura y
                 satisfactoria, pueden reproducirse, y tienen la libertad de decir si quieren hacerlo y con qué
                 frecuencia. Reforcemos el aprendizaje en este apartado.
@@ -1832,7 +2028,8 @@
             <details class="subtema">
                 <summary class="noselect">8.1 Embarazo y prevención del embarazo
                 </summary>
-                <p>Los acontecimientos que conducen a un embarazo comienzan con la concepción, en la cual
+                <p><i id="iconoSexi1" onclick="togglePlayback('seccion32')"
+                    style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>Los acontecimientos que conducen a un embarazo comienzan con la concepción, en la cual
                     un espermatozoide penetra un óvulo.
                 </p>
                 <p>El embarazo comienza oficialmente cuando un óvulo fecundado se implanta en el tejido que
@@ -1863,7 +2060,8 @@
             <details class="subtema">
                 <summary class="noselect">8.2 Estigma del VIH y del sida, atención médica, tratamiento y apoyo
                 </summary>
-                <p>Se trata del prejuicio que se genera cuando se cataloga a alguien como parte de un grupo
+                <p><i id="iconoSexi1" onclick="togglePlayback('seccion33')"
+                    style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i><Se trata del prejuicio que se genera cuando se cataloga a alguien como parte de un grupo
                     que se supone ser socialmente inaceptable.</p>
                 <p>El VIH (virus de la inmunodeficiencia humana) es un virus que ataca el sistema
                     inmunitario del cuerpo. Si el VIH no se trata puede causar SIDA (síndrome de inmunodeficiencia
@@ -1905,7 +2103,9 @@
             <details class="subtema" n>
                 <summary class="noselect">8.3 Cómo entender, reconocer y reducir el riesgo de ITS, incluido el VIH
                 </summary>
-                <p>Las siglas ITS se emplean para referirse a las Infecciones de Transmisión Sexual.
+                <p><i id="iconoSexi1" onclick="togglePlayback('seccion34')"
+                    style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i><
+                    Las siglas ITS se emplean para referirse a las Infecciones de Transmisión Sexual.
                 </p>
                 <h4>¿Qué es una ETS?
                 </h4>

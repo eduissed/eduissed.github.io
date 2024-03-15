@@ -32,6 +32,64 @@
 </head>
 
 <body>
+
+    <script>
+        let isPlaying = false;
+        let paused = false;
+        let utterance;
+        let lectores = {
+          seccion1: {
+            texto: '¿Qué es SEXi?... Actualmente, las estrategias de enseñanza-aprendizaje que el sistema educativo desarrolla a través de los docentes, suelen ser repetitivas y aburridas para los estudiantes, lo que ocasiona que no sean atractivas, pierdan el interés por realizar las actividades y como consecuencia, no se logré el aprendizaje y comprensión esperado sobre los temas Es por eso que nosotros, EDUISSED (Educación Integral Socioemocional en Sexualidad Digitalizada), decidimos diseñar SEXi (Sexualidad Integral) una herramienta tecnopedagógica, específicamente una pagina web, que tiene como objetivo coadyuvar a la adquisición de habilidades socioemocionales en sexualidad. Lo que la hace diferente y más atractiva, es que cuenta con realidad aumentada para facilitar el aprendizaje y a su vez, hacerlo más didáctico y de interés para los estudiantes. Es importante utilizar metodologías interactivas que estimulen la participación activa, y no solo transmitir información, es también adquirir habilidades socioemocionales en sexualidad. Nuestro trabajo está basado principalmente en la información y temas proporcionados por la UNESCO, por lo que es recomendable revisar los links y referencias.'
+          },
+          seccion2: {
+            texto: 'Aprende... A continuación presentamos una serie de articulos y presentaciones interactivas que te permitirán adquirir más conocimientos sobre éstos temas ¡Elije uno de estos!'
+          },
+          seccion3: {
+            texto: 'Juegos... Conoce los increíbles juegos con los cuales podrás aprender aún más.'
+          },
+          seccion4: {
+            texto: 'Recursos... Aquí te dejamos una lista de todos los códigos QR que pueden encontrar en la página, así como las infografías de cada tema. Las puedes descargar desde aquí o dando click en cada una de las imágenes mientras las ves. ¡Diviértete!'
+          },
+          seccion5: {
+            texto: 'Referencia... Lista de links elaborados para hacer esta pagina.'
+          },
+          seccion6: {
+            texto: 'Contacto... Nos preocupamos en que tengas la mejor experiencia; Contactanos para soporte.'
+          }
+        };
+      
+        let seccionActual = '';
+        function togglePlayback(seccion) {
+  if (seccion === seccionActual) {
+    if (isPlaying && !paused) {
+      window.speechSynthesis.pause();
+      paused = true;
+    } else {
+      window.speechSynthesis.resume();
+      paused = false;
+    }
+  } else {
+    if (isPlaying) {
+      window.speechSynthesis.cancel();
+    }
+    seccionActual = seccion;
+    let lectura = lectores[seccion]; // Se corrigió aquí
+    utterance = new SpeechSynthesisUtterance(lectura.texto);
+    window.speechSynthesis.speak(utterance);
+    isPlaying = true;
+    paused = false;
+    utterance.onend = function() {
+      isPlaying = false;
+      paused = false;
+      seccionActual = '';
+    }
+  }
+}
+      </script>
+
+      
+
+
     <div id="loading-screen">
         <img src="./resources/images/logo.png" alt="logo" id="loading-logo">
         <div id="loading-icon"></div>
@@ -981,29 +1039,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
         <div id="inicio" class="section"> 
     <h1 class="section-title">¿Qué es SEXi? 
+<<<<<<< HEAD
+        <i onclick="togglePlayback('seccion1')" id="iconoSexi1"
+            style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume"></i>
+=======
         <i onclick="toggleAudio('audio1')" id="iconoSexi1"
             style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i>
+>>>>>>> 1e9389e742d56a953407de237a2399bf344d321a
     </h1>  
-    <audio id="audio1" src="/audios/que es sexi.mp3" preload="none"></audio>
 </div>
 
 <!-- Script del lector de texto -->
-<script>
-    function toggleAudio(audioId) {
-        const reproductor = document.getElementById(audioId);
-        const icono = document.getElementById("icono" + audioId);
-
-        if (reproductor.paused) {
-            reproductor.play();
-            icono.classList.remove("bx-volume-full");
-            icono.classList.add("bx-pause");
-        } else {
-            reproductor.pause();
-            icono.classList.remove("bx-pause");
-            icono.classList.add("bx-volume-full");
-        }
-    }
-</script>
 
 
     <!--termina codigo del lector de texto-->
@@ -1048,29 +1094,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
         <div id="aprende" class="section">
             <h1 class="section-title">Aprende 
+<<<<<<< HEAD
+                <i onclick="togglePlayback('seccion2')" id="iconoSexi2"
+                    style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume"></i>
+=======
                 <i onclick="toggleAudio2('audio2')" id="iconoSexi2"
                     style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i>
+>>>>>>> 1e9389e742d56a953407de237a2399bf344d321a
             </h1>
-            <audio id="audio2" src="/audios/aprende.mp3" preload="none"></audio>
 
         
         <!-- Script del lector de texto -->
-        <script>
-            function toggleAudio2(audioId) {
-                const reproductor = document.getElementById(audioId);
-                const icono = document.getElementById("icono" + audioId);
     
-                if (reproductor.paused) {
-                    reproductor.play();
-                    icono.classList.remove("bx-volume-full");
-                    icono.classList.add("bx-pause");
-                } else {
-                    reproductor.pause();
-                    icono.classList.remove("bx-pause");
-                    icono.classList.add("bx-volume-full");
-                }
-            }
-        </script>
 
     <!--termina codigo del lector de texto-->
 
@@ -1135,27 +1170,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
         <div id="Juegos" class="section">
             <h1 class="section-title">Juegos 
+<<<<<<< HEAD
+<i onclick="togglePlayback('seccion3')" id="iconoSexi1"
+style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume"></i>
+=======
 <i onclick="toggleAudio5('audio5')" id="iconoSexi3"
 style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i>
+>>>>>>> 1e9389e742d56a953407de237a2399bf344d321a
             </h1>
-            <audio id="audio5" src="/audios/juegos.mp3" preload="none"></audio>
 
-            <script>
-                            function toggleAudio5(audioId) {
-                                const reproductor = document.getElementById(audioId);
-                                const icono = document.getElementById("icono" + audioId);
-                    
-                                if (reproductor.paused) {
-                                    reproductor.play();
-                                    icono.classList.remove("bx-volume-full");
-                                    icono.classList.add("bx-pause");
-                                } else {
-                                    reproductor.pause();
-                                    icono.classList.remove("bx-pause");
-                                    icono.classList.add("bx-volume-full");
-                                }
-                            }
-                        </script>
             
             <p>
                 Conoce los increíbles juegos con los cuales podrás aprender aún más.
@@ -1249,29 +1272,16 @@ style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx
 
         <div id="recursos" class="section">
             <h1 class="section-title">Recursos 
+<<<<<<< HEAD
+<i onclick="togglePlayback('seccion4')" id="iconoSexi1"
+style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume"></i>
+=======
 <i onclick="toggleAudio6('audio6')" id="iconoSexi4"
 style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i>
+>>>>>>> 1e9389e742d56a953407de237a2399bf344d321a
             </h1>
         
         <!-- Script del lector de texto -->
-        <audio id="audio6" src="/audios/recursos.mp3" preload="none"></audio>
-
-<script>
-                function toggleAudio6(audioId) {
-                    const reproductor = document.getElementById(audioId);
-                    const icono = document.getElementById("icono" + audioId);
-        
-                    if (reproductor.paused) {
-                        reproductor.play();
-                        icono.classList.remove("bx-volume-full");
-                        icono.classList.add("bx-pause");
-                    } else {
-                        reproductor.pause();
-                        icono.classList.remove("bx-pause");
-                        icono.classList.add("bx-volume-full");
-                    }
-                }
-            </script>
         
 
     <!--termina codigo del lector de texto-->
@@ -1388,30 +1398,16 @@ style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx
 
         <div id="referencias" class="last-section section">
             <h1 class="section-title">Referencias 
+<<<<<<< HEAD
+                <i onclick="togglePlayback('seccion5')" id="iconoSexi1"
+            style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume"></i>
+=======
                 <i onclick="toggleAudio7('audio7')" id="iconoSexi5"
             style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i>
+>>>>>>> 1e9389e742d56a953407de237a2399bf344d321a
             </h1>
         
         <!-- Script del lector de texto -->
-        <audio id="audio7" src="/audios/referencias.mp3" preload="none"></audio>
-
-<script>
-                function toggleAudio7(audioId) {
-                    const reproductor = document.getElementById(audioId);
-                    const icono = document.getElementById("icono" + audioId);
-        
-                    if (reproductor.paused) {
-                        reproductor.play();
-                        icono.classList.remove("bx-volume-full");
-                        icono.classList.add("bx-pause");
-                    } else {
-                        reproductor.pause();
-                        icono.classList.remove("bx-pause");
-                        icono.classList.add("bx-volume-full");
-                    }
-                }
-            </script>
-        
 
     <!--termina codigo del lector de texto-->
 
@@ -1507,29 +1503,16 @@ style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx
 
         <div id="Ajustes" class="section"> 
             <h1 class="section-title">Contacto 
+<<<<<<< HEAD
+                <i onclick="togglePlayback('seccion6')" id="iconoSexi1"
+            style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume"></i>
+=======
                 <i onclick="toggleAudio8('audio8')" id="iconoSexi6"
             style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i>
+>>>>>>> 1e9389e742d56a953407de237a2399bf344d321a
             </h1>
         
         <!-- Script del lector de texto -->
-        <audio id="audio8" src="/audios/contacto.mp3" preload="none"></audio>
-
-<script>
-                function toggleAudio8(audioId) {
-                    const reproductor = document.getElementById(audioId);
-                    const icono = document.getElementById("icono" + audioId);
-        
-                    if (reproductor.paused) {
-                        reproductor.play();
-                        icono.classList.remove("bx-volume-full");
-                        icono.classList.add("bx-pause");
-                    } else {
-                        reproductor.pause();
-                        icono.classList.remove("bx-pause");
-                        icono.classList.add("bx-volume-full");
-                    }
-                }
-            </script>
 
     <!--termina codigo del lector de texto-->
     

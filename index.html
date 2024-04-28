@@ -131,6 +131,7 @@
                     <li style="font-size: 24px;">
                         <i id="text-resize-btn" class="fa-solid fa-text-height"></i>
                         <input type="range" id="text-resize-slider" min="1" max="40" value="40" step="" onchange="rangevalue.value=value">
+<div class="deslizador"><output id="rangevalue">40</output></div>
                     </li>
                   <li style="font-size: 24px;">
                     <i class='bx bx-droplet' id="icon"></i>
@@ -145,7 +146,6 @@
               </center>
             </div>
           </div>
-<div class="deslizador"><output id="rangevalue">40</output></div>
 
         <style>   
         #rangevalue {
@@ -221,7 +221,10 @@ input[type="range"]::-webkit-slider-thumb {
                 /* Ajusta la posición hacia abajo según tus necesidades */
                 
             }
-            
+
+
+
+
             #dark-mode-icon {
     transition: all 0.3s ease; /* Cambia la duración y la función de la transición según desees */
 }
@@ -267,8 +270,9 @@ input[type="range"]::-webkit-slider-thumb {
                     /* Ajusta la posición hacia arriba en dispositivos móviles */
                 }
                 .deslizador {
-                    top: 455px;
+                    top: 8px;
                     /* Ajusta la posición hacia arriba en dispositivos móviles */
+                    right: 63px;
                 }
             }           
 

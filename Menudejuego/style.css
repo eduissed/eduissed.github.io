@@ -295,7 +295,7 @@ button {
   .game-section .item {
     margin: 0 12px 60px;
     width: 340px;
-    height: 1030px;
+    height: 330px;
     font-size: 39px;
   }
   .game-section .item.active {

@@ -59,4 +59,28 @@ function redirigir(destino) {
   }, 500); // Puedes ajustar el tiempo de espera según tus preferencias
 }
 
+  // Función para detectar la orientación del dispositivo y mostrar un mensaje con SweetAlert2
+  function detectOrientation() {
+    if (window.innerHeight > window.innerWidth) {
+        // Dispositivo en posición vertical
+        Swal.fire({
+            title: 'Por favor, coloque su teléfono en posición <span style="color: lightgreen;">horizontal</span>.',
+            icon: 'error',
+            showConfirmButton: false,
+            html: '<span style="font-size: 12px;">Esta ventana se cerrará automáticamente cuando se ponga en horizontal el dispositivo.</span>',
+            backdrop: true,
+            allowOutsideClick: false
+        });
+    } else {
+        // Dispositivo en posición horizontal
+        Swal.close(); // Cerrar SweetAlert2 si está abierto
+    }
+}
+
+// Detectar la orientación inicialmente
+detectOrientation();
+
+// Detectar cambios en la orientación
+window.addEventListener("resize", detectOrientation);
+
 

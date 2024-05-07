@@ -185,7 +185,7 @@ input[type="range"]::-webkit-slider-thumb {
             #accesibilidad li {
     padding-bottom: 25px;
 }
-           .deslizador{
+            .deslizador{
                 display: none; /* Ocultar inicialmente */
                 background: rgba(90, 94, 185, 0.8);
                 /* Cambia el color a #5A5EB9 con una opacidad */
@@ -954,7 +954,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div id="inicio" class="section"> 
     <h1 class="section-title">¿Qué es SEXi? 
         <i onclick="togglePlayback('seccion1')" id="iconoSexi1"
-            style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume"></i>
+            style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i>
         
 
     </h1>  
@@ -1007,7 +1007,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <h1 class="section-title">Aprende 
 
                 <i onclick="togglePlayback('seccion2')" id="iconoSexi2"
-                    style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume"></i>
+                    style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i>
 
                 
             </h1>
@@ -1080,8 +1080,8 @@ document.addEventListener("DOMContentLoaded", function () {
         <div id="Juegos" class="section">
             <h1 class="section-title">Juegos 
 
-<i onclick="togglePlayback('seccion3')" id="iconoSexi1"
-style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume"></i>
+<i onclick="togglePlayback('seccion3')" id="iconoSexi3"
+style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i>
 
 
             </h1>
@@ -1180,8 +1180,8 @@ style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx
         <div id="recursos" class="section">
             <h1 class="section-title">Recursos 
 
-<i onclick="togglePlayback('seccion4')" id="iconoSexi1"
-style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume"></i>
+<i onclick="togglePlayback('seccion4')" id="iconoSexi4"
+style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i>
 
 
             </h1>
@@ -1304,8 +1304,8 @@ style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx
         <div id="referencias" class="last-section section">
             <h1 class="section-title">Referencias 
 
-                <i onclick="togglePlayback('seccion5')" id="iconoSexi1"
-            style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume"></i>
+                <i onclick="togglePlayback('seccion5')" id="iconoSexi5"
+            style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i>
 
                 
 
@@ -1408,8 +1408,8 @@ style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx
         <div id="Ajustes" class="section"> 
             <h1 class="section-title">Contacto 
 
-                <i onclick="togglePlayback('seccion6')" id="iconoSexi1"
-            style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume"></i>
+                <i onclick="togglePlayback('seccion6')" id="iconoSexi6"
+            style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i>
               
 
             </h1>
@@ -1496,7 +1496,7 @@ style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx
                         intervalo = setInterval(cambiarIcono, 200);
                         setTimeout(() => {
                             clearInterval(intervalo);
-                            icono.className = "bx bx-volume";
+                            icono.className = "bx bx-volume-full";
                             indiceIcono = 0;
                             intervalo = null;
                         }, 10000); // Detener la animación después de 10 segundos

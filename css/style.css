@@ -1145,56 +1145,96 @@ main > .section:nth-child(2n)::after {
 /*//////////////////////////*/
 /*inicio del css de contacto*/
 /*//////////////////////////*/
-.single-cta {
-  text-align: center;
-  background-color: #333333b9;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s;
-  /* Agregar transición suave */
-  width: 450px;
-  /* Aumentar el ancho en estado hover */
+
+.social-section {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+  max-width: 96rem;
+  margin: 0 auto;
+  padding: 3rem 1rem;
 }
 
-@media (max-width: 768px) {
-
-  /* Establecer un ancho más pequeño para dispositivos móviles */
-  .single-cta {
-      width: 90%;
-      /* Ancho del 90% para dispositivos móviles */
-      max-width: none;
-      /* Eliminar el ancho máximo para dispositivos móviles */
+@media (min-width: 640px) {
+  .social-section {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 3rem 1.5rem;
   }
 }
 
-.single-cta i {
-  font-size: 40px;
-  color: white;
-  /* Color del icono */
+@media (min-width: 768px) {
+  .social-section {
+      grid-template-columns: repeat(3, 1fr);
+      padding: 3rem 2rem;
+  }
 }
 
-.cta-text h4 {
-  font-size: 24px;
-  margin: 10px 0;
-  color: white;
-  /* Color del título */
+.social-card {
+  background-color: #E4E2F5;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: background-color 0.3s;
 }
 
-.cta-text span {
-  font-size: 18px;
-  color: #777;
-  /* Color del texto */
+.social-card a {
+  text-decoration: none;
+  color: inherit;
 }
 
-.single-cta:hover {
-  background-color: #2a3487;
-  /* Color de fondo al pasar el mouse */
-  color: #fff;
-  /* Color del texto al pasar el mouse */
-  padding: 10px;
-  /* Reducir el padding en estado hover */
+.social-card-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
 }
+
+.social-card:hover .social-card-content {
+  transform: scale(1.05);
+}
+
+.social-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.social-card:hover .social-icon {
+  transform: scale(1.2);
+}
+
+.twitter-icon {
+  color: #1DA1F2;
+}
+
+.instagram-icon {
+  color: #E1306C;
+}
+
+.mail-icon {
+  color: #DB4437;
+}
+
+.social-title {
+  color: #000000;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.social-handle {
+  color: #6B7280;
+  margin-top: 0.25rem;
+}
+
+.dark .social-card {
+  background-color: #1F2937;
+}
+
+.dark .social-handle {
+  color: #9CA3AF;
+}
+
 
 /*///////////////////////*/
 /*fin del css de contacto*/

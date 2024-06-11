@@ -89,12 +89,12 @@ function toggleSliderVisibility() {
     const deslizador = document.querySelector('.deslizador');
     
     // Verificar si el control deslizante está visible o no
-    if (slider.style.display === 'none') {
+    if (slider.style.display === 'none' || slider.style.display === '') {
         // Si está oculto, activar animación de aparición
         gsap.fromTo("#text-resize-slider, .deslizador", { x: "45%", opacity: 0 }, { x: "0%", opacity: 1, duration: 0.3, ease: "power2.inOut" });
         slider.style.display = 'block'; // Mostrar el control deslizante
         deslizador.style.display = 'block'; // Mostrar el contenedor del control deslizante
-        slider.value = '40'; // Establecer un valor inicial
+        rangeValueOutput.textContent = '40'; // Actualizar el output a 40
         adjustTextSize(); // Ajustar el tamaño del texto al valor inicial
     } else {
         // Si está visible, activar animación de desaparición
@@ -103,6 +103,13 @@ function toggleSliderVisibility() {
             deslizador.style.display = 'none'; // Ocultar el contenedor del control deslizante
         }});
     }
+}
+
+// Función para ajustar el valor del contador en vivo
+function updateRangeValue() {
+    const slider = document.getElementById('text-resize-slider');
+    const rangeValueOutput = document.getElementById('rangevalue');
+    rangeValueOutput.textContent = slider.value;
 }
 
 // Asignar un evento de clic al icono para alternar la visibilidad del control deslizante

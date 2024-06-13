@@ -64,34 +64,71 @@
             texto: 'Contacto... Nos preocupamos en que tengas la mejor experiencia; Contactanos para soporte.'
           }
         };
-      
         let seccionActual = '';
-        function togglePlayback(seccion) {
+        let intervaloIcono;
+function cambiarIconoSecuencial(iconoId) {
+  const icono = document.getElementById(iconoId);
+  const iconos = [
+    "bx bx-volume-low", "bx bx-volume", "bx bx-volume-low", "bx bx-volume-full",
+    "bx bx-volume-low", "bx bx-volume", "bx bx-volume-low", "bx bx-volume-full",
+    "bx bx-volume-low", "bx bx-volume", "bx bx-volume-low", "bx bx-volume-full"
+  ];
+  let indiceIcono = 0;
+
+  function cambiarIcono() {
+    icono.className = iconos[indiceIcono];
+    indiceIcono = (indiceIcono + 1) % iconos.length;
+  }
+
+  intervaloIcono = setInterval(cambiarIcono, 200);
+}
+
+function detenerCambioIcono(iconoId) {
+  clearInterval(intervaloIcono);
+  const icono = document.getElementById(iconoId);
+  icono.className = "bx bx-volume-full";
+}
+
+function togglePlayback(seccion) {
+  const iconoId = `iconoSexi${seccion.charAt(seccion.length - 1)}`;
+
   if (seccion === seccionActual) {
     if (isPlaying && !paused) {
       window.speechSynthesis.pause();
       paused = true;
+      detenerCambioIcono(iconoId);
     } else {
       window.speechSynthesis.resume();
       paused = false;
+      cambiarIconoSecuencial(iconoId);
     }
   } else {
     if (isPlaying) {
       window.speechSynthesis.cancel();
+      detenerCambioIcono(`iconoSexi${seccionActual.charAt(seccionActual.length - 1)}`);
     }
     seccionActual = seccion;
-    let lectura = lectores[seccion]; // Se corrigió aquí
+    let lectura = lectores[seccion];
     utterance = new SpeechSynthesisUtterance(lectura.texto);
-    window.speechSynthesis.speak(utterance);
-    isPlaying = true;
-    paused = false;
     utterance.onend = function() {
       isPlaying = false;
       paused = false;
       seccionActual = '';
-    }
+      detenerCambioIcono(iconoId);
+    };
+    window.speechSynthesis.speak(utterance);
+    isPlaying = true;
+    paused = false;
+    cambiarIconoSecuencial(iconoId);
   }
 }
+        
+            // Iniciar el comportamiento de cambio de ícono para cada ícono con los siguientes id
+            cambiarIconoSecuencial("iconoSexi2");
+            cambiarIconoSecuencial("iconoSexi1");
+            cambiarIconoSecuencial("iconoSexi4");
+            cambiarIconoSecuencial("iconoSexi3");
+            cambiarIconoSecuencial("iconoSexi6");
       </script>
 
       

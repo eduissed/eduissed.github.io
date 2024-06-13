@@ -1540,60 +1540,6 @@ style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx
             
         </div>
 
-        <script>
-                // Función para reproducir el audio de bienvenida
-    function reproducirAudioBienvenida() {
-        // Aquí colocarías el código para reproducir el audio de bienvenida
-        // Por ejemplo, utilizando la etiqueta <audio> de HTML5
-        var audio = new Audio('../resources\ElevenLabs_2024-02-10T06_25_58_Michael_pre_s50_sb75_m1.mp3');
-        audio.play();
-    }
-
-    // Llama a la función de reproducción de audio de bienvenida cuando la página se carga
-    document.addEventListener('DOMContentLoaded', function() {
-        reproducirAudioBienvenida();
-    });
-
-            // Función para cambiar el ícono en un ciclo
-            function cambiarIconoSecuencial(iconoId) {
-                const icono = document.getElementById(iconoId);
-                const iconos = ["bx bxs-volume", "bx bxs-volume-low", "bx bxs-volume-full", "bx bxs-volume-low"];
-                let indiceIcono = 0;
-                let intervalo;
-        
-                function cambiarIcono() {
-                    icono.className = iconos[indiceIcono];
-                    indiceIcono = (indiceIcono + 1) % iconos.length;
-                }
-        
-                function alternarCambioIcono() {
-                    if (!intervalo) {
-                        intervalo = setInterval(cambiarIcono, 200);
-                        setTimeout(() => {
-                            clearInterval(intervalo);
-                            icono.className = "bx bx-volume-full";
-                            indiceIcono = 0;
-                            intervalo = null;
-                        }, 10000); // Detener la animación después de 10 segundos
-                    } else {
-                        clearInterval(intervalo);
-                        icono.className = "bx bx-volume-full";
-                        indiceIcono = 0;
-                        intervalo = null;
-                    }
-                }
-        
-                icono.addEventListener("click", alternarCambioIcono);
-            }
-        
-            // Iniciar el comportamiento de cambio de ícono para cada ícono con los siguientes id
-            cambiarIconoSecuencial("iconoSexi1");
-            cambiarIconoSecuencial("iconoSexi2");
-            cambiarIconoSecuencial("iconoSexi3");
-            cambiarIconoSecuencial("iconoSexi4");
-            cambiarIconoSecuencial("iconoSexi5");
-            cambiarIconoSecuencial("iconoSexi6");
-        </script> 
         
             
         <p class="copyright" id="derechos">

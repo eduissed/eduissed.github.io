@@ -183,33 +183,100 @@
 
         };
         let seccionActual = '';
-      
-        function togglePlayback(seccion) {
-          if (seccion === seccionActual) {
-            if (isPlaying && !paused) {
-              window.speechSynthesis.pause();
-              paused = true;
-            } else {
-              window.speechSynthesis.resume();
-              paused = false;
-            }
-          } else {
-            if (isPlaying) {
-              window.speechSynthesis.cancel();
-            }
-            seccionActual = seccion;
-            let lectura = lectores[seccion];
-            utterance = new SpeechSynthesisUtterance(lectura.texto);
-            window.speechSynthesis.speak(utterance);
-            isPlaying = true;
-            paused = false;
-            utterance.onend = function() {
-              isPlaying = false;
-              paused = false;
-              seccionActual = '';
-            }
-          }
-        }
+        let intervaloIcono;
+function cambiarIconoSecuencial(iconoId) {
+  const icono = document.getElementById(iconoId);
+  const iconos = [
+    "bx bx-volume-low", "bx bx-volume", "bx bx-volume-low", "bx bx-volume-full",
+    "bx bx-volume-low", "bx bx-volume", "bx bx-volume-low", "bx bx-volume-full",
+    "bx bx-volume-low", "bx bx-volume", "bx bx-volume-low", "bx bx-volume-full"
+  ];
+  let indiceIcono = 0;
+
+  function cambiarIcono() {
+    icono.className = iconos[indiceIcono];
+    indiceIcono = (indiceIcono + 1) % iconos.length;
+  }
+
+  intervaloIcono = setInterval(cambiarIcono, 200);
+}
+
+function detenerCambioIcono(iconoId) {
+  clearInterval(intervaloIcono);
+  const icono = document.getElementById(iconoId);
+  icono.className = "bx bx-volume-full";
+}
+
+function togglePlayback(seccion) {
+  const iconoId = `iconoSexi${seccion.charAt(seccion.length - 1)}`;
+
+  if (seccion === seccionActual) {
+    if (isPlaying && !paused) {
+      window.speechSynthesis.pause();
+      paused = true;
+      detenerCambioIcono(iconoId);
+    } else {
+      window.speechSynthesis.resume();
+      paused = false;
+      cambiarIconoSecuencial(iconoId);
+    }
+  } else {
+    if (isPlaying) {
+      window.speechSynthesis.cancel();
+      detenerCambioIcono(`iconoSexi${seccionActual.charAt(seccionActual.length - 1)}`);
+    }
+    seccionActual = seccion;
+    let lectura = lectores[seccion];
+    utterance = new SpeechSynthesisUtterance(lectura.texto);
+    utterance.onend = function() {
+      isPlaying = false;
+      paused = false;
+      seccionActual = '';
+      detenerCambioIcono(iconoId);
+    };
+    window.speechSynthesis.speak(utterance);
+    isPlaying = true;
+    paused = false;
+    cambiarIconoSecuencial(iconoId);
+  }
+}
+        
+            // Iniciar el comportamiento de cambio de ícono para cada ícono con los siguientes id
+            cambiarIconoSecuencial("iconoSexi2");
+            cambiarIconoSecuencial("iconoSexi1");
+            cambiarIconoSecuencial("iconoSexi4");
+            cambiarIconoSecuencial("iconoSexi3");
+            cambiarIconoSecuencial("iconoSexi6");
+            cambiarIconoSecuencial("iconoSexi5");
+            cambiarIconoSecuencial("iconoSexi9");
+            cambiarIconoSecuencial("iconoSexi8");
+            cambiarIconoSecuencial("iconoSexi10");
+            cambiarIconoSecuencial("iconoSexi11");
+            cambiarIconoSecuencial("iconoSexi12");
+            cambiarIconoSecuencial("iconoSexi13");
+            cambiarIconoSecuencial("iconoSexi14");
+            cambiarIconoSecuencial("iconoSexi15");
+            cambiarIconoSecuencial("iconoSexi16");
+            cambiarIconoSecuencial("iconoSexi17");
+            cambiarIconoSecuencial("iconoSexi18");
+            cambiarIconoSecuencial("iconoSexi19");
+            cambiarIconoSecuencial("iconoSexi20");
+            cambiarIconoSecuencial("iconoSexi21");
+            cambiarIconoSecuencial("iconoSexi22");
+            cambiarIconoSecuencial("iconoSexi23");
+            cambiarIconoSecuencial("iconoSexi24");
+            cambiarIconoSecuencial("iconoSexi25");
+            cambiarIconoSecuencial("iconoSexi26");
+            cambiarIconoSecuencial("iconoSexi27");
+            cambiarIconoSecuencial("iconoSexi28");
+            cambiarIconoSecuencial("iconoSexi29");
+            cambiarIconoSecuencial("iconoSexi30");
+            cambiarIconoSecuencial("iconoSexi31");
+            cambiarIconoSecuencial("iconoSexi32");
+            cambiarIconoSecuencial("iconoSexi33");
+            cambiarIconoSecuencial("iconoSexi34");
+            cambiarIconoSecuencial("iconoSexi7");
+
       </script>
 
     <nav>
@@ -334,16 +401,16 @@
           </div>
 
         <div id="relaciones" class="section">
-            <h2 class="section-title">1. Relaciones</h2>
-            <p><i id="iconoSexi1" onclick="togglePlayback('seccion1')"
-                style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i>
+            <h2 class="section-title">1. Relaciones<i id="iconoSexi1" onclick="togglePlayback('seccion1')"
+                style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i></h2>
+            <p>
                 Las relaciones son fundamentales entre seres humanos y nos permiten mantener una conexión
                 emocional con nosotros y el resto del mundo.
             </p>
             <details class="subtema">
                 <summary class="noselect">1.1 Familia</summary>
                 <p>
-                    <i id="iconoSexi1" onclick="togglePlayback('seccion2')"
+                    <i id="iconoSexi2" onclick="togglePlayback('seccion2')"
                 style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>
                 La familia es la primera relación de la que somos parte como seres humanos. Es donde nos
                     desarrollamos y
@@ -414,7 +481,7 @@
                 <summary class="noselect">1.2 Amistad, amor y relaciones románticas</summary>
                 <ul>
                     <li>
-                        <i id="iconoSexi1" onclick="togglePlayback('seccion3')"
+                        <i id="iconoSexi3" onclick="togglePlayback('seccion3')"
                 style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>
                 Amar y ser amado enriquece nuestras vidas. Cuando la gente se siente sentimentalmente cerca de
                         otra
@@ -456,7 +523,7 @@
 
             <details class="subtema">
                 <summary class="noselect">1.3 Tolerancia, inclusión y respeto</summary>
-                <p><i id="iconoSexi1" onclick="togglePlayback('seccion4')"
+                <p><i id="iconoSexi4" onclick="togglePlayback('seccion4')"
                     style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>
                     La <span class="remark">tolerancia</span> significa el respeto a las ideas, creencias o
                     prácticas de los demás cuando son diferentes o contrarias a las propias, así como el
@@ -520,7 +587,7 @@
     
            
         <div id="valores" class="section">
-            <h2 class="section-title">2. Valores, derechos, cultura y sexualidad<i id="iconoSexi1" onclick="togglePlayback('seccion5')"
+            <h2 class="section-title">2. Valores, derechos, cultura y sexualidad<i id="iconoSexi5" onclick="togglePlayback('seccion5')"
                 style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i></h2>
             <p>Los derechos sexuales son una respuesta a diferentes necesidades humanas relacionadas con la
                 sexualidad que sustentan los diferentes valores que nos enseñan desde niños hasta ser personas adultas.
@@ -528,7 +595,7 @@
             </p>
             <details class="subtema">
                 <summary class="noselect">2.1 Valores y Sexualidad</summary>
-                <p><i id="iconoSexi1" onclick="togglePlayback('seccion6')"
+                <p><i id="iconoSexi6" onclick="togglePlayback('seccion6')"
                     style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>
                     La sexualidad humana es uno de los modos más importantes de relacionarnos que existe
                     para las personas, por lo cual, casi todos los valores humanos que fomentemos van a tener una
@@ -574,7 +641,7 @@
 
             <details class="subtema">
                 <summary class="noselect">2.2 Derechos Humanos y Sexualidad</summary>
-                <p><i id="iconoSexi1" onclick="togglePlayback('seccion7')"
+                <p><i id="iconoSexi7" onclick="togglePlayback('seccion7')"
                     style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>
                     La sexualidad es parte fundamental en la vida de las personas en los diferentes
                     aspectos: biológicos, psicológicos y culturales. Mujeres y hombres decidimos como ejercemos nuestro
@@ -600,7 +667,7 @@
             <details class="subtema">
                 <summary class="noselect">2.3 Cultura, sociedad y sexualidad</summary>
                 <p>
-                    <i id="iconoSexi1" onclick="togglePlayback('seccion8')"
+                    <i id="iconoSexi8" onclick="togglePlayback('seccion8')"
                 style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>
                 Las costumbres, el comportamiento social, los hábitos alimenticios y, en definitiva, el
                     modo de vida, están altamente influenciados por la cultura. La sexualidad, como no podía ser de otro
@@ -637,7 +704,7 @@
         </div>
 
         <div id="genero" class="section">
-            <h2 class="section-title">3. Cómo entender el género<i id="iconoSexi1" onclick="togglePlayback('seccion9')"
+            <h2 class="section-title">3. Cómo entender el género<i id="iconoSexi9" onclick="togglePlayback('seccion9')"
                 style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i></h2>
             <p>
                 Al mencionar la palabra género, desplegamos principalmente conceptos y constructos sociales que
@@ -649,7 +716,7 @@
 
             <details class="subtema">
                 <summary class="noselect">3.1 Construcción social del género y las normas del género</summary>
-                <p><i id="iconoSexi1" onclick="togglePlayback('seccion10')"
+                <p><i id="iconoSexi10" onclick="togglePlayback('seccion10')"
                     style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>
                     La construcción social del género está vinculada con la cultura, clase social, religión, historia,
                     etnia, edad y marco político de cada persona.
@@ -731,7 +798,7 @@
 
             <details class="subtema">
                 <summary class="noselect">3.2 Igualdad, estereotipos y prejuicios del género</summary>
-                <p><i id="iconoSexi1" onclick="togglePlayback('seccion11')"
+                <p><i id="iconoSexi11" onclick="togglePlayback('seccion11')"
                     style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>
                     Es nuestra responsabilidad ver por un mundo mejor y con más oportunidades para todos y todas, luchar
                     por los derechos que nos corresponden y cuestionar si lo que nos enseñan está bien, pero para eso,
@@ -778,7 +845,7 @@
             <details class="subtema">
                 <summary class="noselect">3.3 Violencia de género</summary>
                 <p>
-                    <i id="iconoSexi1" onclick="togglePlayback('seccion12')"
+                    <i id="iconoSexi12" onclick="togglePlayback('seccion12')"
                 style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>
                 El propósito de este apartado de información, es concientizar para ser capaces de identificar si
                     sufrimos violencia y reconocer que todas las formas de violencia de género son inaceptables y que es
@@ -896,7 +963,7 @@
         </div>
 
         <div id="violencia" class="section">
-            <h2 class="section-title">4. Violencia y Seguridad personal<i id="iconoSexi1" onclick="togglePlayback('seccion13')"
+            <h2 class="section-title">4. Violencia y Seguridad personal<i id="iconoSexi13" onclick="togglePlayback('seccion13')"
                 style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i></h2>
             <p>La importancia de informarnos para protegernos radica en poder identificar en qué momento y
                 de qué manera actuar ante cualquier situación de violencia para de esta manera no permitir que se lleven
@@ -905,7 +972,7 @@
 
             <details class="subtema">
                 <summary class="noselect">4.1 Violencia</summary>
-                <p><i id="iconoSexi1" onclick="togglePlayback('seccion14')"
+                <p><i id="iconoSexi14" onclick="togglePlayback('seccion14')"
                     style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>
                     Es indispensable tener conocimiento y saber reconocer cualquier tipo de violencia, ya
                     sea pasiva o
@@ -1021,7 +1088,7 @@
             <details class="subtema">
                 <summary class="noselect">4.2 Consentimiento, privacidad e integridad física
                 </summary>
-                <p><i id="iconoSexi1" onclick="togglePlayback('seccion15')"
+                <p><i id="iconoSexi15" onclick="togglePlayback('seccion15')"
                     style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>
                     En este apartado te enseñamos los conceptos básicos para que aprendas a ser capaz de
                     poner límites y salvaguardar tu integridad como persona al no dejar que ninguna persona ajena atente
@@ -1089,7 +1156,7 @@
             <details class="subtema">
                 <summary class="noselect">4.3 Uso seguro de tecnologías de información y comunicación (TIC)
                 </summary>
-                <p><i id="iconoSexi1" onclick="togglePlayback('seccion16')"
+                <p><i id="iconoSexi16" onclick="togglePlayback('seccion16')"
                     style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>
                     Es necesario comprender el alcance y la funcionalidad que pueden tener medios de
                     comunicación como las redes sociales y el cómo emplearlos de manera responsable y segura, de forma
@@ -1142,7 +1209,7 @@
         </div>
 
         <div id="salud" class="section">
-            <h2 class="section-title">5. Habilidades para la salud y bienestar<i id="iconoSexi1" onclick="togglePlayback('seccion17')"
+            <h2 class="section-title">5. Habilidades para la salud y bienestar<i id="iconoSexi17" onclick="togglePlayback('seccion17')"
                 style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i></h2>
             <p>El bienestar es la experimentación de salud, felicidad y prosperidad. Incluye tener buena
                 salud mental, sentirse altamente satisfecho con la vida, tener un sentido de significado o propósito.
@@ -1150,7 +1217,7 @@
 
             <details class="subtema">
                 <summary class="noselect">5.1 Influencia de normas y grupos de pares en la conducta sexual</summary>
-                <h4><i id="iconoSexi1" onclick="togglePlayback('seccion18')"
+                <h4><i id="iconoSexi18" onclick="togglePlayback('seccion18')"
                     style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>¿Qué es la presión de los pares?</h4>
                 <p>
                     Es la fuerza, negativa o positiva, que ejerce un determinado grupo hacia una persona, Esta misma
@@ -1230,7 +1297,7 @@
 
             <details class="subtema">
                 <summary class="noselect">5.2 Toma de decisiones</summary>
-                <p><i id="iconoSexi1" onclick="togglePlayback('seccion19')"
+                <p><i id="iconoSexi19" onclick="togglePlayback('seccion19')"
                     style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>
                     La toma de decisiones es un proceso que atraviesan las personas cuando deben elegir
                     entre distintas opciones. Diariamente cada individuo está ante situaciones en las que debe optar por
@@ -1301,7 +1368,7 @@
 
             <details class="subtema">
                 <summary class="noselect">5.3 Habilidades de comunicación, rechazo y negociación</summary>
-                <p><i id="iconoSexi1" onclick="togglePlayback('seccion20')"
+                <p><i id="iconoSexi20" onclick="togglePlayback('seccion20')"
                     style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>
                     La comunicación es el proceso por medio del cual se transmite información de un ente a
                     otro. Es el intercambio de sentimientos, opiniones o cualquier otro tipo de información mediante el
@@ -1411,7 +1478,7 @@
 
             <details class="subtema">
                 <summary class="noselect">5.4 Alfabetización mediática y sexualidad </summary>
-                <p><i id="iconoSexi1" onclick="togglePlayback('seccion21')"
+                <p><i id="iconoSexi21" onclick="togglePlayback('seccion21')"
                     style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>
                     Según la UNESCO, la alfabetización mediática es el conjunto de habilidades,
                     conocimientos y comprensión necesarios para que las personas interactúen con la información y los
@@ -1450,7 +1517,7 @@
 
             <details class="subtema">
                 <summary class="noselect">5.5 Como encontrar ayuda y apoyo</summary>
-                <p><i id="iconoSexi1" onclick="togglePlayback('seccion22')"
+                <p><i id="iconoSexi22" onclick="togglePlayback('seccion22')"
                     style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>
                     Todas las personas tienen derecho a recibir asistencia asequible, objetiva y respetuosa
                     que mantenga la confidencialidad y proteja la privacidad.
@@ -1490,14 +1557,14 @@
         </div>
 
         <div id="cuerpo" class="section">
-            <h2 class="section-title">6. El cuerpo humano y el desarrollo<i id="iconoSexi1" onclick="togglePlayback('seccion23')"
+            <h2 class="section-title">6. El cuerpo humano y el desarrollo<i id="iconoSexi23" onclick="togglePlayback('seccion23')"
                 style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i></h2>
             <p>Las etapas del desarrollo humano son una serie de cambios biológicos, físicos, emocionales y
                 sociales que atraviesan las personas a lo largo de su trayectoria vital. ¡Vamos a aprender!</p>
             <details class="subtema">
                 <summary class="noselect">6.1 Anatomía y fisiología sexual y reproductiva
                 </summary>
-                <p><i id="iconoSexi1" onclick="togglePlayback('seccion24')"
+                <p><i id="iconoSexi24" onclick="togglePlayback('seccion24')"
                     style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>Se incluyen los órganos sexuales que están fuera del cuerpo y los órganos reproductivos
                     y sexuales que están dentro del cuerpo.
                 </p>
@@ -1642,7 +1709,7 @@
             <details class="subtema">
                 <summary class="noselect">6.2 Reproducción
                 </summary>
-                <p><i id="iconoSexi1" onclick="togglePlayback('seccion25')"
+                <p><i id="iconoSexi25" onclick="togglePlayback('seccion25')"
                     style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>La reproducción es un proceso biológico que permite la creación de nuevos organismos en
                     todas las formas de vida.
                 </p>
@@ -1713,7 +1780,7 @@
             <details class="subtema">
                 <summary class="noselect">6.3 Pubertad
                 </summary>
-                <p><i id="iconoSexi1" onclick="togglePlayback('seccion26')"
+                <p><i id="iconoSexi26" onclick="togglePlayback('seccion26')"
                     style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>
                     Pubertad es el momento de la vida cuando un niño o una niña madura sexualmente
                 </p>
@@ -1807,7 +1874,7 @@
             <details class="subtema">
                 <summary class="noselect">6.4 Imagen Corporal
                 </summary>
-                <p><i id="iconoSexi1" onclick="togglePlayback('seccion27')"
+                <p><i id="iconoSexi27" onclick="togglePlayback('seccion27')"
                     style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>
                     Manera en la que una persona piensa acerca de su propio cuerpo y cómo lo ven los demás.
                 </p>
@@ -1844,7 +1911,7 @@
         </div>
 
         <div id="sexualidad" class="section">
-            <h2 class="section-title">7. Sexualidad y conducta sexual<i id="iconoSexi1" onclick="togglePlayback('seccion28')"
+            <h2 class="section-title">7. Sexualidad y conducta sexual<i id="iconoSexi28" onclick="togglePlayback('seccion28')"
                 style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i></h2>
             <p>La sexualidad es un tema amplio y extenso que requiere de estudio para llegar a comprenderse
                 completamente. Estas herramientas te servirán de apoyo para alcanzar ese objetivo.
@@ -1852,7 +1919,7 @@
             <details class="subtema">
                 <summary class="noselect">7.1 Relaciones Sexuales, Sexualidad y Ciclo de Vida Sexual
                 </summary>
-                <p><i id="iconoSexi1" onclick="togglePlayback('seccion29')"
+                <p><i id="iconoSexi29" onclick="togglePlayback('seccion29')"
                     style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>
                     La sexualidad es principalmente la construcción social de un impulso biológico, que es además,
                     multidimensional y dinámica, es decir, la experiencia que una persona tenga de la sexualidad está
@@ -1928,7 +1995,7 @@
             <details class="subtema">
                 <summary class="noselect">7.2 Conducta Sexual y Respuesta Sexual
                 </summary>
-                <p><i id="iconoSexi1" onclick="togglePlayback('seccion30')"
+                <p><i id="iconoSexi30" onclick="togglePlayback('seccion30')"
                     style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>
                     La conducta sexual son comportamientos que pueden presentarse en cualquier etapa del ciclo vital
                     humano, son todas aquellas actividades de una persona que puede realizar de manera individual, en
@@ -2018,7 +2085,7 @@
         </div>
 
         <div id="salud-sexual" class="section last-section">
-            <h2 class="section-title">8. Salud sexual y reproductiva<i id="iconoSexi1" onclick="togglePlayback('seccion31')"
+            <h2 class="section-title">8. Salud sexual y reproductiva<i id="iconoSexi31" onclick="togglePlayback('seccion31')"
                 style="margin-left: 15px; vertical-align: middle; font-size: 60px;" class="bx bx-volume-full"></i></h2>
             <p>La salud sexual Implica que las personas pueden tener una vida sexual segura y
                 satisfactoria, pueden reproducirse, y tienen la libertad de decir si quieren hacerlo y con qué
@@ -2028,7 +2095,7 @@
             <details class="subtema">
                 <summary class="noselect">8.1 Embarazo y prevención del embarazo
                 </summary>
-                <p><i id="iconoSexi1" onclick="togglePlayback('seccion32')"
+                <p><i id="iconoSexi32" onclick="togglePlayback('seccion32')"
                     style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i>Los acontecimientos que conducen a un embarazo comienzan con la concepción, en la cual
                     un espermatozoide penetra un óvulo.
                 </p>
@@ -2060,8 +2127,8 @@
             <details class="subtema">
                 <summary class="noselect">8.2 Estigma del VIH y del sida, atención médica, tratamiento y apoyo
                 </summary>
-                <p><i id="iconoSexi1" onclick="togglePlayback('seccion33')"
-                    style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i><Se trata del prejuicio que se genera cuando se cataloga a alguien como parte de un grupo
+                <p><i id="iconoSexi33" onclick="togglePlayback('seccion33')"
+                    style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i><p>Se trata del prejuicio que se genera cuando se cataloga a alguien como parte de un grupo
                     que se supone ser socialmente inaceptable.</p>
                 <p>El VIH (virus de la inmunodeficiencia humana) es un virus que ataca el sistema
                     inmunitario del cuerpo. Si el VIH no se trata puede causar SIDA (síndrome de inmunodeficiencia
@@ -2103,7 +2170,7 @@
             <details class="subtema" n>
                 <summary class="noselect">8.3 Cómo entender, reconocer y reducir el riesgo de ITS, incluido el VIH
                 </summary>
-                <p><i id="iconoSexi1" onclick="togglePlayback('seccion34')"
+                <p><i id="iconoSexi34" onclick="togglePlayback('seccion34')"
                     style="margin-left: 15px; vertical-align: middle; font-size: 40px;" class="bx bx-volume-full"></i><
                     Las siglas ITS se emplean para referirse a las Infecciones de Transmisión Sexual.
                 </p>

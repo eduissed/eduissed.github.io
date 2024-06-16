@@ -1217,7 +1217,7 @@ main > .section:nth-child(2n)::after {
 }
 
 .social-title {
-  color: #000000;
+  color: #ffffff;
   font-weight: 600;
   margin-top: 1rem;
 }

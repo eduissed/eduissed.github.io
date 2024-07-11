@@ -3,57 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temporizador y reinicio de página</title>
+    <title>GRACIAS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Russo+One&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7ae90fd583.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/openmoji/13.1.0/css/openmoji.min.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
     <style>
         body {
-            font-family: Arial, sans-serif;
             display: flex;
             align-items: center;
             justify-content: center;
             height: 100vh;
             margin: 0;
+            background-color: black;
+            overflow: hidden; /* Para evitar scroll */
         }
 
         #timer {
-            font-size: 24px;
-            color: #333;
+            font-size: 10vw;
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            font-family: 'Russo One', sans-serif;
+            display: flex;
+            justify-content: space-between;
+        }
+        .digit {
+            flex: -1;
+            text-align: center;
+            color: whitesmoke;
+            font-size: 500px;
+        }
+        .card {
+            position: relative;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(255, 0, 0, 0.366);
+            text-align: center;
+            font-family: 'Russo One', sans-serif;
+            color: #000;
+        }
+        .card img {
+            vertical-align: middle;
+            margin-top: 5px; /* Ajusta este valor para bajar el icono */
+        }
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 999; /* Coloca el fondo detrás del contenido */
+        }
+        body::-webkit-scrollbar {
+            display: none;
+        }
+        body {
+            -ms-overflow-style: none;  /* IE y Edge */
+            scrollbar-width: none;  /* Firefox */
         }
     </style>
 </head>
-<body>
+<body>   
+    <div id="particles-js"></div>
+    <div class="card">
+        Hola soy Eliann Artemio Grajales Grene el programador de 
+        <br><span style="font-family: 'Poppins', sans-serif;">SEXi por eduissed.</span>
+        <br> Gracias por tomarte el tiempo de revisar la página y llegar hasta aqui,
+        <br> sinceramente trabajar en este proyecto haciendo lo que me gusta
+        <br> a sido una increible experiencia que me permitio conocer muchisima 
+        <br> gente de diferentes partes de México y solo me queda agredecer
+        <br> a Angelica por invitarme a este increible proyecto y a todos
+        <br> miembros de este equipo, espero colaborar pronto con ustedes de nuevo.
+        <br><img style="width: 60px; height: 60px;" src="resources/black-favicon.ico" alt=""></span>
+        <br> Mi participacion en el mejor proyecto del mundo 
+        <br> 6/11/23 - 11/07/24 
+    </div>
 
-<div id="timer">10</div>
-
-<script>
-    // Función que reinicia la página
-    function reiniciarPagina() {
-        location.reload(true);
-    }
-
-    // Función del temporizador
-    function iniciarTemporizador(segundos) {
-        let tiempoRestante = segundos;
-        const timerElemento = document.getElementById('timer');
-
-        function actualizarTemporizador() {
-            timerElemento.textContent = tiempoRestante;
-
-            if (tiempoRestante === 0) {
-                reiniciarPagina();
-            } else {
-                tiempoRestante--;
-                setTimeout(actualizarTemporizador, 1000);
-            }
+    <div id="timer">
+        <div class="digit" id="leftDigit">1</div>
+        <div class="digit" id="rightDigit">0</div>
+    </div>
+    <script>
+        // Función que reinicia la página
+        function reiniciarPagina() {
+            location.reload(true);
         }
 
-        actualizarTemporizador();
-    }
+        // Función del temporizador
+        function iniciarTemporizador(segundos) {
+            let tiempoRestante = segundos;
+            const leftDigit = document.getElementById('leftDigit');
+            const rightDigit = document.getElementById('rightDigit');
 
-    // Iniciar temporizador con 10 segundos al cargar la página
-    document.addEventListener('DOMContentLoaded', function () {
-        iniciarTemporizador(10);
+            function actualizarTemporizador() {
+                let left = Math.floor(tiempoRestante / 10);
+                let right = tiempoRestante % 10;
+                leftDigit.textContent = left;
+                rightDigit.textContent = right;
+
+                if (tiempoRestante === 0) {
+                    reiniciarPagina();
+                } else {
+                    tiempoRestante--;
+                    setTimeout(actualizarTemporizador, 1000);
+                }
+            }
+
+            actualizarTemporizador();
+        }
+
+        // Iniciar temporizador con 10 segundos al cargar la página
+        document.addEventListener('DOMContentLoaded', function () {
+            iniciarTemporizador(10);
+        });
+    </script>
+<script>
+    particlesJS("particles-js", {
+        "particles": {
+            "number": {
+                "value": 80,
+                "density": {
+                    "enable": true,
+                    "value_area": 800
+                }
+            },
+            "color": {
+                "value": "#ffffff"
+            },
+            "shape": {
+                "type": "circle",
+                "stroke": {
+                    "width": 0,
+                    "color": "#000000"
+                },
+                "polygon": {
+                    "nb_sides": 5
+                }
+            },
+            "opacity": {
+                "value": 0.5,
+                "random": false,
+                "anim": {
+                    "enable": false,
+                    "speed": 1,
+                    "opacity_min": 0.1,
+                    "sync": false
+                }
+            },
+            "size": {
+                "value": 3,
+                "random": true,
+                "anim": {
+                    "enable": false,
+                    "speed": 40,
+                    "size_min": 0.1,
+                    "sync": false
+                }
+            },
+            "line_linked": {
+                "enable": true,
+                "distance": 150,
+                "color": "#ffffff",
+                "opacity": 0.4,
+                "width": 1
+            },
+            "move": {
+                "enable": true,
+                "speed": 6,
+                "direction": "none",
+                "random": false,
+                "straight": false,
+                "out_mode": "out",
+                "bounce": false,
+                "attract": {
+                    "enable": false,
+                    "rotateX": 600,
+                    "rotateY": 1200
+                }
+            }
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+                "onhover": {
+                    "enable": true,
+                    "mode": "repulse"
+                },
+                "onclick": {
+                    "enable": true,
+                    "mode": "push"
+                },
+                "resize": true
+            },
+            "modes": {
+                "grab": {
+                    "distance": 400,
+                    "line_linked": {
+                        "opacity": 1
+                    }
+                },
+                "bubble": {
+                    "distance": 400,
+                    "size": 40,
+                    "duration": 2,
+                    "opacity": 8,
+                    "speed": 3
+                },
+                "repulse": {
+                    "distance": 200,
+                    "duration": 0.4
+                },
+                "push": {
+                    "particles_nb": 4
+                },
+                "remove": {
+                    "particles_nb": 2
+                }
+            }
+        },
+        "retina_detect": true
     });
 </script>
-
 </body>
 </html>
